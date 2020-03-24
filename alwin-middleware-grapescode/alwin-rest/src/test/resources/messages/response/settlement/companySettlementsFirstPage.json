@@ -1,0 +1,19 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "invoiceNumber": "000015/12/2015/TO",
+      "amount": 10.21,
+      "operation": "CHARGE",
+      "paymentDate": 1468188000000
+    },
+    {
+      "id": 2,
+      "invoiceNumber": "000016/12/2015/TO",
+      "amount": 2340.11,
+      "operation": "CREDIT",
+      "paymentDate": 1470952800000
+    }
+  ],
+  "totalValues": 5
+}

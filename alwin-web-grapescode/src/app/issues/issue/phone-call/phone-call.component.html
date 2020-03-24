@@ -1,0 +1,69 @@
+<div class="mdl-grid" *ngIf="phoneCall">
+  <div class="mdl-card mdl-cell mdl-cell--12-col auto-height progress-bar-placeholder">
+    <div >
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+  </div>
+  <div class="mdl-card mdl-cell mdl-cell--1-col auto-height">
+    <p>
+      <br/>
+      <mat-icon class="material-icons phone-call-icon">call</mat-icon>
+    </p>
+  </div>
+  <div class="mdl-card mdl-cell mdl-cell--2-col auto-height">
+    <p>
+      <b>{{phoneCall.contactDetail.contact}}</b>
+      <br/>
+      Z:
+      <span class="valign-center">
+        <mat-form-field>
+          <mat-select placeholder="" [(ngModel)]="phoneCall.selectedPerson">
+            <mat-option
+              [value]="unknownPerson">{{unknownPerson.firstName | concatenateText: [unknownPerson.lastName] }}</mat-option>
+            <mat-option *ngFor="let person of phoneCall.availablePersons"
+                        [value]="person">{{person.firstName | concatenateText: [person.lastName] }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-mini-fab color="white" (click)="endPhoneCall()" type="button" class="end-phone-call">
+          <mat-icon class="md-24" color="warn">call_end</mat-icon>
+        </button>
+      </span>
+      <br/>
+      <span>Czas rozmowy {{phoneCallLength | phoneCallLength}}</span>
+    </p>
+  </div>
+  <div class="mdl-card mdl-cell mdl-cell--6-col auto-height">
+    <p>
+      <b>Ustalenia:</b>
+      <br/>
+      <textarea matInput placeholder="Treść wiadomości" name="comment" required rows="3" cols="120"
+                [(ngModel)]="remark"></textarea></p>
+  </div>
+  <div class="mdl-card mdl-cell mdl-cell--3-col auto-height">
+    <p *ngIf="!declarationForm">
+      <br/>
+      <button mat-button color="primary" (click)="addDeclaration()" type="button">
+        + Dodaj deklarację
+      </button>
+    </p>
+    <div [formGroup]="declarationForm" *ngIf="declarationForm">
+        <mat-form-field class="full-width font-14">
+          <input matInput [matDatepicker]="declaredPaymentDatePicker"
+                 placeholder="Zadeklarowana data płatności" formControlName="declaredPaymentDate"
+                 name="declaredPaymentDatePicker">
+          <mat-datepicker-toggle matSuffix [for]="declaredPaymentDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #declaredPaymentDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="full-width font-14">
+          <input matInput placeholder="Deklarowana kwota płatności PLN"
+                 formControlName="declaredPaymentAmountPLN" name="declaredPaymentAmountPLN" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="full-width font-14">
+          <input matInput placeholder="Deklarowana kwota płatności EUR"
+                 formControlName="declaredPaymentAmountEUR" name="declaredPaymentAmountEUR" type="number">
+        </mat-form-field>
+    </div>
+  </div>
+</div>

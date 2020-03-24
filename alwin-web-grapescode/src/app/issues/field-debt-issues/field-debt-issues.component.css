@@ -1,0 +1,22 @@
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.mat-column-actions {
+  justify-content: center;
+  display: flex;
+}
+
+.small-currency-label {
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.mat-header-row {
+  text-align: center;
+}
+
+.reminder-icon {
+  position: absolute;
+  margin-left: -10px;
+}

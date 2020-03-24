@@ -1,0 +1,19 @@
+.scheduler-start-date-column {
+  flex: 0 0 130px;
+}
+
+.scheduler-end-date-column {
+  flex: 0 0 130px;
+}
+
+.scheduler-manual-column {
+  flex: 0 0 140px;
+}
+
+.scheduler-duration-column {
+  flex: 0 0 110px;
+}
+
+.scheduler-state-column, .scheduler-type-column {
+  padding-right: 10px;
+}

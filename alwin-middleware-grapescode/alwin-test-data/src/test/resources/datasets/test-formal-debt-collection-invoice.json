@@ -1,0 +1,136 @@
+{
+  "formal_debt_collection_invoice": [
+    {
+      "id": 101,
+      "invoice_number": "FV/001/2017",
+      "contract_number": "CONTRACT/01",
+      "issue_date": "2017-11-10 00:00:00.000000",
+      "due_date": "2017-11-24 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 1000.0,
+      "gross_amount": 1230.0,
+      "current_balance": 500.0,
+      "leo_id": 1101
+    },
+    {
+      "id": 102,
+      "invoice_number": "FV/002/2017",
+      "contract_number": "CONTRACT/02",
+      "issue_date": "2017-03-10 00:00:00.000000",
+      "due_date": "2017-03-24 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 10000.0,
+      "gross_amount": 12300.0,
+      "current_balance": 9000.0,
+      "leo_id": 1102
+    },
+    {
+      "id": 103,
+      "invoice_number": "FV/2018/104",
+      "contract_number": "CONTRACT/03",
+      "issue_date": "2017-06-10 00:00:00.000000",
+      "due_date": "2017-06-24 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 5000.0,
+      "gross_amount": 6150.0,
+      "current_balance": 3000.0,
+      "leo_id": 1103
+    },
+    {
+      "id": 104,
+      "invoice_number": "FV/001/2018",
+      "contract_number": "CONTRACT/04",
+      "issue_date": "2018-11-10 00:00:00.000000",
+      "due_date": "2018-11-24 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 100000.0,
+      "gross_amount": 123000.0,
+      "current_balance": 80000.0,
+      "leo_id": 1104
+    },
+    {
+      "id": 10,
+      "invoice_number": "000001/12/2020/RL/PO/LW",
+      "contract_number": "issue_21_00001/15/1",
+      "issue_date": "2018-11-10 00:00:00.000000",
+      "due_date": "2020-12-01 00:00:00.000000",
+      "currency": "EUR",
+      "net_amount": 154.66,
+      "gross_amount": 190.23,
+      "current_balance": -190.23,
+      "leo_id": 11010
+    },
+    {
+      "id": 11,
+      "invoice_number": "000001/10/2024/RL/PO/LW",
+      "contract_number": "issue_21_00002/15/1",
+      "issue_date": "2018-11-12 00:00:00.000000",
+      "due_date": "2024-10-02 00:00:00.000000",
+      "currency": "EUR",
+      "net_amount": 100.91,
+      "gross_amount": 124.12,
+      "current_balance": -124.12,
+      "leo_id": 11011
+    },
+    {
+      "id": 15,
+      "invoice_number": "000001/10/2020/RL/PO/LW",
+      "contract_number": "issue_21_00002/15/1",
+      "issue_date": "2018-11-15 00:00:00.000000",
+      "due_date": "2020-12-01 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 100.91,
+      "gross_amount": 124.12,
+      "current_balance": -124.12,
+      "leo_id": 11015
+    },
+    {
+      "id": 16,
+      "invoice_number": "000001/10/2024/RL/PO/LW",
+      "contract_number": "issue_21_00002/15/1",
+      "issue_date": "2018-11-12 00:00:00.000000",
+      "due_date": "2024-10-02 00:00:00.000000",
+      "currency": "EUR",
+      "net_amount": 100.91,
+      "gross_amount": 124.12,
+      "current_balance": -124.12,
+      "leo_id": 11011
+    },
+    {
+      "id": 17,
+      "invoice_number": "000001/10/2020/RL/PO/LW",
+      "contract_number": "issue_21_00002/15/1",
+      "issue_date": "2018-11-15 00:00:00.000000",
+      "due_date": "2020-12-01 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 100.91,
+      "gross_amount": 124.12,
+      "current_balance": -124.12,
+      "leo_id": 11015
+    },
+    {
+      "id": 18,
+      "invoice_number": "000001/12/2020/RL/PO/LW",
+      "contract_number": "issue_21_00001/15/1",
+      "issue_date": "2018-11-10 00:00:00.000000",
+      "due_date": "2020-12-01 00:00:00.000000",
+      "currency": "EUR",
+      "net_amount": 154.66,
+      "gross_amount": 190.23,
+      "current_balance": -190.23,
+      "leo_id": 11010
+    },
+    {
+      "id": 25,
+      "invoice_number": "000025/10/2024/RL/PO/LW",
+      "contract_number": "issue_4_00002/15/1",
+      "issue_date": "2018-11-16 00:00:00.000000",
+      "due_date": "2019-10-02 00:00:00.000000",
+      "currency": "PLN",
+      "net_amount": 1009.10,
+      "gross_amount": 1241.20,
+      "current_balance": -1241.20,
+      "leo_id": 11025
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_alter_invoice_add_issue_date" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.5.0/ddl/001_alter_invoice_add_issue_date.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_issue_type_configuration.sql" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.5.0/ddl/002_alter_issue_type_configuration.sql"/>
+    </changeSet>
+
+    <changeSet id="003_update_invoice_issue_subject.sql" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.5.0/ddl/003_update_invoice_issue_subject.sql"/>
+    </changeSet>
+</databaseChangeLog>

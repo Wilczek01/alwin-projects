@@ -1,0 +1,107 @@
+.mat-expansion-panel {
+  display: inline;
+}
+
+.mat-header-row, .mat-row {
+  padding: 0 !important;
+}
+
+.invoices-sum {
+  padding-top: 10px;
+  color: #000000;
+}
+
+.invoice-row {
+  height: 30px;
+  min-height: 30px;
+}
+
+.corrections-column {
+  flex: 1 1 28px;
+  margin-left: -24px;
+  height: 30px;
+}
+
+.invoice-select-column {
+  flex: 1 1 50px;
+  height: 30px;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.issue-subject-column {
+  flex: 1 1 14px;
+  height: 30px;
+}
+
+.issue-subject-column > mat-icon {
+  margin-top: 4px;
+  color: #FEC533;
+}
+
+.invoice-no-column {
+  flex: 4 1 160px;
+}
+
+.invoice-no-column:hover {
+  cursor: hand;
+}
+
+.contract-number-column {
+  flex: 4 1 50px;
+}
+
+.type-column {
+  flex: 4 8 210px;
+}
+
+.currency-column {
+  flex: 1 1 44px;
+}
+
+.issue-date-column {
+  flex: 2 1 66px;
+}
+
+.due-date-column {
+  flex: 2 1 76px;
+}
+
+.gross-amount-column {
+  flex: 2 1 110px;
+}
+
+.current-balance-column {
+  flex: 2 1 110px;
+}
+
+.paid-column {
+  flex: 2 1 110px;
+}
+
+.dpd-column {
+  flex: 1 1 50px;
+}
+
+.excluded-column {
+  flex: 1 1 64px;
+}
+
+.action-column {
+  flex: 1 1 70px;
+}
+
+.inactive-row {
+  color: #dddddd;
+}
+
+.invoice-details-button {
+  height: 30px;
+  max-height: 30px;
+  margin-top: -7px;
+}
+
+.box {
+  height: 48px;
+  position: relative;
+}

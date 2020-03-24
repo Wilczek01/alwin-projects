@@ -1,0 +1,10 @@
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('ADMIN', 'Administrator systemu');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('PHONE_DEBT_COLLECTOR', 'Windykator telefoniczny');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('FIELD_DEBT_COLLECTOR', 'Windykator terenowy');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('RESTRUCTURING_SPECIALIST', 'Specjalista ds. restrukturyzacji');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('RENUNCIATION_COORDINATOR', 'Koordynator wypowiedzeń');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('SECURITY_SPECIALIST', 'Specjalista ds. realizacji zabezpieczeń');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('PHONE_DEBT_COLLECTOR_MANAGER', 'Menedżer windykacji telefonicznej');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('DIRECT_DEBT_COLLECTION_MANAGER', 'Menedżer windykacji bezpośredniej');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('ANALYST', 'Analityk');
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('DEPARTMENT_MANAGER', 'Menedżer departamentu');

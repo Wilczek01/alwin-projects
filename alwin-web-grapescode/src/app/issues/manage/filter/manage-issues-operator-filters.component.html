@@ -1,0 +1,51 @@
+<div [formGroup]="group">
+
+  <div>
+    <div class="filter-table-row">
+      <mat-form-field>
+        <input id="companyNip" name="companyNip" matInput [formControlName]="'companyNipControl'" placeholder="NIP">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="companyRegon" name="companyRegon" matInput [formControlName]="'companyRegonControl'" placeholder="REGON">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="companyName" name="companyName" matInput [formControlName]="'companyNameControl'" placeholder="Nazwa firmy">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="contactPhone" name="contactPhone" matInput [formControlName]="'contactPhoneControl'" placeholder="Nr telefonu do kontaktu">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="contactEmail" name="contactEmail" matInput [formControlName]="'contactEmailControl'" placeholder="Adres email do kontaktu">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="contactName" name="contactName" matInput [formControlName]="'contactNameControl'" placeholder="Imię i nazwisko osoby do kontaktu">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="personName" name="personName" matInput [formControlName]="'personNameControl'" placeholder="Imię i nazwisko osoby w firmie">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="personPesel" name="personPesel" matInput [formControlName]="'personPeselControl'" placeholder="Numer pesel osoby w firmie">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input id="invoiceContractNo" name="invoiceContractNo" matInput [formControlName]="'invoiceContractNoControl'" placeholder="Numer umowy na fakturze">
+      </mat-form-field>
+
+      <mat-form-field class="filter-table-textarea">
+                  <textarea matInput placeholder="Lista numerów klientów rozdzielona przecinkami" [formControlName]="'extCompanyIdsControl'" id="extCompanyIds"
+                            name="extCompanyIds" [maxlength]="500" mat-autosize="" pattern="\d+((,\d+)|(,\n\d+)|(,\r\n\d+))*"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+
+
+

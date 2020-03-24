@@ -1,0 +1,115 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!isLoading()" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="mdl-color--white mdl-cell mdl-cell--12-col">
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>report</mat-icon>
+      <span mat-line>
+        <b class="to-left">Blokady</b>
+      </span>
+      <button mat-icon-button matTooltip="Dodaj" id="create-new-block-button" class="to-right"
+              (click)="createNewExclusion()">
+        <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <table class="mdl-data-table mdl-js-data-table full-width block-table" [hidden]="exclusions.length == 0">
+    <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Od</th>
+      <th class="mdl-data-table__cell--non-numeric">Do</th>
+      <th class="mdl-data-table__cell--non-numeric">Blokujący</th>
+      <th class="mdl-data-table__cell--non-numeric">Wybrana przyczyna</th>
+      <th class="mdl-data-table__cell--non-numeric">Typ Wezwania</th>
+      <th class="mdl-data-table__cell--non-numeric">Powód</th>
+      <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+      <th class="mdl-data-table__cell--non-numeric action-cell">Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let exclusion of exclusions">
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.startDate | date:'dd.MM.yyyy'}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.endDate | date:'dd.MM.yyyy'}}</td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <mat-chip-list>
+          <mat-chip>{{exclusion.blockingOperator}}</mat-chip>
+        </mat-chip-list>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.reasonTypeLabel}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.demandForPaymentType | demandTypeKeyString}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.reason}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{exclusion.remark}}</td>
+      <td class="mdl-data-table__cell--non-numeric action-cell">
+        <button mat-icon-button matTooltip="Edytuj" (click)="editExclusion(exclusion)">
+          <mat-icon class="material-icons">mode_edit</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Usuń" (click)="confirmDeleteExclusion(exclusion.id)">
+          <mat-icon class="material-icons">delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="no-results" [hidden]="loadingExclusions || exclusions.length != 0">
+    Nie znaleziono żadnych blokad tego klienta.
+  </div>
+
+  <div class="no-results" [hidden]="!loadingExclusions">
+    Trwa pobieranie blokad klienta
+  </div>
+
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>assignment</mat-icon>
+      <span mat-line><b>Umowy</b></span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <table class="mdl-data-table mdl-js-data-table full-width block-table" [hidden]="contracts.length == 0">
+    <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Nr</th>
+      <th class="mdl-data-table__cell--non-numeric">Data</th>
+      <th class="mdl-data-table__cell--non-numeric">Stan</th>
+      <th class="mdl-data-table__cell--non-numeric">Status finansowania</th>
+      <th class="mdl-data-table__cell--non-numeric">Typ finansowania</th>
+      <th>Wartość</th>
+      <th class="mdl-data-table__cell--non-numeric">Waluta</th>
+      <th class="mdl-data-table__cell--non-numeric action-cell">Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contract of contracts" [ngClass]="contract.excluded ? 'inactive-contract-row' : 'active-contract-row'">
+      <td class="mdl-data-table__cell--non-numeric">{{contract.contractNo}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{contract.signDate | date:'dd.MM.yyyy'}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{contract.stateDescription }}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{contract.financingState | nullable}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{contract.financingType | nullable}}</td>
+      <td>{{contract.contractValue | number:'0.2-2' | nullable}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{contract.currency | nullable}}</td>
+      <td class="mdl-data-table__cell--non-numeric action-cell">
+        <button mat-icon-button matTooltip="Zablokuj" (click)="exclude(contract)" class="active-contract-row" [disabled]="!contract.active">
+          <mat-icon class="material-icons">block</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Blokady" (click)="showExclusions(contract)" class="active-contract-row" [disabled]="!contract.active">
+          <mat-icon class="material-icons">report</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="no-results" [hidden]="loadingContracts || contracts.length != 0">
+    Nie znaleziono żadnych umów dla tego klienta.
+  </div>
+
+  <div class="no-results" [hidden]="!loadingContracts">
+    Trwa pobieranie umów klienta
+  </div>
+
+</div>

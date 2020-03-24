@@ -1,0 +1,313 @@
+<form (ngSubmit)="editUserForm.form.valid && updateUser()" #editUserForm="ngForm">
+  <div class="mdl-grid">
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--3-col">
+      <div class="progress-bar-placeholder">
+        <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+      </div>
+
+      <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div *ngIf="user != null" class="mdl-cell mdl-cell--12-col">
+          <div>
+            <div style="float: left;">
+              <mat-list>
+                <mat-list-item class="alwin-mat-list-title">
+                  <mat-icon mat-list-icon>person</mat-icon>
+                  <h4 mat-line>Użytkownik</h4>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div style="float: right;">
+            </div>
+          </div>
+          <div style="clear: both;">
+            <div>
+              <mat-form-field>
+                <input matInput placeholder="Imię" [(ngModel)]="user.firstName" name="firstName" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Nazwisko" [(ngModel)]="user.lastName" name="lastName" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Numer telefonu" [(ngModel)]="user.phoneNumber" name="phoneNumber">
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Adres email" [(ngModel)]="user.email" name="email" email required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="user == null && !loading" class="mdl-cell mdl-cell--12-col">
+          <h2 class="mdl-card__title-text">Nie znaleziono użytkownika</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--9-col">
+      <div class="progress-bar-placeholder">
+        <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+      </div>
+
+      <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div *ngIf="user != null" class="mdl-cell mdl-cell--12-col">
+          <div>
+            <div style="float: left;">
+              <mat-list>
+                <mat-list-item class="alwin-mat-list-title">
+                  <mat-icon mat-list-icon>people</mat-icon>
+                  <h4 mat-line>Operatorzy</h4>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div style="float: right;">
+              <button mat-mini-fab color="primary" (click)="addNewOperator()" type="button" id="add-new-operator-button">
+                <mat-icon class="md-24">add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div style="clear: both;">
+            <div>
+              <div *ngIf="user.operators.length == 0">
+                Ten użytkownik nie posiada jeszcze żadnego operatora
+              </div>
+
+              <table
+                class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width mdl-shadow--2dp--no-shadow mdl-data-table--no-border mdl-data-table--editable"
+                *ngIf="user.operators.length != 0">
+                <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Login</th>
+                  <th class="mdl-data-table__cell--non-numeric">Hasło</th>
+                  <th class="mdl-data-table__cell--non-numeric">Typ</th>
+                  <th class="mdl-data-table__cell--non-numeric">Aktywny</th>
+                  <th class="mdl-data-table__cell--non-numeric">Manager</th>
+                  <th class="mdl-data-table__cell--non-numeric">Akcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let operator of user.operators; let i = index;">
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-form-field>
+                      <input matInput placeholder=" " [(ngModel)]="operator.login" name="login-{{i}}" id="login-{{i}}" required>
+                    </mat-form-field>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-form-field *ngIf="operator.id == null">
+                      <input matInput placeholder=" " [(ngModel)]="operator.password" name="password-{{i}}" id="password-{{i}}"
+                             type="password" required>
+                    </mat-form-field>
+                    <span *ngIf="operator.id != null">********</span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-form-field>
+                      <mat-select [compareWith]="compareTypes" placeholder="" [(ngModel)]="operator.type"
+                                  name="operatorType-{{i}}" id="operatorType-{{i}}" required="true">
+                        <mat-option *ngFor="let type of types" [value]="type">{{type.typeLabel}}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.active" name="active-{{i}}" id="active-{{i}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <span class="mdl-chip mdl-chip--deletable">
+                        <span class="mdl-chip__text">
+                          {{operator.parentOperator != null ?
+                          (operator.parentOperator.user != null ?
+                          (operator.parentOperator.user.firstName | concatenateText:[operator.parentOperator.user.lastName]) : operator.parentOperator.login)
+                          : 'brak'}}
+                        </span>
+                        <button type="button" class="mdl-chip__action" (click)="assignManager(operator)"><i
+                          class="material-icons">edit</i></button>
+                    </span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <button mat-icon-button style="float: right; color: black;" (click)="removeOperator(operator)"
+                            type="button" matTooltip="Usuń operatora"
+                            color="primary"
+                            *ngIf="operator.id == null">
+                      <mat-icon class="material-icons">delete</mat-icon>
+                    </button>
+                    <button mat-icon-button style="float: right; color: black;" (click)="confirmResetPassword(operator)"
+                            type="button" matTooltip="Reset hasła"
+                            color="primary" id="reset-password-{{operator.id}}"
+                            *ngIf="operator.id != null">
+                      <mat-icon class="material-icons">cached</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="user == null && !loading" class="mdl-cell mdl-cell--12-col">
+          <h2 class="mdl-card__title-text">Nie znaleziono użytkownika</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+      <div class="progress-bar-placeholder">
+        <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+      </div>
+
+      <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div *ngIf="user != null" class="mdl-cell mdl-cell--12-col">
+          <div>
+            <div style="float: left;">
+              <mat-list>
+                <mat-list-item class="alwin-mat-list-title">
+                  <mat-icon mat-list-icon>build</mat-icon>
+                  <h4 mat-line>Uprawnienia</h4>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div style="float: right;">
+              <button mat-mini-fab color="primary" (click)="addNewPermission()"
+                      [disabled]="!hasAnyOperatorWithoutPermission()" type="button">
+                <mat-icon class="md-24">add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div style="clear: both;">
+            <div>
+              <div *ngIf="user.operators.length == 0">
+                Ten użytkownik nie posiada jeszcze żadnego operatora
+              </div>
+
+              <div *ngIf="user.operators.length != 0 && !hasAnyPermission()">
+                Żaden z operatorów tego użytkownika nie posiada jeszcze uprawnień
+              </div>
+
+              <table
+                class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width mdl-shadow--2dp--no-shadow mdl-data-table--no-border"
+                *ngIf="user.operators.length != 0 && hasAnyPermission()">
+                <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Login</th>
+                  <th class="mdl-data-table__cell--non-numeric">Planowanie</th>
+                  <th class="mdl-data-table__cell--non-numeric">Zmiana opłaty</th>
+                  <th class="mdl-data-table__cell--non-numeric">Zmiana opłaty %</th>
+                  <th class="mdl-data-table__cell--non-numeric">Usuwanie swoich załączników</th>
+                  <th class="mdl-data-table__cell--non-numeric">Usuwanie załączników innych</th>
+                  <th class="mdl-data-table__cell--non-numeric">Wew. transfer</th>
+                  <th class="mdl-data-table__cell--non-numeric">Zew. transfer</th>
+                  <th class="mdl-data-table__cell--non-numeric">Wykluczanie</th>
+                  <th class="mdl-data-table__cell--non-numeric">Wykluczanie klienta</th>
+                  <th class="mdl-data-table__cell--non-numeric">Wykluczanie faktur</th>
+                  <th class="mdl-data-table__cell--non-numeric">Kończenie zlecenia</th>
+                  <th class="mdl-data-table__cell--non-numeric">Wezwania</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let operator of user.operators | withPermission;">
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <span class="mdl-chip mdl-chip--contact">
+                      <span class="mdl-chip__contact alwin-header-dark mdl-color-text--white">
+                        <i class="material-icons">person</i>
+                      </span>
+                      <span class="mdl-chip__text">{{operator.login}}</span>
+                    </span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToExternallyPlanActivities"
+                                  name="epa-{{operator.login}}"
+                                  id="epa-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToChangeActivityCharge"
+                                  name="cac-{{operator.login}}"
+                                  id="cac-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToChangeActivityChargePercent"
+                                  name="cacp-{{operator.login}}"
+                                  id="cacp-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToMarkOwnAttachmentDeleted"
+                                  name="owad-{{operator.login}}"
+                                  id="owad-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToMarkOthersAttachmentsDeleted"
+                                  name="oad-{{operator.login}}"
+                                  id="oad-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToTransferIssuesInternally"
+                                  name="tii-{{operator.login}}"
+                                  id="tii-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToTransferIssuesExternally"
+                                  name="tie-{{operator.login}}"
+                                  id="tie-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToExcludeIssue" name="ei-{{operator.login}}"
+                                  id="ei-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToSetCustomerOutOfService"
+                                  name="coos-{{operator.login}}"
+                                  id="coos-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToExcludeInvoice"
+                                  name="excludeInvoice-{{operator.login}}"
+                                  id="excludeInvoice-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToTerminateIssue"
+                                  name="ti-{{operator.login}}"
+                                  id="ti-{{operator.login}}"></mat-checkbox>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <mat-checkbox [(ngModel)]="operator.permission.allowedToManageDemandsForPayment"
+                                  name="mdf-{{operator.login}}"
+                                  id="mdf-{{operator.login}}"></mat-checkbox>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="user == null && !loading" class="mdl-cell mdl-cell--12-col">
+          <h2 class="mdl-card__title-text">Nie znaleziono użytkownika</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col auto-height" [hidden]="errorMessage == null">
+      <div class="mdl-card mdl-cell mdl-cell--12-col auto-height">
+        <div>
+          <div style="float: left;">
+            <mat-list>
+              <mat-list-item class="alwin-mat-list-title">
+                <mat-icon mat-list-icon class="mat-error">error</mat-icon>
+                <h4 mat-line class="mat-error" style="font-size: 16px">{{errorMessage}}</h4>
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <div style="float: right;">
+          </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+      <button mat-raised-button color="primary" class="filter-table-button full-width" id="update-user-data-button"
+              [disabled]="!editUserForm.form.valid || loading || user == null">
+        Zapisz zmiany
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,27 @@
+.user-label {
+  padding: 10px 0px 0px 24px;
+  line-height: 48px;
+  font-size: 13px;
+}
+
+.user-label-name {
+  color: #ffffff;
+}
+
+.user-label-role {
+  color: rgba(255, 255, 255, .6);
+}
+
+.footer {
+  background-color: #71002E;
+  float: right;
+  text-align: right;
+  padding-right: 25px;
+  font-size: 10px;
+  color: #cccccc;
+  width: 100%;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}

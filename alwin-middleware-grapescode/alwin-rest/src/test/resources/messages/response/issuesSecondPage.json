@@ -1,0 +1,287 @@
+{
+  "values": [
+    {
+      "id": 4,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 9,
+        "company": {
+          "id": 7,
+          "extCompanyId": 9993,
+          "companyName": "Firma 9993",
+          "shortName": "Firma9993",
+          "nip": "2619474934",
+          "regon": "150939459",
+          "krs": "KRS 9993",
+          "recipientName": "Odbiorca firma 9993",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 4,
+        "extContractId": "TEST CONTRACT 4",
+        "customer": {
+          "id": 9,
+          "company": {
+            "id": 7,
+            "extCompanyId": 9993,
+            "companyName": "Firma 9993",
+            "shortName": "Firma9993",
+            "nip": "2619474934",
+            "regon": "150939459",
+            "krs": "KRS 9993",
+            "recipientName": "Odbiorca firma 9993",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1594332000000,
+      "expirationDate": 1597010400000,
+      "terminationCause": "testowy powód 4",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 180.12,
+      "balanceStartPLN": 65432.44,
+      "paymentsPLN": 987654.23,
+      "currentBalancePLN": 234642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 65432.44,
+      "totalCurrentBalancePLN": 234642.67,
+      "totalPaymentsPLN": 987654.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1594332000000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    },
+    {
+      "id": 5,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 10,
+        "company": {
+          "id": 8,
+          "extCompanyId": 9992,
+          "companyName": "Firma 9992",
+          "shortName": "Firma9992",
+          "nip": "9393539165",
+          "regon": "735583142",
+          "krs": "KRS 9992",
+          "recipientName": "Odbiorca firma 9992",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 5,
+        "extContractId": "TEST CONTRACT 5",
+        "customer": {
+          "id": 10,
+          "company": {
+            "id": 8,
+            "extCompanyId": 9992,
+            "companyName": "Firma 9992",
+            "shortName": "Firma9992",
+            "nip": "9393539165",
+            "regon": "735583142",
+            "krs": "KRS 9992",
+            "recipientName": "Odbiorca firma 9992",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1625868000000,
+      "expirationDate": 1628546400000,
+      "terminationCause": "testowy powód 5",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 291.12,
+      "balanceStartPLN": -65432.44,
+      "paymentsPLN": 987654.23,
+      "currentBalancePLN": -234642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 65432.44,
+      "totalCurrentBalancePLN": 234642.67,
+      "totalPaymentsPLN": 987654.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1625868000000,
+      "priority": {
+        "key": "NORMAL",
+        "label": "Normalny"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    },
+    {
+      "id": 6,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 11,
+        "company": {
+          "id": 9,
+          "extCompanyId": 9991,
+          "companyName": "Firma 9991",
+          "shortName": "Firma9991",
+          "nip": "6837458881",
+          "regon": "615557755",
+          "krs": "KRS 9991",
+          "recipientName": "Odbiorca firma 9991",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 6,
+        "extContractId": "TEST CONTRACT 6",
+        "customer": {
+          "id": 11,
+          "company": {
+            "id": 9,
+            "extCompanyId": 9991,
+            "companyName": "Firma 9991",
+            "shortName": "Firma9991",
+            "nip": "6837458881",
+            "regon": "615557755",
+            "krs": "KRS 9991",
+            "recipientName": "Odbiorca firma 9991",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1657404000000,
+      "expirationDate": 1660082400000,
+      "terminationCause": "testowy powód 6",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 191.12,
+      "balanceStartPLN": -33432.44,
+      "paymentsPLN": 557654.23,
+      "currentBalancePLN": -444642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 33432.44,
+      "totalCurrentBalancePLN": 444642.67,
+      "totalPaymentsPLN": 557654.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1657404000000,
+      "priority": {
+        "key": "NORMAL",
+        "label": "Normalny"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    }
+  ],
+  "totalValues": 32
+}

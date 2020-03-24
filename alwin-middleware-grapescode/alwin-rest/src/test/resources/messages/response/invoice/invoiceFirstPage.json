@@ -1,0 +1,29 @@
+{
+  "invoices": {
+    "values": [
+      {
+        "id": 2,
+        "lastPaymentDate": 1449702000000,
+        "netAmount": 375.00,
+        "grossAmount": 461.25,
+        "number": "000016/12/2015/TO",
+        "currency": "PLN",
+        "currentBalance": 0.00,
+        "paid": 0.00,
+        "contractNumber": "issue_21_00001/15/1",
+        "typeId": 5,
+        "dueDate": 1449702000000,
+        "typeLabel": "Oplata dodatkowa",
+        "excluded": true,
+        "dpd": 0,
+        "correction": false,
+        "corrections": [],
+        "correctionOrder": null,
+        "issueSubject": false,
+        "issueDate": 1449702000000
+      }
+    ],
+    "totalValues": 8
+  },
+  "balance": 0.00
+}

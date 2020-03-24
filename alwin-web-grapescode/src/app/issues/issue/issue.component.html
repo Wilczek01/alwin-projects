@@ -1,0 +1,45 @@
+<div class="mdl-grid">
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col width-100-percent margin-0">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div class="mdl-card mdl-cell mdl-cell--12-col auto-height">
+      <div *ngIf="loading" class="issue-loading-info">
+        Proszę czekać, trwa pobieranie danych zlecenia...
+      </div>
+      <div class="issue-panel" *ngIf="!loading && issue != null" id="issue-data-card">
+        <alwin-issue-header [issue]="issue" [issueProgress]="issueProgress" [readonly]="readonly"></alwin-issue-header>
+      </div>
+      <div class="issue-panel" *ngIf="!loading && issue == null" id="no-issue-data-card">
+        Nie znaleziono zlecenia
+      </div>
+    </div>
+  </div>
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col width-100-percent margin-0" *ngIf="!loading && issue != null">
+    <div class="mdl-card mdl-cell mdl-cell--12-col auto-height width-100-percent margin-0">
+      <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+        <mat-tab label="Klient">
+          <div class="alwin-work-mat-tab">
+            <alwin-customer-tab [issue]="issue" [readonly]="readonly"></alwin-customer-tab>
+          </div>
+        </mat-tab>
+        <mat-tab label="Należności">
+          <div class="alwin-work-mat-tab">
+            <alwin-debts-tab [issue]="issue" [readonly]="readonly"></alwin-debts-tab>
+          </div>
+        </mat-tab>
+        <mat-tab label="Czynności" id="activities-tab">
+          <div class="alwin-work-mat-tab" *ngIf="selectedTabIndex == 2">
+            <alwin-activity-tab [issue]="issue" [companyId]="companyId"
+                                [readonly]="readonly && !hasRole(role.PHONE_DEBT_COLLECTOR_MANAGER)"></alwin-activity-tab>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <alwin-phone-call [issue]="issue"></alwin-phone-call>
+  </div>
+
+</div>

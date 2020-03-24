@@ -1,0 +1,16 @@
+
+.postpone-contract-termination-dialog {
+  min-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
+
+.postpone-contract-termination-dialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.postpone-contract-termination-dialog form > * {
+  width: 100%;
+}
+

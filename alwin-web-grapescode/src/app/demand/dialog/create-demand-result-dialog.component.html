@@ -1,0 +1,32 @@
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">
+    <span>Wezwanie</span>
+  </h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="full-width">
+  <table class="mdl-data-table mdl-js-data-table full-width">
+    <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric checkbox-column">
+        Numer umowy
+      </th>
+      <th class="mdl-data-table__cell--non-numeric checkbox-column">
+        Status
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of messages">
+      <td class="mdl-data-table__cell--non-numeric ">
+        {{message.contractNumber}}
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        {{message.resultCode | createDemandResultKeyString}}
+      </td>
+    </tbody>
+  </table>
+</div>

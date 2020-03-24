@@ -1,0 +1,24 @@
+{
+  "pesel": "88010101234",
+  "firstName": "Jan",
+  "lastName": "Kowalsky",
+  "representative": true,
+  "address": "ul. Testowa 4/1",
+  "maritalStatus": {
+    "key": 0,
+    "label": "Nieznany"
+  },
+  "idDocCountry": "PL",
+  "idDocNumber": "QWE123456",
+  "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+  "idDocSignDate": "2010-04-23T00:00:00.000Z",
+  "politician": false,
+  "jobFunction": "Konserwator nawierzchni",
+  "birthDate": "1982-11-17T00:00:00.000Z",
+  "idDocType": {
+    "key": 1,
+    "label": "Dowód osobisty"
+  },
+  "country": "Polska",
+  "contactPerson": false
+}

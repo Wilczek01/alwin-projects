@@ -1,0 +1,16 @@
+
+.reject-confirmation-dialog {
+  min-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
+
+.reject-confirmation-dialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reject-confirmation-dialog form > * {
+  width: 100%;
+}
+

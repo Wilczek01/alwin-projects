@@ -1,0 +1,34 @@
+{
+  "id": -1,
+  "firstName": "Cyprian Kamil",
+  "lastName": "Norwid",
+  "email": "nowy_mail_cknorwid@grapescode.pl",
+  "phoneNumber": null,
+  "operators": [
+    {
+      "id": 3,
+      "active": true,
+      "login": "cknorwid",
+      "permission": {
+        "id": 3,
+        "allowedToExternallyPlanActivities": false,
+        "allowedToChangeActivityCharge": false,
+        "allowedToChangeActivityChargePercent": false,
+        "allowedToMarkOwnAttachmentDeleted": false,
+        "allowedToMarkOthersAttachmentsDeleted": false,
+        "allowedToTransferIssuesInternally": false,
+        "allowedToTransferIssuesExternally": false,
+        "allowedToExcludeIssue": false,
+        "allowedToSetCustomerOutOfService": false,
+        "allowedToTerminateIssue": false,
+        "allowedToExcludeInvoice": false
+      },
+      "parentOperator": null,
+      "type": {
+        "id": 2,
+        "typeName": "PHONE_DEBT_COLLECTOR",
+        "typeLabel": "Windykator telefoniczny"
+      }
+    }
+  ]
+}

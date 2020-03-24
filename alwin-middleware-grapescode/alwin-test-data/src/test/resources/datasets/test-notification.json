@@ -1,0 +1,38 @@
+{
+  "notification": [
+    {
+      "id": 1,
+      "issue_id": 1,
+      "creation_date": "2017-11-29 00:00:00.000000",
+      "message": "Powiadomienie nieodczytane nr 1",
+      "sender_id": 4,
+      "read_confirmation_required": true
+    },
+    {
+      "id": 2,
+      "issue_id": 21,
+      "creation_date": "2017-11-30 14:57:14.934934",
+      "message": "Powiadomienie nieodczytane nr 2",
+      "sender_id": 4,
+      "read_confirmation_required": false
+    },
+    {
+      "id": 3,
+      "issue_id": 1,
+      "creation_date": "2017-11-19 00:00:00.000000",
+      "read_date": "2017-11-30 00:00:00.000000",
+      "message": "Powiadomienie odczytane nr 1",
+      "sender_id": 4,
+      "read_confirmation_required": true
+    },
+    {
+      "id": 4,
+      "issue_id": 21,
+      "creation_date": "2017-11-21 00:00:00.000000",
+      "read_date": "2017-11-30 00:00:00.000000",
+      "message": "Powiadomienie odczytane nr 2",
+      "sender_id": 4,
+      "read_confirmation_required": true
+    }
+  ]
+}

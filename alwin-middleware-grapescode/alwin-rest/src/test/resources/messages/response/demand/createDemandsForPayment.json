@@ -1,0 +1,12 @@
+[
+  {
+    "contractNumber": "TEST 12/34/56",
+    "resultCode": "SUCCESSFUL",
+    "message": null
+  },
+  {
+    "contractNumber": "TEST 20/43/12",
+    "resultCode": "FAILED",
+    "message": null
+  }
+]

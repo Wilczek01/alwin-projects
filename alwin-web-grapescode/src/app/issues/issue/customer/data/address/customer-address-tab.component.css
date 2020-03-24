@@ -1,0 +1,13 @@
+.mdl-data-table {
+  border: none;
+}
+
+.action-cell {
+  width: 45px;
+  padding: 0 0 0 10px;
+}
+
+.action-cell:last-of-type {
+  width: 45px;
+  padding: 0 0 0 18px
+}

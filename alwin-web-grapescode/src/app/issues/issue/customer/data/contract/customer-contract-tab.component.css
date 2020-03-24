@@ -1,0 +1,23 @@
+.contracts-list {
+  min-width: 130px;
+  max-height: 404px;
+  overflow: auto
+}
+
+.mdl-data-table {
+  border: none;
+}
+
+.contract-choice :hover {
+  cursor: pointer;
+}
+
+.contract-data-list-item {
+  margin-left: 27px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.contract-details-data {
+  padding: 10px;
+}

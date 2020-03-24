@@ -1,0 +1,8 @@
+{
+  "username": "Jan Kochanowski",
+  "role": {
+    "id": 1,
+    "typeName": "RENUNCIATION_COORDINATOR",
+    "typeLabel": "Koordynator wypowiedzeń"
+  }
+}

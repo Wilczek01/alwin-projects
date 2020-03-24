@@ -1,0 +1,45 @@
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Harmonogram spłaty</h1>
+  <button mat-icon-button mat-dialog-close id="close-button">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div class="schedules clear">
+  <div class="to-left schedules-list">
+    <b>Aktwyne:</b><br/>
+    <span *ngFor="let schedule of activeSchedules; let i = index">
+      <button mat-button color="primary" (click)="selectActiveSchedule(i)" type="button" [disabled]="isScheduleSelected(schedule.id)"
+              id="schedule-{{schedule.id}}" class="schedule-button">{{schedule.name}}</button><br/>
+    </span>
+    <br/>
+    <b>Pozostałe:</b><br/>
+    <span *ngFor="let schedule of otherSchedules; let i = index">
+      <button mat-button color="primary" (click)="selectOtherSchedule(i)" type="button" [disabled]="isScheduleSelected(schedule.id)"
+              id="schedule-{{schedule.id}}" class="schedule-button">{{schedule.name}}</button><br/>
+    </span>
+  </div>
+  <div class="to-left schedule-details">
+    <div *ngIf="selectedSchedule == null">Nie wybrano harmonogramu</div>
+    <div *ngIf="selectedSchedule != null && selectedSchedule.instalments != null">
+      <table class="mdl-data-table mdl-js-data-table" id="schedules-table">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Nr raty</th>
+          <th class="mdl-data-table__cell--non-numeric">Termin</th>
+          <th>Rata</th>
+          <th>Pozostało</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let instalment of selectedSchedule.instalments" [class.past-schedule]="instalment.paymentDate < currentDate">
+          <td class="mdl-data-table__cell--non-numeric">{{instalment.index}}</td>
+          <td class="mdl-data-table__cell--non-numeric">{{instalment.paymentDate | date:'dd.MM.yyyy'}}</td>
+          <td>{{instalment.payment | number:'0.2-2'}}</td>
+          <td>{{instalment.remainingPayment | number:'0.2-2'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

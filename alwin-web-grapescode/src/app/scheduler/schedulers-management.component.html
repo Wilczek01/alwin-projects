@@ -1,0 +1,56 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" id="scheduler-table" [hidden]="dataSource.data.length == 0" class="zebra-rows zebra-even">
+
+      <ng-container cdkColumnDef="batchProcess">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-batch-process-column"> Opis</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-batch-process-column"> {{row.label}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="hour">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-hour-column"> Zaplanowana godzina startu</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-hour-column">
+          <div *ngIf="configurations.has(row.key); else no_configuration">
+            {{configurations.get(row.key).hour + ':00'}}
+            <button mat-icon-button matTooltip="Zmień godzinę" id="edit-scheduler-hour-{{row.key}}-button"
+                    (click)="changeStartHour(configurations.get(row.key))">
+              <mat-icon class="md-24" aria-label="Zmień godzinę">mode_edit</mat-icon>
+            </button>
+          </div>
+          <ng-template #no_configuration>-</ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="updateDate">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-update-date-column"> Data ostatniej zmiany</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-update-date-column">
+          {{ configurations.has(row.key) ? (configurations.get(row.key).updateDate | date:'dd.MM.yyyy HH:mm') : '-' }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="actions">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-actions-column"> Akcje</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-actions-column">
+          <button mat-icon-button (click)="startTask(row)" matTooltip="Uruchom zadanie teraz" id="start-scheduler-process-{{row.key}}">
+            <mat-icon class="material-icons">play_circle_outline</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;" id="scheduler-configuration-{{row.key}}">
+      </mat-row>
+    </mat-table>
+
+    <div class="example-no-results" [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+      <div class="mdl-cell mdl-cell--12-col">
+        Nie znaleziono żadnych typów grup zadań cyklicznych
+      </div>
+    </div>
+
+  </div>
+</div>

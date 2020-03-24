@@ -1,0 +1,50 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div>
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width configuration-table zebra-rows zebra-odd"
+           *ngIf="!loading && issueTypeConfiguration.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Typ zlecenia</th>
+        <th class="mdl-data-table__cell--non-numeric">Czas trwania</th>
+        <th class="mdl-data-table__cell--non-numeric">Segment</th>
+        <th class="mdl-data-table__cell--non-numeric">Tworzone automatycznie</th>
+        <th class="mdl-data-table__cell--non-numeric">DPD początkowe</th>
+        <th class="mdl-data-table__cell--non-numeric">Minimalny próg zadłużenia</th>
+        <th class="mdl-data-table__cell--non-numeric">Typ użytkownika</th>
+        <th class="mdl-data-table__cell--non-numeric">Akcja</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let configuration of issueTypeConfiguration; let i = index" class="single-row odd">
+        <td class="mdl-data-table__cell--non-numeric" id="issueType-{{i}}">{{configuration.issueType.label}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="duration-{{i}}">{{configuration.duration}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="segment-{{i}}">{{configuration.segment.label}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="createAutomatically-{{i}}">{{configuration.createAutomatically
+          | choice}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="dpdStart-{{i}}">{{configuration.dpdStart | nullable}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="minBalanceStart-{{i}}">{{configuration.minBalanceStart |
+          number:'0.2-2' | nullable}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="operatorTypes-{{i}}">
+          <span *ngFor="let operatorType of configuration.operatorTypes;">{{operatorType.typeLabel}}<br/></span>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <button id="edit-configuration-{{i}}" mat-icon-button matTooltip="Edytuj" (click)="editConfiguration(configuration)">
+            <mat-icon class="material-icons">mode_edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="no-results" [style.display]="!loading && issueTypeConfiguration.length == 0 ? '' : 'none'">
+      Nie znaleziono danych konfiguracji zlecenia
+    </div>
+  </div>
+</div>

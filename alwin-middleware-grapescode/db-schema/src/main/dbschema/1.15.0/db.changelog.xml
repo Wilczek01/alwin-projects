@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_alter_contract_termination_add_activation_date" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/001_alter_contract_termination_add_activation_date.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_contract_termination_subject" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/002_alter_contract_termination_subject.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_contract_termination_subject_increased_fee" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/003_alter_contract_termination_subject_increased_fee.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_contract_termination" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/004_alter_contract_termination.sql"/>
+    </changeSet>
+
+    <changeSet id="005_alter_demand_for_payment" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/005_alter_demand_for_payment.sql"/>
+    </changeSet>
+
+    <changeSet id="006_alter_demand_for_payment_reason_type" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/006_alter_demand_for_payment_reason_type.sql"/>
+    </changeSet>
+
+    <changeSet id="007_alter_demand_for_payment_add_abort_flag" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/007_alter_demand_for_payment_add_abort_flag.sql"/>
+    </changeSet>
+
+    <changeSet id="001_add_operator_types" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/dml/001_add_operator_types.sql"/>
+    </changeSet>
+
+    <changeSet id="001_add_operator_types" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/dml/001_add_operator_types.sql"/>
+    </changeSet>
+
+    <changeSet id="002_update_operator_types" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.15.0/dml/002_update_operator_types.sql"/>
+    </changeSet>
+
+    <changeSet id="008_alter_permission_add_demand_for_payment" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.15.0/ddl/008_alter_permission_add_demand_for_payment.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

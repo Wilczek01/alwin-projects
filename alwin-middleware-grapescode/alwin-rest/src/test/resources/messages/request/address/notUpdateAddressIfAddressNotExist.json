@@ -1,0 +1,14 @@
+{
+  "streetPrefix": "aleje",
+  "streetName": "Jerozolimskie",
+  "houseNumber": "18",
+  "flatNumber": "19",
+  "postalCode": "01-234",
+  "city": "Warszawa",
+  "country": "Polska",
+  "addressType": {
+    "key": "RESIDENCE",
+    "label": "Siedziby/zamieszkania"
+  },
+  "remark": "Test remark"
+}

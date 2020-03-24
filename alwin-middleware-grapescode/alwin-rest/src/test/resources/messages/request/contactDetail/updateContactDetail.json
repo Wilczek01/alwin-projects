@@ -1,0 +1,17 @@
+{
+  "remark": "Nowy numer",
+  "contact": "225678901",
+  "contactType": {
+    "key": "PHONE_NUMBER",
+    "label": "Numer telefonu",
+    "callable": true,
+    "textable": false,
+    "emailable": false,
+    "website": false
+  },
+  "state": {
+    "key": "ACTIVE",
+    "label": "Aktywny"
+  },
+  "sendAutomaticSms": true
+}

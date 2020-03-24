@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "name": "PHONE_DEBT_COLLECTION_1",
+    "label": "Windykacja telefoniczna sekcja 1",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      },
+      {
+        "id": 2,
+        "typeName": "PHONE_DEBT_COLLECTOR",
+        "typeLabel": "Windykator telefoniczny"
+      },
+      {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "PHONE_DEBT_COLLECTION_2",
+    "label": "Windykacja telefoniczna sekcja 2",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "DIRECT_DEBT_COLLECTION",
+    "label": "Windykacja bezpośrednia",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "LAW_DEBT_COLLECTION_MOTION_TO_RELEASE_ITEM",
+    "label": "Windykacja prawna - pozew o wydanie przedmiotu",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "SUBJECT_TRANSPORT",
+    "label": "Transport przedmiotu",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "REALIZATION_OF_COLLATERAL",
+    "label": "Realizacja zabezpieczenia",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "LAW_DEBT_COLLECTION_MOTION_TO_PAY",
+    "label": "Windykacja prawna - pozew o zapłatę",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "RESTRUCTURING",
+    "label": "Restrukturyzacja",
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ]
+  }
+]

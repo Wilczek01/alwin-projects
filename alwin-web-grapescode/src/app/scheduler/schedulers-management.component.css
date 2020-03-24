@@ -1,0 +1,14 @@
+
+.scheduler-hour-column {
+  flex: 0 0 180px;
+}
+
+.scheduler-update-date-column {
+  flex: 0 0 150px;
+
+}
+
+.scheduler-actions-column {
+  flex: 0 0 120px;
+
+}

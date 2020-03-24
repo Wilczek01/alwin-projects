@@ -1,0 +1,36 @@
+.text-to-left {
+  text-align: left;
+}
+
+.issue-date-column {
+  flex: 0 0 90px;
+  text-align: left;
+}
+
+.due-date-column {
+  flex: 0 0 88px;
+}
+
+.ext-company-id-column {
+  flex: 0 0 60px;
+}
+
+.type-key-column {
+  flex: 0 0 78px;
+}
+
+.type-segment-column {
+  flex: 0 0 64px;
+}
+
+.attachment-ref-column {
+  flex: 0 0 72px;
+}
+
+.invoices-column {
+  flex: 0 0 48px;
+}
+
+.state-change-date-column {
+  flex: 0 0 82px;
+}

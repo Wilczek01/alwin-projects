@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Koszyk 4",
+    "color": "#333333",
+    "predefined": false,
+    "type": "CUSTOM",
+    "description": "Zlecenie koszyka 3",
+    "tagIcon": {
+      "id": 1,
+      "name": "bookmark"
+    },
+    "id": 1
+  },
+  {
+    "name": "Koszyk 2",
+    "color": "#999999",
+    "predefined": false,
+    "type": "CUSTOM",
+    "description": "Zlecenie koszyka 2",
+    "tagIcon": {
+      "id": 1,
+      "name": "bookmark"
+    },
+    "id": 2
+  },
+  {
+    "name": "Zaległe",
+    "color": "#E53935",
+    "predefined": true,
+    "type": "OVERDUE",
+    "description": "Zaległe zlecenie",
+    "tagIcon": {
+      "id": 2,
+      "name": "contact_support"
+    },
+    "id": 3
+  }
+]

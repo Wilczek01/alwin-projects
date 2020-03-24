@@ -1,0 +1,122 @@
+{
+  "id": 1,
+  "key": "OUTGOING_PHONE_CALL",
+  "name": "Telefon wychodzący",
+  "canBePlanned": false,
+  "mayBeAutomated": false,
+  "specific": true,
+  "mayHaveDeclaration": false,
+  "chargeMin": 100.00,
+  "chargeMax": null,
+  "customerContact": false,
+  "activityTypeDetailProperties": [
+    {
+      "id": 4,
+      "activityDetailProperty": {
+        "id": 4,
+        "name": "Rozmówca",
+        "key": "PHONE_CALL_PERSON",
+        "type": "java.lang.String",
+        "dictionaryValues": []
+      },
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 15,
+      "activityDetailProperty": {
+        "id": 2,
+        "name": "Czy pozostawiono wiadomość",
+        "key": "MESSAGE_LEFT",
+        "type": "java.lang.Boolean",
+        "dictionaryValues": []
+      },
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 3,
+      "activityDetailProperty": {
+        "id": 3,
+        "name": "Długość rozmowy",
+        "key": "PHONE_CALL_LENGTH",
+        "type": "java.lang.Integer",
+        "dictionaryValues": []
+      },
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 2,
+      "activityDetailProperty": {
+        "id": 2,
+        "name": "Czy pozostawiono wiadomość",
+        "key": "MESSAGE_LEFT",
+        "type": "java.lang.Boolean",
+        "dictionaryValues": []
+      },
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 14,
+      "activityDetailProperty": {
+        "id": 1,
+        "name": "Nr tel.",
+        "key": "PHONE_NUMBER",
+        "type": "java.lang.String",
+        "dictionaryValues": []
+      },
+      "state": "EXECUTED",
+      "required": true
+    },
+    {
+      "id": 1,
+      "activityDetailProperty": {
+        "id": 1,
+        "name": "Nr tel.",
+        "key": "PHONE_NUMBER",
+        "type": "java.lang.String",
+        "dictionaryValues": []
+      },
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 16,
+      "activityDetailProperty": {
+        "id": 3,
+        "name": "Długość rozmowy",
+        "key": "PHONE_CALL_LENGTH",
+        "type": "java.lang.Integer",
+        "dictionaryValues": []
+      },
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 17,
+      "activityDetailProperty": {
+        "id": 10,
+        "name": "Komentarz",
+        "key": "REMARK",
+        "type": "java.lang.String",
+        "dictionaryValues": []
+      },
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 18,
+      "activityDetailProperty": {
+        "id": 10,
+        "name": "Komentarz",
+        "key": "REMARK",
+        "type": "java.lang.String",
+        "dictionaryValues": []
+      },
+      "state": "EXECUTED",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+.create-button {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alwin-mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+#new-tag-dialog, #update-tag-dialog {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.tag-icon-picker {
+  max-width: 300px;
+  padding-bottom: 1.25em;
+}
+
+.tag-icon-picker mat-icon {
+  cursor: pointer;
+  padding: 1px;
+  margin: 2px;
+  border: 3px solid white;
+  -webkit-transition: border 200ms ease-in-out;
+  -moz-transition: border 200ms ease-in-out;
+  -ms-transition: border 200ms ease-in-out;
+  -o-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out;
+}
+
+.tag-icon-picker mat-icon:hover {
+  border: 3px solid rgba(0, 0, 0, 0.26);
+}
+
+.tag-icon-picker mat-icon.selected {
+  border: 3px solid #616161;
+}
+

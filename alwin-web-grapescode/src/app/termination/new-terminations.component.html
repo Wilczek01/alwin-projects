@@ -1,0 +1,46 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading && !processing" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width" *ngIf="terminations.length != 0">
+
+      <tr>
+        <td>
+          <div class="new-termination-header">
+            <div style="width: 18%;">&nbsp;</div>
+            <div style="width: 21%;"><span style="padding-left: 24px;">Nazwa firmy</span></div>
+            <div style="width: 19%;">Data wypowiedzenia</div>
+            <div style="width: 19%;">Typ</div>
+            <div style="width: 19%;">Liczba umów</div>
+            <div style="width: 4%;"></div>
+          </div>
+        </td>
+      </tr>
+      <tr *ngFor="let termination of terminations">
+        <td>
+          <alwin-new-termination [termination]="termination"></alwin-new-termination>
+        </td>
+      </tr>
+    </table>
+
+    <div class="no-results" [hidden]="terminations == null || terminations.length != 0 || loading">
+      Nie znaleziono żadnych wypowiedzeń.
+    </div>
+
+    <div class="no-results" [hidden]="!loading">
+      Trwa wyszukiwanie proszę czekać
+    </div>
+
+    <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+      <button mat-raised-button color="primary" class="full-width"
+              [disabled]="processing" [hidden]="loading" (click)="processSelectedTerminations()">
+        Przetwórz sugestie
+      </button>
+    </div>
+
+  </div>
+
+</div>
+

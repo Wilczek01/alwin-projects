@@ -1,0 +1,35 @@
+<div class="mdl-grid padding-0">
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col width-100-percent margin-0">
+    <div class="mdl-card mdl-cell mdl-cell--12-col auto-height">
+      <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+        <mat-tab label="Historia zadań cyklicznych">
+          <div class="alwin-work-mat-tab">
+            <alwin-schedulers-history></alwin-schedulers-history>
+          </div>
+        </mat-tab>
+        <mat-tab label="Zadania cykliczne">
+          <div class="alwin-work-mat-tab" *ngIf="selectedTabIndex == 1">
+            <alwin-schedulers-management></alwin-schedulers-management>
+          </div>
+        </mat-tab>
+        <mat-tab label="Zlecenia">
+          <div class="alwin-work-mat-tab" *ngIf="selectedTabIndex == 2">
+            <alwin-issue-type></alwin-issue-type>
+          </div>
+        </mat-tab>
+        <mat-tab label="Czynności windykacyjne">
+          <div class="alwin-work-mat-tab" *ngIf="selectedTabIndex == 3">
+            <alwin-issue-activity-type></alwin-issue-activity-type>
+          </div>
+        </mat-tab>
+        <mat-tab label="Domyślne czynności">
+          <div class="alwin-work-mat-tab" *ngIf="selectedTabIndex == 4">
+            <alwin-default-issue-activity></alwin-default-issue-activity>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+
+</div>

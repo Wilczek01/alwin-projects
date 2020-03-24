@@ -1,0 +1,92 @@
+<div *ngIf="responseMessage!=null">
+  <p>{{responseMessage}}</p>
+  <button mat-raised-button color="primary" class="create-button" (click)="closeDialog()">Zamknij</button>
+</div>
+
+<div *ngIf="responseMessage==null">
+  <div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+    <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+  </div>
+
+  <div class="alwin-dialog-header">
+    <h1 mat-dialog-title id="dialog-title">{{dialogTitle}}</h1>
+    <button mat-icon-button mat-dialog-close id="close-button">
+      <mat-icon class="material-icons">cancel</mat-icon>
+    </button>
+  </div>
+
+  <div mat-dialog-content style="min-width: 400px; max-height: 500px;" id="details-dialog">
+
+    <form *ngIf="issueTerminationRequest!=null" (ngSubmit)="terminateIssueForm.form.valid && terminateIssue()" #terminateIssueForm="ngForm">
+
+      <p style="color: red;">{{errorMessage}}</p>
+
+      <mat-form-field>
+      <textarea matInput required placeholder="Przyczyna zakończenia zlecenia" [(ngModel)]="issueTerminationRequest.terminationCause" name="terminationCause"
+                [minlength]="1" [maxlength]="1000" mat-autosize="">
+      </textarea>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="issueTerminationRequest.excludedFromStats" name="excludedFromStats">
+        Czy pomijać zlecenie w statystykach
+      </mat-checkbox>
+
+      <mat-form-field style="margin-top: 16px">
+      <textarea matInput placeholder="Przyczyna pomijania w statystykach faktury" [(ngModel)]="issueTerminationRequest.exclusionFromStatsCause"
+                name="exclusionFromStatsCause" [maxlength]="500" mat-autosize="">
+      </textarea>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button [disabled]="loading || !terminateIssueForm.form.valid" color="primary" class="create-button">
+          Zakończ
+        </button>
+      </div>
+    </form>
+
+    <form *ngIf="issueTermination!=null" #issueTerminationForm="ngForm">
+
+      <p style="color: red;" id="issue-termination-error-message">{{errorMessage}}</p>
+
+      <p>Operator tworzący żądanie:
+        <mat-chip>{{issueTermination.requestOperator.user.firstName | concatenateText:[issueTermination.requestOperator.user.lastName]}}</mat-chip>
+      </p>
+
+      <p>Data stworzenia żądania:
+        <span style="font-weight: bold;">{{issueTermination.created| date:'dd.MM.yyyy HH:mm:ss'}}</span>
+      </p>
+
+      <mat-form-field>
+      <textarea matInput required placeholder="Przyczyna zakończenia zlecenia" [(ngModel)]="issueTermination.requestCause" name="terminationCause"
+                [minlength]="1" [maxlength]="1000" mat-autosize="">
+      </textarea>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="issueTermination.excludedFromStats" name="excludedFromStats">Czy pomijać zlecenie w statystykach</mat-checkbox>
+
+      <mat-form-field style="margin-top: 16px">
+      <textarea matInput placeholder="Przyczyna pomijania faktury w statystykach" [(ngModel)]="issueTermination.exclusionFromStatsCause"
+                name="exclusionFromStatsCause" [maxlength]="500" mat-autosize="">
+      </textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+      <textarea matInput required placeholder="Komentarz" [(ngModel)]="issueTermination.comment" name="comment" [maxlength]="500" mat-autosize=""
+                id="issue-termination-comment">
+      </textarea>
+      </mat-form-field>
+
+      <div>
+        <button style="float: left;" mat-raised-button [disabled]="loading || !issueTerminationForm.form.valid" color="warn" class="create-button"
+                (click)="rejectIssueTermination()">
+          Odrzuć
+        </button>
+        <button style=" float: right;" mat-raised-button [disabled]="loading || !issueTerminationForm.form.valid"
+                class="create-button" id="accept-button" (click)="acceptIssueTermination()">
+          Akceptuj
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

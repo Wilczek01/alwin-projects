@@ -1,0 +1,126 @@
+{
+  "notifications": [
+    {
+      "id": null,
+      "issueId": 1,
+      "creationDate": 1500069600000,
+      "readDate": null,
+      "message": "U klienta stwierdzono nadpłatę w wysokości 1291.50 powstałą w wyniku wpłaty z dnia 2018-07-04 (WN 97).",
+      "sender": null,
+      "readConfirmationRequired": false
+    },
+    {
+      "id": null,
+      "issueId": 1,
+      "creationDate": 1500069600000,
+      "readDate": null,
+      "message": "U klienta stwierdzono nadpłatę w wysokości 5290.24 powstałą w wyniku wpłaty z dnia 2018-07-05 (WN 141).",
+      "sender": null,
+      "readConfirmationRequired": false
+    },
+    {
+      "id": null,
+      "issueId": 1,
+      "creationDate": 1500069600000,
+      "readDate": null,
+      "message": "U klienta stwierdzono nadpłatę w wysokości 8045.10 powstałą w wyniku wpłaty z dnia 2018-07-06 (WN 169).",
+      "sender": null,
+      "readConfirmationRequired": false
+    },
+    {
+      "id": null,
+      "issueId": 1,
+      "creationDate": 1500069600000,
+      "readDate": null,
+      "message": "U klienta stwierdzono nadpłatę w wysokości 3500.50 powstałą w wyniku wpłaty z dnia 2018-07-06 (PRZEKSIĘGOWANIE ODSZKODOWANIA).",
+      "sender": null,
+      "readConfirmationRequired": false
+    },
+    {
+      "id": 1,
+      "issueId": 1,
+      "creationDate": 1511910000000,
+      "readDate": null,
+      "message": "Powiadomienie nieodczytane nr 1",
+      "sender": {
+        "id": 4,
+        "active": true,
+        "forceUpdatePassword": true,
+        "login": "cmilosz",
+        "permission": {
+          "id": 4,
+          "allowedToExternallyPlanActivities": false,
+          "allowedToChangeActivityCharge": false,
+          "allowedToChangeActivityChargePercent": false,
+          "allowedToMarkOwnAttachmentDeleted": false,
+          "allowedToMarkOthersAttachmentsDeleted": false,
+          "allowedToTransferIssuesInternally": false,
+          "allowedToTransferIssuesExternally": false,
+          "allowedToExcludeIssue": false,
+          "allowedToSetCustomerOutOfService": false,
+          "allowedToTerminateIssue": false,
+          "allowedToExcludeInvoice": false,
+          "allowedToManageDemandsForPayment": true
+        },
+        "parentOperator": null,
+        "user": {
+          "id": 4,
+          "firstName": "Czesław",
+          "lastName": "Miłosz",
+          "email": "cmilosz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 3,
+          "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+          "typeLabel": "Menedżer windykacji telefonicznej"
+        }
+      },
+      "readConfirmationRequired": true
+    },
+    {
+      "id": 3,
+      "issueId": 1,
+      "creationDate": 1511046000000,
+      "readDate": 1511996400000,
+      "message": "Powiadomienie odczytane nr 1",
+      "sender": {
+        "id": 4,
+        "active": true,
+        "forceUpdatePassword": true,
+        "login": "cmilosz",
+        "permission": {
+          "id": 4,
+          "allowedToExternallyPlanActivities": false,
+          "allowedToChangeActivityCharge": false,
+          "allowedToChangeActivityChargePercent": false,
+          "allowedToMarkOwnAttachmentDeleted": false,
+          "allowedToMarkOthersAttachmentsDeleted": false,
+          "allowedToTransferIssuesInternally": false,
+          "allowedToTransferIssuesExternally": false,
+          "allowedToExcludeIssue": false,
+          "allowedToSetCustomerOutOfService": false,
+          "allowedToTerminateIssue": false,
+          "allowedToExcludeInvoice": false,
+          "allowedToManageDemandsForPayment": true
+        },
+        "parentOperator": null,
+        "user": {
+          "id": 4,
+          "firstName": "Czesław",
+          "lastName": "Miłosz",
+          "email": "cmilosz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 3,
+          "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+          "typeLabel": "Menedżer windykacji telefonicznej"
+        }
+      },
+      "readConfirmationRequired": true
+    }
+  ],
+  "allUnreadNotificationsCount": 5,
+  "allNotificationsCount": 6
+}

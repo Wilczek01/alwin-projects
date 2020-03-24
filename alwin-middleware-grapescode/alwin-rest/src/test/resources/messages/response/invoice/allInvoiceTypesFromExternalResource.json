@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "label": "Nieokreslony"
+  },
+  {
+    "id": 1,
+    "label": "Oplata wstepna"
+  },
+  {
+    "id": 2,
+    "label": "Oplata manipulacyjna"
+  },
+  {
+    "id": 3,
+    "label": "Oplata okresowa"
+  },
+  {
+    "id": 4,
+    "label": "Refaktura polisy"
+  },
+  {
+    "id": 5,
+    "label": "Oplata dodatkowa"
+  }
+]

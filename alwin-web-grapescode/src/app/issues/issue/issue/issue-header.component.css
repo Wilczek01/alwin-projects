@@ -1,0 +1,87 @@
+
+.spacer {
+  height: 36px;
+  border-left: 1px solid #616161;
+  width: 0;
+  margin: 6px;
+}
+
+.issue-header {
+  padding: 6px;
+}
+
+.issue-tags {
+  display: flex;
+  justify-content: center;
+}
+
+.issue-progress {
+  float: left;
+  width: 230px;
+  margin: 0;
+}
+
+.issue-number {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.issue-header-assignment-icon {
+  margin-top: 8px;
+}
+
+.issue-clickable-header {
+  cursor: pointer;
+}
+
+.issue-clickable-header:hover {
+  background-color: #e0e0e0;
+}
+
+.date-range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.issue-company-short-name {
+  max-width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.issue-state {
+  max-width: 190px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.issue-type {
+  display: flex;
+  justify-content: center;
+}
+
+.total-payments-more-details-row {
+  display: flex;
+  align-content: left;
+  padding: 0 14px;
+}
+
+.details-row-name {
+  flex: 0 0 150px;
+}
+
+.details-row-value {
+  flex: 0 0 120px;
+  text-align: right;
+}
+
+.details-row-value-balance-update-date {
+  flex: 0 0 148px;
+  text-align: right;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}

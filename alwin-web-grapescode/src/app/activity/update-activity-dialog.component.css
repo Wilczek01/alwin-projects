@@ -1,0 +1,18 @@
+.buttons-container {
+  display: block;
+  margin-top: 24px;
+  text-align: center
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.selection-separator {
+  margin-bottom: 1.25em;
+}
+
+.update-activity-dialog {
+  max-width: 600px;
+}

@@ -1,0 +1,77 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header full-width">
+  <h1 mat-dialog-title id="dialog-title">Przedmioty</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content style="min-width: 600px; max-height: 600px; clear: both;">
+
+  <div *ngFor="let subject of subjects; let i = index" class="contract-details-data">
+    <mat-divider class="contract-data-list-item"></mat-divider>
+    <ul class="demo-list-two mdl-list">
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <span>Rodzaj</span>
+          <span class="mdl-list__item-sub-title">{{subject.subjectData.name | nullable}}</span>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <span>Opis</span>
+          <span class="mdl-list__item-sub-title">{{subject.subjectData.description | nullable}}</span>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <span>Nr rejestracyjny</span>
+          <span class="mdl-list__item-sub-title">{{subject.subjectData.registrationNumber | nullable}}</span>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <span>Nr VIN/fabryczny</span>
+          <span class="mdl-list__item-sub-title">{{subject.subjectData.serialNumber | nullable}}</span>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item" *ngIf="subject.terminationData.gpsInstalled">
+          <span>Przedmiot posiada już zainstalowany GPS</span>
+      </li>
+      <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          <span style="padding-right: 10px;">GPS</span>
+          <mat-checkbox [(ngModel)]="subject.terminationData.gpsToInstall" [attr.checked]="subject.terminationData.gpsToInstall"
+                        [disabled]="subject.terminationData.gpsInstalled"></mat-checkbox>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          <span style="padding-right: 10px;">Powiększony koszt instalacji GPS</span>
+          <mat-checkbox [(ngModel)]="subject.terminationData.gpsIncreasedFee" [attr.checked]="subject.terminationData.gpsIncreasedFee"
+                        [disabled]="subject.terminationData.gpsInstalled || !subject.terminationData.gpsToInstall"></mat-checkbox>
+        </span>
+      </li>
+      <mat-divider class="contract-data-list-item"></mat-divider>
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <span>Opłata GPS</span>
+          <span class="mdl-list__item-sub-title">{{getGpsInstallationCharge(subject.terminationData) | number:'0.2-2' | nullable}}</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="no-results" *ngIf="!loading && (subjects == null || subjects.length === 0)">
+    Nie znaleziono danych szczegółowych dla przedmiotów
+  </div>
+
+</div>

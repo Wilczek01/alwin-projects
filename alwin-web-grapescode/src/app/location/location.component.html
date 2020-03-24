@@ -1,0 +1,89 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!locationDataSource.loading && !loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <form (ngSubmit)="searchForm.form.valid && refreshLocations()" #searchForm="ngForm">
+      <div>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Wyszukiwarka
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+            <input name="mask" matInput [(ngModel)]="mask" placeholder="Maska" [pattern]="maskPattern">
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" [disabled]="!searchForm.form.valid" id="location-search-button">
+            Wyszukaj
+          </button>
+          <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+        </mat-expansion-panel>
+      </div>
+    </form>
+  </div>
+
+  <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+
+    <mat-table #table [dataSource]="locationDataSource" [hidden]="locationDataSource.max == 0 || locationDataSource.loading || loading"
+               style="border: 1px solid #ddd;">
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+
+      <ng-container cdkColumnDef="mask">
+        <mat-header-cell *cdkHeaderCellDef>Maska</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">{{row.mask}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="operator">
+        <mat-header-cell *cdkHeaderCellDef>Operator</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          {{ row.operator.user.firstName | concatenateText: [row.operator.user.lastName] }} ({{row.operator.login}})
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="actions">
+        <mat-header-cell *cdkHeaderCellDef>
+          <button mat-icon-button (click)="createLocation()" matTooltip="Utwórz">
+            <mat-icon class="material-icons">add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          <button mat-icon-button (click)="updateLocation(row)" matTooltip="Edytuj">
+            <mat-icon class="material-icons">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="confirmDeleteLocation(row.id)" matTooltip="Usuń">
+            <mat-icon class="material-icons">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+    </mat-table>
+
+    <div class="no-results" [hidden]="locationDataSource.max != 0 || locationDataSource.loading || loading">
+      <span style="text-align: center">
+        Nie znaleziono żadnych masek kodów pocztowych dla podanych kryteriów wyszykiwania. <br/> Dodaj nową maskę
+        <button mat-icon-button (click)="createLocation()" matTooltip="Utwórz">
+          <mat-icon class="material-icons">add</mat-icon>
+        </button>
+      </span>
+    </div>
+
+    <div class="no-results" [hidden]="!locationDataSource.loading && !loading">
+      Trwa wyszukiwanie, proszę czekać
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="locationDataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="locationDataSource == null || locationDataSource.max == 0 || locationDataSource.loading || loading">
+    </mat-paginator>
+  </div>
+
+</div>

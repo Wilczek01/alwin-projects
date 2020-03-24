@@ -1,0 +1,2 @@
+alter table formal_debt_collection_invoice
+  drop constraint formal_debt_collection_invoice_invoice_for_contract;

@@ -1,0 +1,135 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!loadingContacts && !loading" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="mdl-grid" *ngIf="persons.length != 0">
+  <div class="mdl-cell mdl-cell--2-col">
+    <table class="mdl-data-table mdl-js-data-table full-width">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Osoby
+          <button mat-icon-button matTooltip="Dodaj" id="create-new-person-button" (click)="createNewPerson()" *ngIf="!readonly">
+            <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+          </button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let personChoice of persons" (click)="showPersonDetails(personChoice)" class="person-choice"
+          [style.background-color]="person != null && personChoice.id === person.id ? '#eee' : ''">
+        <td class="mdl-data-table__cell--non-numeric" id="contact-person-{{personChoice.id}}">
+          <div class="valign-center">
+            <span [ngClass]="personChoice.contactPerson ? 'contact-person' : ''">{{personChoice.firstName | concatenateText: [personChoice.lastName]}}</span>
+            <mat-icon class="contact-person-icon" *ngIf="personChoice.contactPerson" mat-list-icon>star</mat-icon>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mdl-cell mdl-cell--10-col">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-cell mdl-cell--12-col">
+        <div class="font-gray customer-data-line">
+            <span id="contact-first-last-name-{{person.id}}">
+              <mat-icon mat-list-icon class="person-details-icon">person</mat-icon>
+              {{person.firstName | concatenateText: [person.lastName]}}
+              <span dir="rtl" class="font-14 font-gray">
+                <mat-checkbox [disabled]="loading || readonly" class="to-right" [(ngModel)]="person.contactPerson"
+                              (change)="updateContactPerson()" color="primary">
+                  Osoba do kontaktu
+                </mat-checkbox>
+              </span>
+              <mat-divider></mat-divider>
+            </span>
+        </div>
+        <div>
+            <span class="font-14 font-gray customer-data-line" mat-line id="person-detail-first-line-{{person.id}}">
+              <b>Pesel:</b> {{person.pesel | nullable}} |
+              <b> Data urodzenia:</b> {{person.birthDate | date:'dd.MM.yyyy' | nullable}} |
+              <b> Funkcja:</b> {{person.jobFunction | nullable}}
+            </span>
+        </div>
+        <div>
+            <span class="valign-center font-14 font-gray customer-data-line" mat-line id="person-detail-second-line-{{person.id}}">
+              <b>Reprezentant:&nbsp;</b>{{person.representative | choice}}&nbsp;|&nbsp;
+              <b>&nbsp;Beneficjent rzeczywisty:&nbsp;</b>{{person.realBeneficiary | choice}}&nbsp;|&nbsp;
+              <b>&nbsp;Osoba eksponowana politycznie:&nbsp;</b>{{person.politician | choice}}
+            </span>
+        </div>
+      </div>
+
+      <table class="mdl-data-table mdl-js-data-table full-width">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Rodzaj</th>
+          <th class="mdl-data-table__cell--non-numeric">Numer/adres</th>
+          <th class="mdl-data-table__cell--non-numeric">Priorytet użycia</th>
+          <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+          <th class="mdl-data-table__cell--non-numeric">Automatyczny sms</th>
+          <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">Akcje</th>
+          <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+            <button mat-icon-button matTooltip="Dodaj" id="create-new-contact-button"
+                    (click)="createNewContractDetail(customer)">
+              <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+            </button>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td class="mdl-data-table__cell--non-numeric" id="contact-type-{{contact.id}}">
+            {{contact.contactType.label}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="contact-value-{{contact.id}}">
+            <span *ngIf="contact.contactType.website"><a href="{{contact.contact}}" target="_blank">{{contact.contact}}</a></span>
+            <span *ngIf="contact.contactType.emailable"><a
+              href="mailto:{{contact.contact}}">{{contact.contact}}</a></span>
+            <span *ngIf="!contact.contactType.website && !contact.contactType.emailable ">{{contact.contact}}</span>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="contact-priority-{{contact.id}}">{{contact.state.label}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="contact-remark-{{contact.id}}">{{contact.remark}}</td>
+          <td class="mdl-data-table__cell--non-numeric" id="contact-sms-{{contact.id}}">{{contact.sendAutomaticSms |
+            choice}}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric action-cell" id="contact-action-{{contact.id}}" *ngIf="!readonly">
+            <a matTooltip="Zadzwoń" class="icon-link mat-icon-button"
+               *ngIf="contact.contactType.callable" (click)="startPhoneCall(person, contact)"
+               id="call-{{contact.id}}-button">
+              <mat-icon class="md-24" aria-label="Zadzwoń">headset_mic</mat-icon>
+            </a>
+            <button *ngIf="contact.contactType.callable" mat-icon-button matTooltip="Wyślij wiadomość sms"
+                    (click)="sendSmsMessage(contact.contact)"
+                    id="send-sms-{{contact.id}}-button">
+              <mat-icon class="md-24" aria-label="Wyślij wiadomość sms">textsms</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Edytuj" id="edit-contact-{{contact.id}}-button"
+                    (click)="updateContact(contact)">
+              <mat-icon class="md-24" aria-label="Edytuj">mode_edit</mat-icon>
+            </button>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="no-results" *ngIf="!loadingContacts && !loading && contacts.length == 0">
+        Nie znaleziono adresów dla tej osoby
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="persons.length == 0">
+  <div class="to-left">
+    Nie znaleziono osób uprawnionych dla tego klienta
+  </div>
+  <div class="to-right">
+    <button mat-icon-button matTooltip="Dodaj" (click)="createNewPerson()" *ngIf="!readonly">
+      <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+    </button>
+  </div>
+</div>

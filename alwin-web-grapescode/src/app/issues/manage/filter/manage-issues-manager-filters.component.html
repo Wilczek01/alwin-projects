@@ -1,0 +1,174 @@
+<div [formGroup]="group">
+  <div>
+    <div>
+      <span>Data rozpoczęcia zlecenia</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <input name="startStartDate" matInput [matDatepicker]="startStartDatePicker" [formControlName]="'startStartDateControl'" placeholder="Od"
+                 [max]="group.get('endStartDateControl').value">
+          <mat-datepicker-toggle matSuffix [for]="startStartDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startStartDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input name="endStartDate" matInput [matDatepicker]="endStartDatePicker" [formControlName]="'endStartDateControl'" placeholder="Do"
+                 [min]="group.get('startStartDateControl').value">
+          <mat-datepicker-toggle matSuffix [for]="endStartDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endStartDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Data kontaktu</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <input name="startContactDatePicker" matInput [matDatepicker]="startContactDatePicker" [formControlName]="'startContactDateControl'" placeholder="Od"
+                 [max]="group.get('endContactDateControl').value">
+          <mat-datepicker-toggle matSuffix [for]="startContactDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startContactDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input name="endContactDatePicker" matInput [matDatepicker]="endContactDatePicker" [formControlName]="'endContactDateControl'" placeholder="Do"
+                 [min]="group.get('startContactDateControl').value">
+          <mat-datepicker-toggle matSuffix [for]="endContactDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endContactDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Saldo</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <input matInput placeholder="Od" [formControlName]="'totalCurrentBalancePLNMinControl'" name="totalCurrentBalancePLNMin" type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Do" [formControlName]="'totalCurrentBalancePLNMaxControl'" name="totalCurrentBalancePLNMax" type="number">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!readonly">
+    <div>
+      <div class="filter-table-row">
+        <mat-slide-toggle [formControlName]="'disableAllManagementControl'" (change)="changeAllManagement()" id="include-closed" name="disableAllManagement">
+          Uwzględnij zamknięte i zakończone
+        </mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!readonly">
+    <div>
+      <span>Operator</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Operator" [formControlName]="'operatorControl'" multiple>
+            <mat-option *ngFor="let operator of operators" [value]="operator">
+              {{ operator.id != null ? (operator.user.firstName | concatenateText: [operator.user.lastName]) : 'Nieprzypisane' }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Etykieta</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Etykieta" [formControlName]="'tagControl'" id="issue-tag-filter" multiple>
+            <mat-option *ngFor="let tag of tags" [value]="tag">
+              <span [style.color]="tag.color" id="issue-tag-filter-option-{{tag.id}}">{{ tag.name }}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Status</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Status" [formControlName]="'stateControl'" multiple>
+            <mat-option *ngFor="let state of states" [value]="state">
+              {{ state.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Priorytet</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Priorytet" [formControlName]="'priorityControl'" id="issue-priority-filter">
+            <mat-option [value]="null" id="issue-priority-filter-all">Wszystkie</mat-option>
+            <mat-option *ngFor="let priority of priorities" [value]="priority">
+              {{ priority.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Typ zlecenia</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Typ zlecenia" [formControlName]="'issueTypeControl'" id="issue-type-filter">
+            <mat-option [value]="null" id="issue-type-filter-all">Wszystkie</mat-option>
+            <mat-option *ngFor="let issueType of issueTypes" [value]="issueType">
+              {{ issueType.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Segment</span>
+      <div class="filter-table-row">
+        <mat-form-field>
+          <mat-select placeholder="Segment" [formControlName]="'segmentControl'" id="segment-filter">
+            <mat-option [value]="null" id="segment-filter-all">Wszystkie</mat-option>
+            <mat-option *ngFor="let segment of segments" [value]="segment">
+              {{ segment.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Numery klientów</span>
+      <div class="filter-table-row">
+        <mat-form-field class="filter-table-textarea">
+                  <textarea matInput placeholder="Lista numerów klientów rozdzielona przecinkami" [formControlName]="'extCompanyIdsControl'"
+                            id="extCompanyIds" name="extCompanyIds" [maxlength]="500" mat-autosize="" pattern="\d+((,\d+)|(,\n\d+)|(,\r\n\d+))*"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

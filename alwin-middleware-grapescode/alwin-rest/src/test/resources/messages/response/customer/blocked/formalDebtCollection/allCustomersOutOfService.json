@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "fileContent": null,
+    "fileName": null,
+    "startDate": 1499724000000,
+    "endDate": 1500501600000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 1",
+    "remark": "blocking remark 1",
+    "reasonType": "OTHER",
+    "reasonTypeLabel": "Inne",
+    "demandForPaymentType": "FIRST"
+  },
+  {
+    "id": 2,
+    "fileContent": null,
+    "fileName": null,
+    "startDate": 1500069600000,
+    "endDate": 1500760800000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 2",
+    "remark": "blocking remark 2",
+    "reasonType": "CLIENT_COMPLAINTS",
+    "reasonTypeLabel": "Reklamacja Klienta – błąd po stronie AL.",
+    "demandForPaymentType": "SECOND"
+  },
+  {
+    "id": 3,
+    "fileContent": null,
+    "fileName": null,
+    "startDate": 1500933600000,
+    "endDate": 1501106400000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 3",
+    "remark": "blocking remark 3",
+    "reasonType": "CUSTOMER_SERVICE",
+    "reasonTypeLabel": "Wniosek w DOK",
+    "demandForPaymentType": "FIRST"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "username": "Stanisław Lem",
+  "role": {
+    "id": 1,
+    "typeName": "DIRECT_DEBT_COLLECTION_MANAGER",
+    "typeLabel": "Menedżer windykacji bezpośredniej"
+  }
+}

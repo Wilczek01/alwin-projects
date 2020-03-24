@@ -1,0 +1,15 @@
+Data wystawienia;Data zapłaty;Faktura inicjująca;Numer klienta;Nazwa klienta;Numer umowy;Typ;Segment;Faktura obciążeniowa;Anulowanie;Załącznik
+2017-07-11;2017-08-03;000001/10/2020/RL/PO/LW;9999;Nazwa Firmmy Sp. z o.o.;issue_21_00002/15/1;Pierwsze (Monit);A;CHARGE/INVOICE/10/2017;;http://grapescode.pl/download/attachment1Link.pdf
+2017-08-01;2017-09-13;000001/12/2020/RL/PO/LW;9999;Nazwa Firmmy Sp. z o.o.;issue_21_00001/15/1;Drugie (Ostateczne wezwanie do zapłaty);A;CHARGE/INVOICE/11/2017;;http://grapescode.pl/download/attachment2Link.pdf
+2017-10-11;2017-11-03;000025/10/2024/RL/PO/LW;9998;Najlepsza Firma Sp. z o.o.;issue_4_00002/15/1;Pierwsze (Monit);B;CHARGE/INVOICE/12/2017;;http://grapescode.pl/download/attachment3Link.pdf
+2017-07-21;2017-08-03;000001/10/2020/RL/PO/LW;9997;Druga Najlepsza Firma Sp. z o.o.;issue_21_00002/15/1;Pierwsze (Monit);A;CHARGE/INVOICE/10/2017;;http://grapescode.pl/download/attachment4Link.pdf
+2017-08-01;2017-09-13;000001/12/2020/RL/PO/LW;9997;Druga Najlepsza Firma Sp. z o.o.;issue_21_00001/15/1;Drugie (Ostateczne wezwanie do zapłaty);A;CHARGE/INVOICE/11/2017;;http://grapescode.pl/download/attachment5Link.pdf
+2017-08-01;2017-08-04;Invoice 1;9999;Nazwa Firmmy Sp. z o.o.;TEST 12/34/56;Pierwsze (Monit);A;;;http://grapescode.pl/download/null
+2017-09-01;2017-09-04;Invoice 2;9998;Najlepsza Firma Sp. z o.o.;TEST 20/43/12;Drugie (Ostateczne wezwanie do zapłaty);A;CHARGE/INVOICE/07/2017;;http://grapescode.pl/download/attachment7Link.pdf
+2017-03-01;2017-03-13;Invoice 3;9997;Druga Najlepsza Firma Sp. z o.o.;TEST 12/34/56;Pierwsze (Monit);A;CHARGE/INVOICE/08/2017;;http://grapescode.pl/download/attachment8Link.pdf
+2017-05-01;2017-05-13;000015/12/2015/TO;9996;Trzecia Najlepsza Firma Sp. z o.o.;TEST 12/34/56;Pierwsze (Monit);A;;;http://grapescode.pl/download/null
+2017-06-01;2017-06-13;Invoice 5;9995;Firma 9995;TEST 5/34/56;Drugie (Ostateczne wezwanie do zapłaty);A;;;http://grapescode.pl/download/null
+2017-10-11;2017-11-03;000025/10/2024/RL/PO/LW;9998;Najlepsza Firma Sp. z o.o.;issue_4_00002/15/1;Pierwsze (Monit);B;CHARGE/INVOICE/12/2017;Reklamacja Klienta – błąd po stronie AL.;http://grapescode.pl/download/attachment3Link.pdf
+2017-02-01;2017-02-13;Invoice 3;9997;Druga Najlepsza Firma Sp. z o.o.;TEST 12/34/56;Pierwsze (Monit);A;CHARGE/INVOICE/08/2017;;http://grapescode.pl/download/attachment8Link.pdf
+2017-10-11;2017-11-03;000025/10/2024/RL/PO/LW;9999;Nazwa Firmmy Sp. z o.o.;issue_4_00002/15/1;Pierwsze (Monit);B;INVOICE/12/2017;Komentarz z przyczyną zmiany stanu na odrzucony;http://grapescode.pl/download/attachment3Link.pdf
+2018-10-11;2018-11-03;0000125/10/2024/RL/PO/LW;9999;Nazwa Firmmy Sp. z o.o.;issue_9_00003/15/1;Pierwsze (Monit);B;INVOICE/12/2018;Krótki komentarz;http://grapescode.pl/download/attachment3Link.pdf

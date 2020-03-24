@@ -1,0 +1,124 @@
+INSERT INTO ALWIN_OPERATOR (operator_type_id, alwin_user_id, parent_alwin_operator_id, permission_id, active, login, salt, "password") VALUES
+
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'ADMIN'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'amickiewicz@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'amickiewicz',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'PHONE_DEBT_COLLECTOR'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'jslowacki@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'jslowacki',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'PHONE_DEBT_COLLECTOR'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'afredro@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'afredro',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'PHONE_DEBT_COLLECTOR'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'jdlugosz@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'jdlugosz',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'FIELD_DEBT_COLLECTOR'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'jkochanowski@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'jkochanowski',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'RESTRUCTURING_SPECIALIST'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'zkrasinski@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'zkrasinski',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'RENUNCIATION_COORDINATOR'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'cknorwid@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'cknorwid',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'SECURITY_SPECIALIST'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'lstaff@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'lstaff',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'PHONE_DEBT_COLLECTOR_MANAGER'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'cmilosz@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'cmilosz',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'DIRECT_DEBT_COLLECTION_MANAGER'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'jbrzechwa@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'jbrzechwa',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'ANALYST'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'mrej@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'mrej',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d'),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'DEPARTMENT_MANAGER'),
+   (SELECT ID
+    FROM ALWIN_USER
+    WHERE EMAIL = 'ikrasicki@wieszcz.pl'),
+   NULL, NULL, TRUE,
+   'ikrasicki',
+   '7ad53ec9-876f-4cf3-b7cd-526a153e5836',
+   '30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d');
+
+

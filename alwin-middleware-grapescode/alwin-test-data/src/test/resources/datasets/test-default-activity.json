@@ -1,0 +1,68 @@
+{
+  "default_issue_activity": [
+    {
+      "id": 1,
+      "issue_type_id": 1,
+      "activity_type_id": 1,
+      "default_day": 1,
+      "version": 1,
+      "creating_date": "2017-07-01 00:00:00.000000"
+    },
+    {
+      "id": 2,
+      "issue_type_id": 1,
+      "activity_type_id": 3,
+      "default_day": 7,
+      "version": 2,
+      "creating_date": "2017-07-04 00:00:00.000000"
+    },
+    {
+      "id": 3,
+      "issue_type_id": 1,
+      "activity_type_id": 2,
+      "default_day": 2,
+      "version": 1,
+      "creating_date": "2017-07-02 00:00:00.000000"
+    },
+    {
+      "id": 4,
+      "issue_type_id": 1,
+      "activity_type_id": 1,
+      "default_day": 10,
+      "version": 1,
+      "creating_date": "2017-07-03 00:00:00.000000"
+    },
+    {
+      "id": 5,
+      "issue_type_id": 1,
+      "activity_type_id": 2,
+      "default_day": 3,
+      "version": 2,
+      "creating_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 6,
+      "issue_type_id": 2,
+      "activity_type_id": 1,
+      "default_day": 1,
+      "version": 1,
+      "creating_date": "2017-07-05 00:00:00.000000"
+    },
+    {
+      "id": 7,
+      "issue_type_id": 2,
+      "activity_type_id": 3,
+      "default_day": 7,
+      "version": 1,
+      "creating_date": "2017-07-06 00:00:00.000000"
+    },
+    {
+      "id": 8,
+      "issue_type_id": 3,
+      "activity_type_id": 7,
+      "default_day": 2,
+      "version": 1,
+      "creating_date": "2018-08-14 00:00:00.000000"
+    }
+  ]
+}

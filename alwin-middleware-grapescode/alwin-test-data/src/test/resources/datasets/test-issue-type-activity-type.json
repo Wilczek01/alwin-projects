@@ -1,0 +1,59 @@
+{
+  "issue_type_activity_type": [
+    {
+      "id": 1,
+      "issue_type_id": 1,
+      "activity_type_id": 1
+    },
+    {
+      "id": 2,
+      "issue_type_id": 1,
+      "activity_type_id": 2
+    },
+    {
+      "id": 3,
+      "issue_type_id": 1,
+      "activity_type_id": 3
+    },
+    {
+      "id": 4,
+      "issue_type_id": 2,
+      "activity_type_id": 1
+    },
+    {
+      "id": 5,
+      "issue_type_id": 2,
+      "activity_type_id": 2
+    },
+    {
+      "id": 6,
+      "issue_type_id": 2,
+      "activity_type_id": 3
+    },
+    {
+      "id": 7,
+      "issue_type_id": 3,
+      "activity_type_id": 7
+    },
+    {
+      "id": 8,
+      "issue_type_id": 3,
+      "activity_type_id": 8
+    },
+    {
+      "id": 9,
+      "issue_type_id": 3,
+      "activity_type_id": 9
+    },
+    {
+      "id": 10,
+      "issue_type_id": 1,
+      "activity_type_id": 14
+    },
+    {
+      "id": 11,
+      "issue_type_id": 2,
+      "activity_type_id": 14
+    }
+  ]
+}

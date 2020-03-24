@@ -1,0 +1,16 @@
+.create-button {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+#accept-button:not([disabled]) {
+  background-color: #43A047;
+  color: #ffffff;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    th {
+        text-align: left;
+    }
+</style>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>
+    Zestawienie dokumentów, na podstawie których należy utworzyć zlecenia.
+</p>
+<p>
+    Dokumenty z zakresu od <span th:utext="${#dates.format(dateFrom, 'dd-MM-yyyy')}"></span> do <span
+        th:utext="${#dates.format(dateTo, 'dd-MM-yyyy')}"></span>.
+</p>
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th width="250">Identyfikator klienta (LEO)</th>
+        <th width="150">Numer faktury</th>
+        <th width="150">Zadłużenie na dokumencie</th>
+    </tr>
+    <tr th:each="missingIssue : ${missingIssues}">
+        <td th:text="${missingIssue.extCustomerId}"></td>
+        <td th:text="${missingIssue.invoiceNo}"></td>
+        <td th:text="${missingIssue.balance}"></td>
+    </tr>
+</table>
+<p>
+    Wiadomość wygenerowana automatycznie, prosimy na nią nie odpowiadać.
+</p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "id": 100,
+  "activityType": {
+    "id": 1
+  },
+  "state": {
+    "key": "PLANNED",
+    "label": "Zaplanowana",
+    "closed": false
+  },
+  "activityDate": "2017-08-02T22:00:00.000Z",
+  "plannedDate": "2017-08-02T22:00:00.000Z",
+  "charge": "450",
+  "invoiceId": "fv1a/2017",
+  "issueId": 1,
+  "creationDate": "2017-08-02T08:51:32.029Z",
+  "activityDetails": [
+    {
+      "value": "12-123-123-523",
+      "detailProperty": {
+        "id": 1,
+        "type": "java.lang.String",
+        "name": "Przykładowy ciąg znaków"
+      },
+      "required": true
+    },
+    {
+      "value": "22-123-123-523",
+      "detailProperty": {
+        "id": 1,
+        "type": "java.lang.String",
+        "name": "Przykładowy ciąg znaków"
+      },
+      "required": true
+    }
+  ],
+  "declarations": [
+    {
+      "declarationDate": "2017-07-30T00:00:00.000Z",
+      "declaredPaymentDate": "2012-12-18T15:00:00.000Z",
+      "declaredPaymentAmountPLN": 43323.12,
+      "declaredPaymentAmountEUR": 0,
+      "cashPaidPLN": 2345.34,
+      "cashPaidEUR": 0,
+      "monitored": true
+    },
+    {
+      "declarationDate": "2017-08-01T00:00:00.000Z",
+      "declaredPaymentDate": "2012-12-17T15:00:00.000Z",
+      "declaredPaymentAmountPLN": 121243.12,
+      "declaredPaymentAmountEUR": 0,
+      "cashPaidPLN": 5432.34,
+      "cashPaidEUR": 0,
+      "monitored": false
+    }
+  ],
+  "operator": {
+    "id": 1,
+    "active": true,
+    "login": "amickiewicz",
+    "permission": null,
+    "parentOperator": null,
+    "user": {
+      "id": 1,
+      "firstName": "Adam",
+      "lastName": "Mickiewicz",
+      "email": "amickiewicz@grapescode.pl",
+      "phoneNumber": null
+    },
+    "type": {
+      "id": 1,
+      "typeName": "ADMIN",
+      "typeLabel": "Administrator systemu"
+    }
+  }
+}

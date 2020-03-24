@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_create_tag_icon" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.8.0/ddl/001_create_tag_icon.sql"/>
+    </changeSet>
+
+    <changeSet id="001_insert_tag_icons" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.8.0/dml/001_insert_tag_icons.sql"/>
+    </changeSet>
+
+    <changeSet id="002_add_tag_icon_and_description_to_tag" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.8.0/ddl/002_add_tag_icon_and_description_to_tag.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_declaration_aud" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.8.0/ddl/003_alter_declaration_aud.sql"/>
+    </changeSet>
+
+    <changeSet id="001_update_issue_balance_update_date" author="tsliwinski">
+        <sqlFile path="src/test/dbschema/1.8.0/dml/001_update_issue_balance_update_date.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

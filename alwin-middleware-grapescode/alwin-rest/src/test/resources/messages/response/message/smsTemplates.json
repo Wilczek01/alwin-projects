@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "testowy 1",
+    "body": "testowa treść wiadomości 1"
+  },
+  {
+    "id": 2,
+    "name": "testowy 2",
+    "body": "testowa treść wiadomości 2"
+  }
+]

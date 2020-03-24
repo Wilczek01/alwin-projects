@@ -1,0 +1,15 @@
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.selection-separator {
+  margin-bottom: 1.25em;
+}
+
+.declaration-title {
+  width: 100%;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 40px;
+}

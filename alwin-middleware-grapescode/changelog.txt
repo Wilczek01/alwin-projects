@@ -1,0 +1,142 @@
+1.15.0:
+    - #31988 rozszerzenie modelu o nową flagę permission, rozszerzenie odpowiedzi logowania i uwzględnienie w walidacji zarządzania wezwaniami
+    - #31914 Poprawka sortowania po dpd w pobieraniu pracy
+    - #30738 Modyfikacja serwisu REST do pobierania wypowiedzeń
+    - #30713 Modyfikacja serwisu REST do odrzucania nowych wezwań
+    - #30717 Dodanie serwisu REST do pobierania odrzuconych wezwań
+    - #30825 wybor z listy powodu anulowania wezwania
+    - #30646 Użycie serwisu do blokad umów oraz klientów przy tworzeniu wezwań
+    - #30801 Zmiana sposobu naliczania opłaty za GPS + „Podwyższona opłata za GPS”
+    - #31643 Sortowanie wypowiedzeń
+    - #30730 Dodanie serwisu REST do aktywowania umów
+    - #30726 Rozszerzenie modelu wypowiedzeń
+    - #30758 Dodanie sprawdzania, czy dany przedmiot ma już GPS
+    - #30816 Modyfikacja serwisu REST do pobierania wezwań - flaga do pobierania tylko ręcznie utworzonych wezwań
+    - #30723 Modyfikacja serwisu REST do pobierania wypowiedzeń historycznych
+    - #30822 Dodanie serwisu REST do pobierania słownika przyczyń wykluczenia
+    - #30645 Dodanie serwisu REST do edycji blokady umowy windykacji formalnej
+    - #30644 Dodanie serwisu REST do edycji blokady klienta w windykacji formalnej
+    - #30642 Dodanie serwisu REST do usuwania blokady umowy w windykacji formalnej
+    - #30641 Dodanie serwisu REST do usuwania blokady klienta w windykacji formalnej
+    - #30331 Sugerowana lista telefonów przy dodawaniu czynności
+    - #30696 Możliwość wystawienia wezwania do zapłaty ręcznie
+    - #30692 Możliwość pobrania paczki wezwań (wysłanych) do excela
+1.14.0:
+    - #30652 Rozszerzenie serwisu REST z wypowiedzeniami o nazwę klienta
+    - #30640 Dodanie serwisu REST do tworzenia blokady umowy w windykacji formalnej
+    - #30639 Dodanie serwisu REST do tworzenia blokady klienta w windykacji formalnej
+    - #30638 Dodanie serwisu REST do pobierania listy blokad umów dla windykacji formalnej
+    - #30637 Dodanie serwisu REST do pobierania listy blokad klienta dla windykacji formalnej
+    - #31104 Wysyłanie salda faktur ze znakiem dodatnim do eFaktury
+    - #30636 Dodanie dao do pobierania blokad umów windykacji formalnej
+    - #30635 Dodanie dao do pobierania blokad klienta windykacji formalnej
+    - #30634 Stworzenie modelu pod blokady windykacji formalnej
+    - #30370 Serwis REST do pobierania operatorów windykacji bezpośredniej
+    - #30368 Serwisy REST do edycji i usuwania masek kodów pocztowych dla operatorów
+    - #30367 Serwis REST do dodawania masek kodów pocztowych dla operatorów
+    - #30369 Przypisywanie operatora dla zleceń windykacji bezpośredniej
+    - #30366 Serwis REST do pobierania przypisanych kodów pocztowych do operatorów filtrowane po masce
+    - #30428 Poprawienie uzupełniania danych adresowych w procesie windykacji formalnej
+    - #30327 Sortowanie kolejki zleceń WT po DPD i RPB
+    - #30799 Dostosowanie kodu do zmian w eFakturze dla wypowiedzeń
+1.13:0:
+    - #30088 zmiana wyświetlania ostatniej daty płatności za fakturę
+    - #30086 zabezpieczenie przed powielaniem danych firm
+    - #30083 Błędnie wyliczane DPD bieżące dla umowy – widok należności, grupowanie po umowach
+1.12.0:
+    - #29738 Uwzględnienie typu operatora w pobieraniu pracy na podstawie czynności
+    - #29496 Dodanie serwisu rest do pobierania przedmiotów dla umowy po numerze umowy
+    - #28758 Dodanie serwisu rest do pobierania filtrowanych wezwań do zapłaty
+    - #28334 Rozszerzenie serwisu REST do pobierania dni wolnych po id usera
+    - #19859 Konfiguracja zadań cyklicznych dla wezwań do zapłaty
+    - #28321 Dodanie domyślnej czynności dla windykacji terenowej
+    - #28748 Domyślną czynnością zaplanowaną jest Wizyta terenowa (zamiast telefonu wychodzącego)
+    - #29259 Dodanie listy załączników dla czynności windykacyjnych, konfiguracja załączników
+    - #29012 Generowanie nowych wezwań do zapłaty/wypowiedzeń
+    - #28310 dodanie wymagalności priorytetu przy edycji
+    - #28848 Moduł connectora do systemu eFaktura
+    - #29004 Dodanie serwisu REST do pobierania dedykowanych zleceń dla windykatora terenowego
+    - #28913 Utworzenie modelu (Wsparcie procesu windykacji terenowej)
+    - #29291 Serwis rest zwracający dane do "Widok przeglądu wypowiedzeń" - zakładka historii
+    - #29398 Serwis rest zwracający dane do "Widok przeglądu wypowiedzeń" - zakładka akcji
+    - #29424 Serwis rest do procesowania przesłanych wypowiedzeń
+    - #29553 Walidacja i wysyłanie wypowiedzeń do efaktury
+    - #29471 Wyznaczenie pracownika zajmującego się sprawą do wskazania na wypowiedzeniu
+    - #29712 Grupowanie wypowiedzeń po typie
+1.11.0:
+    - #28501 Aktualizowanie danych słownikowych dla cech czynności podczas aktualizowania typów czynności
+    - #28396 Rozszerzenie serwisu REST do zmiany typu czynności o aktualizowanie cech dla tego typu
+    - #22926 Zmiana schedulera aby korzystał z dodanej konfiguracji przy tworzeniu zleceń
+    - #28449 Eksport należności do pliku CSV
+    - #28312 Zmian serwisu REST do pobierania wszystkich domyślnych czynności windykacyjnych
+1.10.0:
+    - #28195 Zmiana w zapytaniu pobierającym listę domyślnych czynności zlecenia
+    - #27859 Walidacja przy aktualizacji i dodawaniu czynności z deklaracjami na zadeklarowaną kwotę płatności PLN/EUR - nie może być ujemna
+    - #27325 Dodanie dao do pobierania najstarszej zaplanowanej czynności 'telefon wychodzący' dla zlecenia
+    - #25183 Mail z klientami do dodania:
+        - dodanie logowania adresów, na które jest wysyłany mail
+        - zmiana identyfikator aida -> identyfikator LEO
+    - #27326 Dodanie serwisu REST do pobierania najstarszej zaplanowanej czynności telefon wychodzący
+    - #27322 Dodanie nowego typu czynności 'Nieudana próba kontaktu'
+    - #27263 Dodanie możliwości dodawania deklaracji przy edycji czynności zaplanowanej
+    - #24112 Dodanie cache do pobierania przejść między zleceniami
+    - #25142 Nowa cecha dodatkowa przy nieudanej próbie kontaktu
+    - #28135 Zmiana parametru DPD dla WT1 z 5 na 1
+1.9.1:
+    - #27839 Problem z pobraniem kolejnego zlecenia
+1.9.0:
+    - #27266 Filtrowanie typów czynności po tym czy mogą mieć deklaracje
+    - #27203 Zmiana labelki w czynnościach windykacyjnych
+    - #23708 Dodanie serwisu REST do pobieranie portfeli dla etykiet
+    - #26729 Rozszerzenie serwisu REST do pobierania czynności - dodanie filtrowania po statusach czynności
+    - #26722 Dodanie serwisu REST do pobieranie poprzedniego dnia roboczego
+    - #26723 Dodanie walidacji podczas dodawania deklaracji na dzień tworzenia deklaracji
+    - #27390 Dodanie serwisu REST do pobieranie wszystkich portfeli
+    - #27399 Nieprzeliczanie salda dla zamkniętych zleceń w momencie pobierania szczegółów zlecenia
+    - #27537 Zmiana sposobu liczenia dpd dla zleceń
+    - #27417 Sprawdzenie konfiguracji domyślnych czynności dla WT1 - fix
+1.8.0:
+    - #25278 Filtrowania zleceń po osobach firmy
+    - #25156 Zmiana maksymalnego terminu deklaracji z 3 na 7 dni
+    - #25281 Dodanie filtrowania po numerze kontraktu na fakturze
+    - #25181 Automatyczne tworzenie czynności przy wnioskowaniu o zakończenie zlecenia
+    - #26448 Zmiana etykiet w dto zlecenia na sortowaną listę
+    - #26015 Dodanie serwisu i REST do pobierania zlecenia z przeliczonym saldem
+    - #26016 Dodanie mechanizmu zabezpieczającego żeby nie przeliczać jednocześnie tego samego zlecenia oraz brak przeliczania salda,
+             jeśli zlecenie miało je przeliczone w przeciągu ostatnich 15 minut
+    - #26609 Testy integracyjne dla mechanizmu historii zlecenia
+    - #26523 Podział portfeli na typy zleceń (nowe i w realizacji) oraz (czekające na zamknięcie)
+    - #26020 Zmiana w pobieraniu pracy - przeliczanie salda zlecenia w momencie pobierania pracy
+    - #26437 Rozszerzenie encji tagu, dodanie encji ikony
+    - #26439 Dodanie serwisu REST do pobierania ikon
+1.7.0:
+    - #25157 Aktualizacja spłat w deklaracjach
+    - #26396 Dodanie nowych pól w historii zlecenia, poprawienie błędu podczas wyświetlania
+1.6.0:
+    - #26070 Dodanie zadania cyklicznego aktualizującego salda dla niespłaconych deklaracji
+    - #24831 Zmiana kolejki zleceń - nie pobieramy zleceń z saldem 0 (dla zleceń tworzonych automatycznie)
+    - dodanie sortowania wszystkich zleceń oraz zleceń zarządzanych przez managera
+    - rozszerzenie sortowania należności
+    - #22501 generowanie zleceń na żądanie (konfiguracja zadań cyklicznych i możliwość ręcznego uruchamiania dla administratora)
+    - #23702 rozszerzenie serwisu REST do pobierania faktur o filtr przedmioty zlecenia
+    - #24456 Prezentowanie sald na stronie należności
+    - #23682 dodanie kursu wymiany walut w fakturze
+    - #23123 dodatkowe informacje na belce zlecenia (informacja "spłacono" z paskiem % spłaty)
+    - #25363 nie zakładanie zleceń jeśli klient ma starsze zaległości niż podane DPD
+    - #25169 Filtr: Wszystkie / tylko nieopłacone / tylko wymagalne
+    - #25141 Kolejka zleceń sekcji 2 - albo nie wpadają, albo dashboard poazuje błędne informacje
+    - #25209 Brak skróconej nazwy klienta.
+    - #25339 Historia zlecenia - błąd przy prezentowaniu
+    - #25364 DPD zlecenia powinno być liczone z dokumentu inicjującego zlecenie
+1.5.0
+    - dodanie dpd do zlecenia (na dzień tworzenia zlecania oraz szacowane na koniec zlecenia)
+    - dodanie ilości zleceń do obsłużenia w ramach portfela (czynności zaległe i dzisiejsze)
+1.4.1
+    - poprawa w liczeniu RPB kiedy kontrakt stał się nieaktywny po otwarciu zlecenia windykacyjnego
+1.4.0:
+    - tworzenie wpisów w bazie o uruchomieniu i zakończeniu poszczególnych zadań cyklicznych
+    - dodanie serwisu rest do podglądu historii uruchomień zadań cyklicznych
+    - rozszerzenie modelu etykiet o predefiniowane etykiety dodane przez system
+    - filtrowanie zleceń po typie oraz po segmencie klienta
+    - zwracanie zleceń, które nie mają czynności windykacyjnych na liście filtrowanych zleceń
+    - zmiana sposobu liczenia salda zlecenia (tylko z faktur będących przedmiotem zlecenia #23129)

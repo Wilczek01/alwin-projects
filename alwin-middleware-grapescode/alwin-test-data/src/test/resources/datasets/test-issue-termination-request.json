@@ -1,0 +1,40 @@
+{
+  "issue_termination_request": [
+    {
+      "id": 1,
+      "issue_id": 1,
+      "request_cause": "przyczyna przerwania 1",
+      "request_operator_id": 2,
+      "excluded_from_stats": true,
+      "exclusion_from_stats_cause": "przyczyna wyłączenia ze statystyk 1",
+      "state": "NEW",
+      "created": "2016-01-01 01:01:01.000000",
+      "updated": "2016-01-01 01:01:01.000000"
+    },
+    {
+      "id": 2,
+      "issue_id": 19,
+      "request_cause": "przyczyna przerwania 2",
+      "request_operator_id": 3,
+      "excluded_from_stats": true,
+      "exclusion_from_stats_cause": "przyczyna wyłączenia ze statystyk 2",
+      "state": "ACCEPTED",
+      "manager_operator_id": 4,
+      "comment": "zgadzdam się, ma to sens",
+      "created": "2016-02-02 02:02:02.000000",
+      "updated": "2016-02-12 12:12:12.000000"
+    },
+    {
+      "id": 3,
+      "issue_id": 2,
+      "request_cause": "przyczyna przerwania 3",
+      "request_operator_id": 3,
+      "excluded_from_stats": false,
+      "state": "REJECTED",
+      "manager_operator_id": 4,
+      "comment": "nie zgadzdam się, proszę podać lepszy powód ",
+      "created": "2016-03-03 03:03:03.000000",
+      "updated": "2016-03-13 13:13:13.000000"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "id": 5,
+    "remark": "Adam -  w godzinach 10-18",
+    "contact": "0048123456791",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "PREFERRED",
+      "label": "Preferowany"
+    },
+    "sendAutomaticSms": false
+  },
+  {
+    "id": 2,
+    "remark": "w godzinach 10-18",
+    "contact": "Adam Mickiewicz",
+    "contactType": {
+      "key": "CONTACT_PERSON",
+      "label": "Osoba kontaktowa",
+      "callable": false,
+      "textable": false,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "PREFERRED",
+      "label": "Preferowany"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 10,
+    "remark": null,
+    "contact": "contat@company.pl",
+    "contactType": {
+      "key": "E_MAIL",
+      "label": "E-mail",
+      "callable": false,
+      "textable": false,
+      "emailable": true,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 4,
+    "remark": "Jan - trudno się dodzownić",
+    "contact": "0048123456790",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": true
+  },
+  {
+    "id": 7,
+    "remark": null,
+    "contact": "220987654",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": false
+  },
+  {
+    "id": 8,
+    "remark": null,
+    "contact": "221234567",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": false
+  },
+  {
+    "id": 9,
+    "remark": null,
+    "contact": "225678901",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": false
+  },
+  {
+    "id": 1,
+    "remark": "trudno się dodzownić",
+    "contact": "Jan Kochanowski",
+    "contactType": {
+      "key": "CONTACT_PERSON",
+      "label": "Osoba kontaktowa",
+      "callable": false,
+      "textable": false,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 12,
+    "remark": null,
+    "contact": "test@test.pl",
+    "contactType": {
+      "key": "OFFICE_E_EMAIL",
+      "label": "E-mail do biura",
+      "callable": false,
+      "textable": false,
+      "emailable": true,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 11,
+    "remark": null,
+    "contact": "documents@email.pl",
+    "contactType": {
+      "key": "DOCUMENT_E_MAIL",
+      "label": "E-mail dla dokumentów",
+      "callable": false,
+      "textable": false,
+      "emailable": true,
+      "website": false
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 13,
+    "remark": null,
+    "contact": "http://www.google.pl",
+    "contactType": {
+      "key": "INTERNET_ADDRESS",
+      "label": "Adres internetowy",
+      "callable": false,
+      "textable": false,
+      "emailable": false,
+      "website": true
+    },
+    "state": {
+      "key": "ACTIVE",
+      "label": "Aktywny"
+    },
+    "sendAutomaticSms": null
+  },
+  {
+    "id": 6,
+    "remark": "Juliusz - nie odbiera",
+    "contact": "0048123456789",
+    "contactType": {
+      "key": "PHONE_NUMBER",
+      "label": "Numer telefonu",
+      "callable": true,
+      "textable": true,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "INACTIVE",
+      "label": "Nieaktywny"
+    },
+    "sendAutomaticSms": true
+  },
+  {
+    "id": 3,
+    "remark": "nie odbiera",
+    "contact": "Juliusz Słowacki",
+    "contactType": {
+      "key": "CONTACT_PERSON",
+      "label": "Osoba kontaktowa",
+      "callable": false,
+      "textable": false,
+      "emailable": false,
+      "website": false
+    },
+    "state": {
+      "key": "INACTIVE",
+      "label": "Nieaktywny"
+    },
+    "sendAutomaticSms": null
+  }
+]

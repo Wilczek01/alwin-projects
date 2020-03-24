@@ -1,0 +1,2 @@
+INSERT INTO ISSUE_INVOICE (id, issue_id, invoice_id, last_payment_date, net_amount, gross_amount, number, currency, current_balance, contract_number, type)
+VALUES (10000, 10000, 7777, '2015-12-24', 300.00, 369.00, '000014/12/2015/TO', 'PLN', 0, '001098/15/1', 5);

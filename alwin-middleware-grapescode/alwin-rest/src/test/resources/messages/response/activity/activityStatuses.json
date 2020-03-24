@@ -1,0 +1,22 @@
+[
+  {
+    "key": "PLANNED",
+    "label": "Zaplanowana",
+    "closed": false
+  },
+  {
+    "key": "POSTPONED",
+    "label": "Przełożona",
+    "closed": false
+  },
+  {
+    "key": "CANCELED",
+    "label": "Anulowana",
+    "closed": true
+  },
+  {
+    "key": "EXECUTED",
+    "label": "Wykonana",
+    "closed": true
+  }
+]

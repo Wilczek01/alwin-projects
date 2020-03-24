@@ -1,0 +1,231 @@
+{
+  "values": [
+    {
+      "id": 2,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 7,
+        "company": {
+          "id": 5,
+          "extCompanyId": 9995,
+          "companyName": "Firma 9995",
+          "shortName": "Firma9995",
+          "nip": "3819667897",
+          "regon": "935884179",
+          "krs": "KRS 9995",
+          "recipientName": "Odbiorca firma 9995",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 2,
+        "extContractId": "TEST CONTRACT 2",
+        "customer": {
+          "id": 7,
+          "company": {
+            "id": 5,
+            "extCompanyId": 9995,
+            "companyName": "Firma 9995",
+            "shortName": "Firma9995",
+            "nip": "3819667897",
+            "regon": "935884179",
+            "krs": "KRS 9995",
+            "recipientName": "Odbiorca firma 9995",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1531173600000,
+      "expirationDate": 1533852000000,
+      "terminationCause": "testowy powód 2",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 190.12,
+      "balanceStartPLN": -65432.44,
+      "paymentsPLN": 987654.23,
+      "currentBalancePLN": -234642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 230.23,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 66353.36,
+      "totalCurrentBalancePLN": 234642.67,
+      "totalPaymentsPLN": 987654.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1531173600000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [
+        {
+          "name": "Koszyk 1",
+          "color": "#333333",
+          "predefined": false,
+          "type": "CUSTOM",
+          "description": "Zlecenie koszyka 1",
+          "tagIcon": {
+            "id": 1,
+            "name": "bookmark"
+          },
+          "id": 1
+        }
+      ],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    },
+    {
+      "id": 3,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 8,
+        "company": {
+          "id": 6,
+          "extCompanyId": 9994,
+          "companyName": "Firma 9994",
+          "shortName": "Firma9994",
+          "nip": "6780323778",
+          "regon": "756152902",
+          "krs": "KRS 9994",
+          "recipientName": "Odbiorca firma 9994",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 3,
+        "extContractId": "TEST CONTRACT 3",
+        "customer": {
+          "id": 8,
+          "company": {
+            "id": 6,
+            "extCompanyId": 9994,
+            "companyName": "Firma 9994",
+            "shortName": "Firma9994",
+            "nip": "6780323778",
+            "regon": "756152902",
+            "krs": "KRS 9994",
+            "recipientName": "Odbiorca firma 9994",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1562709600000,
+      "expirationDate": 1565388000000,
+      "terminationCause": "testowy powód 3",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 2,
+        "name": "PHONE_DEBT_COLLECTION_2",
+        "label": "Windykacja telefoniczna sekcja 2"
+      },
+      "issueState": {
+        "key": "IN_PROGRESS",
+        "label": "Realizowane"
+      },
+      "rpbPLN": 280.12,
+      "balanceStartPLN": -65432.44,
+      "paymentsPLN": 987654.23,
+      "currentBalancePLN": -234642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 65432.44,
+      "totalCurrentBalancePLN": 234642.67,
+      "totalPaymentsPLN": 987654.23,
+      "excludedFromStats": true,
+      "exclusionCause": "powód wykluczenia ze statystyk 3",
+      "balanceUpdateDate": 1562709600000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [
+        {
+          "name": "Koszyk 1",
+          "color": "#333333",
+          "predefined": false,
+          "type": "CUSTOM",
+          "description": "Zlecenie koszyka 1",
+          "tagIcon": {
+            "id": 1,
+            "name": "bookmark"
+          },
+          "id": 1
+        },
+        {
+          "name": "Zaległe",
+          "color": "#E53935",
+          "predefined": true,
+          "type": "OVERDUE",
+          "description": "Zaległe zlecenie",
+          "tagIcon": {
+            "id": 2,
+            "name": "contact_support"
+          },
+          "id": 3
+        }
+      ],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    }
+  ],
+  "totalValues": 14
+}

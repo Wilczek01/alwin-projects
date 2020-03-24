@@ -1,0 +1,8 @@
+ALTER TABLE COMPANY
+  ADD COLUMN short_name VARCHAR(30);
+
+ALTER TABLE COMPANY_AUD
+  ADD COLUMN short_name VARCHAR(30);
+
+COMMENT ON COLUMN COMPANY.short_name
+IS 'Skrócona nazwa klienta';

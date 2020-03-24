@@ -1,0 +1,2 @@
+ALTER TABLE declaration ADD COLUMN paid BOOLEAN DEFAULT false;
+ALTER TABLE declaration_aud ADD COLUMN paid BOOLEAN;

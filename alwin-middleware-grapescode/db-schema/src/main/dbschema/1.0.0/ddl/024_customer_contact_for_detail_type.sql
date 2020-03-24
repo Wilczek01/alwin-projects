@@ -1,0 +1,2 @@
+ALTER TABLE activity_type
+  ADD COLUMN customer_contact BOOLEAN NOT NULL DEFAULT FALSE;

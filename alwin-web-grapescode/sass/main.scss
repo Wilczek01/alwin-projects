@@ -1,0 +1,62 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "tables";
+@import "table-filters";
+@import "custom-overwrites";
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$alwin-app-primary: mat-palette($mat-pink, 900);
+$alwin-app-accent: mat-palette($mat-amber, 700);
+$alwin-app-theme: mat-light-theme($alwin-app-primary, $alwin-app-accent);
+
+@include angular-material-theme($alwin-app-theme);
+
+/**
+ obejście problemu z niepoprawnym renderowaniem zwiniętych expansion-panel w niewidocznych zakładkach
+ https://github.com/angular/material2/issues/5269
+ */
+.mat-expansion-panel-header {
+  height: 48px;
+}
+
+
+/*
+ *  padding
+ */
+.padding-0 {
+  padding: 0 !important;
+}
+
+/*
+ *  margin
+ */
+.margin-0 {
+  margin: 0 !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+/*
+ *  width
+ */
+.width-100-percent {
+  width: 100%;
+}
+
+/*
+ *  position
+ */
+.position-relative {
+  position: relative;
+}
+
+.align-flex-end {
+  align-items: flex-end;
+}

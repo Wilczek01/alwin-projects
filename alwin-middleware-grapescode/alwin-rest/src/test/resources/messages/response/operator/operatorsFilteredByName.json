@@ -1,0 +1,39 @@
+{
+  "values": [
+    {
+      "id": 3,
+      "active": true,
+      "forceUpdatePassword": false,
+      "login": "cknorwid",
+      "permission": {
+        "id": 3,
+        "allowedToExternallyPlanActivities": false,
+        "allowedToChangeActivityCharge": false,
+        "allowedToChangeActivityChargePercent": false,
+        "allowedToMarkOwnAttachmentDeleted": false,
+        "allowedToMarkOthersAttachmentsDeleted": false,
+        "allowedToTransferIssuesInternally": false,
+        "allowedToTransferIssuesExternally": false,
+        "allowedToExcludeIssue": false,
+        "allowedToSetCustomerOutOfService": false,
+        "allowedToTerminateIssue": false,
+        "allowedToExcludeInvoice": false,
+        "allowedToManageDemandsForPayment": false
+      },
+      "parentOperator": null,
+      "user": {
+        "id": 3,
+        "firstName": "Cyprian Kamil",
+        "lastName": "Norwid",
+        "email": "cknorwid@grapescode.pl",
+        "phoneNumber": null
+      },
+      "type": {
+        "id": 2,
+        "typeName": "PHONE_DEBT_COLLECTOR",
+        "typeLabel": "Windykator telefoniczny"
+      }
+    }
+  ],
+  "totalValues": 1
+}

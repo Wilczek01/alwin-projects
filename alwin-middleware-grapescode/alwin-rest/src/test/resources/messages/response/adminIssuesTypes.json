@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "PHONE_DEBT_COLLECTION_1",
+    "label": "Windykacja telefoniczna sekcja 1"
+  },
+  {
+    "id": 2,
+    "name": "PHONE_DEBT_COLLECTION_2",
+    "label": "Windykacja telefoniczna sekcja 2"
+  },
+  {
+    "id": 3,
+    "name": "DIRECT_DEBT_COLLECTION",
+    "label": "Windykacja bezpośrednia"
+  },
+  {
+    "id": 4,
+    "name": "LAW_DEBT_COLLECTION_MOTION_TO_RELEASE_ITEM",
+    "label": "Windykacja prawna - pozew o wydanie przedmiotu"
+  },
+  {
+    "id": 5,
+    "name": "SUBJECT_TRANSPORT",
+    "label": "Transport przedmiotu"
+  },
+  {
+    "id": 6,
+    "name": "REALIZATION_OF_COLLATERAL",
+    "label": "Realizacja zabezpieczenia"
+  },
+  {
+    "id": 7,
+    "name": "LAW_DEBT_COLLECTION_MOTION_TO_PAY",
+    "label": "Windykacja prawna - pozew o zapłatę"
+  },
+  {
+    "id": 8,
+    "name": "RESTRUCTURING",
+    "label": "Restrukturyzacja"
+  }
+]

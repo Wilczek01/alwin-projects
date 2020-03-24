@@ -1,0 +1,16 @@
+
+.cancel-demand-dialog {
+  min-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
+
+.cancel-demand-dialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cancel-demand-dialog form > * {
+  width: 100%;
+}
+

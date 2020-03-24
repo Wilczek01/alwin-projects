@@ -1,0 +1,21 @@
+
+#process-terminations mat-panel-description {
+  color: #616161;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.mdl-data-table {
+  white-space: normal;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+  margin-right: 0;
+}
+
+.action-buttons-column {
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_remove_company_duplicates" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.13.0/dml/001_remove_company_duplicates.sql"/>
+    </changeSet>
+
+    <changeSet id="002_update_issue_type_configuration" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.13.0/dml/002_update_issue_type_configuration.sql"/>
+    </changeSet>
+</databaseChangeLog>

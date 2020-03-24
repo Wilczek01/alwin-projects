@@ -1,0 +1,135 @@
+{
+  "walletsByIssueStates": {
+    "issueStates": [
+      {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      {
+        "key": "IN_PROGRESS",
+        "label": "Realizowane"
+      }
+    ],
+    "wallets": [
+      {
+        "companyCount": 4,
+        "currentIssueQueueCount": 4,
+        "involvement": 0.00,
+        "currentBalancePLN": -679285.34,
+        "currentBalanceEUR": 0.00,
+        "issueType": {
+          "id": 1,
+          "name": "PHONE_DEBT_COLLECTION_1",
+          "label": "Windykacja telefoniczna sekcja 1"
+        },
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "duration": "1-14"
+      },
+      {
+        "companyCount": 1,
+        "currentIssueQueueCount": 1,
+        "involvement": 0.00,
+        "currentBalancePLN": 554642.67,
+        "currentBalanceEUR": 0.00,
+        "issueType": {
+          "id": 2,
+          "name": "PHONE_DEBT_COLLECTION_2",
+          "label": "Windykacja telefoniczna sekcja 2"
+        },
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "duration": "14-31"
+      },
+      {
+        "companyCount": 1,
+        "currentIssueQueueCount": 1,
+        "involvement": 0.00,
+        "currentBalancePLN": 554642.67,
+        "currentBalanceEUR": 0.00,
+        "issueType": {
+          "id": 1,
+          "name": "PHONE_DEBT_COLLECTION_1",
+          "label": "Windykacja telefoniczna sekcja 1"
+        },
+        "segment": {
+          "key": "B",
+          "label": "B"
+        },
+        "duration": "1-9"
+      },
+      {
+        "companyCount": 0,
+        "currentIssueQueueCount": 0,
+        "involvement": 0.00,
+        "currentBalancePLN": 0.00,
+        "currentBalanceEUR": 0.00,
+        "issueType": {
+          "id": 2,
+          "name": "PHONE_DEBT_COLLECTION_2",
+          "label": "Windykacja telefoniczna sekcja 2"
+        },
+        "segment": {
+          "key": "B",
+          "label": "B"
+        },
+        "duration": "9-21"
+      }
+    ]
+  },
+  "waitingForTerminationIssuesWallet": {
+    "companyCount": 1,
+    "currentIssueQueueCount": 1,
+    "involvement": 12345.67,
+    "currentBalancePLN": 234642.67,
+    "currentBalanceEUR": 0.00,
+    "issueState": {
+      "key": "WAITING_FOR_TERMINATION",
+      "label": "Czekające na zamknięcie"
+    }
+  },
+  "tagWallets": [
+    {
+      "companyCount": 2,
+      "currentIssueQueueCount": 2,
+      "involvement": 12345.67,
+      "currentBalancePLN": 0.00,
+      "currentBalanceEUR": 0.00,
+      "tag": {
+        "name": "Koszyk 1",
+        "color": "#333333",
+        "predefined": false,
+        "type": "CUSTOM",
+        "description": "Zlecenie koszyka 1",
+        "tagIcon": {
+          "id": 1,
+          "name": "bookmark"
+        },
+        "id": 1
+      }
+    },
+    {
+      "companyCount": 1,
+      "currentIssueQueueCount": 1,
+      "involvement": 12345.67,
+      "currentBalancePLN": 234642.67,
+      "currentBalanceEUR": 0.00,
+      "tag": {
+        "name": "Koszyk 2",
+        "color": "#999999",
+        "predefined": false,
+        "type": "CUSTOM",
+        "description": "Zlecenie koszyka 2",
+        "tagIcon": {
+          "id": 1,
+          "name": "bookmark"
+        },
+        "id": 2
+      }
+    }
+  ]
+}

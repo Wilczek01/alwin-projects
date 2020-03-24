@@ -1,0 +1,1 @@
+update scheduler_execution set type = 'GENERATE_DEMAND_FOR_PAYMENT_AND_CONTRACT_TERMINATION' where type = 'GENERATE_DEMAND_FOR_PAYMENT'

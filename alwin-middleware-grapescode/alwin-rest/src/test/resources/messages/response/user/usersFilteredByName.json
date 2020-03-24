@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "firstName": "Adam",
+      "lastName": "Mickiewicz",
+      "email": "amickiewicz@grapescode.pl",
+      "phoneNumber": null,
+      "operators": [
+        {
+          "id": 1,
+          "login": "amickiewicz",
+          "active": true,
+          "permission": null,
+          "parentOperator": null,
+          "type": {
+            "id": 1,
+            "typeName": "ADMIN",
+            "typeLabel": "Administrator systemu"
+          }
+        }
+      ],
+      "updateDate": 1499637600000,
+      "creationDate": 1499637600000
+    }
+  ],
+  "totalValues": 1
+}

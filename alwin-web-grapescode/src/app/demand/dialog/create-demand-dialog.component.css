@@ -1,0 +1,16 @@
+
+.create-demand-dialog {
+  min-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
+
+.create-demand-dialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-demand-dialog form > * {
+  width: 100%;
+}
+

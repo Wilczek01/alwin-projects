@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_create_scheduler_configuration" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.4.0/ddl/001_create_scheduler_configuration.sql"/>
+    </changeSet>
+
+    <changeSet id="001_insert_base_schedule_tasks_configuration" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.4.0/dml/001_insert_base_schedule_tasks_configuration.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_table_tag" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.4.0/ddl/002_alter_table_tag.sql"/>
+    </changeSet>
+
+    <changeSet id="002_insert_predefined_tag" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.4.0/dml/002_insert_predefined_tag.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_table_tag_aud" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.4.0/ddl/003_alter_table_tag_aud.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_issue_invoice_issue_subject" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.4.0/ddl/004_alter_issue_invoice_issue_subject.sql"/>
+    </changeSet>
+
+    <changeSet id="003_update_issue_invoice_issue_subject" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.4.0/dml/003_update_issue_invoice_issue_subject.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

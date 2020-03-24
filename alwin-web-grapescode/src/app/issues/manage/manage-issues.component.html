@@ -1,0 +1,325 @@
+<div class="mdl-grid padding-0">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col margin-0 width-100-percent mb-15">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!isLoading()" mode="indeterminate"></mat-progress-bar>
+    </div>
+    <form (ngSubmit)="onSubmit()" #filterManagedIssuesForm="ngForm" [formGroup]="reactiveFormGroup">
+      <div>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>Filtruj</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div *ngIf="onlyOperatorFilters;then operatorFilters else managerFilters"></div>
+
+          <ng-template #operatorFilters>
+            <alwin-manage-issues-operator-filters [group]="reactiveFormGroup"></alwin-manage-issues-operator-filters>
+          </ng-template>
+
+          <ng-template #managerFilters>
+            <alwin-manage-issues-manager-filters
+              [group]="reactiveFormGroup"
+              [operators]="operators"
+              [tags]="tags"
+              [states]="states"
+              [priorities]="priorities"
+              [issueTypes]="issueTypes"
+              [segments]="segments"
+              [readonly]="readonly"
+              (changeManagement)="onChangeManagement($event)"
+            ></alwin-manage-issues-manager-filters>
+          </ng-template>
+          <div class="divAsButtonReset" (click)="filterIssuesReset()"  id="reset">Wyczyść</div>
+          <button mat-raised-button color="primary" [disabled]="!filterManagedIssuesForm.valid || isLoading()" style="float: right;"
+                  class="filter-table-button" id="filter-managed-issues">
+            Szukaj
+          </button>
+        </mat-expansion-panel>
+      </div>
+    </form>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col margin-0 width-100-percent position-relative">
+    <div class="progress-bar-placeholder absolute-progress">
+      <mat-progress-bar [hidden]="!dataSource || !dataSource.loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div class="table-header" *ngIf="!onlyOperatorFilters">
+      <div style="float: right;">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [disabled]="selection.isEmpty() || disableAllManagementControl.value" (click)="openAssignment(selection.selected, false, null)">
+            <mat-icon>supervisor_account</mat-icon>
+            <span>Przypisz ({{selection.isEmpty() ? '0' : selection.selected.length}})</span>
+          </button>
+          <button mat-menu-item [disabled]="!dataSource || dataSource.max == 0 || disableAllManagementControl.value" (click)="openAssignment([], true, null)">
+            <mat-icon>group_add</mat-icon>
+            <span>Przypisz wszystkie</span>
+          </button>
+          <button id="update-priority-for-issues" mat-menu-item [disabled]="selection.isEmpty() || disableAllManagementControl.value"
+                  (click)="openPriorityUpdate(selection.selected, false, null)">
+            <mat-icon>low_priority</mat-icon>
+            <span>Zmień priorytet ({{selection.isEmpty() ? '0' : selection.selected.length}})</span>
+          </button>
+          <button id="update-priority-for-all-issues" mat-menu-item [disabled]="!dataSource || dataSource.max == 0 || disableAllManagementControl.value"
+                  (click)="openPriorityUpdate([], true, null)">
+            <mat-icon>low_priority</mat-icon>
+            <span>Zmień priorytet wszystkim</span>
+          </button>
+          <button id="update-tags-for-issues" mat-menu-item [disabled]="selection.isEmpty() || disableAllManagementControl.value"
+                  (click)="openTagIssueUpdate(selection.selected, false)">
+            <mat-icon>book</mat-icon>
+            <span>Nadaj etykietę ({{selection.isEmpty() ? '0' : selection.selected.length}})</span>
+          </button>
+          <button id="update-tags-for-all-issues" mat-menu-item [disabled]="!dataSource || dataSource.max == 0 || disableAllManagementControl.value"
+                  (click)="openTagIssueUpdate([], true)">
+            <mat-icon>collections_bookmark</mat-icon>
+            <span>Nadaj etykietę wszystkim</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" id="issue-table" class="zebra-rows zebra-even" matSort>
+
+      <ng-container cdkColumnDef="customer">
+        <mat-header-cell *cdkHeaderCellDef class="issue-customer-column" mat-sort-header="{{manageIssuesSort.CUSTOMER}}">
+          <div class="wrapper padding-cell-3">
+            Klient
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-customer-column">
+          <button mat-button (click)="openCustomerDetails(row.customer)" class="user-name-cell ellipsis-with-hover">
+            {{ row.customer.company.companyName }}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="select">
+        <mat-header-cell *cdkHeaderCellDef class="custom-icon-col">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [disabled]="!dataSource || dataSource.max == 0 || disableAllManagementControl.value">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="custom-icon-col">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event && !disableAllManagementControl.value ? selection.toggle(row.id) : null"
+                        [checked]="selection.isSelected(row.id)"
+                        [disabled]="disableAllManagementControl.value">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="priority">
+        <mat-header-cell *cdkHeaderCellDef class="issue-priority custom-icon-col"></mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-priority custom-icon-col">
+          <mat-icon mat-list-icon *ngIf="isIssuePriorityHigh(row)" matTooltip="Priorytet: {{row.priority.label}}">priority_high</mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="extCompanyId">
+        <mat-header-cell *cdkHeaderCellDef class="issue-expiration-date-column alwin-table-align-left small-col" mat-sort-header="{{manageIssuesSort.EXT_COMPANY_ID}}">
+          <div class="padding-cell-3">
+            Nr klienta<br>w&nbsp;LEO
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-expiration-date-column alwin-table-align-rightside small-col">
+            {{row.customer.company.extCompanyId }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="dpdStart">
+        <mat-header-cell *cdkHeaderCellDef class="issue-start-date-column small-col">
+          <div class="padding-cell-3">
+            DPD rozpoczęcia
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-start-date-column alwin-table-align-rightside small-col">
+            {{row.dpdStart}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="dpdEstimated">
+        <mat-header-cell *cdkHeaderCellDef class="issue-start-date-column small-col">
+          <div class="padding-cell-3">
+            DPD wygaśnięcia
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-start-date-column alwin-table-align-right-dpd small-col">
+            {{row.dpdEstimated}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="startDate">
+        <mat-header-cell *cdkHeaderCellDef class="issue-start-date-column issue-date-column" mat-sort-header="{{manageIssuesSort.START_DATE}}">
+          <div class="padding-cell-3">
+            Data rozpoczęcia
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-start-date-column issue-date-column"> {{row.startDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="expirationDate">
+        <mat-header-cell *cdkHeaderCellDef aria-colspan="1" class="issue-expiration-date-column issue-date-column" mat-sort-header="{{manageIssuesSort.EXPIRATION_DATE}}">
+          <div class="padding-cell-3">
+            Data wygaśnięcia
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-expiration-date-column issue-date-column"> {{row.expirationDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="tags">
+        <mat-header-cell *cdkHeaderCellDef class="issue-tags-column issue-tags">
+          <div class="padding-cell-3">
+            Etykiety
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-tags-column issue-tags">
+          <mat-icon class="material-icons" *ngFor="let tag of row.tags" [style.color]="tag.color"
+                    matTooltip="{{tag.name}}{{tag.description ? ' - ' + tag.description : ''}}">{{tag.tagIcon.name}}
+          </mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="issueType">
+        <mat-header-cell *cdkHeaderCellDef class="issue-type-column custom-icon-col" mat-sort-header="{{manageIssuesSort.TYPE}}">
+          <div class="padding-cell-3">
+            Typ
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-type-column custom-icon-col">
+          <alwin-issue-type-icon [issueType]="row.issueType"></alwin-issue-type-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="issueState">
+        <mat-header-cell *cdkHeaderCellDef class="issue-state-column" mat-sort-header="{{manageIssuesSort.STATE}}">
+          <div class="padding-cell-3">
+            Stan
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-state-column">
+          <div class="ellipsis-with-hover">
+            {{row.issueState.label}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--<ng-container cdkColumnDef="rpb">
+        <mat-header-cell *cdkHeaderCellDef> Kapitał</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right">
+          {{row.rpbPLN | number:'0.2-2'}} <span class="small-currency-label">PLN</span><br/>
+          {{row.rpbEUR | number:'0.2-2'}} <span class="small-currency-label">EUR</span>
+        </mat-cell>
+      </ng-container>-->
+
+      <ng-container cdkColumnDef="balanceStart">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{manageIssuesSort.BALANCE_START}}" class="amount">
+          <div class="padding-cell-3">
+            Saldo początkowe
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right alwin-table-width amount align-flex-end">
+          <div class="peel-off-right-cell">
+            {{row.balanceStartPLN | number:'0.2-2'}} <span class="small-currency-label">PLN</span>
+          </div>
+          <div class="peel-off-right-cell">
+            {{row.balanceStartEUR | number:'0.2-2'}} <span class="small-currency-label">EUR</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="currentBalance">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{manageIssuesSort.CURRENT_BALANCE}}" class="amount">
+          <div class="padding-cell-3">
+            Saldo bieżące
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right amount align-flex-end">
+          <div class="peel-off-right-cell">
+            {{row.currentBalancePLN | number:'0.2-2'}} <span class="small-currency-label">PLN</span>
+          </div>
+          <div class="peel-off-right-cell">
+            {{row.currentBalanceEUR | number:'0.2-2'}} <span class="small-currency-label">EUR</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="payments">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{manageIssuesSort.PAYMENTS}}" class="amount">
+          <div class="padding-cell-3">
+            Suma wpłat
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right amount align-flex-end">
+          <div class="peel-off-right-cell">
+            {{row.paymentsPLN | number:'0.2-2'}} <span class="small-currency-label">PLN</span><br/>
+          </div>
+          <div class="peel-off-right-cell">
+            {{row.paymentsEUR | number:'0.2-2'}} <span class="small-currency-label">EUR</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="actions">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="{'custom-icon-col': onlyOperatorFilters, 'double-icon-col': !onlyOperatorFilters}"></mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="{'custom-icon-col': onlyOperatorFilters, 'double-icon-col': !onlyOperatorFilters}">
+
+          <button mat-icon-button [matMenuTriggerFor]="menu" id="issue-{{row.id}}-more-actions-button" *ngIf="!onlyOperatorFilters">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="terminateIssue(row.id)" [disabled]="disableAllManagementControl.value" id="terminate-issue-button-{{row.id}}">
+              <mat-icon class="md-24" aria-label="Zakończ">assignment_turned_in</mat-icon>
+              <span>Zakończ</span>
+            </button>
+            <button mat-menu-item (click)="openAssignment([row.id], false, row.assignee)" [disabled]="disableAllManagementControl.value"
+                    id="assign-issue-button-{{row.id}}">
+              <mat-icon class="md-24" aria-label="Przypisz">person</mat-icon>
+              <span>Przypisz</span>
+            </button>
+            <button mat-menu-item (click)="openPriorityUpdate([row.id], false, row.priority)" [disabled]="disableAllManagementControl.value"
+                    id="change-issue-priority-button-{{row.id}}">
+              <mat-icon class="md-24" aria-label="Zmień priorytet">low_priority</mat-icon>
+              <span>Zmień priorytet</span>
+            </button>
+            <button mat-menu-item (click)="addTag(row)" [disabled]="disableAllManagementControl.value" id="tag-issue-button-{{row.id}}">
+              <mat-icon class="md-24" aria-label="Nadaj etykietę">book</mat-icon>
+              <span>Nadaj etykietę</span>
+            </button>
+          </mat-menu>
+
+          <a href="issue/{{row.id}}" matTooltip="Szczegóły" target="_blank" class="icon-link mat-icon-button">
+            <mat-icon class="md-24" aria-label="Szczegóły">mode_edit</mat-icon>
+          </a>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;"
+               [class.example-selected-row]="selection.isSelected(row.id)"
+               (click)="!disableAllManagementControl.value ? selection.toggle(row.id): null"
+               id="issue-{{row.id}}">
+      </mat-row>
+    </mat-table>
+
+    <div class="example-no-results" [style.display]="dataSource && !dataSource.loading && dataSource.max == 0  ? '' : 'none'">
+      Nie znaleziono żadnych zleceń.
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource ? dataSource.max : 0"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="!dataSource || dataSource.max == 0">
+    </mat-paginator>
+  </div>
+</div>

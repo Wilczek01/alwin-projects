@@ -1,0 +1,49 @@
+{
+  "permission": [
+    {
+      "id": 2,
+      "allowed_to_externally_plan_activities": true,
+      "allowed_to_change_activity_charge": true,
+      "allowed_to_change_activity_charge_percent": true,
+      "allowed_to_mark_own_attachment_deleted": true,
+      "allowed_to_mark_others_attachments_deleted": true,
+      "allowed_to_transfer_issues_internally": true,
+      "allowed_to_transfer_issues_externally": true,
+      "allowed_to_exclude_issue": true,
+      "allowed_to_set_customer_out_of_service": true,
+      "allowed_to_terminate_issue": true,
+      "allowed_to_exclude_invoice": true,
+      "allowed_to_manage_demands_for_payment": true
+    },
+    {
+      "id": 3,
+      "allowed_to_externally_plan_activities": false,
+      "allowed_to_change_activity_charge": false,
+      "allowed_to_change_activity_charge_percent": false,
+      "allowed_to_mark_own_attachment_deleted": false,
+      "allowed_to_mark_others_attachments_deleted": false,
+      "allowed_to_transfer_issues_internally": false,
+      "allowed_to_transfer_issues_externally": false,
+      "allowed_to_exclude_issue": false,
+      "allowed_to_set_customer_out_of_service": false,
+      "allowed_to_terminate_issue": false,
+      "allowed_to_exclude_invoice": false,
+      "allowed_to_manage_demands_for_payment": false
+    },
+    {
+      "id": 4,
+      "allowed_to_externally_plan_activities": false,
+      "allowed_to_change_activity_charge": false,
+      "allowed_to_change_activity_charge_percent": false,
+      "allowed_to_mark_own_attachment_deleted": false,
+      "allowed_to_mark_others_attachments_deleted": false,
+      "allowed_to_transfer_issues_internally": false,
+      "allowed_to_transfer_issues_externally": false,
+      "allowed_to_exclude_issue": false,
+      "allowed_to_set_customer_out_of_service": false,
+      "allowed_to_terminate_issue": false,
+      "allowed_to_exclude_invoice": false,
+      "allowed_to_manage_demands_for_payment": true
+    }
+  ]
+}

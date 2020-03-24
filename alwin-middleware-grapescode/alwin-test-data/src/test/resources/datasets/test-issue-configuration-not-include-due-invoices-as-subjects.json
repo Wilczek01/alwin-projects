@@ -1,0 +1,14 @@
+{
+  "issue_type_configuration": [
+    {
+      "id": 1,
+      "issue_type_id": 1,
+      "duration": 14,
+      "segment": "A",
+      "create_automatically": true,
+      "dpd_start": 1,
+      "min_balance_start": -100.00,
+      "include_debt_invoices_during_issue": false
+    }
+  ]
+}

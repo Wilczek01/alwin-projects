@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Święto Pracy",
+    "day": 1,
+    "month": 5,
+    "year": null,
+    "user": null,
+    "id": 1
+  },
+  {
+    "description": "Urlop",
+    "day": 2,
+    "month": 5,
+    "year": 2018,
+    "user": {
+      "id": 1,
+      "firstName": "Adam",
+      "lastName": "Mickiewicz"
+    },
+    "id": 3
+  }
+]

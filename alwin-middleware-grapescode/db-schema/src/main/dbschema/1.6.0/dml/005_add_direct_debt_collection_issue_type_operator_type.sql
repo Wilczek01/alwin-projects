@@ -1,0 +1,21 @@
+INSERT INTO OPERATOR_TYPE_ISSUE_TYPE (operator_type_id, issue_type_id) VALUES
+
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'FIELD_DEBT_COLLECTOR'),
+   (SELECT ID
+    FROM ISSUE_TYPE
+    WHERE NAME = 'DIRECT_DEBT_COLLECTION')),
+  ((SELECT ID
+    FROM OPERATOR_TYPE
+    WHERE TYPE_NAME = 'DIRECT_DEBT_COLLECTION_MANAGER'),
+   (SELECT ID
+    FROM ISSUE_TYPE
+    WHERE NAME = 'DIRECT_DEBT_COLLECTION'));
+
+
+UPDATE operator_type
+SET parent_operator_type_id = (SELECT o2.id
+                               FROM operator_type o2
+                               WHERE o2.type_name = 'DIRECT_DEBT_COLLECTION_MANAGER')
+WHERE type_name = 'FIELD_DEBT_COLLECTOR';

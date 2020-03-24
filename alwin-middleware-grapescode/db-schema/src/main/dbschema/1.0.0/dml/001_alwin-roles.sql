@@ -1,0 +1,10 @@
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('ADMIN', 'Administrator systemu');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('PHONE_DEBT_COLLECTOR', 'Windykator telefoniczny');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('FIELD_DEBT_COLLECTOR', 'Windykator terenowy');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('RESTRUCTURING_SPECIALIST', 'Specjalista ds. restrukturyzacji');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('RENUNCIATION_COORDINATOR', 'Koordynator wypowiedzeń');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('SECURITY_SPECIALIST', 'Specjalista ds. realizacji zabezpieczeń');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('PHONE_DEBT_COLLECTOR_MANAGER', 'Menedżer windykacji telefonicznej');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('DIRECT_DEBT_COLLECTION_MANAGER', 'Menedżer windykacji bezpośredniej');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('ANALYST', 'Analityk');
+INSERT INTO ALWIN_ROLE (name, label) VALUES ('DEPARTMENT_MANAGER', 'Menedżer departamentu');

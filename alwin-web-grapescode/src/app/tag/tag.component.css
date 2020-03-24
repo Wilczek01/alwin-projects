@@ -1,0 +1,19 @@
+.tags-table {
+  border: none;
+}
+
+.mdl-data-table td:last-of-type, .mdl-data-table th:last-of-type {
+  width: 35px;
+}
+
+.action-cell {
+  width: 70px;
+}
+
+.not-found-label {
+  padding: 18px;
+}
+
+.not-found {
+  padding: 10px;
+}

@@ -1,0 +1,25 @@
+{
+  "values": [
+    {
+      "id": 6,
+      "active": true,
+      "forceUpdatePassword": false,
+      "login": "jbrzechwa",
+      "permission": null,
+      "parentOperator": null,
+      "user": {
+        "id": 6,
+        "firstName": "Jan",
+        "lastName": "Brzechwa",
+        "email": "jbrzechwa@grapescode.pl",
+        "phoneNumber": null
+      },
+      "type": {
+        "id": 5,
+        "typeName": "FIELD_DEBT_COLLECTOR",
+        "typeLabel": "Windykator terenowy"
+      }
+    }
+  ],
+  "totalValues": 1
+}

@@ -1,0 +1,107 @@
+<div class="mdl-grid">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!dataSource.loading || loadingIssueTypes || loadingOperators" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <form (ngSubmit)="searchForm.form.valid && findCompanies()" #searchForm="ngForm">
+      <div>
+        <mat-expansion-panel [expanded]="true" [hideToggle]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Wyszukiwarka firm
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+            <input name="companyId" matInput [(ngModel)]="companyId" placeholder="Identyfikator firmy" pattern="^[0-9]*$">
+            <mat-error>Proszę wprowadzić poprawną liczbę</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input name="companyName" matInput [(ngModel)]="companyName" placeholder="Nazwa firmy (lub jej część)">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input name="companyNip" matInput [(ngModel)]="companyNip" placeholder="NIP">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input name="companyRegon" matInput [(ngModel)]="companyRegon" placeholder="REGON">
+          </mat-form-field>
+
+          <button class="find-company-panel-button" mat-raised-button color="primary" [disabled]="!searchForm.form.valid" id="company-search-button">
+            Wyszukaj
+          </button>
+          <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+        </mat-expansion-panel>
+      </div>
+    </form>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+
+    <mat-table #table [dataSource]="dataSource" [hidden]="dataSource.max == 0">
+
+      <mat-header-row *cdkHeaderRowDef="companyDisplayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: companyDisplayedColumns;">
+      </mat-row>
+
+      <ng-container cdkColumnDef="id">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="'column-width-100'">Identyfikator</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="'column-width-100'"> {{row.id}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="companyName">
+        <mat-header-cell *cdkHeaderCellDef>Nazwa</mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.companyName}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="nip">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="'column-width-150'">NIP</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="'column-width-150'"> {{row.nip}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="regon">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="'column-width-150'">REGON</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="'column-width-150'"> {{row.regon}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="krs">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="'column-width-150'">KRS</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="'column-width-150'"> {{row.krs}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="legalForm">
+        <mat-header-cell *cdkHeaderCellDef>Forma prawna</mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.legalForm.symbol}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="createIssue">
+        <mat-header-cell *cdkHeaderCellDef [ngClass]="'column-add-issue'">Akcje</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [ngClass]="'column-add-issue'">
+          <button mat-icon-button matTooltip="Utwórz zlecenie" (click)="openCreateIssueDialog(row)">
+            <mat-icon class="material-icons">add_circle</mat-icon>
+          </button>
+
+          <a [routerLink]="['/companies/' + row.id + '/manage']" matTooltip="Szczegóły" class="icon-link mat-icon-button" target="_blank">
+            <mat-icon class="md-24" aria-label="Szczegóły">mode_edit</mat-icon>
+          </a>
+        </mat-cell>
+      </ng-container>
+    </mat-table>
+
+    <div class="no-results" [hidden]="dataSource.max != 0 || dataSource.loading">
+      Nie znaleziono żadnych firm dla podanych kryteriów wyszykiwania.
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource.max == 0">
+    </mat-paginator>
+  </div>
+
+</div>

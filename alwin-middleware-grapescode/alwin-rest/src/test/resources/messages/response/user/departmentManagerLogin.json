@@ -1,0 +1,8 @@
+{
+  "username": "Julian Tuwim",
+  "role": {
+    "id": 1,
+    "typeName": "DEPARTMENT_MANAGER",
+    "typeLabel": "Menedżer departamentu"
+  }
+}

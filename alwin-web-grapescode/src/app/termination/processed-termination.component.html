@@ -1,0 +1,103 @@
+<div id="process-terminations">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description style="width: 24%;">{{termination.companyName}}</mat-panel-description>
+      <mat-panel-description style="width: 24%;">{{termination.terminationDate | date:'dd.MM.yyyy'}}</mat-panel-description>
+      <mat-panel-description style="width: 24%;">{{termination.type | terminationContractType}}</mat-panel-description>
+      <mat-panel-description style="width: 24%;">{{termination.contracts.length}}</mat-panel-description>
+      <mat-panel-description style="width: 4%;"></mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="termination.contracts.length == 0">
+      Ten klient nie posiada żadnej umowy do wypowiedzenia
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width" *ngIf="termination.contracts.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Nr umowy</th>
+        <th class="mdl-data-table__cell--non-numeric">Typ</th>
+        <th class="mdl-data-table__cell--non-numeric">Status</th>
+        <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+        <th class="mdl-data-table__cell--non-numeric">Operator</th>
+        <th class="mdl-data-table__cell--non-numeric">Opłata za wznowienie</th>
+        <th class="mdl-data-table__cell--non-numeric">Termin zapłaty</th>
+        <th class="mdl-data-table__cell--non-numeric">Kwota do spłaty</th>
+        <th class="mdl-data-table__cell--non-numeric">Suma wpłat</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktura inicjująca</th>
+        <th class="mdl-data-table__cell--non-numeric">Przedmioty</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktury</th>
+        <th class="mdl-data-table__cell--non-numeric" *ngIf="showActions">Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let terminationContract of termination.contracts; let i = index">
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.contractNumber}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.type | terminationContractType}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.state | terminationState}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.remark | nullable}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.generatedBy}}<br/>{{terminationContract.operatorEmail}}<br/>{{terminationContract.operatorPhoneNumber}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.resumptionCost | number:'0.2-2'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.dueDateInDemandForPayment | date:'dd.MM.yyyy'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.amountInDemandForPaymentPLN | number:'0.2-2'}} PLN<br/>
+          {{terminationContract.amountInDemandForPaymentEUR | number:'0.2-2'}} EUR
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.totalPaymentsSinceDemandForPaymentPLN | number:'0.2-2'}} PLN<br/>
+          {{terminationContract.totalPaymentsSinceDemandForPaymentEUR | number:'0.2-2'}} EUR
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          Numer: {{terminationContract.invoiceNumberInitiatingDemandForPayment}}<br/>
+          Kwota: {{terminationContract.invoiceAmountInitiatingDemandForPayment | number:'0.2-2'}}<br/>
+          Saldo: {{terminationContract.invoiceBalanceInitiatingDemandForPayment | number:'0.2-2'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <span *ngIf="terminationContract.subjects != null && terminationContract.subjects.length > 0">
+            <a style="cursor: pointer" (click)="showSubjects(terminationContract.subjects, terminationContract.contractNumber)">
+              Zobacz ({{terminationContract.subjects.length}})
+            </a>
+          </span>
+          <span *ngIf="terminationContract.subjects == null || terminationContract.subjects.length == 0">Brak</span>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <button mat-icon-button (click)="showInvoices(terminationContract.formalDebtCollectionInvoices)" matTooltip="Zobacz">
+            <mat-icon class="material-icons">search</mat-icon>
+          </button>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" class="action-buttons-column" *ngIf="showActions">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openActivateDialog(terminationContract)">
+              Aktywuj umowę
+            </button>
+          </mat-menu>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <mat-action-row>
+      <button (click)="openTerminationDocuments(termination.attachmentRefs)" mat-raised-button color="primary" style="margin-left: 10px; margin-right: 16px;"
+              [disabled]="termination.attachmentRefs == null || termination.attachmentRefs.length == 0">
+        Zobacz wypowiedzenia
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

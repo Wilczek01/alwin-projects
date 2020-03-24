@@ -1,0 +1,1 @@
+ALTER TABLE declaration ADD COLUMN current_balance NUMERIC(18, 2);

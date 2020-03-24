@@ -1,0 +1,60 @@
+{
+  "notifications": [
+    {
+      "id": 1,
+      "issueId": 1,
+      "creationDate": 1511910000000,
+      "readDate": 1511996400000,
+      "message": "Powiadomienie nieodczytane -> odczytane nr 1",
+      "sender": {
+        "id": 4,
+        "active": true,
+        "login": "cmilosz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 4,
+          "firstName": "Czesław",
+          "lastName": "Miłosz",
+          "email": "cmilosz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 3,
+          "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+          "typeLabel": "Menedżer windykacji telefonicznej"
+        }
+      },
+      "readConfirmationRequired": true
+    },
+    {
+      "id": 3,
+      "issueId": 1,
+      "creationDate": 1511046000000,
+      "readDate": 1511996400000,
+      "message": "Powiadomienie odczytane nr 1",
+      "sender": {
+        "id": 4,
+        "active": true,
+        "login": "cmilosz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 4,
+          "firstName": "Czesław",
+          "lastName": "Miłosz",
+          "email": "cmilosz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 3,
+          "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+          "typeLabel": "Menedżer windykacji telefonicznej"
+        }
+      },
+      "readConfirmationRequired": true
+    }
+  ],
+  "allUnreadNotificationsCount": 0,
+  "allNotificationsCount": 2
+}

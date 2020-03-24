@@ -1,0 +1,4 @@
+ALTER SEQUENCE country_id_seq start 20000 restart 20100 MINVALUE 20000;
+ALTER SEQUENCE customer_id_seq start 20000 restart 20100 MINVALUE 20000;
+ALTER SEQUENCE company_id_seq start 20000 restart 20100 MINVALUE 20000;
+ALTER SEQUENCE person_id_seq start 20000 restart 20100 MINVALUE 20000;

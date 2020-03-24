@@ -1,0 +1,55 @@
+[
+  {
+    "id": 16,
+    "active": true,
+    "forceUpdatePassword": false,
+    "login": "aasynk",
+    "permission": null,
+    "parentOperator": {
+      "id": 4,
+      "active": true,
+      "forceUpdatePassword": true,
+      "login": "cmilosz",
+      "permission": {
+        "id": 4,
+        "allowedToExternallyPlanActivities": false,
+        "allowedToChangeActivityCharge": false,
+        "allowedToChangeActivityChargePercent": false,
+        "allowedToMarkOwnAttachmentDeleted": false,
+        "allowedToMarkOthersAttachmentsDeleted": false,
+        "allowedToTransferIssuesInternally": false,
+        "allowedToTransferIssuesExternally": false,
+        "allowedToExcludeIssue": false,
+        "allowedToSetCustomerOutOfService": false,
+        "allowedToTerminateIssue": false,
+        "allowedToExcludeInvoice": false,
+        "allowedToManageDemandsForPayment": true
+      },
+      "parentOperator": null,
+      "user": {
+        "id": 4,
+        "firstName": "Czesław",
+        "lastName": "Miłosz",
+        "email": "cmilosz@grapescode.pl",
+        "phoneNumber": null
+      },
+      "type": {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      }
+    },
+    "user": {
+      "id": 15,
+      "firstName": "Adam",
+      "lastName": "Asnyk",
+      "email": "aasnyk@grapescode.pl",
+      "phoneNumber": null
+    },
+    "type": {
+      "id": 13,
+      "typeName": "PHONE_DEBT_COLLECTOR_2",
+      "typeLabel": "Windykator telefoniczny sekcja 2"
+    }
+  }
+]

@@ -1,0 +1,98 @@
+<div class="to-left issue-header-assignment-icon">
+  <mat-icon mat-list-icon>assignment</mat-icon>
+</div>
+<div class="to-left issue-header issue-number">
+  <div>Zlecenie</div>
+  <div>{{issue.id}}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>Stan</b></div>
+  <div class="issue-state">{{issue.issueState.label}}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>Etykiety</b></div>
+  <div class="issue-tags">
+    <mat-icon class="material-icons" *ngFor="let tag of issue.tags" [style.color]="tag.color"
+              matTooltip="{{tag.name}}{{tag.description ? ' - ' + tag.description : ''}}">{{tag.tagIcon.name}}</mat-icon>
+  </div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>Nr klienta</b></div>
+  <div class="issue-external-company-id">{{issue.customer.company.extCompanyId | nullable}}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>Klient</b></div>
+  <div class="issue-company-short-name" matTooltip="{{issue.customer.company.shortName | nullable}}">{{issue.customer.company.shortName | nullable}}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>Typ</b></div>
+  <div class="issue-type">
+    <alwin-issue-type-icon [issueType]="issue.issueType"></alwin-issue-type-icon>
+  </div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header">
+  <div><b>DPD</b></div>
+  <div>{{issue.dpdStart}} - {{issue.dpdEstimated}}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header issue-progress">
+  <div><b>Czas trwania</b></div>
+  <div class="date-range">
+    <div>{{issue.startDate | date:'dd.MM.yyyy'}}</div>
+    <div>{{issue.expirationDate | date:'dd.MM.yyyy'}}</div>
+  </div>
+  <div>
+    <mat-progress-bar mode="determinate" value="{{issueProgress}}" id="issue-progress"></mat-progress-bar>
+  </div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header issue-priority">
+  <div><b>Priorytet</b></div>
+  <div>{{issue.priority.label }}</div>
+</div>
+<div class="to-left spacer"></div>
+<div class="to-left issue-header issue-clickable-header" [matMenuTriggerFor]="totalPaymentsMoreDetailsPanel">
+  <div><b>Spłacono</b></div>
+  <div class="to-left issue-total-payments-progress-pln" *ngIf="isTotalPaymentsCorrect(); else paymentsNotCorrect">
+    {{issue.totalPaymentsPLN | number:'0.2-2' | nullable}} PLN / {{issue.totalBalanceStartPLN | abs | number:'0.2-2' | nullable}} PLN
+    ({{determineIssuePaymentProgress()}}%)
+    <mat-progress-bar mode="determinate" [value]="determineIssuePaymentProgress()" id="issue-total-payment-progress"></mat-progress-bar>
+  </div>
+  <ng-template #paymentsNotCorrect>
+    <div class="to-left issue-total-payments-progress-pln"> Proszę sprawdzić kursy walut</div>
+  </ng-template>
+</div>
+<mat-menu #totalPaymentsMoreDetailsPanel="matMenu" class="alwin-notification-header">
+  <div class="total-payments-more-details-row">
+    <b class="details-row-name">Saldo początkowe:</b>
+    <span class="details-row-value">{{issue.balanceStartPLN | number:'0.2-2' | nullable}} PLN</span>
+    <span class="details-row-value">{{issue.balanceStartEUR | number:'0.2-2' | nullable}} EUR</span>
+  </div>
+  <div class="total-payments-more-details-row">
+    <b class="details-row-name">Saldo bieżące:</b>
+    <span class="details-row-value">{{issue.currentBalancePLN | number:'0.2-2' | nullable}} PLN</span>
+    <span class="details-row-value">{{issue.currentBalanceEUR | number:'0.2-2' | nullable}} EUR</span>
+  </div>
+  <div class="total-payments-more-details-row">
+    <b class="details-row-name">Suma wpłat:</b>
+    <span class="details-row-value">{{issue.paymentsPLN | number:'0.2-2' | nullable}} PLN</span>
+    <span class="details-row-value">{{issue.paymentsEUR | number:'0.2-2' | nullable}} EUR</span>
+  </div>
+  <div class="total-payments-more-details-row margin-top-10">
+    <b class="details-row-name">Data aktualizacji sald:</b>
+    <span class="details-row-value-balance-update-date">{{issue.balanceUpdateDate | date:'yyyy-MM-dd HH:mm:ss' | nullable}}</span>
+  </div>
+</mat-menu>
+
+
+<div class="to-right">
+  <alwin-issue-audit [issueId]="issue.id"></alwin-issue-audit>
+  <alwin-issue-termination-header [issueId]="issue.id" *ngIf="!readonly"></alwin-issue-termination-header>
+  <alwin-notification-header [issueId]="issue.id" [readonly]="readonly"></alwin-notification-header>
+</div>

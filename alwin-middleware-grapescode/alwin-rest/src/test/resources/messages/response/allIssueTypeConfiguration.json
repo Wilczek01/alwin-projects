@@ -1,0 +1,560 @@
+[
+  {
+    "id": 1,
+    "issueType": {
+      "id": 1,
+      "name": "PHONE_DEBT_COLLECTION_1",
+      "label": "Windykacja telefoniczna sekcja 1"
+    },
+    "duration": 14,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": true,
+    "dpdStart": 1,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 1,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1498860000000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 5,
+        "activityTypeId": 2,
+        "defaultDay": 3,
+        "version": 2,
+        "creatingDate": 1499637600000,
+        "defaultExecutionDate": 1355526000000
+      },
+      {
+        "id": 2,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 2,
+        "creatingDate": 1499119200000,
+        "defaultExecutionDate": 1355871600000
+      },
+      {
+        "id": 4,
+        "activityTypeId": 1,
+        "defaultDay": 10,
+        "version": 1,
+        "creatingDate": 1499032800000,
+        "defaultExecutionDate": 1356130800000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      },
+      {
+        "id": 2,
+        "typeName": "PHONE_DEBT_COLLECTOR",
+        "typeLabel": "Windykator telefoniczny"
+      },
+      {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      },
+      {
+        "id": 12,
+        "typeName": "PHONE_DEBT_COLLECTOR_1",
+        "typeLabel": "Windykator telefoniczny sekcja 1"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 2,
+    "issueType": {
+      "id": 2,
+      "name": "PHONE_DEBT_COLLECTION_2",
+      "label": "Windykacja telefoniczna sekcja 2"
+    },
+    "duration": 17,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": true,
+    "dpdStart": 16,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 6,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1499205600000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 7,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 1,
+        "creatingDate": 1499292000000,
+        "defaultExecutionDate": 1355871600000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      },
+      {
+        "id": 13,
+        "typeName": "PHONE_DEBT_COLLECTOR_2",
+        "typeLabel": "Windykator telefoniczny sekcja 2"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 3,
+    "issueType": {
+      "id": 3,
+      "name": "DIRECT_DEBT_COLLECTION",
+      "label": "Windykacja bezpośrednia"
+    },
+    "duration": 13,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 8,
+        "activityTypeId": 7,
+        "defaultDay": 2,
+        "version": 1,
+        "creatingDate": 1534197600000,
+        "defaultExecutionDate": 1355439600000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 4,
+    "issueType": {
+      "id": 4,
+      "name": "LAW_DEBT_COLLECTION_MOTION_TO_RELEASE_ITEM",
+      "label": "Windykacja prawna - pozew o wydanie przedmiotu"
+    },
+    "duration": 14,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 5,
+    "issueType": {
+      "id": 5,
+      "name": "SUBJECT_TRANSPORT",
+      "label": "Transport przedmiotu"
+    },
+    "duration": 15,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 6,
+    "issueType": {
+      "id": 6,
+      "name": "REALIZATION_OF_COLLATERAL",
+      "label": "Realizacja zabezpieczenia"
+    },
+    "duration": 16,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 7,
+    "issueType": {
+      "id": 7,
+      "name": "LAW_DEBT_COLLECTION_MOTION_TO_PAY",
+      "label": "Windykacja prawna - pozew o zapłatę"
+    },
+    "duration": 17,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 8,
+    "issueType": {
+      "id": 8,
+      "name": "RESTRUCTURING",
+      "label": "Restrukturyzacja"
+    },
+    "duration": 18,
+    "segment": {
+      "key": "A",
+      "label": "A"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 11,
+    "issueType": {
+      "id": 1,
+      "name": "PHONE_DEBT_COLLECTION_1",
+      "label": "Windykacja telefoniczna sekcja 1"
+    },
+    "duration": 9,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": true,
+    "dpdStart": 1,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 1,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1498860000000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 5,
+        "activityTypeId": 2,
+        "defaultDay": 3,
+        "version": 2,
+        "creatingDate": 1499637600000,
+        "defaultExecutionDate": 1355526000000
+      },
+      {
+        "id": 2,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 2,
+        "creatingDate": 1499119200000,
+        "defaultExecutionDate": 1355871600000
+      },
+      {
+        "id": 4,
+        "activityTypeId": 1,
+        "defaultDay": 10,
+        "version": 1,
+        "creatingDate": 1499032800000,
+        "defaultExecutionDate": 1356130800000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      },
+      {
+        "id": 2,
+        "typeName": "PHONE_DEBT_COLLECTOR",
+        "typeLabel": "Windykator telefoniczny"
+      },
+      {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      },
+      {
+        "id": 12,
+        "typeName": "PHONE_DEBT_COLLECTOR_1",
+        "typeLabel": "Windykator telefoniczny sekcja 1"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 12,
+    "issueType": {
+      "id": 2,
+      "name": "PHONE_DEBT_COLLECTION_2",
+      "label": "Windykacja telefoniczna sekcja 2"
+    },
+    "duration": 12,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": true,
+    "dpdStart": 11,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 6,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1499205600000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 7,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 1,
+        "creatingDate": 1499292000000,
+        "defaultExecutionDate": 1355871600000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      },
+      {
+        "id": 13,
+        "typeName": "PHONE_DEBT_COLLECTOR_2",
+        "typeLabel": "Windykator telefoniczny sekcja 2"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 13,
+    "issueType": {
+      "id": 3,
+      "name": "DIRECT_DEBT_COLLECTION",
+      "label": "Windykacja bezpośrednia"
+    },
+    "duration": 23,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [
+      {
+        "id": 8,
+        "activityTypeId": 7,
+        "defaultDay": 2,
+        "version": 1,
+        "creatingDate": 1534197600000,
+        "defaultExecutionDate": 1355439600000
+      }
+    ],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 14,
+    "issueType": {
+      "id": 4,
+      "name": "LAW_DEBT_COLLECTION_MOTION_TO_RELEASE_ITEM",
+      "label": "Windykacja prawna - pozew o wydanie przedmiotu"
+    },
+    "duration": 24,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 15,
+    "issueType": {
+      "id": 5,
+      "name": "SUBJECT_TRANSPORT",
+      "label": "Transport przedmiotu"
+    },
+    "duration": 25,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 16,
+    "issueType": {
+      "id": 6,
+      "name": "REALIZATION_OF_COLLATERAL",
+      "label": "Realizacja zabezpieczenia"
+    },
+    "duration": 26,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 17,
+    "issueType": {
+      "id": 7,
+      "name": "LAW_DEBT_COLLECTION_MOTION_TO_PAY",
+      "label": "Windykacja prawna - pozew o zapłatę"
+    },
+    "duration": 27,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  },
+  {
+    "id": 18,
+    "issueType": {
+      "id": 8,
+      "name": "RESTRUCTURING",
+      "label": "Restrukturyzacja"
+    },
+    "duration": 28,
+    "segment": {
+      "key": "B",
+      "label": "B"
+    },
+    "createAutomatically": false,
+    "dpdStart": 5,
+    "minBalanceStart": -100.00,
+    "defaultIssueActivity": [],
+    "operatorTypes": [
+      {
+        "id": 1,
+        "typeName": "ADMIN",
+        "typeLabel": "Administrator systemu"
+      }
+    ],
+    "includeDebtInvoicesDuringIssue": false
+  }
+]

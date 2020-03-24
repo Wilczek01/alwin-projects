@@ -1,0 +1,427 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 1,
+        "company": {
+          "id": 1,
+          "extCompanyId": 9999,
+          "companyName": "Nazwa Firmmy Sp. z o.o.",
+          "shortName": "Nazwa Firmmy",
+          "nip": "123456789",
+          "regon": "123456",
+          "krs": "98765432234",
+          "recipientName": "Mikołaj Rej",
+          "rating": "Q01",
+          "ratingDate": 1504216800000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1499637600000,
+          "persons": [],
+          "pkdCode": "20.12.Z",
+          "pkdName": "Produkcja barwników i pigmentów"
+        },
+        "person": {
+          "id": 1,
+          "personId": 8888,
+          "pesel": "88010101234",
+          "firstName": "Jan",
+          "lastName": "Kowalsky",
+          "representative": true,
+          "address": "ul. Testowa 4/1",
+          "maritalStatus": {
+            "key": 0,
+            "label": "Nieznany"
+          },
+          "idDocCountry": "PL",
+          "idDocNumber": "QWE123456",
+          "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+          "idDocSignDate": 1271973600000,
+          "politician": false,
+          "jobFunction": "Konserwator nawierzchni",
+          "birthDate": 406335600000,
+          "realBeneficiary": false,
+          "idDocType": {
+            "key": 1,
+            "label": "Dowód osobisty"
+          },
+          "country": "Polska",
+          "contactPerson": false
+        },
+        "accountManager": {
+          "id": 12,
+          "user": {
+            "id": 12,
+            "firstName": "Maria",
+            "lastName": "Konopnicka"
+          }
+        }
+      },
+      "contract": {
+        "id": 1,
+        "extContractId": "TEST 12/34/56",
+        "customer": {
+          "id": 1,
+          "company": {
+            "id": 1,
+            "extCompanyId": 9999,
+            "companyName": "Nazwa Firmmy Sp. z o.o.",
+            "shortName": "Nazwa Firmmy",
+            "nip": "123456789",
+            "regon": "123456",
+            "krs": "98765432234",
+            "recipientName": "Mikołaj Rej",
+            "rating": "Q01",
+            "ratingDate": 1504216800000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1499637600000,
+            "persons": [],
+            "pkdCode": "20.12.Z",
+            "pkdName": "Produkcja barwników i pigmentów"
+          },
+          "person": {
+            "id": 1,
+            "personId": 8888,
+            "pesel": "88010101234",
+            "firstName": "Jan",
+            "lastName": "Kowalsky",
+            "representative": true,
+            "address": "ul. Testowa 4/1",
+            "maritalStatus": {
+              "key": 0,
+              "label": "Nieznany"
+            },
+            "idDocCountry": "PL",
+            "idDocNumber": "QWE123456",
+            "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+            "idDocSignDate": 1271973600000,
+            "politician": false,
+            "jobFunction": "Konserwator nawierzchni",
+            "birthDate": 406335600000,
+            "realBeneficiary": false,
+            "idDocType": {
+              "key": 1,
+              "label": "Dowód osobisty"
+            },
+            "country": "Polska",
+            "contactPerson": false
+          },
+          "accountManager": {
+            "id": 12,
+            "user": {
+              "id": 12,
+              "firstName": "Maria",
+              "lastName": "Konopnicka"
+            }
+          }
+        }
+      },
+      "startDate": 1499637600000,
+      "expirationDate": 1502316000000,
+      "terminationCause": "testowy powód 1",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 290.12,
+      "balanceStartPLN": 65432.44,
+      "paymentsPLN": 100000.23,
+      "currentBalancePLN": 234642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 1230.12,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 70352.92,
+      "totalCurrentBalancePLN": 234642.67,
+      "totalPaymentsPLN": 100000.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1499637600000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [
+        {
+          "name": "Koszyk 1",
+          "color": "#333333",
+          "predefined": false,
+          "type": "CUSTOM",
+          "description": "Zlecenie koszyka 1",
+          "tagIcon": {
+            "id": 1,
+            "name": "bookmark"
+          },
+          "id": 1
+        },
+        {
+          "name": "Koszyk 2",
+          "color": "#999999",
+          "predefined": false,
+          "type": "CUSTOM",
+          "description": "Zlecenie koszyka 2",
+          "tagIcon": {
+            "id": 1,
+            "name": "bookmark"
+          },
+          "id": 2
+        }
+      ],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    },
+    {
+      "id": 13,
+      "assignee": null,
+      "customer": {
+        "id": 4,
+        "company": {
+          "id": 2,
+          "extCompanyId": 9998,
+          "companyName": "Najlepsza Firma Sp. z o.o.",
+          "shortName": "Najlepsza Firma",
+          "nip": "8866123123",
+          "regon": "989867612",
+          "krs": "876543232324",
+          "recipientName": "Krzysztof Kolumb",
+          "rating": "W02",
+          "ratingDate": 1477346400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [
+            {
+              "id": 1,
+              "personId": 8888,
+              "pesel": "88010101234",
+              "firstName": "Jan",
+              "lastName": "Kowalsky",
+              "representative": true,
+              "address": "ul. Testowa 4/1",
+              "maritalStatus": {
+                "key": 0,
+                "label": "Nieznany"
+              },
+              "idDocCountry": "PL",
+              "idDocNumber": "QWE123456",
+              "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+              "idDocSignDate": 1271973600000,
+              "politician": false,
+              "jobFunction": "Konserwator nawierzchni",
+              "birthDate": 406335600000,
+              "realBeneficiary": false,
+              "idDocType": {
+                "key": 1,
+                "label": "Dowód osobisty"
+              },
+              "country": "Polska",
+              "contactPerson": false
+            },
+            {
+              "id": 2,
+              "personId": 8889,
+              "pesel": "81011101234",
+              "firstName": "Zuzana",
+              "lastName": "Fialová",
+              "representative": false,
+              "address": "Banská Bystrica, Sládkovičova 54",
+              "maritalStatus": {
+                "key": 1,
+                "label": "Wolny/wolna"
+              },
+              "idDocCountry": "SK",
+              "idDocNumber": "SAA12456",
+              "idDocSignedBy": "Rodne číslo",
+              "idDocSignDate": 1297378800000,
+              "politician": false,
+              "jobFunction": "Všeobecná zdravotná",
+              "birthDate": 348102000000,
+              "realBeneficiary": false,
+              "idDocType": {
+                "key": 1,
+                "label": "Dowód osobisty"
+              },
+              "country": "Słowacja",
+              "contactPerson": true
+            }
+          ],
+          "pkdCode": "01.11.Z",
+          "pkdName": "Uprawa zbóż, roślin strączkowych i roślin oleistych na nasiona, z wyłączeniem ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 11,
+        "extContractId": "TEST CONTRACT 11",
+        "customer": {
+          "id": 18,
+          "company": {
+            "id": 16,
+            "extCompanyId": 9984,
+            "companyName": "Firma 9984",
+            "shortName": "Firma9984",
+            "nip": "4669628820",
+            "regon": "071429334",
+            "krs": "KRS 9984",
+            "recipientName": "Odbiorca firma 9984",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1688940000000,
+      "expirationDate": 1723240800000,
+      "terminationCause": "testowy powód 13",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 282.00,
+      "balanceStartPLN": -44432.44,
+      "paymentsPLN": 667654.23,
+      "currentBalancePLN": -554642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 44432.44,
+      "totalCurrentBalancePLN": 554642.67,
+      "totalPaymentsPLN": 667654.23,
+      "excludedFromStats": true,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1688940000000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 402
+    },
+    {
+      "id": 19,
+      "assignee": null,
+      "customer": {
+        "id": 3,
+        "company": {
+          "id": 1,
+          "extCompanyId": 9999,
+          "companyName": "Nazwa Firmmy Sp. z o.o.",
+          "shortName": "Nazwa Firmmy",
+          "nip": "123456789",
+          "regon": "123456",
+          "krs": "98765432234",
+          "recipientName": "Mikołaj Rej",
+          "rating": "Q01",
+          "ratingDate": 1504216800000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1499637600000,
+          "persons": [],
+          "pkdCode": "20.12.Z",
+          "pkdName": "Produkcja barwników i pigmentów"
+        },
+        "person": {
+          "id": 1,
+          "personId": 8888,
+          "pesel": "88010101234",
+          "firstName": "Jan",
+          "lastName": "Kowalsky",
+          "representative": true,
+          "address": "ul. Testowa 4/1",
+          "maritalStatus": {
+            "key": 0,
+            "label": "Nieznany"
+          },
+          "idDocCountry": "PL",
+          "idDocNumber": "QWE123456",
+          "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+          "idDocSignDate": 1271973600000,
+          "politician": false,
+          "jobFunction": "Konserwator nawierzchni",
+          "birthDate": 406335600000,
+          "realBeneficiary": false,
+          "idDocType": {
+            "key": 1,
+            "label": "Dowód osobisty"
+          },
+          "country": "Polska",
+          "contactPerson": false
+        },
+        "accountManager": null
+      },
+      "contract": null,
+      "startDate": 1688940000000,
+      "expirationDate": 1723240800000,
+      "terminationCause": "to zlecenie zostało zakończone - status DONE",
+      "terminationOperator": {
+        "id": 3,
+        "user": {
+          "id": 3,
+          "firstName": "Cyprian Kamil",
+          "lastName": "Norwid"
+        }
+      },
+      "terminationDate": 1689372000000,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "DONE",
+        "label": "Zakonczone"
+      },
+      "rpbPLN": 333432.12,
+      "balanceStartPLN": 44432.44,
+      "paymentsPLN": 667654.23,
+      "currentBalancePLN": 554642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 44432.44,
+      "totalCurrentBalancePLN": 554642.67,
+      "totalPaymentsPLN": 667654.23,
+      "excludedFromStats": true,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1688940000000,
+      "priority": {
+        "key": "HIGH",
+        "label": "Wysoki"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 402
+    }
+  ],
+  "totalValues": 4
+}

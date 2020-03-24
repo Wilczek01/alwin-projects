@@ -1,0 +1,10 @@
+{
+  "scheduler_configuration": [
+    {
+      "id": 1,
+      "batch_process": "BASE_SCHEDULE_TASKS",
+      "update_date": "2018-05-22 12:00:00",
+      "hour": 3
+    }
+  ]
+}

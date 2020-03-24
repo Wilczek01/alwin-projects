@@ -1,0 +1,44 @@
+<div *ngIf="customer != null && customer.company != null">
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>person</mat-icon>
+      <span mat-line id="customer-name"><b>Klient: {{customer.company.shortName | nullable}}</b></span>
+    </mat-list-item>
+    <mat-divider class="customer-data-list-item"></mat-divider>
+
+    <mat-list-item class="customer-data-list-item">
+      <span mat-line><b>PKD:</b> ({{customer.company.pkdCode | nullable}}) {{customer.company.pkdName | nullable}}</span>
+    </mat-list-item>
+    <mat-list-item class="customer-data-list-item">
+      <span mat-line>
+        <b>Nr klienta:</b> {{customer.company.extCompanyId | nullable}} |
+        <b> NIP:</b> {{customer.company.nip | nullable}} |
+        <b> Regon:</b> {{customer.company.regon | nullable}} |
+        <b> KRS:</b> {{customer.company.krs | nullable}} |
+        <b> Forma prawna:</b> {{customer.company.legalForm | nullable}}
+      </span>
+    </mat-list-item>
+    <mat-list-item class="customer-data-list-item">
+      <span mat-line><b>Nazwa pełna:</b> {{customer.company.companyName | nullable}}</span>
+    </mat-list-item>
+    <mat-list-item class="customer-data-list-item">
+      <span mat-line class="account-manager-span">
+        <b>Opiekun:</b>
+        <mat-chip class="account-manager-chip">
+          {{customer.accountManager != null ? (customer.accountManager.user.firstName | concatenateText: [customer.accountManager.user.lastName]) : 'brak'}}
+          <button *ngIf="isPhoneDebtCollectorManager()" type="button" class="mdl-chip__action" id="update-account-manager"
+                  (click)="openAssignment(customer.accountManager)">
+            <i class="material-icons">edit</i>
+          </button>
+        </mat-chip>
+      </span>
+    </mat-list-item>
+    <mat-divider class="customer-data-list-item"></mat-divider>
+  </mat-list>
+</div>
+
+<div *ngIf="customer == null || customer.company == null">
+  <b>Brak danych klienta</b>
+</div>
+
+<alwin-customer-data-tabs class="customer-data-list-item" [customer]="customer" [readonly]="readonly" [issueId]="issue.id"></alwin-customer-data-tabs>

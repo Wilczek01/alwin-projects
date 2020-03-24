@@ -1,0 +1,5 @@
+{
+  "terminationCause": "termination cause 1",
+  "excludedFromStats": true,
+  "exclusionFromStatsCause": "exclusion from stats cause 1"
+}

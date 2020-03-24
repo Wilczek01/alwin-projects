@@ -1,0 +1,37 @@
+{
+  "formal_debt_collection_customer_out_of_service": [
+    {
+      "id": 1,
+      "customer_id": 1,
+      "start_date": "2017-07-11 00:00:00.000000",
+      "end_date": "2017-07-20 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "reason": "blocking reason 1",
+      "remark": "blocking remark 1",
+      "reason_type": "OTHER",
+      "demand_for_payment_type": "FIRST"
+    },
+    {
+      "id": 2,
+      "customer_id": 1,
+      "start_date": "2017-07-15 00:00:00.000000",
+      "end_date": "2017-07-23 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "reason": "blocking reason 2",
+      "remark": "blocking remark 2",
+      "reason_type": "CLIENT_COMPLAINTS",
+      "demand_for_payment_type": "SECOND"
+    },
+    {
+      "id": 3,
+      "customer_id": 1,
+      "start_date": "2017-07-25 00:00:00.000000",
+      "end_date": "2017-07-27 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "reason": "blocking reason 3",
+      "remark": "blocking remark 3",
+      "reason_type": "CUSTOMER_SERVICE",
+      "demand_for_payment_type": "FIRST"
+    }
+  ]
+}

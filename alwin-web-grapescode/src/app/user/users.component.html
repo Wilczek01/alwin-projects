@@ -1,0 +1,59 @@
+<div class="mdl-grid padding-0">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col width-100-percent margin-0">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!dataSource.loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <div>
+        <div style="float: left;">
+          <mat-list>
+            <mat-list-item class="alwin-mat-list-title">
+              <mat-icon mat-list-icon>supervisor_account</mat-icon>
+              <h4 mat-line>Użytkownicy</h4>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div style="float: right;">
+          <button mat-mini-fab color="primary" (click)="createNewUser()" id="add-user-button">
+            <mat-icon class="md-24">add</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div style="clear: both;">
+        <div [style.display]="(dataSource.max == 0 && !dataSource.loading) ? '' : 'none'">
+          Nie znaleziono żadnych użytkowników.
+        </div>
+      </div>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" [hidden]="dataSource.loading" class="zebra-rows-panel">
+
+      <ng-container cdkColumnDef="user">
+        <mat-header-cell *cdkHeaderCellDef>
+          <div class="width-100-percent">
+            <div style="width: 35%; float: left;">Imię i Nazwisko</div>
+            <div style="width: 30%; float: left;">Adres email</div>
+            <div style="width: 30%; float: left;">Numer telefonu</div>
+            <div style="width: 5%; float: left;"></div>
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          <alwin-full-user [user]="row"></alwin-full-user>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;" class="alwin-mat-row-one-column">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource.max == 0 || dataSource.loading">
+    </mat-paginator>
+  </div>
+</div>

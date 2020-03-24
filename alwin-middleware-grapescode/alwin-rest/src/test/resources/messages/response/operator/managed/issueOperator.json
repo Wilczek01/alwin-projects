@@ -1,0 +1,122 @@
+[
+  {
+    "id": 2,
+    "active": true,
+    "forceUpdatePassword": false,
+    "login": "jslowacki",
+    "permission": {
+      "id": 2,
+      "allowedToExternallyPlanActivities": true,
+      "allowedToChangeActivityCharge": true,
+      "allowedToChangeActivityChargePercent": true,
+      "allowedToMarkOwnAttachmentDeleted": true,
+      "allowedToMarkOthersAttachmentsDeleted": true,
+      "allowedToTransferIssuesInternally": true,
+      "allowedToTransferIssuesExternally": true,
+      "allowedToExcludeIssue": true,
+      "allowedToSetCustomerOutOfService": true,
+      "allowedToTerminateIssue": true,
+      "allowedToExcludeInvoice": true,
+      "allowedToManageDemandsForPayment": true
+    },
+    "parentOperator": {
+      "id": 4,
+      "active": true,
+      "forceUpdatePassword": true,
+      "login": "cmilosz",
+      "permission": {
+        "id": 4,
+        "allowedToExternallyPlanActivities": false,
+        "allowedToChangeActivityCharge": false,
+        "allowedToChangeActivityChargePercent": false,
+        "allowedToMarkOwnAttachmentDeleted": false,
+        "allowedToMarkOthersAttachmentsDeleted": false,
+        "allowedToTransferIssuesInternally": false,
+        "allowedToTransferIssuesExternally": false,
+        "allowedToExcludeIssue": false,
+        "allowedToSetCustomerOutOfService": false,
+        "allowedToTerminateIssue": false,
+        "allowedToExcludeInvoice": false,
+        "allowedToManageDemandsForPayment": true
+      },
+      "parentOperator": null,
+      "user": {
+        "id": 4,
+        "firstName": "Czesław",
+        "lastName": "Miłosz",
+        "email": "cmilosz@grapescode.pl",
+        "phoneNumber": null
+      },
+      "type": {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      }
+    },
+    "user": {
+      "id": 2,
+      "firstName": "Juliusz",
+      "lastName": "Słowacki",
+      "email": "jslowacki@grapescode.pl",
+      "phoneNumber": "0048123098567"
+    },
+    "type": {
+      "id": 2,
+      "typeName": "PHONE_DEBT_COLLECTOR",
+      "typeLabel": "Windykator telefoniczny"
+    }
+  },
+  {
+    "id": 15,
+    "active": true,
+    "forceUpdatePassword": false,
+    "login": "lstaff",
+    "permission": null,
+    "parentOperator": {
+      "id": 4,
+      "active": true,
+      "forceUpdatePassword": true,
+      "login": "cmilosz",
+      "permission": {
+        "id": 4,
+        "allowedToExternallyPlanActivities": false,
+        "allowedToChangeActivityCharge": false,
+        "allowedToChangeActivityChargePercent": false,
+        "allowedToMarkOwnAttachmentDeleted": false,
+        "allowedToMarkOthersAttachmentsDeleted": false,
+        "allowedToTransferIssuesInternally": false,
+        "allowedToTransferIssuesExternally": false,
+        "allowedToExcludeIssue": false,
+        "allowedToSetCustomerOutOfService": false,
+        "allowedToTerminateIssue": false,
+        "allowedToExcludeInvoice": false,
+        "allowedToManageDemandsForPayment": true
+      },
+      "parentOperator": null,
+      "user": {
+        "id": 4,
+        "firstName": "Czesław",
+        "lastName": "Miłosz",
+        "email": "cmilosz@grapescode.pl",
+        "phoneNumber": null
+      },
+      "type": {
+        "id": 3,
+        "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+        "typeLabel": "Menedżer windykacji telefonicznej"
+      }
+    },
+    "user": {
+      "id": 14,
+      "firstName": "Leopold",
+      "lastName": "Staff",
+      "email": "lstaff@grapescode.pl",
+      "phoneNumber": null
+    },
+    "type": {
+      "id": 12,
+      "typeName": "PHONE_DEBT_COLLECTOR_1",
+      "typeLabel": "Windykator telefoniczny sekcja 1"
+    }
+  }
+]

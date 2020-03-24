@@ -1,0 +1,40 @@
+{
+  "scheduler_execution": [
+    {
+      "id": 20101,
+      "start_date": "2018-05-06 01:00:00",
+      "end_date": "2018-05-06 06:00:00",
+      "type": "GENERATE_ISSUES",
+      "manual": false
+    },
+    {
+      "id": 20103,
+      "start_date": "2018-05-07 06:00:00",
+      "end_date": "2018-05-07 06:05:00",
+      "state": "unknown error occurred",
+      "type": "FIND_UNRESOLVED_ISSUES_AND_SEND_REPORT_EMAIL",
+      "manual": false
+    },
+    {
+      "id": 20102,
+      "start_date": "2018-05-06 12:00:00",
+      "end_date": "2018-05-06 13:00:00",
+      "type": "UPDATE_COMPANY_DATA",
+      "manual": true
+    },
+    {
+      "id": 20104,
+      "start_date": "2018-05-09 05:00:00",
+      "end_date": "2018-05-09 07:35:40",
+      "state": "To zadanie wykonało się z bardzo długim komentarzem, np. została podana jakaś bardzo długa nazwa wyjątku: javax.resource.ResourceException: Unable to get managed connection",
+      "type": "UPDATE_ISSUES_BALANCE",
+      "manual": true
+    },
+    {
+      "id": 20106,
+      "start_date": "2018-05-09 05:15:00",
+      "type": "UPDATE_COMPANIES_INVOLVEMENT",
+      "manual": false
+    }
+  ]
+}

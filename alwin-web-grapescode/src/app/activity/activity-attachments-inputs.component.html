@@ -1,0 +1,25 @@
+<div *ngIf="isFieldVisitActivity()" alwinProvideParentFormGroup>
+  <h6>Załączniki</h6>
+
+  <div class="file-upload" *ngIf="!readOnly">
+    <span mat-line id="customer-name">
+    <input type="file" accept="image/*" (change)="selectFile($event)" multiple>
+    </span>
+  </div>
+  <p *ngFor="let file of selectedFiles">
+    <mat-icon class="md-24" aria-label="Załącznik">image</mat-icon>
+    {{file.name}}
+  </p>
+  <div *ngFor="let property of activity.activityDetails;">
+    <div *ngIf="isKeyOfPhotoAttachment(property)">
+      <a *ngIf="property.value!=undefined"
+         href="{{property.value}}"
+         matTooltip="Załącznik" target="_blank" class="icon-link mat-icon-button" name="photoAttachment">
+        <mat-icon class="md-24" aria-label="Załącznik">image</mat-icon>
+        {{property.value}}
+      </a>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+

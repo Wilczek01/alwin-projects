@@ -1,0 +1,8 @@
+{
+  "username": "Wisława Szymborska",
+  "role": {
+    "id": 1,
+    "typeName": "PHONE_DEBT_COLLECTOR",
+    "typeLabel": "Windykator telefoniczny"
+  }
+}

@@ -1,0 +1,17 @@
+INSERT INTO TAG_ICON (name) VALUES
+  ('bookmark'),
+  ('contact_support'),
+  ('date_range'),
+  ('description'),
+  ('euro_symbol'),
+  ('face'),
+  ('grade'),
+  ('hourglass_full'),
+  ('lock'),
+  ('info'),
+  ('pan_tool'),
+  ('warning'),
+  ('ring_volume'),
+  ('mail'),
+  ('forward'),
+  ('redo');

@@ -1,0 +1,79 @@
+{
+  "values": [
+    {
+      "id": 3,
+      "firstName": "Cyprian Kamil",
+      "lastName": "Norwid",
+      "email": "cknorwid@grapescode.pl",
+      "phoneNumber": null,
+      "operators": [
+        {
+          "id": 3,
+          "login": "cknorwid",
+          "active": true,
+          "permission": {
+            "id": 3,
+            "allowedToExternallyPlanActivities": false,
+            "allowedToChangeActivityCharge": false,
+            "allowedToChangeActivityChargePercent": false,
+            "allowedToMarkOwnAttachmentDeleted": false,
+            "allowedToMarkOthersAttachmentsDeleted": false,
+            "allowedToTransferIssuesInternally": false,
+            "allowedToTransferIssuesExternally": false,
+            "allowedToExcludeIssue": false,
+            "allowedToSetCustomerOutOfService": false,
+            "allowedToTerminateIssue": false,
+            "allowedToExcludeInvoice": false,
+            "allowedToManageDemandsForPayment": false
+          },
+          "parentOperator": null,
+          "type": {
+            "id": 2,
+            "typeName": "PHONE_DEBT_COLLECTOR",
+            "typeLabel": "Windykator telefoniczny"
+          }
+        }
+      ],
+      "updateDate": 1499637600000,
+      "creationDate": 1499637600000
+    },
+    {
+      "id": 4,
+      "firstName": "Czesław",
+      "lastName": "Miłosz",
+      "email": "cmilosz@grapescode.pl",
+      "phoneNumber": null,
+      "operators": [
+        {
+          "id": 4,
+          "login": "cmilosz",
+          "active": true,
+          "permission": {
+            "id": 4,
+            "allowedToExternallyPlanActivities": false,
+            "allowedToChangeActivityCharge": false,
+            "allowedToChangeActivityChargePercent": false,
+            "allowedToMarkOwnAttachmentDeleted": false,
+            "allowedToMarkOthersAttachmentsDeleted": false,
+            "allowedToTransferIssuesInternally": false,
+            "allowedToTransferIssuesExternally": false,
+            "allowedToExcludeIssue": false,
+            "allowedToSetCustomerOutOfService": false,
+            "allowedToTerminateIssue": false,
+            "allowedToExcludeInvoice": false,
+            "allowedToManageDemandsForPayment": true
+          },
+          "parentOperator": null,
+          "type": {
+            "id": 3,
+            "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+            "typeLabel": "Menedżer windykacji telefonicznej"
+          }
+        }
+      ],
+      "updateDate": 1499637600000,
+      "creationDate": 1499637600000
+    }
+  ],
+  "totalValues": 15
+}

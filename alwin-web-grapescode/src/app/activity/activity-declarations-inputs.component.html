@@ -1,0 +1,57 @@
+<div *ngIf="activity.activityType !== undefined && activity.activityType.mayHaveDeclaration" alwinProvideParentFormGroup>
+
+  <h6>Deklaracje</h6>
+  <button *ngIf="!readOnly" mat-button type="button" style="margin: 0 auto; width: 100%;" (click)="addDeclaration()" id="add-declaration-to-activity">
+    Dodaj deklarację spłaty
+  </button>
+
+  <mat-tab-group>
+    <mat-tab
+      label="{{declarationsForm.at(i).get('declaredPaymentDate').value == null ? 'Nowa deklaracja ' + (i+1) : 'Deklaracja ' + (declarationsForm.at(i).get('declaredPaymentDate').value | date:'dd.MM.yyyy')}}"
+             *ngFor="let delcarationVar of declarationsForm.controls; let i = index">
+      <div [formGroup]="delcarationVar">
+
+        <div class="declaration-title">
+          <span style="float: left;">Deklaracja</span>
+          <button mat-icon-button style="float: right; color: black;" (click)="removeDeclaration(i)" type="button" matTooltip="Usuń deklarację" color="primary" [hidden]="readOnly">
+            <mat-icon class="material-icons">delete</mat-icon>
+          </button>
+          <div style="clear: both;"></div>
+        </div>
+
+        <mat-form-field [hidden]="declarationsForm.at(i).get('currentBalancePLN').value == null">
+          <input matInput placeholder="Saldo w momencie tworzenia deklaracji" formControlName="currentBalancePLN"
+                 name="currentBalancePLN" readonly>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="declarationDatePicker" formControlName="declarationDate" placeholder="Data deklaracji"
+                 name="declarationDatePicker" required [min]="startOfPreviousWorkingDay" [readonly]="readOnly">
+          <mat-datepicker-toggle matSuffix [for]="declarationDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #declarationDatePicker [disabled]="readOnly"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="declaredPaymentDatePicker" formControlName="declaredPaymentDate" placeholder="Zadeklarowana data płatności"
+                 name="declaredPaymentDatePicker" required [readonly]="readOnly">
+          <mat-datepicker-toggle matSuffix [for]="declaredPaymentDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #declaredPaymentDatePicker [disabled]="readOnly"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Deklarowana kwota płatności PLN" formControlName="declaredPaymentAmountPLN" name="declaredPaymentAmountPLN" type="number" [readonly]="readOnly">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Deklarowana kwota płatności EUR" formControlName="declaredPaymentAmountEUR" name="declaredPaymentAmountEUR" type="number" [readonly]="readOnly">
+        </mat-form-field>
+
+        <mat-checkbox color="primary" formControlName="monitored" name="monitored" id="monitored" class="mat-form-field selection-separator" [disabled]="readOnly">
+          Monitoruj deklarację
+        </mat-checkbox>
+
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

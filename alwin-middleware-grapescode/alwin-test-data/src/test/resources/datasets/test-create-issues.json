@@ -1,0 +1,244 @@
+{
+  "activity_type": [
+    {
+      "id": 1,
+      "name": "Telefon wychodzący",
+      "key": "OUTGOING_PHONE_CALL",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": true,
+      "specific": true,
+      "can_be_planned": true,
+      "customer_contact": true
+    },
+    {
+      "id": 2,
+      "name": "Wezwanie do zapłaty (podstawowe)",
+      "key": "FIRST_DEMAND_PAYMENT",
+      "may_be_automated": true,
+      "charge_min": 50.00,
+      "charge_max": 203.33,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 3,
+      "name": "Wezwanie do zapłaty (ostateczne)",
+      "key": "LAST_DEMAND_PAYMENT",
+      "may_be_automated": true,
+      "charge_min": 150.33,
+      "charge_max": 100.99,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 4,
+      "name": "Wiadomość SMS wychodząca",
+      "key": "OUTGOING_SMS",
+      "may_be_automated": true,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": true,
+      "customer_contact": true
+    },
+    {
+      "id": 5,
+      "name": "Telefon przychodzący",
+      "key": "INCOMING_PHONE_CALL",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": true,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": true
+    },
+    {
+      "id": 6,
+      "name": "Komentarz",
+      "key": "COMMENT",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 7,
+      "name": "Wizyta terenowa",
+      "key": "FIELD_VISIT",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": true,
+      "customer_contact": false
+    },
+    {
+      "id": 8,
+      "name": "Wypowiedzenie warunkowe umowy",
+      "key": "CONTRACT_TERMINATION",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 9,
+      "name": "Wezwanie do zwrotu przedmiotu",
+      "key": "RETURN_SUBJECT_DEMAND",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 10,
+      "name": "Podejrzenie fraudu",
+      "key": "FRAUD_SUSPECTED",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 11,
+      "name": "Odbiór przedmiotu leasingu",
+      "key": "SUBJECT_COLLECTED",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 12,
+      "name": "Potwierdzenie wpłaty klienta",
+      "key": "PAYMENT_COLLECTED_CONFIRMATION",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    }
+  ],
+  "issue_type": [
+    {
+      "id": 1,
+      "name": "PHONE_DEBT_COLLECTION_1",
+      "label": "Windykacja telefoniczna sekcja 1"
+    },
+    {
+      "id": 2,
+      "name": "PHONE_DEBT_COLLECTION_2",
+      "label": "Windykacja telefoniczna sekcja 2"
+    },
+    {
+      "id": 3,
+      "name": "DIRECT_DEBT_COLLECTION",
+      "label": "Windykacja bezpośrednia"
+    }
+  ],
+  "default_issue_activity": [
+    {
+      "id": 1,
+      "issue_type_id": 1,
+      "activity_type_id": 1,
+      "default_day": 1,
+      "version": 1,
+      "creating_date": "2017-07-01 00:00:00.000000"
+    },
+    {
+      "id": 2,
+      "issue_type_id": 1,
+      "activity_type_id": 3,
+      "default_day": 7,
+      "version": 1,
+      "creating_date": "2017-07-04 00:00:00.000000"
+    },
+    {
+      "id": 3,
+      "issue_type_id": 1,
+      "activity_type_id": 2,
+      "default_day": 2,
+      "version": 1,
+      "creating_date": "2017-07-02 00:00:00.000000"
+    },
+    {
+      "id": 4,
+      "issue_type_id": 1,
+      "activity_type_id": 1,
+      "default_day": 10,
+      "version": 1,
+      "creating_date": "2017-07-03 00:00:00.000000"
+    },
+    {
+      "id": 5,
+      "issue_type_id": 1,
+      "activity_type_id": 2,
+      "default_day": 3,
+      "version": 2,
+      "creating_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 6,
+      "issue_type_id": 2,
+      "activity_type_id": 1,
+      "default_day": 1,
+      "version": 1,
+      "creating_date": "2017-07-01 00:00:00.000000"
+    },
+    {
+      "id": 7,
+      "issue_type_id": 2,
+      "activity_type_id": 3,
+      "default_day": 7,
+      "version": 1,
+      "creating_date": "2017-07-04 00:00:00.000000"
+    }
+  ],
+  "invoice": [
+    {
+      "id": 4,
+      "last_payment_date": "2015-11-13 00:00:00.000000",
+      "net_amount": 300.00,
+      "gross_amount": 369.00,
+      "number": "Invoice 1",
+      "currency": "PLN",
+      "current_balance": -99234.35,
+      "paid": 2323.93,
+      "contract_number": "TEST 12/34/56",
+      "type_id": 5,
+      "due_date": "2015-11-10 00:00:00.000000",
+      "correction": false
+    },
+    {
+      "id": 29,
+      "net_amount": 290.00,
+      "gross_amount": 356.70,
+      "number": "000029/12/2015/KF",
+      "currency": "PLN",
+      "current_balance": 0,
+      "paid": 0,
+      "contract_number": "TEST 12/34/56",
+      "type_id": 5,
+      "due_date": "2015-10-29 00:00:00.000000",
+      "correction": true,
+      "parent_id": 4,
+      "correction_order": 1
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "invoices": {
+    "values": [
+      {
+        "id": 1,
+        "lastPaymentDate": 1499724000000,
+        "netAmount": 300.00,
+        "grossAmount": 369.00,
+        "number": "Invoice 1",
+        "currency": "PLN",
+        "currentBalance": -99234.35,
+        "paid": 134.35,
+        "contractNumber": "TEST 12/34/56",
+        "typeId": 5,
+        "dueDate": 1499637600000,
+        "typeLabel": "Oplata dodatkowa",
+        "excluded": false,
+        "dpd": 2559,
+        "correction": false,
+        "corrections": null,
+        "correctionOrder": null,
+        "issueSubject": false,
+        "issueDate": null
+      },
+      {
+        "id": 2,
+        "lastPaymentDate": 1499724000000,
+        "netAmount": 375.00,
+        "grossAmount": 461.25,
+        "number": "Invoice 2",
+        "currency": "PLN",
+        "currentBalance": -100.00,
+        "paid": 0.00,
+        "contractNumber": "TEST 20/43/12",
+        "typeId": 5,
+        "dueDate": 1499637600000,
+        "typeLabel": "Oplata dodatkowa",
+        "excluded": false,
+        "dpd": 2559,
+        "correction": false,
+        "corrections": null,
+        "correctionOrder": null,
+        "issueSubject": false,
+        "issueDate": null
+      }
+    ],
+    "totalValues": 2
+  },
+  "balance": -99334.35
+}

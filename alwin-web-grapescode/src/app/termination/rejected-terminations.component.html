@@ -1,0 +1,185 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!dataSource.loading && !loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <form (ngSubmit)="searchForm.form.valid && findContractTerminations()" class="search-form" #searchForm="ngForm">
+      <div>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Wyszukiwarka
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div>
+            <div class="to-left">
+              <div>
+                <div>Data wypowiedzenia</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input matInput [matDatepicker]="startTerminationDatePicker" [(ngModel)]="startTerminationDate" placeholder="Od" name="startTerminationDate">
+                  <mat-datepicker-toggle matSuffix [for]="startTerminationDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #startTerminationDatePicker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input matInput [matDatepicker]="endTerminationDatePicker" [(ngModel)]="endTerminationDate" placeholder="Do" name="endTerminationDate">
+                  <mat-datepicker-toggle matSuffix [for]="endTerminationDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #endTerminationDatePicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Data wskazania do zapłaty</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input matInput [matDatepicker]="startDueDateInDemandForPaymentPicker" [(ngModel)]="startDueDateInDemandForPayment" placeholder="Od"
+                         name="startDueDateInDemandForPayment">
+                  <mat-datepicker-toggle matSuffix [for]="startDueDateInDemandForPaymentPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #startDueDateInDemandForPaymentPicker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input matInput [matDatepicker]="endDueDateInDemandForPaymentPicker" [(ngModel)]="endDueDateInDemandForPayment" placeholder="Do"
+                         name="endDueDateInDemandForPayment">
+                  <mat-datepicker-toggle matSuffix [for]="endDueDateInDemandForPaymentPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #endDueDateInDemandForPaymentPicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Opłata za wznowienie</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input name="resumptionCostMin" matInput [(ngModel)]="resumptionCostMin" type="number" placeholder="Minimalna">
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input name="resumptionCostMax" matInput [(ngModel)]="resumptionCostMax" type="number" placeholder="Maksymalna">
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Kwota wskazana do spłaty na wezwaniu PLN</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input name="amountInDemandForPaymentPLNMin" matInput [(ngModel)]="amountInDemandForPaymentPLNMin" type="number" placeholder="Minimalna">
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input name="amountInDemandForPaymentPLNMax" matInput [(ngModel)]="amountInDemandForPaymentPLNMax" type="number" placeholder="Maksymalna">
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Kwota wskazana do spłaty na wezwaniu EUR</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input name="amountInDemandForPaymentEURMin" matInput [(ngModel)]="amountInDemandForPaymentEURMin" type="number" placeholder="Minimalna">
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input name="amountInDemandForPaymentEURMax" matInput [(ngModel)]="amountInDemandForPaymentEURMax" type="number" placeholder="Maksymalna">
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Suma wpłat dokonanych od wezwania PLN</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input name="totalPaymentsSinceDemandForPaymentPLNMin" matInput [(ngModel)]="totalPaymentsSinceDemandForPaymentPLNMin" type="number"
+                         placeholder="Minimalna">
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input name="totalPaymentsSinceDemandForPaymentPLNMax" matInput [(ngModel)]="totalPaymentsSinceDemandForPaymentPLNMax" type="number"
+                         placeholder="Maksymalna">
+                </mat-form-field>
+              </div>
+              <div>
+                <div>Suma wpłat dokonanych od wezwania EUR</div>
+                <mat-form-field class="to-left" style="padding-right: 10px">
+                  <input name="totalPaymentsSinceDemandForPaymentEURMin" matInput [(ngModel)]="totalPaymentsSinceDemandForPaymentEURMin" type="number"
+                         placeholder="Minimalna">
+                </mat-form-field>
+                <mat-form-field class="right">
+                  <input name="totalPaymentsSinceDemandForPaymentEURMax" matInput [(ngModel)]="totalPaymentsSinceDemandForPaymentEURMax" type="number"
+                         placeholder="Maksymalna">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="to-left second-filters-column">
+              <div>
+                <mat-form-field>
+                  <input name="initialInvoiceNo" matInput [(ngModel)]="initialInvoiceNo" placeholder="Faktura inicjująca">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input name="contractNo" matInput [(ngModel)]="contractNo" placeholder="Numer umowy">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <mat-select placeholder="Typ" [(ngModel)]="type" name="type">
+                    <mat-option [value]="null"></mat-option>
+                    <mat-option [value]="TYPE.IMMEDIATE">{{TYPE.IMMEDIATE | terminationContractType}}</mat-option>
+                    <mat-option [value]="TYPE.CONDITIONAL">{{TYPE.CONDITIONAL | terminationContractType}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input name="extCompanyId" matInput [(ngModel)]="extCompanyId" placeholder="Nr klienta">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input name="companyName" matInput [(ngModel)]="companyName" placeholder="Nazwa klienta">
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input name="generatedBy" matInput [(ngModel)]="generatedBy" placeholder="Operator generujący dokument">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="clear">
+              <button class="find-terminations-panel-button" mat-raised-button color="primary" [disabled]="!searchForm.form.valid">
+                Wyszukaj
+              </button>
+              <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+            </div>
+          </div>
+
+
+        </mat-expansion-panel>
+      </div>
+    </form>
+
+    <mat-table #table [dataSource]="dataSource" [hidden]="dataSource.max == 0 || dataSource.loading || loading" style="border: 1px solid #ddd;" matSort>
+
+      <ng-container cdkColumnDef="termination">
+        <mat-header-cell *cdkHeaderCellDef>
+          <div>
+            <div style="width: 24%; float: left;" mat-sort-header="{{SORT.COMPANY_NAME}}">Nazwa firmy</div>
+            <div style="width: 24%; float: left;" mat-sort-header="{{SORT.TERMINATION_DATE}}">Data wypowiedzenia</div>
+            <div style="width: 24%; float: left;" mat-sort-header="{{SORT.TYPE}}">Typ wypowiedzenia</div>
+            <div style="width: 24%; float: left;">Liczba umów</div>
+            <div style="width: 4%; float: left;"></div>
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row">
+          <alwin-processed-termination [termination]="row"></alwin-processed-termination>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;" style="padding: 0">
+      </mat-row>
+    </mat-table>
+
+    <div class="no-results" [hidden]="dataSource.max != 0 || dataSource.loading || loading">
+      Nie znaleziono żadnych wypowiedzeń.
+    </div>
+
+    <div class="no-results" [hidden]="!dataSource.loading && !loading">
+      Trwa wyszukiwanie proszę czekać
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource == null || dataSource.max == 0 || dataSource.loading || loading">
+    </mat-paginator>
+  </div>
+
+</div>

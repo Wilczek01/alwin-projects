@@ -1,0 +1,14 @@
+[
+  {
+    "key": "PREFERRED",
+    "label": "Preferowany"
+  },
+  {
+    "key": "ACTIVE",
+    "label": "Aktywny"
+  },
+  {
+    "key": "INACTIVE",
+    "label": "Nieaktywny"
+  }
+]

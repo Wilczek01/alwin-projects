@@ -1,0 +1,72 @@
+[
+  {
+    "contactState": "Preferowany",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "0048123456791"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Firma",
+    "phoneNumber": "0048534978576"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Firma",
+    "phoneNumber": "221297834"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Firma",
+    "phoneNumber": "223247865"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Firma",
+    "phoneNumber": "228901267"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "0048123456790"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "220987654"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "221234567"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "225678901"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Zuzana Fialová",
+    "phoneNumber": "0048534978576"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Zuzana Fialová",
+    "phoneNumber": "221297834"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Zuzana Fialová",
+    "phoneNumber": "223247865"
+  },
+  {
+    "contactState": "Aktywny",
+    "label": "Zuzana Fialová",
+    "phoneNumber": "228901267"
+  },
+  {
+    "contactState": "Nieaktywny",
+    "label": "Jan Kowalsky",
+    "phoneNumber": "0048123456789"
+  }
+]

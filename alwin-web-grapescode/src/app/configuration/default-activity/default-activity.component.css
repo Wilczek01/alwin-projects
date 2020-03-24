@@ -1,0 +1,11 @@
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.default-activities-table {
+  border: none;
+}

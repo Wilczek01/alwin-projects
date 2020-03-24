@@ -1,0 +1,14 @@
+{
+  "streetPrefix": "ul.",
+  "streetName": "Polna",
+  "houseNumber": "18",
+  "flatNumber": "191",
+  "postalCode": "04-234",
+  "city": "Lublin",
+  "country": "Polska",
+  "addressType": {
+    "key": "CORRESPONDENCE",
+    "label": "Korespondencyjny"
+  },
+  "remark": "Do potwierdzenia"
+}

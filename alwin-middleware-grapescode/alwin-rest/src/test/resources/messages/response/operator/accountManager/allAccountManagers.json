@@ -1,0 +1,42 @@
+[
+  {
+    "id": 12,
+    "active": false,
+    "forceUpdatePassword": false,
+    "login": "mkonopnicka",
+    "permission": null,
+    "parentOperator": null,
+    "user": {
+      "id": 12,
+      "firstName": "Maria",
+      "lastName": "Konopnicka",
+      "email": "mkonopnicka@grapescode.pl",
+      "phoneNumber": null
+    },
+    "type": {
+      "id": 11,
+      "typeName": "ACCOUNT_MANAGER",
+      "typeLabel": "Opiekun klienta"
+    }
+  },
+  {
+    "id": 13,
+    "active": false,
+    "forceUpdatePassword": false,
+    "login": "wszymborska",
+    "permission": null,
+    "parentOperator": null,
+    "user": {
+      "id": 13,
+      "firstName": "Wisława",
+      "lastName": "Szymborska",
+      "email": "wszymborska@grapescode.pl",
+      "phoneNumber": null
+    },
+    "type": {
+      "id": 11,
+      "typeName": "ACCOUNT_MANAGER",
+      "typeLabel": "Opiekun klienta"
+    }
+  }
+]

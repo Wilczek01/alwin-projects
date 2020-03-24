@@ -1,0 +1,206 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!activityDatasource.loading && !loadingOperators && !loadingTypes" mode="indeterminate"></mat-progress-bar>
+</div>
+<form (ngSubmit)="onSubmit()" #filterActivitiesForm="ngForm">
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtruj
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="to-left mat-form-field-margin">
+      <div>
+        <span>Data utworzenia czynności</span>
+        <div>
+          <mat-form-field>
+            <input name="startCreationDate" matInput [matDatepicker]="startCreationDatePicker" [formControl]="startCreationDate" placeholder="Od"
+                   [max]="endCreationDate.value">
+            <mat-datepicker-toggle matSuffix [for]="startCreationDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startCreationDatePicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <input name="endCreationDate" matInput [matDatepicker]="endCreationDatePicker" [formControl]="endCreationDate" placeholder="Do"
+                   [min]="startCreationDate.value">
+            <mat-datepicker-toggle matSuffix [for]="endCreationDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endCreationDatePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="to-left mat-form-field-margin">
+      <div>
+        <span>Komentarz</span>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Komentarz" [formControl]="remark" name="remark">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="to-left mat-form-field-margin">
+      <div>
+        <span>Typ</span>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Typ" [formControl]="type">
+              <mat-option *ngFor="let type of types" [value]="type">
+                {{ type.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="to-left mat-form-field-margin">
+      <div>
+        <span>Operator</span>
+        <div>
+          <mat-form-field [hidden]="loadingOperators">
+            <mat-select placeholder="Operator" [formControl]="operatorControl">
+              <mat-option [value]="emptyOperator"></mat-option>
+              <mat-option *ngFor="let operator of operators" [value]="operator">
+                {{ operator.id != null ? (operator.user.firstName | concatenateText: [operator.user.lastName]) : '' }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="to-left">
+      <div>
+        <span>Typ zadania</span>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Typ" [formControl]="issueTypeControl">
+              <mat-option *ngFor="let type of issueTypes" [value]="type">
+                {{ type.issueType.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <mat-action-row>
+      <button mat-raised-button color="primary" [disabled]="!filterActivitiesForm.valid || isLoading()" class="to-left clear" style="margin-bottom: 24px;">
+        Szukaj
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+</form>
+<div class="clear">
+  <div class="activity-list-filter-content-left">
+    <mat-radio-group [(ngModel)]="activityState" (change)="filterActivities()">
+      <mat-radio-button class=" radio-button" [value]="ActivityStateConst.EXECUTED">Wykonane</mat-radio-button>
+      <mat-radio-button class=" radio-button" [value]="ActivityStateConst.PLANNED" id="planned-activities-radio">Zaplanowane</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="activity-list-filter-content-right">
+    <mat-slide-toggle [(ngModel)]="allForCompany" (change)="filterActivities()">Wszystkie dla klienta</mat-slide-toggle>
+  </div>
+</div>
+<div class="clear">
+  <mat-table #table [dataSource]="activityDatasource" [hidden]="activityDatasource.max == 0" matSort class="zebra-rows zebra-even">
+
+    <ng-container cdkColumnDef="issueType">
+      <mat-header-cell *cdkHeaderCellDef>Typ zlecenia</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="issue-type-{{row.id}}">
+        <alwin-issue-type-icon [issueType]="currentIssueType"></alwin-issue-type-icon>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="creationDate">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.CREATION_DATE}}">Utworzono</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="creationDate-column-{{row.id}}">{{row.creationDate | date:'dd.MM.yyyy HH:mm'}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="activityDate">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.ACTIVITY_DATE}}">Wykonano</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="activityDate-column-{{row.id}}">{{row.activityDate | date:'dd.MM.yyyy'}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="plannedDate">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.PLANNED_DATE}}">Zaplanowano na</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="plannedDate-column-{{row.id}}">{{row.plannedDate | date:'dd.MM.yyyy'}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="operator">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.OPERATOR}}">Kto</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="operator-column-{{row.id}}">
+        <mat-chip-list>
+          <mat-chip *ngIf="row.operator != null">{{row.operator.user.firstName | concatenateText: [row.operator.user.lastName]}}</mat-chip>
+        </mat-chip-list>
+        <span *ngIf="row.operator == null">Nie przypisano</span>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="name">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.TYPE_NAME}}">Typ</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="activityType-column-{{row.id}}">{{row.activityType.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="remark">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortHeader.REMARK}}">Komentarz</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="remark-column-{{row.id}}">{{row.activityDetails | activityComment}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="summary">
+      <mat-header-cell *cdkHeaderCellDef>Podsumowanie</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" id="summary-column-{{row.id}}">{{row | activitySummary}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+      <mat-header-cell *cdkHeaderCellDef class="action-cell">Akcje</mat-header-cell>
+      <mat-cell *cdkCellDef="let row" class="action-cell">
+        <button mat-icon-button matTooltip="Szczegóły" id="edit-activity-{{row.id}}-button" (click)="updateActivity(row)" [disabled]="readonly">
+          <mat-icon class="md-24" aria-label="Edytuj">mode_edit</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="singleAction">
+      <mat-header-cell *cdkHeaderCellDef class="single-action-cell">
+        <button mat-icon-button matTooltip="Dodaj" id="create-new-activity-button" (click)="createNewActivity()" *ngIf="!readonly">
+          <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *cdkCellDef="let row" class="single-action-cell">
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="activityState === ActivityStateConst.EXECUTED ? executedActivityDisplayedColumns : plannedActivityDisplayedColumns">
+    </mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: activityState === ActivityStateConst.EXECUTED ? executedActivityDisplayedColumns : plannedActivityDisplayedColumns;">
+    </mat-row>
+
+  </mat-table>
+
+  <div class="no-results" [style.display]="activityDatasource.max == 0 && !activityDatasource.loading ? '' : 'none'">
+    <div class="to-left">
+      Nie znaleziono żadnych czynności
+    </div>
+    <div class="to-right">
+      <button mat-icon-button matTooltip="Dodaj" id="create-new-activity-button" (click)="createNewActivity()"
+              *ngIf="!readonly">
+        <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-paginator #activityPaginator
+                 [length]="activityDatasource.max"
+                 [pageIndex]="0"
+                 [pageSize]="25"
+                 [pageSizeOptions]="[25, 50, 100]"
+                 [hidden]="activityDatasource.max == 0">
+  </mat-paginator>
+</div>

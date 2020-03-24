@@ -1,0 +1,23 @@
+.schedules-list {
+  min-width: 250px;
+  margin-right: 15px;
+}
+
+.schedule-details {
+  min-width: 300px;
+  max-height: 700px;
+  overflow-x: hidden;
+}
+
+.schedules {
+  min-width: 630px;
+}
+
+.schedule-button {
+  min-width: 230px;
+  text-align: left;
+}
+
+.past-schedule {
+  color: rgba(0, 0, 0, .26);
+}

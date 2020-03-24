@@ -1,0 +1,23 @@
+.mdl-data-table__cell--non-numeric {
+  white-space: initial;
+  line-height: 20px;
+}
+
+.checkbox-column {
+  width: 74px;
+  padding-right: 8px;
+  padding-top: 6px;
+  text-align: center;
+}
+
+.date-column {
+  width: 106px;
+}
+
+.ext-company-id-column {
+  width: 80px;
+}
+
+.state-column {
+  width: 192px;
+}

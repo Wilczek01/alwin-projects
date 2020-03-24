@@ -1,0 +1,482 @@
+{
+  "contract_termination": [
+    {
+      "id": 101,
+      "contract_number": "CONTRACT/101",
+      "ext_company_id": 1000,
+      "termination_date": "2016-03-13",
+      "type": "CONDITIONAL",
+      "state": "ISSUED",
+      "contract_type": "OPERATIONAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1000",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 0.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 0.00,
+      "amount_in_demand_for_payment_eur": 0.00,
+      "total_payments_since_demand_for_payment_pln": 0.00,
+      "total_payments_since_demand_for_payment_eur": 0.00,
+      "invoice_number_initiating_demand_for_payment": "FV/001/2017",
+      "invoice_amount_initiating_demand_for_payment": 0.00,
+      "invoice_balance_initiating_demand_for_payment": 0.00,
+      "preceding_demand_for_payment_id": 1
+    },
+    {
+      "id": 102,
+      "contract_number": "CONTRACT/102",
+      "ext_company_id": 1000,
+      "termination_date": "2016-03-13",
+      "type": "IMMEDIATE",
+      "state": "REJECTED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1000",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 0.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 0.00,
+      "amount_in_demand_for_payment_eur": 0.00,
+      "total_payments_since_demand_for_payment_pln": 0.00,
+      "total_payments_since_demand_for_payment_eur": 0.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/102",
+      "invoice_amount_initiating_demand_for_payment": 0.00,
+      "invoice_balance_initiating_demand_for_payment": 0.00
+    },
+    {
+      "id": 103,
+      "contract_number": "CONTRACT/103",
+      "ext_company_id": 1000,
+      "termination_date": "2016-03-13",
+      "type": "CONDITIONAL",
+      "state": "ISSUED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1000",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 0.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 0.00,
+      "amount_in_demand_for_payment_eur": 0.00,
+      "total_payments_since_demand_for_payment_pln": 0.00,
+      "total_payments_since_demand_for_payment_eur": 0.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/103",
+      "invoice_amount_initiating_demand_for_payment": 0.00,
+      "invoice_balance_initiating_demand_for_payment": 0.00
+    },
+    {
+      "id": 104,
+      "contract_number": "CONTRACT/104",
+      "ext_company_id": 1001,
+      "termination_date": "2016-03-13",
+      "type": "CONDITIONAL",
+      "state": "NEW",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1001",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 100.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 0.00,
+      "amount_in_demand_for_payment_eur": 0.00,
+      "total_payments_since_demand_for_payment_pln": 0.00,
+      "total_payments_since_demand_for_payment_eur": 0.00,
+      "invoice_number_initiating_demand_for_payment": "FV/003/2017",
+      "invoice_amount_initiating_demand_for_payment": 100.00,
+      "invoice_balance_initiating_demand_for_payment": 0.00
+    },
+    {
+      "id": 105,
+      "contract_number": "CONTRACT/105",
+      "ext_company_id": 1001,
+      "termination_date": "2016-03-13",
+      "type": "IMMEDIATE",
+      "state": "NEW",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1001",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 100.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 0.00,
+      "amount_in_demand_for_payment_eur": 0.00,
+      "total_payments_since_demand_for_payment_pln": 100.00,
+      "total_payments_since_demand_for_payment_eur": 100.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/105",
+      "invoice_amount_initiating_demand_for_payment": 0.00,
+      "invoice_balance_initiating_demand_for_payment": 0.00
+    },
+    {
+      "id": 128,
+      "contract_number": "CONTRACT/128",
+      "ext_company_id": 1009,
+      "termination_date": "2016-04-14",
+      "type": "CONDITIONAL",
+      "state": "ISSUED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1009",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 900.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 900.00,
+      "amount_in_demand_for_payment_eur": 900.00,
+      "total_payments_since_demand_for_payment_pln": 500.00,
+      "total_payments_since_demand_for_payment_eur": 500.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/128",
+      "invoice_amount_initiating_demand_for_payment": 300.00,
+      "invoice_balance_initiating_demand_for_payment": 70.00
+    },
+    {
+      "id": 129,
+      "contract_number": "CONTRACT/129",
+      "ext_company_id": 1009,
+      "termination_date": "2016-04-14",
+      "type": "IMMEDIATE",
+      "state": "REJECTED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1009",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 800.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 100.00,
+      "amount_in_demand_for_payment_eur": 100.00,
+      "total_payments_since_demand_for_payment_pln": 100.00,
+      "total_payments_since_demand_for_payment_eur": 100.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/129",
+      "invoice_amount_initiating_demand_for_payment": 200.00,
+      "invoice_balance_initiating_demand_for_payment": 80.00
+    },
+    {
+      "id": 130,
+      "contract_number": "CONTRACT/130",
+      "ext_company_id": 1009,
+      "termination_date": "2016-04-14",
+      "activation_date": "2016-12-05",
+      "type": "CONDITIONAL",
+      "state": "REJECTED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1009",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 500.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 500.00,
+      "amount_in_demand_for_payment_eur": 500.00,
+      "total_payments_since_demand_for_payment_pln": 100.00,
+      "total_payments_since_demand_for_payment_eur": 100.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/130",
+      "invoice_amount_initiating_demand_for_payment": 100.00,
+      "invoice_balance_initiating_demand_for_payment": 40.00
+    },
+    {
+      "id": 131,
+      "contract_number": "CONTRACT/131",
+      "ext_company_id": 1010,
+      "termination_date": "2016-04-14",
+      "type": "CONDITIONAL",
+      "state": "ISSUED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1010",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 200.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 100.00,
+      "amount_in_demand_for_payment_eur": 100.00,
+      "total_payments_since_demand_for_payment_pln": 900.00,
+      "total_payments_since_demand_for_payment_eur": 900.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/131",
+      "invoice_amount_initiating_demand_for_payment": 400.00,
+      "invoice_balance_initiating_demand_for_payment": 10.00
+    },
+    {
+      "id": 132,
+      "contract_number": "CONTRACT/132",
+      "ext_company_id": 1010,
+      "termination_date": "2016-04-14",
+      "type": "IMMEDIATE",
+      "state": "ISSUED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1010",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 500.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 300.00,
+      "amount_in_demand_for_payment_eur": 300.00,
+      "total_payments_since_demand_for_payment_pln": 1000.00,
+      "total_payments_since_demand_for_payment_eur": 1000.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/132",
+      "invoice_amount_initiating_demand_for_payment": 100.00,
+      "invoice_balance_initiating_demand_for_payment": 100.00,
+      "preceding_contract_termination_id": 101
+    },
+    {
+      "id": 133,
+      "contract_number": "CONTRACT/133",
+      "ext_company_id": 1010,
+      "termination_date": "2016-04-14",
+      "activation_date": "2016-09-18",
+      "type": "CONDITIONAL",
+      "state": "ISSUED",
+      "contract_type": "FINANCIAL_LEASING",
+      "generated_by": "Jan Kochanowski",
+      "operator_phone_number": "+22 123 45 67",
+      "operator_email": "jkochanowski@alwin.com",
+      "company_name": "Company1010",
+      "company_address_id": 4,
+      "company_correspondence_address_id": 5,
+      "resumption_cost": 100.00,
+      "due_date_in_demand_for_payment": "2016-03-27 00:00:00.000000",
+      "amount_in_demand_for_payment_pln": 1000.00,
+      "amount_in_demand_for_payment_eur": 1000.00,
+      "total_payments_since_demand_for_payment_pln": 400.00,
+      "total_payments_since_demand_for_payment_eur": 400.00,
+      "invoice_number_initiating_demand_for_payment": "FV/2018/133",
+      "invoice_amount_initiating_demand_for_payment": 300.00,
+      "invoice_balance_initiating_demand_for_payment": 20.00
+    }
+  ],
+  "contract_termination_subject": [
+    {
+      "id": 101,
+      "contract_termination_id": 101,
+      "subject_id": 10101,
+      "gps_to_install": true,
+      "gps_installation_charge": 500.0,
+      "gps_installed": false,
+      "gps_increased_installation_charge": 600.0,
+      "gps_increased_fee": true
+    },
+    {
+      "id": 102,
+      "contract_termination_id": 101,
+      "subject_id": 10102,
+      "gps_to_install": false,
+      "gps_installed": true,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 103,
+      "contract_termination_id": 101,
+      "subject_id": 10103,
+      "gps_to_install": false,
+      "gps_installed": false,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 104,
+      "contract_termination_id": 102,
+      "subject_id": 10201,
+      "gps_to_install": true,
+      "gps_installation_charge": 900.0,
+      "gps_installed": false,
+      "gps_increased_installation_charge": 1000.0,
+      "gps_increased_fee": true
+    },
+    {
+      "id": 106,
+      "contract_termination_id": 104,
+      "subject_id": 1090,
+      "gps_to_install": true,
+      "gps_installed": false,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 107,
+      "contract_termination_id": 104,
+      "subject_id": 10901,
+      "gps_to_install": true,
+      "gps_installed": false,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 108,
+      "contract_termination_id": 105,
+      "subject_id": 1090,
+      "gps_to_install": false,
+      "gps_installed": true,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 126,
+      "contract_termination_id": 128,
+      "subject_id": 1090,
+      "gps_to_install": true,
+      "gps_installation_charge": 880.70,
+      "gps_installed": false,
+      "gps_increased_installation_charge": 990.80,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 127,
+      "contract_termination_id": 128,
+      "subject_id": 1090,
+      "gps_to_install": true,
+      "gps_installation_charge": 880.70,
+      "gps_installed": false,
+      "gps_increased_installation_charge": 990.80,
+      "gps_increased_fee": true
+    },
+    {
+      "id": 128,
+      "contract_termination_id": 129,
+      "subject_id": 1090,
+      "gps_to_install": true,
+      "gps_installation_charge": 540.00,
+      "gps_installed": false,
+      "gps_increased_installation_charge": 640.00,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 129,
+      "contract_termination_id": 130,
+      "subject_id": 1090,
+      "gps_to_install": false,
+      "gps_installed": false,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 130,
+      "contract_termination_id": 131,
+      "subject_id": 1090,
+      "gps_to_install": false,
+      "gps_installed": false,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 131,
+      "contract_termination_id": 132,
+      "subject_id": 1090,
+      "gps_to_install": false,
+      "gps_installed": true,
+      "gps_increased_fee": false
+    },
+    {
+      "id": 132,
+      "contract_termination_id": 133,
+      "subject_id": 1090,
+      "gps_to_install": false,
+      "gps_installed": true,
+      "gps_increased_fee": false
+    }
+  ],
+  "contract_termination_attachment": [
+    {
+      "id": 101,
+      "reference": "ba66bbb1bd8a16304b48e11de620937e"
+    },
+    {
+      "id": 102,
+      "reference": "fe53d2d733ad51900d5a7964974fbd91"
+    },
+    {
+      "id": 103,
+      "reference": "f820e6fc0758ad274a172d9fc4d6783d"
+    },
+    {
+      "id": 104,
+      "reference": "14ff36e56b9dfb42fde740e5245a9fb7"
+    }
+  ],
+  "contract_termination_has_attachment": [
+    {
+      "contract_termination_id": 101,
+      "contract_termination_attachment_id": 101
+    },
+    {
+      "contract_termination_id": 101,
+      "contract_termination_attachment_id": 103
+    },
+    {
+      "contract_termination_id": 129,
+      "contract_termination_attachment_id": 101
+    },
+    {
+      "contract_termination_id": 129,
+      "contract_termination_attachment_id": 102
+    },
+    {
+      "contract_termination_id": 129,
+      "contract_termination_attachment_id": 103
+    },
+    {
+      "contract_termination_id": 131,
+      "contract_termination_attachment_id": 103
+    },
+    {
+      "contract_termination_id": 131,
+      "contract_termination_attachment_id": 104
+    }
+  ],
+  "contract_termination_invoice": [
+    {
+      "contract_termination_id": 101,
+      "formal_debt_collection_invoice_id": 101
+    },
+    {
+      "contract_termination_id": 101,
+      "formal_debt_collection_invoice_id": 102
+    },
+    {
+      "contract_termination_id": 102,
+      "formal_debt_collection_invoice_id": 103
+    },
+    {
+      "contract_termination_id": 102,
+      "formal_debt_collection_invoice_id": 104
+    },
+    {
+      "contract_termination_id": 104,
+      "formal_debt_collection_invoice_id": 101
+    },
+    {
+      "contract_termination_id": 104,
+      "formal_debt_collection_invoice_id": 102
+    },
+    {
+      "contract_termination_id": 105,
+      "formal_debt_collection_invoice_id": 101
+    },
+    {
+      "contract_termination_id": 131,
+      "formal_debt_collection_invoice_id": 101
+    },
+    {
+      "contract_termination_id": 131,
+      "formal_debt_collection_invoice_id": 103
+    }
+  ]
+}

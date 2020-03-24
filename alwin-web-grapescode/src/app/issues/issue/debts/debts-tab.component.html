@@ -1,0 +1,157 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!balanceUpdating && !loading && !balanceStartAndAdditionalLoading" mode="indeterminate"></mat-progress-bar>
+</div>
+<div>
+  <div>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_balance_wallet</mat-icon>
+        <span mat-line id="customer-name">
+          <b>Należności klienta:</b>
+        </span>
+        <div class="activity-list-filter-content-right">
+          <mat-slide-toggle [(ngModel)]="notPaidOnly" (change)="updateOverdueOnlyFlagAndRefreshContracts()" id="not-paid-only">
+            Tylko nieopłacone
+          </mat-slide-toggle>
+        </div>
+        <div class="activity-list-filter-content-right">
+          <mat-slide-toggle [(ngModel)]="overdueOnly" (change)="refreshContracts()" id="overdue-only" [disabled]="!notPaidOnly">
+            Tylko zaległe
+          </mat-slide-toggle>
+        </div>
+        <div class="activity-list-filter-content-right">
+          <mat-slide-toggle [(ngModel)]="groupByContract" id="group-by-contract">
+            Grupowanie po umowach
+          </mat-slide-toggle>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="receivables">
+        <b>Saldo bieżące:</b>
+        <span id="issue-current-balance" *ngIf="!balanceStartAndAdditionalLoading; else issueBalanceStartLoading">
+          <span class="balance-value">{{getIssueBalance('PLN') | number:'0.2-2' | nullable}} PLN</span>
+          i
+          <span class="balance-value">{{getIssueBalance('EUR') | number:'0.2-2' | nullable}} EUR</span>
+        </span>
+        <ng-template #issueBalanceStartLoading>
+        <span>
+          <mat-spinner [diameter]="24"></mat-spinner>
+        </span>
+        </ng-template>
+        |
+        <b>Wymagane:</b>
+        <span id="customer-balance-start" *ngIf="!balanceStartAndAdditionalLoading; else customerBalanceStartLoading">
+          <span class="balance-value">{{getBalanceStart('PLN') | number:'0.2-2' | nullable}} PLN</span>
+          i
+          <span class="balance-value">{{getBalanceStart('EUR') | number:'0.2-2' | nullable}} EUR</span>
+        </span>
+        <ng-template #customerBalanceStartLoading>
+        <span>
+          <mat-spinner [diameter]="24"></mat-spinner>
+        </span>
+        </ng-template>
+        |
+        <b>Niewymagane:</b>
+        <span id="customer-balance-additional" *ngIf="!balanceStartAndAdditionalLoading; else customerBalanceAdditionalLoading">
+          <span class="balance-value">{{getBalanceAdditional('PLN') | number:'0.2-2' | nullable}} PLN</span>
+          i
+          <span class="balance-value">{{getBalanceAdditional('EUR') | number:'0.2-2' | nullable}} EUR</span>
+        </span>
+        <ng-template #customerBalanceAdditionalLoading>
+        <span>
+          <mat-spinner [diameter]="24"></mat-spinner>
+        </span>
+        </ng-template>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="debts-list-item" *ngIf="!loading && contractFinancialSummaries !== undefined && groupByContract">
+    <mat-accordion [multi]="true">
+      <mat-expansion-panel disabled="true">
+        <mat-expansion-panel-header style="margin-right: 10px">
+          <mat-panel-title class="contract-list-header-column">Numer umowy</mat-panel-title>
+          <mat-panel-description class="contract-list-header-column">DPD</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Wymagane PLN</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Niewymagane PLN</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Wymagane EUR</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Niewymagane EUR</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Nadpłaty PLN</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">Nadpłaty EUR</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">RAZEM PLN</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column">RAZEM EUR</mat-panel-description>
+          <mat-panel-description class="contract-list-header-column" matTooltip="Czy umowa wykluczona z obsługi">
+            Wykluczona
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel *ngFor=" let contractFinancialSummary of contractFinancialSummaries; let i=index;"
+                           [expanded]="contractFinancialSummary.contractNo == activeContractNo"
+                           id="contract-financial-summary-panel-{{i}}">
+        <mat-expansion-panel-header [class.contract-excluded]="contractFinancialSummary.excluded">
+          <mat-panel-title class="contract-list-column">{{contractFinancialSummary.contractNo}}</mat-panel-title>
+          <mat-panel-description class="contract-list-column">{{contractFinancialSummary.dpd | contractDpd}}</mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['PLN'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['PLN'].requiredPayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['PLN'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['PLN'].notRequiredPayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['EUR'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['EUR'].requiredPayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['EUR'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['EUR'].notRequiredPayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['PLN'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['PLN'].overpayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['EUR'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['EUR'].overpayment | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['PLN'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['PLN'].total | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.currencyToSummary['EUR'] !== undefined
+            ? (contractFinancialSummary.currencyToSummary['EUR'].total | number:'0.2-2' | nullable) : '-'}}
+          </mat-panel-description>
+          <mat-panel-description class="contract-list-column">
+            {{contractFinancialSummary.excluded | booleanToString}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <alwin-issue-invoices-card [issueId]="issue.id"
+                                   [overdueOnly]="overdueOnly" [ref]="this"
+                                   [readonly]="readonly" [notPaidOnly]="notPaidOnly">
+        </alwin-issue-invoices-card>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="debts-list-item" *ngIf="!groupByContract">
+    <alwin-issue-invoices-card [issueId]="issue.id" [overdueOnly]="overdueOnly" [ref]="this" [readonly]="readonly"
+                               [notPaidOnly]="notPaidOnly"></alwin-issue-invoices-card>
+  </div>
+
+  <div class="debts-list-item no-debts-message"
+       *ngIf="!loading && contractFinancialSummaries === undefined">
+    Brak zestawień należności.
+  </div>
+
+  <div *ngIf="!balanceStartAndAdditionalLoading && balanceStartAndAdditional !== undefined">
+    <mat-list>
+      <mat-list-item class="receivables">
+        <!-- Sekcja pod tabelką -->
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

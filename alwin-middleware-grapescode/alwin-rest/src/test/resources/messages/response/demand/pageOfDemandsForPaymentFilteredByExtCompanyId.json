@@ -1,0 +1,97 @@
+{
+  "values": [
+    {
+      "id": 3,
+      "issueDate": 1507672800000,
+      "dueDate": 1509663600000,
+      "initialInvoiceNo": "000025/10/2024/RL/PO/LW",
+      "extCompanyId": 9998,
+      "companyName": "Najlepsza Firma Sp. z o.o.",
+      "contractNumber": "issue_4_00002/15/1",
+      "type": {
+        "id": 3,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "B",
+          "label": "B"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/12/2017",
+      "state": "ISSUED",
+      "attachmentRef": "http://grapescode.pl/download/attachment3Link.pdf",
+      "invoices": [
+        {
+          "id": 25,
+          "invoiceNumber": "000025/10/2024/RL/PO/LW",
+          "contractNumber": "issue_4_00002/15/1",
+          "issueDate": 1542322800000,
+          "dueDate": 1569967200000,
+          "currency": "PLN",
+          "netAmount": 1009.10,
+          "grossAmount": 1241.20,
+          "currentBalance": -1241.20,
+          "leoId": 11025
+        }
+      ],
+      "reasonType": null,
+      "reasonTypeLabel": null,
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    },
+    {
+      "id": 11,
+      "issueDate": 1507672800000,
+      "dueDate": 1509663600000,
+      "initialInvoiceNo": "000025/10/2024/RL/PO/LW",
+      "extCompanyId": 9998,
+      "companyName": "Najlepsza Firma Sp. z o.o.",
+      "contractNumber": "issue_4_00002/15/1",
+      "type": {
+        "id": 3,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "B",
+          "label": "B"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/12/2017",
+      "state": "CANCELED",
+      "attachmentRef": "http://grapescode.pl/download/attachment3Link.pdf",
+      "invoices": [
+        {
+          "id": 25,
+          "invoiceNumber": "000025/10/2024/RL/PO/LW",
+          "contractNumber": "issue_4_00002/15/1",
+          "issueDate": 1542322800000,
+          "dueDate": 1569967200000,
+          "currency": "PLN",
+          "netAmount": 1009.10,
+          "grossAmount": 1241.20,
+          "currentBalance": -1241.20,
+          "leoId": 11025
+        }
+      ],
+      "reasonType": "CLIENT_COMPLAINTS",
+      "reasonTypeLabel": "Reklamacja Klienta – błąd po stronie AL.",
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    }
+  ],
+  "totalValues": 2
+}

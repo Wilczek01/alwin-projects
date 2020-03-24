@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    th {
+        text-align: left;
+    }
+
+</style>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>
+    Zestawienie dokumentów, na podstawie których należy utworzyć zlecenia
+</p>
+<p>
+    Dokumenty z zakresu od <span th:utext="${#dates.format(dateFrom, 'dd-MM-yyyy HH:mm:ss')}"></span> do <span
+        th:utext="${#dates.format(dateTo, 'dd-MM-yyyy HH:mm:ss')}"></span>.
+</p>
+<table cellpadding="0" cellspacing="0">
+    <tr>
+
+        <th width="250">Identyfikatory kontraktów (LEO)</th>
+        <th width="100">Identyfikator zlecenia</th>
+        <th width="100">Kapitał pozostały do spłaty (PLN)</th>
+        <th width="100">Saldo zlecenia (PLN)</th>
+        <th width="100">Saldo dokumentów (PLN)</th>
+        <th width="100">Suma dokonanych wpłat (PLN)</th>
+        <th width="100">Kapitał pozostały do spłaty (EUR)</th>
+        <th width="100">Saldo zlecenia (EUR)</th>
+        <th width="100">Saldo dokumentów (EUR)</th>
+        <th width="100">Suma dokonanych wpłat (EUR)</th>
+    </tr>
+    <tr th:each="unresolvedIssue : ${unresolvedIssues}">
+        <td>
+            <ul>
+                <li th:each="extContractsNumber : ${unresolvedIssue.extContractsNumbers}" th:text="${extContractsNumber}"></li>
+            </ul>
+        </td>
+        <td th:text="${unresolvedIssue.issueId}"></td>
+        <td th:text="${unresolvedIssue.rpbPLN}"></td>
+        <td th:text="${unresolvedIssue.balanceStartPLN}"></td>
+        <td th:text="${unresolvedIssue.currentBalancePLN}"></td>
+        <td th:text="${unresolvedIssue.paymentsPLN}"></td>
+        <td th:text="${unresolvedIssue.rpbEUR}"></td>
+        <td th:text="${unresolvedIssue.balanceStartEUR}"></td>
+        <td th:text="${unresolvedIssue.currentBalanceEUR}"></td>
+        <td th:text="${unresolvedIssue.paymentsEUR}"></td>
+    </tr>
+</table>
+<p>
+    Wiadomość wygenerowana automatycznie, prosimy na nią nie odpowiadać.
+</p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "Koszyk 3",
+  "color": "#123456",
+  "description": "Zlecenie koszyka 4",
+  "tagIcon": {
+    "id": 3,
+    "name": "date_range"
+  }
+}

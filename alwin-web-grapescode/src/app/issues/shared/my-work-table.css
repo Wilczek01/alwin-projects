@@ -1,0 +1,23 @@
+.filter-panel {
+  background: #eaeaea;
+}
+
+.filter-panel-header {
+  background: #d6d6d6;
+}
+
+.filter-panel-button {
+  margin-left: 35px;
+}
+
+.filter-panel-select-field {
+  min-width: 400px;
+}
+
+.filter-panel-select-field-250 {
+  min-width: 250px;
+}
+
+.min-height {
+  min-height: 810px;
+}

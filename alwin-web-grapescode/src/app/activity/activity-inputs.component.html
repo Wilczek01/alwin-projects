@@ -1,0 +1,60 @@
+<div alwinProvideParentFormGroup>
+
+  <mat-form-field *ngIf="!creation">
+    <mat-select placeholder="Status" [(ngModel)]="activity.state" name="activityState" disabled="true">
+      <mat-option *ngFor="let status of statuses" [value]="status">{{status.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="hasRole(role.PHONE_DEBT_COLLECTOR_MANAGER)">
+    <input placeholder="Operator" aria-label="Operator" matInput [formControl]="operatorControl"
+           [(ngModel)]="activity.operator" [matAutocomplete]="auto" name="operator" [readonly]="readOnly">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayOperator">
+      <mat-option *ngFor="let operator of filteredOptions | async" [value]="operator">
+        {{ operator.user.firstName | concatenateText: [operator.user.lastName] }} ({{operator.login}})
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="!activityPlanning">
+    <input matInput [matDatepicker]="activityDatePicker " [(ngModel)]="activity.activityDate"
+           placeholder="Data czynności" name="activityDate" [readonly]="readOnly">
+    <mat-datepicker-toggle matSuffix [for]="activityDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #activityDatePicker [disabled]="readOnly"></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="activityPlanning || (!creation && activity.plannedDate != null)">
+    <input matInput [matDatepicker]="plannedDatePicker" [(ngModel)]="activity.plannedDate"
+           placeholder="Planowana data wykonania" name="plannedDate"
+           alwinDateBefore dateAfter="{{issue.expirationDate}}" #plannedDate="ngModel" [readonly]="readOnly">
+    <mat-datepicker-toggle matSuffix [for]="plannedDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #plannedDatePicker [disabled]="readOnly"></mat-datepicker>
+    <mat-error *ngIf="plannedDate.invalid && (plannedDate.dirty || plannedDate.touched)">
+      Planowana data wykonania nie może być późniejsza niż data zakończenia zlecenia <strong>{{issue.expirationDate |
+      date:'dd.MM.yyyy'}}</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field hidden>
+    <input matInput placeholder="Opłata" [(ngModel)]="activity.charge" name="charge">
+  </mat-form-field>
+
+  <mat-form-field hidden>
+    <input matInput placeholder="Numer faktury" [(ngModel)]="activity.invoiceId" name="invoiceId">
+  </mat-form-field>
+
+  <alwin-activity-details-inputs [activity]="activity" [persons]="persons" [readOnly]="activityExecuted" [suggestedPhones]="suggestedPhones"></alwin-activity-details-inputs>
+
+  <alwin-activity-attachments-inputs [activity]="activity" [readOnly]="activityExecuted" [filesData]="filesData"></alwin-activity-attachments-inputs>
+
+  <alwin-activity-declarations-inputs [activity]="activity" [declarationsForm]="declarationsForm"
+                                      [balancePLN]="issue.currentBalancePLN" *ngIf="!activityPlanning || updateWithDeclarations"
+                                      [readOnly]="activityExecuted"
+                                      [balanceEUR]="issue.currentBalanceEUR"></alwin-activity-declarations-inputs>
+
+  <mat-form-field *ngIf="comment">
+    <textarea matInput placeholder="Komentarz" [(ngModel)]="comment.value" name="remark" id="remark" rows="5"
+              [required]="comment.required" (change)="commentFieldChanged()" [readonly]="readOnly"></textarea>
+  </mat-form-field>
+
+</div>

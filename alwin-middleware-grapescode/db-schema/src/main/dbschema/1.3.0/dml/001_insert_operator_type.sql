@@ -1,0 +1,1 @@
+INSERT INTO OPERATOR_TYPE (type_name, type_label) VALUES ('CUSTOMER_ASSISTANT', 'Opiekun klienta');

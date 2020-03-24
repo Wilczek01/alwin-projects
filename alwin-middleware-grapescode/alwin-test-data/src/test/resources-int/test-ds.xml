@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.jboss.org/ironjacamar/schema"
+             xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+    <datasource jndi-name="java:jboss/datasources/AlwinUnit"
+                pool-name="alwin-test" enabled="true"
+                use-ccm="false" jta="true">
+        <connection-url>jdbc:postgresql://localhost:5432/alwin_int</connection-url>
+        <driver>postgresql</driver>
+        <security>
+            <user-name>alwin_admin_int</user-name>
+            <password>yxFnV!+Yy7H@d5aR</password>
+        </security>
+    </datasource>
+</datasources>

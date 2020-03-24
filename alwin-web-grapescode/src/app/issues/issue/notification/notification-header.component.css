@@ -1,0 +1,37 @@
+.alwin-notification {
+  padding: 15px;
+  clear: both;
+}
+
+.alwin-notification-icon {
+  width: 40px;
+}
+
+.alwin-notification-content {
+  padding-bottom: 15px;
+  text-align: left;
+  width: 480px;
+}
+
+.alwin-notification-content-separator {
+  border-bottom: 1px solid #cccccc;
+}
+
+.alwin-mat-notification-size {
+  width: 48px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+}
+
+.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button .read-notification-button {
+  line-height: normal;
+}
+
+.mat-icon-button.read-notification-button {
+  height: 24px;
+  width: 24px;
+}
+
+.add-notification-button {
+  line-height: 34px;
+}

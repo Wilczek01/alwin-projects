@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "batchProcess": {
+    "key": "BASE_SCHEDULE_TASKS",
+    "label": "Aktualizacja sald, otwarcie nowych oraz zamknięcie przeterminowanych zleceń. Przetwarzanie przeterminowanych dokumentów i wysłanie raportu email. Aktualizacja firm: dane adresowe i kontaktowe, zaangażowanie firm. Wysłanie raportu o nierozwiązanych zleceniach. Utworzenie czynności windykacyjnych typu 'telefon wychodzący'"
+  },
+  "updateDate": "2018-05-22 12:00:00",
+  "hour": 3
+}

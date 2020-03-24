@@ -1,0 +1,59 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!loadingContacts" mode="indeterminate"></mat-progress-bar>
+</div>
+<table class="mdl-data-table mdl-js-data-table full-width" *ngIf="!loadingContacts && contacts.length != 0">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Rodzaj</th>
+    <th class="mdl-data-table__cell--non-numeric">Numer/adres</th>
+    <th class="mdl-data-table__cell--non-numeric">Priorytet użycia</th>
+    <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+    <th class="mdl-data-table__cell--non-numeric">Automatyczny sms</th>
+    <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">Akcje</th>
+    <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+      <button mat-icon-button matTooltip="Dodaj" id="create-new-contact-button" (click)="createNewContact()">
+        <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+      </button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contact of contacts">
+    <td class="mdl-data-table__cell--non-numeric" id="contact-type-{{contact.id}}">{{contact.contactType.label}}</td>
+    <td class="mdl-data-table__cell--non-numeric" id="contact-value-{{contact.id}}">
+      <span *ngIf="contact.contactType.website"><a href="{{contact.contact}}" target="_blank">{{contact.contact}}</a></span>
+      <span *ngIf="contact.contactType.emailable"><a href="mailto:{{contact.contact}}">{{contact.contact}}</a></span>
+      <span *ngIf="!contact.contactType.website && !contact.contactType.emailable ">{{contact.contact}}</span>
+    </td>
+    <td class="mdl-data-table__cell--non-numeric" id="contact-priority-{{contact.id}}">{{contact.state.label}}</td>
+    <td class="mdl-data-table__cell--non-numeric" id="contact-remark-{{contact.id}}">{{contact.remark}}</td>
+    <td class="mdl-data-table__cell--non-numeric" id="contact-sms-{{contact.id}}">{{contact.sendAutomaticSms | choice}}</td>
+    <td class="mdl-data-table__cell--non-numeric action-cell" id="contact-action-{{contact.id}}" *ngIf="!readonly">
+      <a (click)="startPhoneCall(contact)" matTooltip="Zadzwoń" class="icon-link mat-icon-button" *ngIf="contact.contactType.callable"
+         id="call-{{contact.id}}-button">
+        <mat-icon class="md-24" aria-label="Zadzwoń">headset_mic</mat-icon>
+      </a>
+      <button *ngIf="contact.contactType.callable" mat-icon-button matTooltip="Wyślij wiadomość sms" (click)="sendSmsMessage(contact.contact)"
+              id="send-sms-{{contact.id}}-button">
+        <mat-icon class="md-24" aria-label="Wyślij wiadomość sms">textsms</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Edytuj" id="edit-contact-{{contact.id}}-button" (click)="updateContact(contact)">
+        <mat-icon class="md-24" aria-label="Edytuj">mode_edit</mat-icon>
+      </button>
+    </td>
+    <td class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loadingContacts && contacts.length == 0">
+  <div class="to-left">
+    Nie znaleziono adresów dla tego klienta
+  </div>
+  <div class="to-right">
+    <button mat-icon-button matTooltip="Dodaj" (click)="createNewContact(customer)" *ngIf="!readonly">
+      <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+{
+  "values": [
+    {
+      "extCompanyId": 1000,
+      "terminationDate": 1457823600000,
+      "type": "CONDITIONAL",
+      "companyName": "Company1000",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 101,
+          "terminationDate": 1457823600000,
+          "activationDate": 1501632000000,
+          "contractNumber": "CONTRACT/101",
+          "type": "CONDITIONAL",
+          "state": "CONTRACT_ACTIVATED",
+          "remark": "Some remark",
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 1320.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 0.00,
+          "amountInDemandForPaymentEUR": 0.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 0.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 0.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/001/2017",
+          "invoiceAmountInitiatingDemandForPayment": 0.00,
+          "invoiceBalanceInitiatingDemandForPayment": 0.00,
+          "subjects": [
+            {
+              "id": 101,
+              "subjectId": 10101,
+              "gpsToInstall": true,
+              "gpsInstallationCharge": 500.00,
+              "gpsInstalled": false,
+              "gpsIncreasedFee": true,
+              "gpsIncreasedInstallationCharge": 600.00
+            },
+            {
+              "id": 102,
+              "subjectId": 10102,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": true,
+              "gpsIncreasedFee": false,
+              "gpsIncreasedInstallationCharge": null
+            },
+            {
+              "id": 103,
+              "subjectId": 10103,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": false,
+              "gpsIncreasedFee": false,
+              "gpsIncreasedInstallationCharge": null
+            }
+          ],
+          "formalDebtCollectionInvoices": [
+            {
+              "id": 101,
+              "invoiceNumber": "FV/001/2017",
+              "contractNumber": "CONTRACT/01",
+              "issueDate": 1510268400000,
+              "dueDate": 1511478000000,
+              "currency": "PLN",
+              "netAmount": 1000.00,
+              "grossAmount": 1230.00,
+              "currentBalance": 500.00,
+              "leoId": 1101
+            },
+            {
+              "id": 102,
+              "invoiceNumber": "FV/002/2017",
+              "contractNumber": "CONTRACT/02",
+              "issueDate": 1489100400000,
+              "dueDate": 1490310000000,
+              "currency": "PLN",
+              "netAmount": 10000.00,
+              "grossAmount": 12300.00,
+              "currentBalance": 9000.00,
+              "leoId": 1102
+            }
+          ]
+        }
+      ],
+      "attachmentRefs": [
+        "http://grapescode.pl/download/ba66bbb1bd8a16304b48e11de620937e",
+        "http://grapescode.pl/download/f820e6fc0758ad274a172d9fc4d6783d"
+      ]
+    }
+  ],
+  "totalValues": 1
+}

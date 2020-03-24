@@ -1,0 +1,76 @@
+{
+  "demand_for_payment": [
+    {
+      "id": 1000,
+      "issue_date": "2017-07-12 00:00:00.000000",
+      "due_date": "2017-08-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": false,
+      "aborted": true
+    },
+    {
+      "id": 1001,
+      "issue_date": "2017-07-11 00:00:00.000000",
+      "due_date": "2017-08-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 1005,
+      "issue_date": "2017-07-01 00:00:00.000000",
+      "due_date": "2017-07-20 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 1002,
+      "issue_date": "2017-07-10 00:00:00.000000",
+      "due_date": "2017-08-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": false,
+      "aborted": true
+    },
+    {
+      "id": 1003,
+      "issue_date": "2017-03-10 00:00:00.000000",
+      "due_date": "2017-04-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 2,
+      "state": "ISSUED",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 1004,
+      "issue_date": "2017-03-10 00:00:00.000000",
+      "due_date": "2017-04-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 2,
+      "state": "ISSUED",
+      "created_manually": false,
+      "aborted": true
+    }
+  ]
+}

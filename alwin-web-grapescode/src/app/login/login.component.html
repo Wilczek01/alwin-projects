@@ -1,0 +1,23 @@
+<div class="login-box">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <form (ngSubmit)="loginForm.form.valid && login()" #loginForm="ngForm">
+    <div class="group">
+      <img src="./assets/al-logo.png" alt="">
+    </div>
+
+    <mat-form-field class="alwin-textfield">
+      <input matInput placeholder="Login" [(ngModel)]="user.username" name="username" required>
+    </mat-form-field>
+
+    <mat-form-field class="alwin-textfield">
+      <input type="password" matInput placeholder="Hasło" [(ngModel)]="user.password" name="password" required>
+    </mat-form-field>
+
+    <div>
+      <button id="login-button" mat-raised-button [disabled]="loading || !loginForm.form.valid" color="primary">
+        Zaloguj
+      </button>
+    </div>
+  </form>
+</div>

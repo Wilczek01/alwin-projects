@@ -1,0 +1,163 @@
+<div id="user-operators">
+  <mat-expansion-panel id="user-row-{{user.id}}">
+    <mat-expansion-panel-header class="single-row">
+      <mat-panel-title style="width: 35%;">{{user.firstName | concatenateText: [user.lastName]}}</mat-panel-title>
+      <mat-panel-description style="width: 30%;">{{user.email}}</mat-panel-description>
+      <mat-panel-description style="width: 30%;">{{user.phoneNumber | nullable}}</mat-panel-description>
+      <mat-panel-description style="width: 5%;"></mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="user.operators.length == 0">
+      Ten użytkownik nie posiada jeszcze żadnego operatora
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width" *ngIf="user.operators.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Login</th>
+        <th class="mdl-data-table__cell--non-numeric">Typ</th>
+        <th class="mdl-data-table__cell--non-numeric">Aktywny</th>
+        <th class="mdl-data-table__cell--non-numeric">Planowanie</th>
+        <th class="mdl-data-table__cell--non-numeric">Zmiana opłaty</th>
+        <th class="mdl-data-table__cell--non-numeric">Zmiana opłaty %</th>
+        <th class="mdl-data-table__cell--non-numeric">Usuwanie swoich załączników</th>
+        <th class="mdl-data-table__cell--non-numeric">Usuwanie załączników innych</th>
+        <th class="mdl-data-table__cell--non-numeric">Wew. transfer</th>
+        <th class="mdl-data-table__cell--non-numeric">Zew. transfer</th>
+        <th class="mdl-data-table__cell--non-numeric">Wykluczanie</th>
+        <th class="mdl-data-table__cell--non-numeric">Wykluczanie klienta</th>
+        <th class="mdl-data-table__cell--non-numeric">Wykluczanie faktur</th>
+        <th class="mdl-data-table__cell--non-numeric">Kończenie zlecenia</th>
+        <th class="mdl-data-table__cell--non-numeric">Wezwania</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let operator of user.operators; let i = index">
+        <td class="mdl-data-table__cell--non-numeric">
+          <span class="mdl-chip mdl-chip--contact">
+            <span class="mdl-chip__contact alwin-header-dark mdl-color-text--white">
+              <i class="material-icons">person</i>
+            </span>
+            <span class="mdl-chip__text" id="{{user.id}}-operator-{{i}}-login">{{operator.login}}</span>
+          </span>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="{{user.id}}-operator-{{i}}-type">{{operator.type.typeLabel}}</td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <mat-checkbox disabled="true" id="{{user.id}}-operator-{{i}}-active" [(ngModel)]="operator.active" [attr.checked]="operator.active"></mat-checkbox>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToExternallyPlanActivities"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToChangeActivityCharge"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToChangeActivityChargePercent"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToMarkOwnAttachmentDeleted"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToMarkOthersAttachmentsDeleted"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToTransferIssuesInternally"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToTransferIssuesExternally"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true" [(ngModel)]="operator.permission.allowedToExcludeIssue"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true"
+                          [(ngModel)]="operator.permission.allowedToSetCustomerOutOfService"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true" [(ngModel)]="operator.permission.allowedToExcludeInvoice"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true" [(ngModel)]="operator.permission.allowedToTerminateIssue"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <div *ngIf="operator.permission != null">
+            <mat-checkbox disabled="true" [(ngModel)]="operator.permission.allowedToManageDemandsForPayment"></mat-checkbox>
+          </div>
+          <div *ngIf="operator.permission == null">
+            <mat-checkbox disabled="true"></mat-checkbox>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <mat-action-row>
+      <a [routerLink]="['/users/' + user.id]" mat-raised-button style="background-color: #43A047; color: #ffffff; margin-left: 10px; margin-right: 16px;"
+         id="edit-user-button-{{user.id}}">
+        Edytuj
+      </a>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>

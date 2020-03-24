@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+  {{message}}
+  <br/>
+  <span class="alwin-warn-color">{{warning}}</span>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close id="confirmation-dialog-cancel-button">Nie</button>
+  <button mat-button [mat-dialog-close]="true" id="confirmation-dialog-confirm-button">Tak</button>
+</mat-dialog-actions>

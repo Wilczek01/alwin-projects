@@ -1,0 +1,55 @@
+/*
+ *  Tables variables
+ */
+.mat-cell.invoice-no-column, .mat-header-cell.invoice-no-column {
+  position: relative;
+  flex: 0 0 250px;
+}
+.mat-cell.invoice-no-column button.ellipsis-with-hover, .mat-header-cell.invoice-no-column button.ellipsis-with-hover {
+  text-align: left;
+  width: 250px;
+}
+.mat-cell.corrections-column, .mat-header-cell.corrections-column {
+  position: relative;
+  flex: 0 0 60px;
+  overflow: visible;
+}
+.mat-cell.corrections-column .ribbon span, .mat-header-cell.corrections-column .ribbon span {
+  font-size: 7px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-50deg);
+  -webkit-transform: rotate(-50deg);
+  width: 58px;
+  display: block;
+  background: #880e4f;
+}
+
+.issue-subject-column > mat-icon {
+  color: #FEC533;
+}
+
+.invoice-no-column:hover {
+  cursor: hand;
+}
+
+.inactive-row {
+  color: #dddddd;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.invoices-download-button {
+  margin: 5px 20px 0 5px;
+}
+
+/*# sourceMappingURL=issue-invoices.component.css.map */

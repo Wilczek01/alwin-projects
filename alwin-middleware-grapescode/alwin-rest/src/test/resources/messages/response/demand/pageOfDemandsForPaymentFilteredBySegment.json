@@ -1,0 +1,221 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "issueDate": 1499724000000,
+      "dueDate": 1501711200000,
+      "initialInvoiceNo": "000001/10/2020/RL/PO/LW",
+      "extCompanyId": 9999,
+      "companyName": "Nazwa Firmmy Sp. z o.o.",
+      "contractNumber": "issue_21_00002/15/1",
+      "type": {
+        "id": 1,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/10/2017",
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/attachment1Link.pdf",
+      "invoices": [
+        {
+          "id": 11,
+          "invoiceNumber": "000001/10/2024/RL/PO/LW",
+          "contractNumber": "issue_21_00002/15/1",
+          "issueDate": 1541977200000,
+          "dueDate": 1727820000000,
+          "currency": "EUR",
+          "netAmount": 100.91,
+          "grossAmount": 124.12,
+          "currentBalance": -124.12,
+          "leoId": 11011
+        },
+        {
+          "id": 15,
+          "invoiceNumber": "000001/10/2020/RL/PO/LW",
+          "contractNumber": "issue_21_00002/15/1",
+          "issueDate": 1542236400000,
+          "dueDate": 1606777200000,
+          "currency": "PLN",
+          "netAmount": 100.91,
+          "grossAmount": 124.12,
+          "currentBalance": -124.12,
+          "leoId": 11015
+        }
+      ],
+      "reasonType": null,
+      "reasonTypeLabel": null,
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "precedingDemandForPaymentId": null,
+      "aborted": false,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    },
+    {
+      "id": 2,
+      "issueDate": 1501538400000,
+      "dueDate": 1505253600000,
+      "initialInvoiceNo": "000001/12/2020/RL/PO/LW",
+      "extCompanyId": 9999,
+      "companyName": "Nazwa Firmmy Sp. z o.o.",
+      "contractNumber": "issue_21_00001/15/1",
+      "type": {
+        "id": 2,
+        "key": "SECOND",
+        "dpdStart": 15,
+        "numberOfDaysToPay": 3,
+        "charge": 99.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/11/2017",
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/attachment2Link.pdf",
+      "invoices": [
+        {
+          "id": 10,
+          "invoiceNumber": "000001/12/2020/RL/PO/LW",
+          "contractNumber": "issue_21_00001/15/1",
+          "issueDate": 1541804400000,
+          "dueDate": 1606777200000,
+          "currency": "EUR",
+          "netAmount": 154.66,
+          "grossAmount": 190.23,
+          "currentBalance": -190.23,
+          "leoId": 11010
+        }
+      ],
+      "reasonType": null,
+      "reasonTypeLabel": null,
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "precedingDemandForPaymentId": null,
+      "aborted": false,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    },
+    {
+      "id": 4,
+      "issueDate": 1500588000000,
+      "dueDate": 1501711200000,
+      "initialInvoiceNo": "000001/10/2020/RL/PO/LW",
+      "extCompanyId": 9997,
+      "companyName": "Druga Najlepsza Firma Sp. z o.o.",
+      "contractNumber": "issue_21_00002/15/1",
+      "type": {
+        "id": 1,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/10/2017",
+      "state": "WAITING",
+      "attachmentRef": "http://grapescode.pl/download/attachment4Link.pdf",
+      "invoices": [
+        {
+          "id": 16,
+          "invoiceNumber": "000001/10/2024/RL/PO/LW",
+          "contractNumber": "issue_21_00002/15/1",
+          "issueDate": 1541977200000,
+          "dueDate": 1727820000000,
+          "currency": "EUR",
+          "netAmount": 100.91,
+          "grossAmount": 124.12,
+          "currentBalance": -124.12,
+          "leoId": 11011
+        },
+        {
+          "id": 17,
+          "invoiceNumber": "000001/10/2020/RL/PO/LW",
+          "contractNumber": "issue_21_00002/15/1",
+          "issueDate": 1542236400000,
+          "dueDate": 1606777200000,
+          "currency": "PLN",
+          "netAmount": 100.91,
+          "grossAmount": 124.12,
+          "currentBalance": -124.12,
+          "leoId": 11015
+        }
+      ],
+      "reasonType": null,
+      "reasonTypeLabel": null,
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "precedingDemandForPaymentId": null,
+      "aborted": false,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    },
+    {
+      "id": 5,
+      "issueDate": 1501538400000,
+      "dueDate": 1505253600000,
+      "initialInvoiceNo": "000001/12/2020/RL/PO/LW",
+      "extCompanyId": 9997,
+      "companyName": "Druga Najlepsza Firma Sp. z o.o.",
+      "contractNumber": "issue_21_00001/15/1",
+      "type": {
+        "id": 2,
+        "key": "SECOND",
+        "dpdStart": 15,
+        "numberOfDaysToPay": 3,
+        "charge": 99.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": "CHARGE/INVOICE/11/2017",
+      "state": "WAITING",
+      "attachmentRef": "http://grapescode.pl/download/attachment5Link.pdf",
+      "invoices": [
+        {
+          "id": 18,
+          "invoiceNumber": "000001/12/2020/RL/PO/LW",
+          "contractNumber": "issue_21_00001/15/1",
+          "issueDate": 1541804400000,
+          "dueDate": 1606777200000,
+          "currency": "EUR",
+          "netAmount": 154.66,
+          "grossAmount": 190.23,
+          "currentBalance": -190.23,
+          "leoId": 11010
+        }
+      ],
+      "reasonType": null,
+      "reasonTypeLabel": null,
+      "createdManually": false,
+      "manualCreationMessage": null,
+      "precedingDemandForPaymentId": null,
+      "aborted": false,
+      "stateChangeDate": null,
+      "stateChangeReason": null,
+      "stateChangeOperator": null
+    }
+  ],
+  "totalValues": 4
+}

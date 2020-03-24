@@ -1,0 +1,40 @@
+.mdl-data-table {
+  border: none;
+}
+
+.action-cell {
+  width: 45px;
+}
+
+.action-cell:last-of-type {
+  width: 45px;
+}
+
+.block-table {
+  margin-bottom: 24px;
+}
+
+.inactive-contract-row {
+  color: #dddddd;
+}
+
+.active-contract-row {
+  color: #616161;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.company-data {
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+.company-data-divider {
+  margin-top: 15px;
+}

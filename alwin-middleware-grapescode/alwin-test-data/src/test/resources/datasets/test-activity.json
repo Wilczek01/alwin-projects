@@ -1,0 +1,1108 @@
+{
+  "activity_type": [
+    {
+      "id": 1,
+      "name": "Telefon wychodzący",
+      "key": "OUTGOING_PHONE_CALL",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": true,
+      "specific": true,
+      "can_be_planned": true,
+      "customer_contact": true
+    },
+    {
+      "id": 2,
+      "name": "Wezwanie do zapłaty (podstawowe)",
+      "key": "FIRST_DEMAND_PAYMENT",
+      "may_be_automated": true,
+      "charge_min": 50.00,
+      "charge_max": 203.33,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 3,
+      "name": "Wezwanie do zapłaty (ostateczne)",
+      "key": "LAST_DEMAND_PAYMENT",
+      "may_be_automated": true,
+      "charge_min": 150.33,
+      "charge_max": 100.99,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 4,
+      "name": "Wiadomość SMS wychodząca",
+      "key": "OUTGOING_SMS",
+      "may_be_automated": true,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": true,
+      "customer_contact": true
+    },
+    {
+      "id": 5,
+      "name": "Telefon przychodzący",
+      "key": "INCOMING_PHONE_CALL",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": true,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": true
+    },
+    {
+      "id": 6,
+      "name": "Komentarz",
+      "key": "COMMENT",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 7,
+      "name": "Wizyta terenowa",
+      "key": "FIELD_VISIT",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": true,
+      "customer_contact": false
+    },
+    {
+      "id": 8,
+      "name": "Wypowiedzenie warunkowe umowy",
+      "key": "CONTRACT_TERMINATION",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 9,
+      "name": "Wezwanie do zwrotu przedmiotu",
+      "key": "RETURN_SUBJECT_DEMAND",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 10,
+      "name": "Podejrzenie fraudu",
+      "key": "FRAUD_SUSPECTED",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 11,
+      "name": "Odbiór przedmiotu leasingu",
+      "key": "SUBJECT_COLLECTED",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 12,
+      "name": "Potwierdzenie wpłaty klienta",
+      "key": "PAYMENT_COLLECTED_CONFIRMATION",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": false,
+      "can_be_planned": false,
+      "customer_contact": false
+    },
+    {
+      "id": 14,
+      "name": "Nieudana próba kontaktu tel.",
+      "key": "FAILED_PHONE_CALL_ATTEMPT",
+      "may_be_automated": false,
+      "charge_min": 0,
+      "may_have_declaration": false,
+      "specific": true,
+      "can_be_planned": false,
+      "customer_contact": false
+    }
+  ],
+  "activity_detail_property": [
+    {
+      "id": 1,
+      "property_name": "Nr tel.",
+      "property_type": "java.lang.String",
+      "property_key": "PHONE_NUMBER"
+    },
+    {
+      "id": 2,
+      "property_name": "Czy pozostawiono wiadomość",
+      "property_type": "java.lang.Boolean",
+      "property_key": "MESSAGE_LEFT"
+    },
+    {
+      "id": 3,
+      "property_name": "Długość rozmowy",
+      "property_type": "java.lang.Integer",
+      "property_key": "PHONE_CALL_LENGTH"
+    },
+    {
+      "id": 4,
+      "property_name": "Rozmówca",
+      "property_type": "java.lang.String",
+      "property_key": "PHONE_CALL_PERSON"
+    },
+    {
+      "id": 5,
+      "property_name": "Termin zapłaty",
+      "property_type": "java.util.Date",
+      "property_key": "DATE_OF_PAYMENT"
+    },
+    {
+      "id": 8,
+      "property_name": "Treść wiadomości",
+      "property_type": "java.lang.String",
+      "property_key": "MESSAGE_CONTENT"
+    },
+    {
+      "id": 9,
+      "property_name": "Adres email",
+      "property_type": "java.lang.String",
+      "property_key": "EMAIL_ADDRESS"
+    },
+    {
+      "id": 10,
+      "property_name": "Komentarz",
+      "property_type": "java.lang.String",
+      "property_key": "REMARK"
+    },
+    {
+      "id": 11,
+      "property_name": "Przyczyna nieudanego kontaktu tel.",
+      "property_type": "java.lang.String",
+      "property_key": "FAILED_PHONE_CALL_REASON"
+    }
+  ],
+  "activity_type_detail_property_dict_value": [
+    {
+      "id": 1,
+      "activity_detail_property_id": 11,
+      "value": "Nie odbiera"
+    },
+    {
+      "id": 2,
+      "activity_detail_property_id": 11,
+      "value": "Tel. Wyłączony"
+    },
+    {
+      "id": 3,
+      "activity_detail_property_id": 11,
+      "value": "Nie ma takiego numeru"
+    },
+    {
+      "id": 4,
+      "activity_detail_property_id": 11,
+      "value": "Inna"
+    }
+  ],
+  "activity_type_has_detail_property": [
+    {
+      "id": 1,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 1,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 2,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 2,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 3,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 3,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 4,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 4,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 5,
+      "activity_type_id": 2,
+      "activity_detail_property_id": 5,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 7,
+      "activity_type_id": 3,
+      "activity_detail_property_id": 5,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 9,
+      "activity_type_id": 4,
+      "activity_detail_property_id": 1,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 10,
+      "activity_type_id": 4,
+      "activity_detail_property_id": 8,
+      "state": "PLANNED",
+      "required": true
+    },
+    {
+      "id": 11,
+      "activity_type_id": 5,
+      "activity_detail_property_id": 1,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 12,
+      "activity_type_id": 5,
+      "activity_detail_property_id": 3,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 13,
+      "activity_type_id": 5,
+      "activity_detail_property_id": 4,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 14,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 1,
+      "state": "EXECUTED",
+      "required": true
+    },
+    {
+      "id": 15,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 2,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 16,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 3,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 17,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 10,
+      "state": "PLANNED",
+      "required": false
+    },
+    {
+      "id": 18,
+      "activity_type_id": 1,
+      "activity_detail_property_id": 10,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 19,
+      "activity_type_id": 14,
+      "activity_detail_property_id": 11,
+      "state": "EXECUTED",
+      "required": true
+    },
+    {
+      "id": 20,
+      "activity_type_id": 14,
+      "activity_detail_property_id": 1,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 21,
+      "activity_type_id": 14,
+      "activity_detail_property_id": 10,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 22,
+      "activity_type_id": 7,
+      "activity_detail_property_id": 10,
+      "state": "EXECUTED",
+      "required": false
+    },
+    {
+      "id": 23,
+      "activity_type_id": 7,
+      "activity_detail_property_id": 10,
+      "state": "PLANNED",
+      "required": false
+    }
+  ],
+  "activity": [
+    {
+      "id": 100,
+      "issue_id": 1,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "planned_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-09 00:00:00.000000",
+      "creation_date": "2017-07-05 00:00:00.000000",
+      "activity_state": "PLANNED",
+      "charge": 10.32,
+      "invoice_id": "fv1a/2017"
+    },
+    {
+      "id": 11,
+      "issue_id": 1,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 12,
+      "issue_id": 1,
+      "operator_id": 1,
+      "activity_type_id": 2,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-21 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 13,
+      "issue_id": 1,
+      "operator_id": 2,
+      "activity_type_id": 1,
+      "charge": 6543.55,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-21 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 14,
+      "issue_id": 1,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 99898.67,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-25 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 21,
+      "issue_id": 2,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 22,
+      "issue_id": 2,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-20 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 31,
+      "issue_id": 3,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 32,
+      "issue_id": 3,
+      "operator_id": 1,
+      "activity_type_id": 2,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-19 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 41,
+      "issue_id": 4,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 42,
+      "issue_id": 4,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-18 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 51,
+      "issue_id": 5,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 52,
+      "issue_id": 5,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-17 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 61,
+      "issue_id": 6,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 62,
+      "issue_id": 6,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-16 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 71,
+      "issue_id": 7,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "POSTPONED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 72,
+      "issue_id": 7,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 81,
+      "issue_id": 8,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "POSTPONED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 82,
+      "issue_id": 8,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 91,
+      "issue_id": 9,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 92,
+      "issue_id": 9,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-13 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 101,
+      "issue_id": 10,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 102,
+      "issue_id": 10,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-12 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 111,
+      "issue_id": 11,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 112,
+      "issue_id": 11,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-11 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 121,
+      "issue_id": 12,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 122,
+      "issue_id": 12,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-10 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 131,
+      "issue_id": 13,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 132,
+      "issue_id": 13,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-09 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 141,
+      "issue_id": 14,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 142,
+      "issue_id": 14,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-08 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 151,
+      "issue_id": 15,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 152,
+      "issue_id": 15,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-07 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 161,
+      "issue_id": 16,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 162,
+      "issue_id": 16,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-06 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 171,
+      "issue_id": 17,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 172,
+      "issue_id": 17,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-05 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 181,
+      "issue_id": 18,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 182,
+      "issue_id": 18,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "PLANNED",
+      "planned_date": "2017-08-04 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 191,
+      "issue_id": 19,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-05-14 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2016-07-10 00:00:00.000000"
+    },
+    {
+      "id": 192,
+      "issue_id": 19,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "EXECUTED",
+      "planned_date": "2017-08-03 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 201,
+      "issue_id": 20,
+      "operator_id": 1,
+      "activity_type_id": 1,
+      "charge": 56432.23,
+      "activity_state": "EXECUTED",
+      "planned_date": "2017-07-15 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 202,
+      "issue_id": 20,
+      "activity_type_id": 1,
+      "charge": 643.12,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 203,
+      "issue_id": 21,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 204,
+      "issue_id": 22,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 205,
+      "issue_id": 23,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 206,
+      "issue_id": 24,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 207,
+      "issue_id": 25,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 208,
+      "issue_id": 26,
+      "activity_type_id": 1,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2017-08-02 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "activity_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 209,
+      "issue_id": 27,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2018-07-10 00:00:00.000000",
+      "activity_date": "2018-07-10 00:00:00.000000"
+    },
+    {
+      "id": 210,
+      "issue_id": 28,
+      "operator_id": 2,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "PLANNED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "creation_date": "2018-07-10 00:00:00.000000"
+    },
+    {
+      "id": 211,
+      "issue_id": 29,
+      "operator_id": 2,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "PLANNED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "creation_date": "2018-07-10 00:00:00.000000"
+    },
+    {
+      "id": 212,
+      "issue_id": 30,
+      "operator_id": 2,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2018-07-10 00:00:00.000000",
+      "activity_date": "2018-07-10 00:00:00.000000"
+    },
+    {
+      "id": 213,
+      "issue_id": 31,
+      "operator_id": 2,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "PLANNED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2018-07-10 00:00:00.000000"
+    },
+    {
+      "id": 214,
+      "issue_id": 32,
+      "operator_id": 2,
+      "activity_type_id": 2,
+      "charge": 0,
+      "activity_state": "CANCELED",
+      "planned_date": "2018-07-12 00:00:00.000000",
+      "invoice_id": "fv1a/2017",
+      "creation_date": "2018-07-10 00:00:00.000000",
+      "activity_date": "2018-07-10 00:00:00.000000"
+    }
+  ],
+  "activity_detail": [
+    {
+      "id": 100,
+      "activity_id": 100,
+      "activity_detail_property_id": 1,
+      "property_value": "01242-234-234-234"
+    },
+    {
+      "id": 101,
+      "activity_id": 100,
+      "activity_detail_property_id": 2,
+      "property_value": "TRUE"
+    },
+    {
+      "id": 103,
+      "activity_id": 100,
+      "activity_detail_property_id": 10,
+      "property_value": "To jest Komentarz"
+    }
+  ],
+  "declaration": [
+    {
+      "id": 123,
+      "activity_id": 100,
+      "declaration_date": "2017-10-01 00:00:00.000",
+      "declared_payment_date": "2017-08-01 00:00:00.000",
+      "declared_payment_amount_pln": 43323.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 2345.34,
+      "cash_paid_eur": 0,
+      "monitored": true,
+      "paid": false
+    },
+    {
+      "id": 124,
+      "activity_id": 100,
+      "declaration_date": "2017-08-01 00:00:00.000",
+      "declared_payment_date": "2017-07-01 00:00:00.000",
+      "declared_payment_amount_pln": 121243.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 121243.12,
+      "cash_paid_eur": 0,
+      "monitored": false,
+      "paid": true
+    },
+    {
+      "id": 125,
+      "activity_id": 101,
+      "declaration_date": "2017-08-02 00:00:00.000",
+      "declared_payment_date": "2017-07-02 00:00:00.000",
+      "declared_payment_amount_pln": 121243.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 121243.12,
+      "cash_paid_eur": 0,
+      "monitored": false,
+      "paid": false
+    },
+    {
+      "id": 126,
+      "activity_id": 111,
+      "declaration_date": "2017-08-01 00:00:00.000",
+      "declared_payment_date": "2017-07-01 00:00:00.000",
+      "declared_payment_amount_pln": 121243.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 121243.12,
+      "cash_paid_eur": 0,
+      "monitored": false,
+      "paid": false
+    },
+    {
+      "id": 127,
+      "activity_id": 101,
+      "declaration_date": "2017-08-02 00:00:00.000",
+      "declared_payment_date": "2017-07-03 00:00:00.000",
+      "declared_payment_amount_pln": 121243.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 121243.12,
+      "cash_paid_eur": 0,
+      "monitored": false,
+      "paid": false
+    },
+    {
+      "id": 128,
+      "activity_id": 100,
+      "declaration_date": "2017-08-02 00:00:00.000",
+      "declared_payment_date": "2017-07-03 00:00:00.000",
+      "declared_payment_amount_pln": 121243.12,
+      "declared_payment_amount_eur": 0,
+      "cash_paid_pln": 121243.12,
+      "cash_paid_eur": 0,
+      "monitored": false,
+      "paid": false
+    }
+  ]
+}
+
+
+
+
+
+

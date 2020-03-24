@@ -1,0 +1,40 @@
+<div *ngIf="invoiceEntriesLoading" class="invoice-details-margin">
+  <p>Pobieranie pozycji faktury...</p>
+</div>
+
+<div *ngIf="(invoiceEntries != null && invoiceEntries.length > 0) && !invoiceEntriesLoading" style="margin-bottom: 20px">
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width mdl-shadow--2dp--no-shadow mdl-data-table--no-border" id="invoice-entries-table">
+    <thead>
+    <tr>
+      <th colspan="7" class="table-header">Pozycje</th>
+    </tr>
+    <tr>
+      <th>Lp.</th>
+      <th class="mdl-data-table__cell--non-numeric">Nazwa</th>
+      <th>Ilość</th>
+      <th class="mdl-data-table__cell--non-numeric">Jednostka</th>
+      <th>Netto</th>
+      <th>Stawka VAT</th>
+      <th>VAT</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let invoiceEntry of invoiceEntries">
+      <td>{{invoiceEntry.positionNumber}}</td>
+      <td [matTooltip]="(invoiceEntry.paymentTitle !== undefined && invoiceEntry.paymentTitle.length > 35) ? invoiceEntry.paymentTitle : ''"
+          class="mdl-data-table__cell--non-numeric">
+        {{invoiceEntry.paymentTitle | truncateText:[35]}}
+      </td>
+      <td>{{invoiceEntry.quantity}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{invoiceEntry.quantityUnit}}</td>
+      <td>{{invoiceEntry.netAmount | number:'0.2-2'}}</td>
+      <td>{{invoiceEntry.vatRate | nullable:['b/d']}}</td>
+      <td>{{invoiceEntry.vatAmount | number:'0.2-2'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="((invoiceEntries === undefined || invoiceEntries.length === 0) && !invoiceEntriesLoading)" class="invoice-details-margin">
+  <p>Brak Pozycji faktury...</p>
+</div>

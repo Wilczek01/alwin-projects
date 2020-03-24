@@ -1,0 +1,1 @@
+ALTER SEQUENCE alwin_user_id_seq start 20000 restart 20100 MINVALUE 20000;

@@ -1,0 +1,3 @@
+UPDATE ISSUE_TYPE
+SET case_length = 15
+WHERE name = 'PHONE_DEBT_COLLECTION_2';

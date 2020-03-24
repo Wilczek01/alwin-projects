@@ -1,0 +1,16 @@
+.issue-panel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.alwin-work-mat-tab{
+  margin-top: 15px;
+}
+
+.issue-loading-info {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}

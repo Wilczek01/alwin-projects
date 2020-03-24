@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="AlwinUnit" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/AlwinDS</jta-data-source>
+
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider"/>
+            <property name="hibernate.transaction.manager_lookup_class"
+                      value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
+            <property name="org.hibernate.envers.revision_listener" value="com.codersteam.alwin.db.dao.listener.OperatorRevisionListener"/>
+
+            <property name="hibernate.cache.infinispan.query.eviction.strategy" value="LRU"/>
+            <property name="hibernate.cache.infinispan.query.eviction.wake_up_interval" value="2000"/>
+            <property name="hibernate.cache.infinispan.query.eviction.max_entries" value="5000"/>
+            <property name="hibernate.cache.infinispan.query.expiration.lifespan" value="1800000"/>
+            <property name="hibernate.cache.infinispan.query.expiration.max_idle" value="900000"/>
+        </properties>
+    </persistence-unit>
+</persistence>

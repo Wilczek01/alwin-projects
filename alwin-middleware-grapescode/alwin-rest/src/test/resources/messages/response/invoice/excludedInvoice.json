@@ -1,0 +1,29 @@
+{
+  "invoices": {
+    "values": [
+      {
+        "id": 4,
+        "lastPaymentDate": 1447455600000,
+        "netAmount": 1490.73,
+        "grossAmount": 342.87,
+        "number": "000004/12/2015/RL/PO/LW",
+        "currency": "EUR",
+        "currentBalance": -502.23,
+        "paid": 10.11,
+        "contractNumber": "000121/15/3",
+        "typeId": 3,
+        "dueDate": 1449615600000,
+        "typeLabel": "Oplata okresowa",
+        "excluded": true,
+        "dpd": 3138,
+        "correction": false,
+        "corrections": [],
+        "correctionOrder": null,
+        "issueSubject": true,
+        "issueDate": null
+      }
+    ],
+    "totalValues": 1
+  },
+  "balance": 0.00
+}

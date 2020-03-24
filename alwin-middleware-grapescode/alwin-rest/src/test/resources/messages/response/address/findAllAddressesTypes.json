@@ -1,0 +1,18 @@
+[
+  {
+    "key": "OTHER",
+    "label": "Inny"
+  },
+  {
+    "key": "BUSINESS",
+    "label": "Prowadzenia działalności"
+  },
+  {
+    "key": "RESIDENCE",
+    "label": "Siedziby/zamieszkania"
+  },
+  {
+    "key": "CORRESPONDENCE",
+    "label": "Korespondencyjny"
+  }
+]

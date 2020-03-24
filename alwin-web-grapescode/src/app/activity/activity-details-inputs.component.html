@@ -1,0 +1,67 @@
+<div *ngIf="hasActivityDetails()" alwinProvideParentFormGroup>
+  <h6>Dane szczegółowe</h6>
+
+  <div *ngFor="let property of activity.activityDetails;">
+
+    <mat-form-field *ngIf="isKeyOfPhoneCallPerson(property)">
+      <mat-select placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+                  name="property-{{property.detailProperty.id}}"
+                  [required]="property.required" [disabled]="readOnly">
+        <mat-option *ngFor="let person of persons" [value]="person.firstName | concatenateText: [person.lastName]">
+          {{person.firstName | concatenateText: [person.lastName] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isKeyOfFailedPhoneCallReason(property)">
+      <mat-select placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+                  name="property-{{property.detailProperty.id}}"
+                  [required]="property.required" [disabled]="readOnly">
+        <mat-option *ngFor="let dictValue of property.detailProperty.dictionaryValues" [value]="dictValue.value">
+          {{dictValue.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isKeyOfPhoneNumber(property)">
+      <input matInput placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+             name="property-{{property.detailProperty.id}}"
+             [required]="property.required" [readonly]="readOnly" [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let suggestedPhone of suggestedPhones" [value]="suggestedPhone.phoneNumber">
+          {{ suggestedPhone.label | concatenateText: [suggestedPhone.phoneNumber] }} ({{suggestedPhone.contactState}})
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field
+      *ngIf="isTypeOfUnhandledString(property)">
+      <input matInput placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+             name="property-{{property.detailProperty.id}}"
+             [required]="property.required" [readonly]="readOnly">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isTypeOfInteger(property)">
+      <input matInput placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+             name="property-{{property.detailProperty.id}}"
+             [required]="property.required" type="number" [readonly]="readOnly">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isTypeOfDate(property)">
+      <input matInput [matDatepicker]="datePicker" [(ngModel)]="property.value"
+             placeholder="{{property.detailProperty.name}}"
+             name="property-{{property.detailProperty.id}}" [required]="property.required" [readonly]="readOnly">
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isTypeOfBoolean(property)">
+      <mat-select placeholder="{{property.detailProperty.name}}" [(ngModel)]="property.value"
+                  name="property-{{property.detailProperty.id}}" [required]="property.required" [disabled]="readOnly">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

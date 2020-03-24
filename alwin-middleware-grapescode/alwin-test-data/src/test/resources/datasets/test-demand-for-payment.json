@@ -1,0 +1,235 @@
+{
+  "demand_for_payment": [
+    {
+      "id": 1,
+      "issue_date": "2017-07-11 00:00:00.000000",
+      "due_date": "2017-08-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "charge_invoice_no": "CHARGE/INVOICE/10/2017",
+      "state": "NEW",
+      "attachment_ref": "attachment1Link.pdf",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 2,
+      "issue_date": "2017-08-01 00:00:00.000000",
+      "due_date": "2017-09-13 00:00:00.000000",
+      "initial_invoice_no": "000001/12/2020/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_21_00001/15/1",
+      "demand_for_payment_type_configuration_id": 2,
+      "charge_invoice_no": "CHARGE/INVOICE/11/2017",
+      "state": "NEW",
+      "attachment_ref": "attachment2Link.pdf",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 3,
+      "issue_date": "2017-10-11 00:00:00.000000",
+      "due_date": "2017-11-03 00:00:00.000000",
+      "initial_invoice_no": "000025/10/2024/RL/PO/LW",
+      "ext_company_id": 9998,
+      "contract_number": "issue_4_00002/15/1",
+      "demand_for_payment_type_configuration_id": 3,
+      "charge_invoice_no": "CHARGE/INVOICE/12/2017",
+      "state": "ISSUED",
+      "attachment_ref": "attachment3Link.pdf",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 4,
+      "issue_date": "2017-07-21 00:00:00.000000",
+      "due_date": "2017-08-03 00:00:00.000000",
+      "initial_invoice_no": "000001/10/2020/RL/PO/LW",
+      "ext_company_id": 9997,
+      "contract_number": "issue_21_00002/15/1",
+      "demand_for_payment_type_configuration_id": 1,
+      "charge_invoice_no": "CHARGE/INVOICE/10/2017",
+      "state": "WAITING",
+      "attachment_ref": "attachment4Link.pdf",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 5,
+      "issue_date": "2017-08-01 00:00:00.000000",
+      "due_date": "2017-09-13 00:00:00.000000",
+      "initial_invoice_no": "000001/12/2020/RL/PO/LW",
+      "ext_company_id": 9997,
+      "contract_number": "issue_21_00001/15/1",
+      "demand_for_payment_type_configuration_id": 2,
+      "charge_invoice_no": "CHARGE/INVOICE/11/2017",
+      "state": "WAITING",
+      "attachment_ref": "attachment5Link.pdf",
+      "created_manually": false,
+      "aborted": false
+    },
+    {
+      "id": 6,
+      "issue_date": "2017-08-01 00:00:00.000000",
+      "due_date": "2017-08-04 00:00:00.000000",
+      "initial_invoice_no": "Invoice 1",
+      "ext_company_id": 9999,
+      "contract_number": "TEST 12/34/56",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 7,
+      "issue_date": "2017-09-01 00:00:00.000000",
+      "due_date": "2017-09-04 00:00:00.000000",
+      "initial_invoice_no": "Invoice 2",
+      "ext_company_id": 9998,
+      "contract_number": "TEST 20/43/12",
+      "demand_for_payment_type_configuration_id": 2,
+      "charge_invoice_no": "CHARGE/INVOICE/07/2017",
+      "state": "ISSUED",
+      "attachment_ref": "attachment7Link.pdf",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 8,
+      "issue_date": "2017-03-01 00:00:00.000000",
+      "due_date": "2017-03-13 00:00:00.000000",
+      "initial_invoice_no": "Invoice 3",
+      "ext_company_id": 9997,
+      "contract_number": "TEST 12/34/56",
+      "demand_for_payment_type_configuration_id": 1,
+      "charge_invoice_no": "CHARGE/INVOICE/08/2017",
+      "state": "ISSUED",
+      "attachment_ref": "attachment8Link.pdf",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 9,
+      "issue_date": "2017-05-01 00:00:00.000000",
+      "due_date": "2017-05-13 00:00:00.000000",
+      "initial_invoice_no": "000015/12/2015/TO",
+      "ext_company_id": 9996,
+      "contract_number": "TEST 12/34/56",
+      "demand_for_payment_type_configuration_id": 1,
+      "state": "NEW",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 10,
+      "issue_date": "2017-06-01 00:00:00.000000",
+      "due_date": "2017-06-13 00:00:00.000000",
+      "initial_invoice_no": "Invoice 5",
+      "ext_company_id": 9995,
+      "contract_number": "TEST 5/34/56",
+      "demand_for_payment_type_configuration_id": 2,
+      "state": "NEW",
+      "created_manually": true,
+      "aborted": false
+    },
+    {
+      "id": 11,
+      "issue_date": "2017-10-11 00:00:00.000000",
+      "due_date": "2017-11-03 00:00:00.000000",
+      "initial_invoice_no": "000025/10/2024/RL/PO/LW",
+      "ext_company_id": 9998,
+      "contract_number": "issue_4_00002/15/1",
+      "demand_for_payment_type_configuration_id": 3,
+      "charge_invoice_no": "CHARGE/INVOICE/12/2017",
+      "state": "CANCELED",
+      "attachment_ref": "attachment3Link.pdf",
+      "created_manually": false,
+      "aborted": false,
+      "reason_type": "CLIENT_COMPLAINTS"
+    },
+    {
+      "id": 12,
+      "issue_date": "2017-02-01 00:00:00.000000",
+      "due_date": "2017-02-13 00:00:00.000000",
+      "initial_invoice_no": "Invoice 3",
+      "ext_company_id": 9997,
+      "contract_number": "TEST 12/34/56",
+      "demand_for_payment_type_configuration_id": 1,
+      "charge_invoice_no": "CHARGE/INVOICE/08/2017",
+      "state": "ISSUED",
+      "attachment_ref": "attachment8Link.pdf",
+      "created_manually": false,
+      "aborted": true
+    },
+    {
+      "id": 13,
+      "issue_date": "2017-10-11 00:00:00.000000",
+      "due_date": "2017-11-03 00:00:00.000000",
+      "initial_invoice_no": "000025/10/2024/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_4_00002/15/1",
+      "demand_for_payment_type_configuration_id": 3,
+      "charge_invoice_no": "INVOICE/12/2017",
+      "state": "REJECTED",
+      "attachment_ref": "attachment3Link.pdf",
+      "created_manually": false,
+      "state_change_date": "2018-10-23 07:33:00.000000",
+      "state_change_reason": "Komentarz z przyczyną zmiany stanu na odrzucony",
+      "state_change_operator_id": 1,
+      "aborted": true
+    },
+    {
+      "id": 14,
+      "issue_date": "2018-10-11 00:00:00.000000",
+      "due_date": "2018-11-03 00:00:00.000000",
+      "initial_invoice_no": "0000125/10/2024/RL/PO/LW",
+      "ext_company_id": 9999,
+      "contract_number": "issue_9_00003/15/1",
+      "demand_for_payment_type_configuration_id": 3,
+      "charge_invoice_no": "INVOICE/12/2018",
+      "state": "REJECTED",
+      "attachment_ref": "attachment3Link.pdf",
+      "created_manually": false,
+      "state_change_date": "2018-11-01 12:33:00.000000",
+      "state_change_reason": "Krótki komentarz",
+      "state_change_operator_id": 1,
+      "aborted": true
+    }
+  ],
+  "demand_for_payment_invoice": [
+    {
+      "demand_for_payment_id": 1,
+      "formal_debt_collection_invoice_id": 11
+    },
+    {
+      "demand_for_payment_id": 1,
+      "formal_debt_collection_invoice_id": 15
+    },
+    {
+      "demand_for_payment_id": 2,
+      "formal_debt_collection_invoice_id": 10
+    },
+    {
+      "demand_for_payment_id": 3,
+      "formal_debt_collection_invoice_id": 25
+    },
+    {
+      "demand_for_payment_id": 4,
+      "formal_debt_collection_invoice_id": 16
+    },
+    {
+      "demand_for_payment_id": 4,
+      "formal_debt_collection_invoice_id": 17
+    },
+    {
+      "demand_for_payment_id": 5,
+      "formal_debt_collection_invoice_id": 18
+    },
+    {
+      "demand_for_payment_id": 11,
+      "formal_debt_collection_invoice_id": 25
+    }
+  ]
+}

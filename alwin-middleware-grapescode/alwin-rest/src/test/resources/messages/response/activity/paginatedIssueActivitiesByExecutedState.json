@@ -1,0 +1,103 @@
+{
+  "values": [
+    {
+      "id": 201,
+      "issueId": 20,
+      "operator": {
+        "id": 1,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "amickiewicz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz",
+          "email": "amickiewicz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 1,
+          "typeName": "ADMIN",
+          "typeLabel": "Administrator systemu"
+        }
+      },
+      "activityType": {
+        "id": 1,
+        "key": "OUTGOING_PHONE_CALL",
+        "name": "Telefon wychodzący",
+        "canBePlanned": true,
+        "mayBeAutomated": false,
+        "specific": true,
+        "mayHaveDeclaration": true,
+        "chargeMin": 0.00,
+        "chargeMax": null,
+        "customerContact": true,
+        "activityTypeDetailProperties": [
+          {
+            "id": 14,
+            "activityDetailProperty": {
+              "id": 1,
+              "name": "Nr tel.",
+              "key": "PHONE_NUMBER",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": true
+          },
+          {
+            "id": 18,
+            "activityDetailProperty": {
+              "id": 10,
+              "name": "Komentarz",
+              "key": "REMARK",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 15,
+            "activityDetailProperty": {
+              "id": 2,
+              "name": "Czy pozostawiono wiadomość",
+              "key": "MESSAGE_LEFT",
+              "type": "java.lang.Boolean",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 16,
+            "activityDetailProperty": {
+              "id": 3,
+              "name": "Długość rozmowy",
+              "key": "PHONE_CALL_LENGTH",
+              "type": "java.lang.Integer",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          }
+        ]
+      },
+      "activityDate": 1499637600000,
+      "plannedDate": 1500069600000,
+      "creationDate": 1499637600000,
+      "state": {
+        "key": "EXECUTED",
+        "label": "Wykonana",
+        "closed": true
+      },
+      "charge": 56432.23,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [],
+      "declarations": []
+    }
+  ],
+  "totalValues": 1
+}

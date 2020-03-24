@@ -1,0 +1,121 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Aktualizacja typu czynności</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="alwin-dialog-size-big" id="update-dialog">
+  <form (ngSubmit)="updateActivityTypeForm.form.valid && updateActivityType()"
+        #updateActivityTypeForm="ngForm">
+
+    <mat-form-field class="alwin-mat-form-field">
+      <input matInput placeholder="Nazwa typu czynności" [(ngModel)]="activityType.name"
+             name="name"
+             required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Planowana" [(ngModel)]="activityType.canBePlanned"
+                  name="canBePlanned">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="alwin-mat-form-field">
+      <input matInput placeholder="Minimum opłaty dodatkowej	" [(ngModel)]="activityType.chargeMin"
+             name="chargeMin"
+             required>
+    </mat-form-field>
+
+    <mat-form-field class="alwin-mat-form-field">
+      <input matInput placeholder="Maksimum opłaty dodatkowej	" [(ngModel)]="activityType.chargeMax"
+             name="chargeMax">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Może być wykonana przez system" [(ngModel)]="activityType.mayBeAutomated"
+                  name="mayBeAutomated">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Można dodać deklarację" [(ngModel)]="activityType.mayHaveDeclaration"
+                  name="mayHaveDeclaration">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Czynność szczególna" [(ngModel)]="activityType.specific"
+                  name="specific">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Kontakt z klientem" [(ngModel)]="activityType.customerContact"
+                  name="customerContact">
+        <mat-option [value]="true">Tak</mat-option>
+        <mat-option [value]="false">Nie</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="select-size">
+
+      <table class="mdl-data-table mdl-js-data-table full-width activity-types-table" *ngIf="!loading">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric" *ngIf="activityType.canBePlanned === true">Planowana</th>
+          <th class="mdl-data-table__cell--non-numeric">Wykonana</th>
+          <th class="mdl-data-table__cell--non-numeric">Nazwa</th>
+          <th class="mdl-data-table__cell--non-numeric" *ngIf="activityType.canBePlanned === true">Wymagana przy planowaniu</th>
+          <th class="mdl-data-table__cell--non-numeric">Wymagana</th>
+          <th class="mdl-data-table__cell--non-numeric">Predefiniowane wartości</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let property of selectedActivityDetailProperties; let i = index">
+          <td class="mdl-data-table__cell--non-numeric" id="planned-activity-type-{{i}}" *ngIf="activityType.canBePlanned === true">
+            <mat-checkbox [(ngModel)]="property.selectedPlanned" name="planned-activity-type-{{i}}"></mat-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="activity-type-{{i}}">
+            <mat-checkbox [(ngModel)]="property.selected" name="activity-type-{{i}}"></mat-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="name-{{i}}">{{property.activityDetailProperty.name}}</td>
+          <td class="mdl-data-table__cell--non-numeric" id="required-planned-{{i}}" *ngIf="activityType.canBePlanned === true">
+            <mat-checkbox [(ngModel)]="property.requiredPlanned" name="required-planned-{{i}}"></mat-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="required-{{i}}">
+            <mat-checkbox [(ngModel)]="property.required" name="required-{{i}}"></mat-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" id="predefined-values-{{i}}">
+            <span *ngIf="property.activityDetailProperty.key !== activityDetailPropertyKey.FAILED_PHONE_CALL_REASON">b/d</span>
+            <button id="edit-configuration-{{i}}" mat-icon-button matTooltip="Edytuj" (click)="chooseDictionaryValues(property.activityDetailProperty)" type="button"
+                    *ngIf="property.activityDetailProperty.key === activityDetailPropertyKey.FAILED_PHONE_CALL_REASON">
+              <mat-icon class="material-icons">mode_edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="full-width update-button-wrapper">
+      <button mat-raised-button [disabled]="loading || !updateActivityTypeForm.form.valid" color="primary"
+              class="update-button" id="update-activity-type-button">
+        Aktualizuj czynność
+      </button>
+    </div>
+  </form>
+</div>

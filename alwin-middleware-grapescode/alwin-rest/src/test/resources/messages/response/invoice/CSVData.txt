@@ -1,0 +1,16 @@
+Korekta;Przedmiot umowy;Nr faktury;Numer umowy;Typ;Waluta;Data wystawienia;Termin płatności;Data rozliczenia;Kwota dokumentu;Saldo;Zapłacono;DPD;Wyłączona z obsługi
+Nie;Nie;000016/12/2015/TO;issue_21_00001/15/1;Oplata dodatkowa;PLN;2015-12-10;2015-12-10;2015-12-10;461.25;0.00;0.00;0;Tak
+Nie;Nie;000006/11/2015/RL/PO/LW;issue_21_00001/15/1;Oplata okresowa;EUR;2015-12-01;2015-11-10;2015-11-13;490.73;100.00;10.00;3;Nie
+Nie;Tak;000001/12/2020/RL/PO/LW;issue_21_00001/15/1;Oplata okresowa;EUR;;2020-12-01;;190.23;-190.23;90.32;1319;Nie
+Tak;Tak;000001/10/2024/RL/PO/LW;issue_21_00002/15/1;Oplata okresowa;EUR;;2024-10-02;;124.12;-124.12;24.21;-82;Nie
+Nie;Tak;000001/07/2020/RL/PO/LW;issue_21_00002/15/1;Oplata okresowa;PLN;;2020-07-02;;124.12;-124.12;24.20;1471;Nie
+Nie;Tak;000001/08/2020/RL/PO/LW;issue_21_00002/15/1;Oplata okresowa;PLN;;2020-12-01;;124.12;-124.12;0.00;1319;Nie
+Nie;Nie;000001/09/2020/RL/PO/LW;issue_21_00002/15/1;Oplata okresowa;PLN;;2020-12-02;;124.12;-124.12;0.00;1318;Nie
+Nie;Tak;000001/10/2020/RL/PO/LW;issue_21_00002/15/1;Oplata okresowa;PLN;;2020-12-01;;124.12;-124.12;0.00;1319;Nie
+;;;;;;;;;;;;;
+Filtry:;;;;;;;;;;;;;
+;;Tylko nieopłacone:;Nie;;;;;;;;;;
+;;Tylko zaległe:;Nie;;;;;;;;;;
+;;Termin płatności od:;;;;;;;;;;;
+;;Termin płatności do:;;;;;;;;;;;
+;;Typ faktury:;;;;;;;;;;;

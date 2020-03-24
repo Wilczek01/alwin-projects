@@ -1,0 +1,50 @@
+[
+  {
+    "key": "E_MAIL",
+    "label": "E-mail",
+    "callable": false,
+    "textable": false,
+    "emailable": true,
+    "website": false
+  },
+  {
+    "key": "PHONE_NUMBER",
+    "label": "Numer telefonu",
+    "callable": true,
+    "textable": true,
+    "emailable": false,
+    "website": false
+  },
+  {
+    "key": "CONTACT_PERSON",
+    "label": "Osoba kontaktowa",
+    "callable": false,
+    "textable": false,
+    "emailable": false,
+    "website": false
+  },
+  {
+    "key": "OFFICE_E_EMAIL",
+    "label": "E-mail do biura",
+    "callable": false,
+    "textable": false,
+    "emailable": true,
+    "website": false
+  },
+  {
+    "key": "DOCUMENT_E_MAIL",
+    "label": "E-mail dla dokumentów",
+    "callable": false,
+    "textable": false,
+    "emailable": true,
+    "website": false
+  },
+  {
+    "key": "INTERNET_ADDRESS",
+    "label": "Adres internetowy",
+    "callable": false,
+    "textable": false,
+    "emailable": false,
+    "website": true
+  }
+]

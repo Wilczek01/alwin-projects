@@ -1,0 +1,567 @@
+{
+  "values": [
+    {
+      "id": 100,
+      "issueId": 1,
+      "operator": {
+        "id": 1,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "amickiewicz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz",
+          "email": "amickiewicz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 1,
+          "typeName": "ADMIN",
+          "typeLabel": "Administrator systemu"
+        }
+      },
+      "activityType": {
+        "id": 1,
+        "key": "OUTGOING_PHONE_CALL",
+        "name": "Telefon wychodzący",
+        "canBePlanned": true,
+        "mayBeAutomated": false,
+        "specific": true,
+        "mayHaveDeclaration": true,
+        "chargeMin": 0.00,
+        "chargeMax": null,
+        "customerContact": true,
+        "activityTypeDetailProperties": [
+          {
+            "id": 14,
+            "activityDetailProperty": {
+              "id": 1,
+              "name": "Nr tel.",
+              "key": "PHONE_NUMBER",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": true
+          },
+          {
+            "id": 16,
+            "activityDetailProperty": {
+              "id": 3,
+              "name": "Długość rozmowy",
+              "key": "PHONE_CALL_LENGTH",
+              "type": "java.lang.Integer",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 15,
+            "activityDetailProperty": {
+              "id": 2,
+              "name": "Czy pozostawiono wiadomość",
+              "key": "MESSAGE_LEFT",
+              "type": "java.lang.Boolean",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 18,
+            "activityDetailProperty": {
+              "id": 10,
+              "name": "Komentarz",
+              "key": "REMARK",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          }
+        ]
+      },
+      "activityDate": 1499551200000,
+      "plannedDate": 1499637600000,
+      "creationDate": 1499205600000,
+      "state": {
+        "key": "PLANNED",
+        "label": "Zaplanowana",
+        "closed": false
+      },
+      "charge": 10.32,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [
+        {
+          "id": 100,
+          "detailProperty": {
+            "id": 1,
+            "name": "Nr tel.",
+            "key": "PHONE_NUMBER",
+            "type": "java.lang.String",
+            "dictionaryValues": []
+          },
+          "value": "01242-234-234-234",
+          "required": true
+        },
+        {
+          "id": 101,
+          "detailProperty": {
+            "id": 2,
+            "name": "Czy pozostawiono wiadomość",
+            "key": "MESSAGE_LEFT",
+            "type": "java.lang.Boolean",
+            "dictionaryValues": []
+          },
+          "value": "TRUE",
+          "required": false
+        },
+        {
+          "id": 103,
+          "detailProperty": {
+            "id": 10,
+            "name": "Komentarz",
+            "key": "REMARK",
+            "type": "java.lang.String",
+            "dictionaryValues": []
+          },
+          "value": "To jest Komentarz",
+          "required": false
+        }
+      ],
+      "declarations": [
+        {
+          "id": 123,
+          "declarationDate": 1506808800000,
+          "declaredPaymentDate": 1501538400000,
+          "declaredPaymentAmountPLN": 43323.12,
+          "declaredPaymentAmountEUR": 0.00,
+          "cashPaidPLN": 2345.34,
+          "cashPaidEUR": 0.00,
+          "monitored": true,
+          "currentBalancePLN": null,
+          "currentBalanceEUR": null
+        },
+        {
+          "id": 124,
+          "declarationDate": 1501538400000,
+          "declaredPaymentDate": 1498860000000,
+          "declaredPaymentAmountPLN": 121243.12,
+          "declaredPaymentAmountEUR": 0.00,
+          "cashPaidPLN": 121243.12,
+          "cashPaidEUR": 0.00,
+          "monitored": false,
+          "currentBalancePLN": null,
+          "currentBalanceEUR": null
+        },
+        {
+          "id": 128,
+          "declarationDate": 1501624800000,
+          "declaredPaymentDate": 1499032800000,
+          "declaredPaymentAmountPLN": 121243.12,
+          "declaredPaymentAmountEUR": 0.00,
+          "cashPaidPLN": 121243.12,
+          "cashPaidEUR": 0.00,
+          "monitored": false,
+          "currentBalancePLN": null,
+          "currentBalanceEUR": null
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "issueId": 1,
+      "operator": {
+        "id": 1,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "amickiewicz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz",
+          "email": "amickiewicz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 1,
+          "typeName": "ADMIN",
+          "typeLabel": "Administrator systemu"
+        }
+      },
+      "activityType": {
+        "id": 1,
+        "key": "OUTGOING_PHONE_CALL",
+        "name": "Telefon wychodzący",
+        "canBePlanned": true,
+        "mayBeAutomated": false,
+        "specific": true,
+        "mayHaveDeclaration": true,
+        "chargeMin": 0.00,
+        "chargeMax": null,
+        "customerContact": true,
+        "activityTypeDetailProperties": [
+          {
+            "id": 14,
+            "activityDetailProperty": {
+              "id": 1,
+              "name": "Nr tel.",
+              "key": "PHONE_NUMBER",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": true
+          },
+          {
+            "id": 16,
+            "activityDetailProperty": {
+              "id": 3,
+              "name": "Długość rozmowy",
+              "key": "PHONE_CALL_LENGTH",
+              "type": "java.lang.Integer",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 15,
+            "activityDetailProperty": {
+              "id": 2,
+              "name": "Czy pozostawiono wiadomość",
+              "key": "MESSAGE_LEFT",
+              "type": "java.lang.Boolean",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 18,
+            "activityDetailProperty": {
+              "id": 10,
+              "name": "Komentarz",
+              "key": "REMARK",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          }
+        ]
+      },
+      "activityDate": 1499637600000,
+      "plannedDate": 1499983200000,
+      "creationDate": 1499637600000,
+      "state": {
+        "key": "PLANNED",
+        "label": "Zaplanowana",
+        "closed": false
+      },
+      "charge": 56432.23,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [],
+      "declarations": []
+    },
+    {
+      "id": 12,
+      "issueId": 1,
+      "operator": {
+        "id": 1,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "amickiewicz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz",
+          "email": "amickiewicz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 1,
+          "typeName": "ADMIN",
+          "typeLabel": "Administrator systemu"
+        }
+      },
+      "activityType": {
+        "id": 2,
+        "key": "FIRST_DEMAND_PAYMENT",
+        "name": "Wezwanie do zapłaty (podstawowe)",
+        "canBePlanned": false,
+        "mayBeAutomated": true,
+        "specific": true,
+        "mayHaveDeclaration": false,
+        "chargeMin": 50.00,
+        "chargeMax": 203.33,
+        "customerContact": false,
+        "activityTypeDetailProperties": null
+      },
+      "activityDate": 1499637600000,
+      "plannedDate": 1503266400000,
+      "creationDate": 1499637600000,
+      "state": {
+        "key": "PLANNED",
+        "label": "Zaplanowana",
+        "closed": false
+      },
+      "charge": 643.12,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [],
+      "declarations": []
+    },
+    {
+      "id": 13,
+      "issueId": 1,
+      "operator": {
+        "id": 2,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "jslowacki",
+        "permission": {
+          "id": 2,
+          "allowedToExternallyPlanActivities": true,
+          "allowedToChangeActivityCharge": true,
+          "allowedToChangeActivityChargePercent": true,
+          "allowedToMarkOwnAttachmentDeleted": true,
+          "allowedToMarkOthersAttachmentsDeleted": true,
+          "allowedToTransferIssuesInternally": true,
+          "allowedToTransferIssuesExternally": true,
+          "allowedToExcludeIssue": true,
+          "allowedToSetCustomerOutOfService": true,
+          "allowedToTerminateIssue": true,
+          "allowedToExcludeInvoice": true,
+          "allowedToManageDemandsForPayment": true
+        },
+        "parentOperator": {
+          "id": 4,
+          "active": true,
+          "forceUpdatePassword": true,
+          "login": "cmilosz",
+          "permission": {
+            "id": 4,
+            "allowedToExternallyPlanActivities": false,
+            "allowedToChangeActivityCharge": false,
+            "allowedToChangeActivityChargePercent": false,
+            "allowedToMarkOwnAttachmentDeleted": false,
+            "allowedToMarkOthersAttachmentsDeleted": false,
+            "allowedToTransferIssuesInternally": false,
+            "allowedToTransferIssuesExternally": false,
+            "allowedToExcludeIssue": false,
+            "allowedToSetCustomerOutOfService": false,
+            "allowedToTerminateIssue": false,
+            "allowedToExcludeInvoice": false,
+            "allowedToManageDemandsForPayment": true
+          },
+          "parentOperator": null,
+          "user": {
+            "id": 4,
+            "firstName": "Czesław",
+            "lastName": "Miłosz",
+            "email": "cmilosz@grapescode.pl",
+            "phoneNumber": null
+          },
+          "type": {
+            "id": 3,
+            "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+            "typeLabel": "Menedżer windykacji telefonicznej"
+          }
+        },
+        "user": {
+          "id": 2,
+          "firstName": "Juliusz",
+          "lastName": "Słowacki",
+          "email": "jslowacki@grapescode.pl",
+          "phoneNumber": "0048123098567"
+        },
+        "type": {
+          "id": 2,
+          "typeName": "PHONE_DEBT_COLLECTOR",
+          "typeLabel": "Windykator telefoniczny"
+        }
+      },
+      "activityType": {
+        "id": 1,
+        "key": "OUTGOING_PHONE_CALL",
+        "name": "Telefon wychodzący",
+        "canBePlanned": true,
+        "mayBeAutomated": false,
+        "specific": true,
+        "mayHaveDeclaration": true,
+        "chargeMin": 0.00,
+        "chargeMax": null,
+        "customerContact": true,
+        "activityTypeDetailProperties": [
+          {
+            "id": 14,
+            "activityDetailProperty": {
+              "id": 1,
+              "name": "Nr tel.",
+              "key": "PHONE_NUMBER",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": true
+          },
+          {
+            "id": 16,
+            "activityDetailProperty": {
+              "id": 3,
+              "name": "Długość rozmowy",
+              "key": "PHONE_CALL_LENGTH",
+              "type": "java.lang.Integer",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 15,
+            "activityDetailProperty": {
+              "id": 2,
+              "name": "Czy pozostawiono wiadomość",
+              "key": "MESSAGE_LEFT",
+              "type": "java.lang.Boolean",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 18,
+            "activityDetailProperty": {
+              "id": 10,
+              "name": "Komentarz",
+              "key": "REMARK",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          }
+        ]
+      },
+      "activityDate": 1499637600000,
+      "plannedDate": 1503266400000,
+      "creationDate": 1499637600000,
+      "state": {
+        "key": "PLANNED",
+        "label": "Zaplanowana",
+        "closed": false
+      },
+      "charge": 6543.55,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [],
+      "declarations": []
+    },
+    {
+      "id": 14,
+      "issueId": 1,
+      "operator": {
+        "id": 1,
+        "active": true,
+        "forceUpdatePassword": false,
+        "login": "amickiewicz",
+        "permission": null,
+        "parentOperator": null,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz",
+          "email": "amickiewicz@grapescode.pl",
+          "phoneNumber": null
+        },
+        "type": {
+          "id": 1,
+          "typeName": "ADMIN",
+          "typeLabel": "Administrator systemu"
+        }
+      },
+      "activityType": {
+        "id": 1,
+        "key": "OUTGOING_PHONE_CALL",
+        "name": "Telefon wychodzący",
+        "canBePlanned": true,
+        "mayBeAutomated": false,
+        "specific": true,
+        "mayHaveDeclaration": true,
+        "chargeMin": 0.00,
+        "chargeMax": null,
+        "customerContact": true,
+        "activityTypeDetailProperties": [
+          {
+            "id": 14,
+            "activityDetailProperty": {
+              "id": 1,
+              "name": "Nr tel.",
+              "key": "PHONE_NUMBER",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": true
+          },
+          {
+            "id": 16,
+            "activityDetailProperty": {
+              "id": 3,
+              "name": "Długość rozmowy",
+              "key": "PHONE_CALL_LENGTH",
+              "type": "java.lang.Integer",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 15,
+            "activityDetailProperty": {
+              "id": 2,
+              "name": "Czy pozostawiono wiadomość",
+              "key": "MESSAGE_LEFT",
+              "type": "java.lang.Boolean",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          },
+          {
+            "id": 18,
+            "activityDetailProperty": {
+              "id": 10,
+              "name": "Komentarz",
+              "key": "REMARK",
+              "type": "java.lang.String",
+              "dictionaryValues": []
+            },
+            "state": "EXECUTED",
+            "required": false
+          }
+        ]
+      },
+      "activityDate": 1499637600000,
+      "plannedDate": 1503612000000,
+      "creationDate": 1499637600000,
+      "state": {
+        "key": "PLANNED",
+        "label": "Zaplanowana",
+        "closed": false
+      },
+      "charge": 99898.67,
+      "invoiceId": "fv1a/2017",
+      "activityDetails": [],
+      "declarations": []
+    }
+  ],
+  "totalValues": 5
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "CLIENT_COMPLAINTS",
+    "label": "Reklamacja Klienta – błąd po stronie AL."
+  },
+  {
+    "key": "CUSTOMER_SERVICE",
+    "label": "Wniosek w DOK"
+  },
+  {
+    "key": "MISSING_DATA",
+    "label": "Brak danych windykacyjnych"
+  },
+  {
+    "key": "CORRECTION",
+    "label": "Korekta rozrachunku"
+  },
+  {
+    "key": "ZWB",
+    "label": "W obsłudze ZWB"
+  },
+  {
+    "key": "OTHER",
+    "label": "Inne"
+  }
+]

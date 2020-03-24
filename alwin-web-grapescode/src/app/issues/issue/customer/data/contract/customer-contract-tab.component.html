@@ -1,0 +1,94 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!loadingContracts" mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="!loadingContracts && contracts.length > 0" class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col">
+    <table class="mdl-data-table mdl-js-data-table full-width">
+      <tbody>
+      <tr *ngFor="let contract of contracts; let i = index" (click)="selectContract(i)" class="contract-choice" [style.background-color]="selectedContract != null && selectedContract.id === contract.id ? '#eee' : ''">
+        <td class="mdl-data-table__cell--non-numeric" id="contract-{{i}}">
+          <div class="valign-center">
+            <span>{{contract.contractNo}}</span>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mdl-cell mdl-cell--10-col">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="to-left">
+        <div *ngIf="selectedContract == null">Nie wybrano kontraktu</div>
+        <div *ngIf="selectedContract != null" class="font-14 font-gray">
+          <div class="contract-details-data">
+            <div>
+              <mat-icon mat-list-icon>assignment</mat-icon>
+              <span mat-line id="contract-no"><b>Umowa nr: {{selectedContract.contractNo}}</b></span>
+            </div>
+            <mat-divider class="contract-data-list-item"></mat-divider>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Data umowy:</b> {{selectedContract.signDate | date:'dd.MM.yyyy'}} |
+            <b> Stan umowy:</b> {{selectedContract.stateDescription | nullable}} |
+            <b> Status finansowania:</b> {{selectedContract.financingState | nullable}}
+          </span>
+            </div>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Typ finansowania:</b> {{selectedContract.financingType | nullable}} |
+            <b> Sieć sprzedaży:</b> {{selectedContract.distributionChannel | nullable}} |
+            <b> Operator:</b> {{selectedContract.distributionOperator | nullable}}
+          </span>
+            </div>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Wartość umowy:</b> {{selectedContract.contractValue | number:'0.2-2' | nullable}} |
+            <b> Waluta:</b> {{selectedContract.currency | nullable}} |
+            <button mat-button color="primary" type="button" id="contract-schedule-{{selectedContract.id}}" (click)="showSchedule()"
+                    [disabled]="!hasInstalments()">Harmonogram spłaty</button><br/>
+          </span>
+            </div>
+            <mat-divider class="contract-data-list-item"></mat-divider>
+          </div>
+
+          <div *ngFor="let subject of selectedContract.subjects; let i = index" class="contract-details-data">
+            <div>
+              <mat-icon mat-list-icon>assignment</mat-icon>
+              <span mat-line id="contract-subject-{{i}}"><b>Przedmiot</b></span>
+            </div>
+            <mat-divider class="contract-data-list-item"></mat-divider>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Rodzaj:</b> {{subject.name}}
+          </span>
+            </div>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Opis:</b> {{subject.description | nullable}}
+          </span>
+            </div>
+
+            <div class="contract-data-list-item">
+          <span mat-line>
+            <b>Nr rejestracyjny:</b> {{subject.registrationNumber | nullable}} |
+            <b> Nr VIN/fabryczny:</b> {{subject.serialNumber | nullable}}
+          </span>
+            </div>
+
+            <mat-divider class="contract-data-list-item"></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loadingContracts && contracts.length == 0">
+  Brak umów dla tego klienta
+</div>

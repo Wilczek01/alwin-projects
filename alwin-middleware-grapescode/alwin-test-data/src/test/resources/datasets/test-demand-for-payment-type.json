@@ -1,0 +1,40 @@
+{
+  "demand_for_payment_type_configuration": [
+    {
+      "id": 1,
+      "key": "FIRST",
+      "dpd_start": 7,
+      "number_of_days_to_pay": 3,
+      "charge": 50.00,
+      "segment": "A",
+      "min_due_payment_value": -100.00
+    },
+    {
+      "id": 2,
+      "key": "SECOND",
+      "dpd_start": 15,
+      "number_of_days_to_pay": 3,
+      "charge": 99.00,
+      "segment": "A",
+      "min_due_payment_value": -100.00
+    },
+    {
+      "id": 3,
+      "key": "FIRST",
+      "dpd_start": 7,
+      "number_of_days_to_pay": 3,
+      "charge": 50.00,
+      "segment": "B",
+      "min_due_payment_value": -100.00
+    },
+    {
+      "id": 4,
+      "key": "SECOND",
+      "dpd_start": 15,
+      "number_of_days_to_pay": 3,
+      "charge": 99.00,
+      "segment": "B",
+      "min_due_payment_value": -100.00
+    }
+  ]
+}

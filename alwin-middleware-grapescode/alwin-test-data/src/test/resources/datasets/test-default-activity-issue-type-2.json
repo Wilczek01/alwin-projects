@@ -1,0 +1,20 @@
+{
+  "default_issue_activity": [
+    {
+      "id": 6,
+      "issue_type_id": 2,
+      "activity_type_id": 1,
+      "default_day": 1,
+      "version": 1,
+      "creating_date": "2017-07-01 00:00:00.000000"
+    },
+    {
+      "id": 7,
+      "issue_type_id": 2,
+      "activity_type_id": 3,
+      "default_day": 7,
+      "version": 1,
+      "creating_date": "2017-07-04 00:00:00.000000"
+    }
+  ]
+}

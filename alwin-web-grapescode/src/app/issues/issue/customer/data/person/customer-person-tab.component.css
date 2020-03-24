@@ -1,0 +1,58 @@
+.mdl-data-table {
+  border: none;
+}
+
+.action-cell {
+  width: 45px;
+  padding: 0 0 0 10px;
+}
+
+.action-cell:last-of-type {
+  width: 45px;
+  padding: 0 0 0 18px
+}
+
+.customer-data-list-item {
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+.customer-data-line {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.person-details-icon {
+  padding-bottom: 5px;
+}
+
+.person-choice :hover {
+  cursor: pointer;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.contact-person {
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.contact-person-icon {
+  margin-left: 10px;
+}
+
+.person-details {
+  color: rgba(0, 0, 0, 0.87);
+}

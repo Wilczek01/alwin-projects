@@ -1,0 +1,27 @@
+{
+  "values": [
+    {
+      "id": 20106,
+      "startDate": 1525835700000,
+      "endDate": null,
+      "state": null,
+      "type": {
+        "key": "UPDATE_COMPANIES_INVOLVEMENT",
+        "label": "Uaktualnienie zaangażowania firm"
+      },
+      "manual": false
+    },
+    {
+      "id": 20104,
+      "startDate": 1525834800000,
+      "endDate": 1525844140000,
+      "state": "To zadanie wykonało się z bardzo długim komentarzem, np. została podana jakaś bardzo długa nazwa wyjątku: javax.resource.ResourceException: Unable to get managed connection",
+      "type": {
+        "key": "UPDATE_ISSUES_BALANCE",
+        "label": "Uaktualnienie sald otwartych zleceń windykacyjnych oraz powiązanych z nimi faktur"
+      },
+      "manual": true
+    }
+  ],
+  "totalValues": 5
+}

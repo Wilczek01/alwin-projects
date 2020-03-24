@@ -1,0 +1,15 @@
+/*
+ *  Tables variables
+ */
+
+$min-col-width: 40px;
+$side-cols-offset: 0px;  //dodatkowa przestrzeń dla bocznych kolumn (lewej, prawej)
+$side-col-width: $min-col-width + 2*$side-cols-offset;
+
+$customer-col-width: 350px;
+$customer-col-min-width: 150px;
+$invoices-col-width: 250px;
+$tags-col-width: 100px;
+$state-col-width: 150px;
+
+$zebra-row-color: rgba(200, 180, 180, 0.1);

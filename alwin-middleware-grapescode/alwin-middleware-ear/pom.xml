@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>alwin-middleware</artifactId>
+        <groupId>com.codersteam.alwin</groupId>
+        <version>1.18.0.20190917</version>
+    </parent>
+
+    <artifactId>alwin-middleware-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <name>alwin-middleware: EAR Module</name>
+
+    <properties>
+        <sonar.skip>true</sonar.skip>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-common</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-rest</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-rest-doc</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-core</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-dms-connector</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-efaktura-connector</artifactId>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.codersteam.alwin</groupId>
+            <artifactId>alwin-db</artifactId>
+            <type>ejb</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.parent.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${version.plugin.ear}</version>
+                <configuration>
+                    <version>7</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <configuration>
+                    <filename>${project.parent.artifactId}</filename>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,25 @@
+.create-button {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.alwin-mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.update-button {
+  margin-top: 15px;
+}
+
+.update-button-wrapper {
+  display: flex;
+  justify-content: center;
+}

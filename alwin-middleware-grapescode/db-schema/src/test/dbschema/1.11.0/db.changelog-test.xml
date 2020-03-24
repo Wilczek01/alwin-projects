@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_update_issue_type_configuration" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.11.0/dml/001_update_issue_type_configuration.sql"/>
+    </changeSet>
+
+    <changeSet id="001_drop_not_null_activity_type_has_detail_property_aud" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.11.0/ddl/001_drop_not_null_activity_type_has_detail_property_aud.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_value_name_activity_type_detail_property_dict_value_aud" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.11.0/ddl/002_alter_value_name_activity_type_detail_property_dict_value_aud.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_holiday" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.11.0/ddl/003_alter_holiday.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

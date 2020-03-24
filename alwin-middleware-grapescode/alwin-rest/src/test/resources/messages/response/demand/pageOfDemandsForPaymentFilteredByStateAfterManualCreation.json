@@ -1,0 +1,138 @@
+{
+  "values": [
+    {
+      "id": 6,
+      "issueDate": 1501538400000,
+      "dueDate": 1501797600000,
+      "initialInvoiceNo": "Invoice 1",
+      "extCompanyId": 9999,
+      "companyName": "Nazwa Firmmy Sp. z o.o.",
+      "contractNumber": "TEST 12/34/56",
+      "type": {
+        "id": 1,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": null,
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/null",
+      "invoices": [],
+      "createdManually": true,
+      "manualCreationMessage": [
+        "Uwaga: umowa jest już windykowana – wysłano wezwanie danego stopnia dnia 2017-03-01",
+        "Uwaga: nie upłynął termin zapłaty ostatniego wezwania wystawionego do tej umowy!"
+      ]
+    },
+    {
+      "id": 9,
+      "issueDate": 1493589600000,
+      "dueDate": 1494626400000,
+      "initialInvoiceNo": "000015/12/2015/TO",
+      "extCompanyId": 9996,
+      "companyName": "Trzecia Najlepsza Firma Sp. z o.o.",
+      "contractNumber": "TEST 12/34/56",
+      "type": {
+        "id": 1,
+        "key": "FIRST",
+        "dpdStart": 7,
+        "numberOfDaysToPay": 3,
+        "charge": 50.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": null,
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/null",
+      "invoices": [],
+      "createdManually": true,
+      "manualCreationMessage": [
+        "Uwaga: umowa jest już windykowana – wysłano wezwanie danego stopnia dnia 2017-03-01",
+        "Uwaga: nie upłynął termin zapłaty ostatniego wezwania wystawionego do tej umowy!"
+      ]
+    },
+    {
+      "id": 10,
+      "issueDate": 1496268000000,
+      "dueDate": 1497304800000,
+      "initialInvoiceNo": "Invoice 5",
+      "extCompanyId": 9995,
+      "companyName": "Firma 9995",
+      "contractNumber": "TEST 5/34/56",
+      "type": {
+        "id": 2,
+        "key": "SECOND",
+        "dpdStart": 15,
+        "numberOfDaysToPay": 3,
+        "charge": 99.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": null,
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/null",
+      "invoices": [],
+      "createdManually": true,
+      "manualCreationMessage": []
+    },
+    {
+      "id": 100,
+      "issueDate": 1355266800000,
+      "dueDate": 1355526000000,
+      "initialInvoiceNo": "Invoice 1",
+      "extCompanyId": 9999,
+      "companyName": "Nazwa Firmmy Sp. z o.o.",
+      "contractNumber": "TEST 12/34/56",
+      "type": {
+        "id": 2,
+        "key": "SECOND",
+        "dpdStart": 15,
+        "numberOfDaysToPay": 3,
+        "charge": 99.00,
+        "segment": {
+          "key": "A",
+          "label": "A"
+        },
+        "minDuePaymentValue": -100.00,
+        "minDuePaymentPercent": null
+      },
+      "chargeInvoiceNo": null,
+      "state": "NEW",
+      "attachmentRef": "http://grapescode.pl/download/null",
+      "invoices": [
+        {
+          "id": 100,
+          "invoiceNumber": "Invoice 1",
+          "contractNumber": "TEST 12/34/56",
+          "issueDate": 1498860000000,
+          "dueDate": 1499637600000,
+          "currency": "PLN",
+          "netAmount": 300.00,
+          "grossAmount": 369.00,
+          "currentBalance": -99234.35,
+          "leoId": 1
+        }
+      ],
+      "createdManually": true,
+      "manualCreationMessage": [
+        "Uwaga: nie upłynął termin zapłaty ostatniego wezwania wystawionego do tej umowy!"
+      ]
+    }
+  ],
+  "totalValues": 4
+}

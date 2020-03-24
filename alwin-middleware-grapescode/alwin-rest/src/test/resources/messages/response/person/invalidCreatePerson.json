@@ -1,0 +1,6 @@
+{
+  "lastName": "Podaj nazwisko, bo pole nie może być puste.",
+  "firstName": "Podaj imię, bo pole nie może być puste.",
+  "idDocType": "Niepoprawna wartość typu dokumentu tożsamości.",
+  "maritalStatus": "Niepoprawna wartość stanu cywilnego osoby."
+}

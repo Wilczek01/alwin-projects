@@ -1,0 +1,6 @@
+{
+  "errorId": "acbcb5e4-89ee-4971-a29f-d95d9a9d2662",
+  "reportingRequired": false,
+  "message": "Nieprawidłowa wartość statusu [[qwerty]] wezwania do zapłaty. Możliwe wartości to [[NEW, WAITING, FAILED, ISSUED, CANCELED, REJECTED]]",
+  "internalDetails": null
+}

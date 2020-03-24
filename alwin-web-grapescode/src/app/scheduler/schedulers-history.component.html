@@ -1,0 +1,61 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!dataSource.loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" id="scheduler-table" [hidden]="dataSource.max == 0" class="zebra-rows zebra-even">
+
+      <ng-container cdkColumnDef="startDate">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-start-date-column"> Data uruchomienia</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-start-date-column"> {{row.startDate | date:'dd.MM.yyyy HH:mm'}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="endDate">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-end-date-column"> Data zakończenia</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-end-date-column"> {{row.endDate ? (row.endDate | date:'dd.MM.yyyy HH:mm') : 'trwa'}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="duration">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-duration-column"> Czas trwania</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-duration-column"> {{row.startDate | duration:[row.endDate]}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="state">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-state-column"> Komentarz</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-state-column"> {{row.state}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="type">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-type-column"> Zadanie</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-type-column"> {{row.type.label}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="manual">
+        <mat-header-cell *cdkHeaderCellDef class="scheduler-manual-column"> Uruchomienie manualne</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="scheduler-manual-column"> {{row.manual | choice}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;" id="scheduler-{{row.id}}">
+      </mat-row>
+    </mat-table>
+
+    <div class="example-no-results" [style.display]="dataSource.max == 0 ? '' : 'none'">
+      <div class="mdl-cell mdl-cell--12-col">
+        Nie znaleziono żadnych zadań cyklicznych
+      </div>
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource.max == 0">
+    </mat-paginator>
+  </div>
+</div>

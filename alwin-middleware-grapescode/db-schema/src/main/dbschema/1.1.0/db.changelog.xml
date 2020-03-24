@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_create_demand_for_payment_type" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.1.0/ddl/001_create_demand_for_payment_type.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_issue_debt_collection_action" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.1.0/ddl/002_alter_issue_debt_collection_action.sql"/>
+    </changeSet>
+
+    <changeSet id="003_create_demand_for_payment" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.1.0/ddl/003_create_demand_for_payment.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_last_data_sync" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.1.0/ddl/004_alter_last_data_sync.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

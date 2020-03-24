@@ -1,0 +1,69 @@
+{
+  "values": [
+    {
+      "extCompanyId": 1000,
+      "terminationDate": 1457823600000,
+      "type": "CONDITIONAL",
+      "companyName": "Company1000",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 103,
+          "terminationDate": 1457823600000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/103",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 0.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 0.00,
+          "amountInDemandForPaymentEUR": 0.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 0.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 0.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/103",
+          "invoiceAmountInitiatingDemandForPayment": 0.00,
+          "invoiceBalanceInitiatingDemandForPayment": 0.00,
+          "subjects": [],
+          "formalDebtCollectionInvoices": []
+        }
+      ],
+      "attachmentRefs": []
+    }
+  ],
+  "totalValues": 1
+}

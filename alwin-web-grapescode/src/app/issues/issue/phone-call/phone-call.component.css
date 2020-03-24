@@ -1,0 +1,15 @@
+.end-phone-call {
+  margin-left: 26px;
+}
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.phone-call-icon {
+  font-size: 48px;
+  margin-top: 10px;
+  margin-left: 26px;
+}

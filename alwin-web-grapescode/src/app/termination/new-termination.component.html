@@ -1,0 +1,142 @@
+<div id="process-terminations">
+  <mat-expansion-panel [expanded]="expanded" (opened)="expanded = true" (closed)="expanded = false">
+    <mat-expansion-panel-header>
+      <mat-panel-description class="termination-row" style="width: 18%;">
+        <div class="checkboxes" [class.expanded]="expanded">
+          <div class="checkbox" style="text-align: center;">Wypowiedz
+            <mat-checkbox [(ngModel)]="termination.sendAll" (click)="$event.stopPropagation()" (change)="markAllToSend()"
+                          [attr.checked]="termination.sendAll"></mat-checkbox>
+          </div>
+          <div class="checkbox" style="text-align: center;">Odrzuć
+            <mat-checkbox [(ngModel)]="termination.rejectAll" (click)="$event.stopPropagation()" (change)="markAllToReject()"
+                          [attr.checked]="termination.rejectAll"></mat-checkbox>
+          </div>
+          <div class="checkbox" style="text-align: center;">Odrocz
+            <mat-checkbox [(ngModel)]="termination.postponeAll" (click)="$event.stopPropagation()" (change)="markAllToPostpone()"
+                          [attr.checked]="termination.postponeAll"></mat-checkbox>
+          </div>
+        </div>
+      </mat-panel-description>
+      <mat-panel-description class="termination-row" style="width: 21%;">{{termination.termination.companyName}}</mat-panel-description>
+      <mat-panel-description class="termination-row" style="width: 19%;">{{termination.termination.terminationDate | date:'dd.MM.yyyy'}}</mat-panel-description>
+      <mat-panel-description class="termination-row" style="width: 19%;">{{termination.termination.type | terminationContractType}}</mat-panel-description>
+      <mat-panel-description class="termination-row" style="width: 19%;">{{termination.contracts.length}}</mat-panel-description>
+      <mat-panel-description class="termination-row" style="width: 4%;"></mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="termination.termination.contracts.length == 0">
+      Ten klient nie posiada żadnej umowy do wypowiedzenia
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width" *ngIf="termination.termination.contracts.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric" style="text-align: center;">Wypowiedz
+          <mat-checkbox [(ngModel)]="termination.sendAll" (change)="markAllToSend()"
+                        [attr.checked]="termination.sendAll"></mat-checkbox>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric" style="text-align: center;">Odrzuć
+          <mat-checkbox [(ngModel)]="termination.rejectAll" (change)="markAllToReject()"
+                        [attr.checked]="termination.rejectAll"></mat-checkbox>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric" style="text-align: center;">Odrocz
+          <mat-checkbox [(ngModel)]="termination.postponeAll" (change)="markAllToPostpone()"
+                        [attr.checked]="termination.postponeAll"></mat-checkbox>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">Nr umowy</th>
+        <th class="mdl-data-table__cell--non-numeric">Typ</th>
+        <th class="mdl-data-table__cell--non-numeric">Status</th>
+        <th class="mdl-data-table__cell--non-numeric" style="max-width: 150px;">Odroczenie</th>
+        <th class="mdl-data-table__cell--non-numeric">Operator</th>
+        <th class="mdl-data-table__cell--non-numeric">Opłata za wznowienie</th>
+        <th class="mdl-data-table__cell--non-numeric">Termin zapłaty</th>
+        <th class="mdl-data-table__cell--non-numeric" style="min-width: 105px;">Kwota do spłaty</th>
+        <th class="mdl-data-table__cell--non-numeric" style="min-width: 105px;">Suma wpłat</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktura inicjująca</th>
+        <th class="mdl-data-table__cell--non-numeric">Przedmioty</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktury</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let terminationContract of termination.contracts">
+        <td style="text-align: center;">
+          <mat-checkbox [(ngModel)]="terminationContract.send" (change)="markToSend(terminationContract)"
+                        [attr.checked]="terminationContract.send"
+                        [disabled]="terminationContract.terminationContract.state != STATE.NEW && terminationContract.terminationContract.state != STATE.FAILED && terminationContract.terminationContract.state != STATE.POSTPONED"></mat-checkbox>
+        </td>
+        <td style="text-align: center;">
+          <mat-checkbox [(ngModel)]="terminationContract.reject" (change)="markToReject(terminationContract)"
+                        [attr.checked]="terminationContract.reject"
+                        [disabled]="terminationContract.terminationContract.state == STATE.WAITING"></mat-checkbox>
+        </td>
+        <td style="text-align: center;">
+          <mat-checkbox [(ngModel)]="terminationContract.postpone" (change)="markToPostpone(terminationContract, null, null)"
+                        [attr.checked]="terminationContract.postpone"
+                        [disabled]="terminationContract.terminationContract.state == STATE.WAITING"></mat-checkbox>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.terminationContract.contractNumber}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" style="min-width: 130px">
+          <mat-select placeholder="Typ" [(ngModel)]="terminationContract.terminationContract.type" [disabled]="!terminationContract.changeType"
+                      (selectionChange)="changeType(terminationContract)">
+            <mat-option [value]="TYPE.CONDITIONAL">{{TYPE.CONDITIONAL | terminationContractType}}</mat-option>
+            <mat-option [value]="TYPE.IMMEDIATE">{{TYPE.IMMEDIATE | terminationContractType}}</mat-option>
+          </mat-select>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.terminationContract.state | terminationState}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" style="max-width: 150px;">
+          <mat-form-field style="max-width: 130px;">
+            <input matInput [matDatepicker]="postponeTerminationDate" [(ngModel)]="terminationContract.terminationContract.terminationDate"
+                   placeholder="Odroczony termin" name="postponeTerminationDate" [disabled]="!terminationContract.postpone" required>
+            <mat-datepicker-toggle matSuffix [for]="postponeTerminationDate"></mat-datepicker-toggle>
+            <mat-datepicker #postponeTerminationDate [disabled]="!terminationContract.postpone"></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field style="max-width: 130px;">
+            <input matInput placeholder="Komentarz" [(ngModel)]="terminationContract.terminationContract.remark" name="remark"
+                   [disabled]="!terminationContract.postpone">
+          </mat-form-field>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.terminationContract.generatedBy}}<br/>{{terminationContract.terminationContract.operatorEmail}}<br/>{{terminationContract.terminationContract.operatorPhoneNumber}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.terminationContract.resumptionCost | number:'0.2-2'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{terminationContract.terminationContract.dueDateInDemandForPayment | date:'dd.MM.yyyy'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" style="min-width: 105px;">
+          {{terminationContract.terminationContract.amountInDemandForPaymentPLN | number:'0.2-2'}} PLN<br/>
+          {{terminationContract.terminationContract.amountInDemandForPaymentEUR | number:'0.2-2'}} EUR
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" style="min-width: 105px;">
+          {{terminationContract.terminationContract.totalPaymentsSinceDemandForPaymentPLN | number:'0.2-2'}} PLN<br/>
+          {{terminationContract.terminationContract.totalPaymentsSinceDemandForPaymentEUR | number:'0.2-2'}} EUR
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          Numer: {{terminationContract.terminationContract.invoiceNumberInitiatingDemandForPayment}}<br/>
+          Kwota: {{terminationContract.terminationContract.invoiceAmountInitiatingDemandForPayment | number:'0.2-2'}}<br/>
+          Saldo: {{terminationContract.terminationContract.invoiceBalanceInitiatingDemandForPayment | number:'0.2-2'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <span *ngIf="terminationContract.terminationContract.subjects != null && terminationContract.terminationContract.subjects.length > 0">
+            <a style="cursor: pointer"
+               (click)="showSubjects(terminationContract.terminationContract.subjects, terminationContract.terminationContract.contractNumber)">
+              Zobacz ({{terminationContract.terminationContract.subjects.length}})
+            </a>
+          </span>
+          <span *ngIf="terminationContract.terminationContract.subjects == null || terminationContract.terminationContract.subjects.length == 0">Brak</span>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <button mat-icon-button (click)="showInvoices(terminationContract.terminationContract.formalDebtCollectionInvoices)" matTooltip="Zobacz">
+            <mat-icon class="material-icons">search</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+</div>

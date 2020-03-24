@@ -1,0 +1,41 @@
+{
+  "values": [
+    {
+      "id": 11,
+      "postalCode": "2305",
+      "city": "ADHPoczta2305",
+      "prefix": "ul.",
+      "street": "ADHUlica22305",
+      "email": "kontakt@jan.example.zzz",
+      "correspondencePostalCode": "33305",
+      "correspondenceCity": "ADHPoczta33305",
+      "correspondencePrefix": "ul.",
+      "correspondenceStreet": "ADHUlica33305",
+      "nip": "98762305",
+      "regon": "12342305",
+      "krs": "krs",
+      "companyName": "ADHNazwa2305",
+      "shortName": "ADH2305",
+      "recipientName": "JAN KOWALSKI USLUGI DORADCZE",
+      "rating": "Q01",
+      "ratingDate": 1451516400000,
+      "contactPerson": "Pani Janina",
+      "phoneNumber1": "tel 1305",
+      "phoneNumber2": "tel 2305",
+      "phoneNumber3": "tel 3305",
+      "mobilePhoneNumber": "mobile 305",
+      "documentsEmail": "dokumenty@jan.example.zzz",
+      "officeEmail": "biuro@jan.example.zzz",
+      "websiteAddress": "http address 11",
+      "externalDBAgreement": false,
+      "externalDBAgreementDate": 1496181600000,
+      "legalForm": {
+        "id": 1,
+        "symbol": "Spółka z o.o."
+      },
+      "pkdCode": "90.04.Z",
+      "pkdName": "Działalność obiektów kulturalnych"
+    }
+  ],
+  "totalValues": 2
+}

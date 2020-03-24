@@ -1,0 +1,63 @@
+@import '../../../../sass/variables';
+//@import '/sass/variables';
+
+.mat-cell, .mat-header-cell {
+
+  &.amount {
+    //min-width: 85px;
+    flex: 0 0 8%;
+  }
+
+  &.small-col {
+    flex: 0 0 5%;
+    min-width: unset;
+  }
+
+  &.issue-customer-column {
+    position: relative;
+    //flex: 0 1 $customer-col-width;
+    flex: 0 1 70%;
+    min-width: $customer-col-min-width;
+    .user-name-cell.ellipsis-with-hover {
+      //width: $customer-col-width; //potrzebne do ellipsisa
+      text-align: left;
+      width: 100%; //potrzebne do ellipsisa
+      //min-width: $customer-col-width;
+    }
+
+    .mat-sort-header-container {
+      width: $customer-col-width;
+      justify-content: center;
+    }
+  }
+
+  &.issue-state-column {
+    position: relative;
+    flex: 0 1 20%;
+    .ellipsis-with-hover {
+      width: 100%; //potrzebne do ellipsisa
+      //min-width: $state-col-width;
+    }
+  }
+
+  &.issue-tags-column {
+    flex-direction: row;
+    flex: 0 0 $tags-col-width;
+  }
+
+  &.issue-date-column {
+    flex: 0 0 8%;
+  }
+
+  &.issue-priority .mat-icon {
+    color: #EE2222;
+  }
+
+  &.issue-type-column {
+    min-width: $min-col-width + 10;
+  }
+
+  .peel-off-right-cell {
+    padding-right: 5%;
+  }
+}

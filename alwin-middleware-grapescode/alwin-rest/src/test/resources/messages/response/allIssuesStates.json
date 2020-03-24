@@ -1,0 +1,22 @@
+[
+  {
+    "key": "NEW",
+    "label": "Nowe"
+  },
+  {
+    "key": "IN_PROGRESS",
+    "label": "Realizowane"
+  },
+  {
+    "key": "WAITING_FOR_TERMINATION",
+    "label": "Czekające na zamknięcie"
+  },
+  {
+    "key": "DONE",
+    "label": "Zakonczone"
+  },
+  {
+    "key": "CANCELED",
+    "label": "Anulowane"
+  }
+]

@@ -1,0 +1,46 @@
+<div class="progress-bar-placeholder">
+  <mat-progress-bar [hidden]="!loadingAddresses" mode="indeterminate"></mat-progress-bar>
+</div>
+<table class="mdl-data-table mdl-js-data-table full-width" *ngIf="!loadingAddresses && addresses.length != 0">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Typ</th>
+    <th class="mdl-data-table__cell--non-numeric">Adres</th>
+    <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+    <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">Akcje</th>
+    <th class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+      <button mat-icon-button matTooltip="Dodaj" id="create-new-address-button" (click)="createNewAddress()">
+        <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+      </button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let address of addresses">
+    <td class="mdl-data-table__cell--non-numeric" id="address-type-{{address.id}}">{{address.addressType.label}}</td>
+    <td class="mdl-data-table__cell--non-numeric" id="address-value-{{address.id}}">
+      <p [innerHTML]="address.streetPrefix | buildAddress:
+      [address.streetName, address.houseNumber, address.flatNumber, address.postalCode, address.city, address.country]"></p>
+    </td>
+    <td class="mdl-data-table__cell--non-numeric" id="address-remark-{{address.id}}">{{address.remark}}</td>
+    <td class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly">
+      <button mat-icon-button matTooltip="Edytuj" id="edit-address-{{address.id}}-button" (click)="updateAddress(address)"
+              [disabled]="address.importedFromAida">
+        <mat-icon class="md-24" aria-label="Edytuj">mode_edit</mat-icon>
+      </button>
+    </td>
+    <td class="mdl-data-table__cell--non-numeric action-cell" *ngIf="!readonly"></td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loadingAddresses && addresses.length == 0">
+  <div class="to-left">
+    Nie znaleziono adresów dla tego klienta
+  </div>
+  <div class="to-right">
+    <button mat-icon-button matTooltip="Dodaj" (click)="createNewAddress()" *ngIf="!readonly">
+      <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+    </button>
+  </div>
+</div>

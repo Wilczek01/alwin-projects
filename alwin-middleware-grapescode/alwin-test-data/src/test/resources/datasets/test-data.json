@@ -1,0 +1,1604 @@
+{
+  "operator_type": [
+    {
+      "id": 1,
+      "type_name": "ADMIN",
+      "type_label": "Administrator systemu"
+    },
+    {
+      "id": 3,
+      "type_name": "PHONE_DEBT_COLLECTOR_MANAGER",
+      "type_label": "Menedżer windykacji telefonicznej"
+    },
+    {
+      "id": 2,
+      "type_name": "PHONE_DEBT_COLLECTOR",
+      "type_label": "Windykator telefoniczny",
+      "parent_operator_type_id": 3
+    },
+    {
+      "id": 4,
+      "type_name": "DIRECT_DEBT_COLLECTION_MANAGER",
+      "type_label": "Menedżer windykacji bezpośredniej"
+    },
+    {
+      "id": 5,
+      "type_name": "FIELD_DEBT_COLLECTOR",
+      "type_label": "Windykator terenowy",
+      "parent_operator_type_id": 4
+    },
+    {
+      "id": 6,
+      "type_name": "RESTRUCTURING_SPECIALIST",
+      "type_label": "Specjalista ds. restrukturyzacji"
+    },
+    {
+      "id": 7,
+      "type_name": "RENUNCIATION_COORDINATOR",
+      "type_label": "Koordynator wypowiedzeń"
+    },
+    {
+      "id": 8,
+      "type_name": "SECURITY_SPECIALIST",
+      "type_label": "Specjalista ds. realizacji zabezpieczeń"
+    },
+    {
+      "id": 9,
+      "type_name": "ANALYST",
+      "type_label": "Analityk"
+    },
+    {
+      "id": 10,
+      "type_name": "DEPARTMENT_MANAGER",
+      "type_label": "Menedżer departamentu"
+    },
+    {
+      "id": 11,
+      "type_name": "ACCOUNT_MANAGER",
+      "type_label": "Opiekun klienta"
+    },
+    {
+      "id": 12,
+      "type_name": "PHONE_DEBT_COLLECTOR_1",
+      "type_label": "Windykator telefoniczny sekcja 1",
+      "parent_operator_type_id": 3
+    },
+    {
+      "id": 13,
+      "type_name": "PHONE_DEBT_COLLECTOR_2",
+      "type_label": "Windykator telefoniczny sekcja 2",
+      "parent_operator_type_id": 3
+    }
+  ],
+  "alwin_user": [
+    {
+      "id": 1,
+      "first_name": "Adam",
+      "last_name": "Mickiewicz",
+      "email": "amickiewicz@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 2,
+      "first_name": "Juliusz",
+      "last_name": "Słowacki",
+      "email": "jslowacki@grapescode.pl",
+      "phone_number": "0048123098567",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 3,
+      "first_name": "Cyprian Kamil",
+      "last_name": "Norwid",
+      "email": "cknorwid@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 4,
+      "first_name": "Czesław",
+      "last_name": "Miłosz",
+      "email": "cmilosz@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 5,
+      "first_name": "Stanisław",
+      "last_name": "Lem",
+      "email": "slem@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 6,
+      "first_name": "Jan",
+      "last_name": "Brzechwa",
+      "email": "jbrzechwa@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 7,
+      "first_name": "Ryszard",
+      "last_name": "Kapuściński",
+      "email": "rkapuscinski@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 8,
+      "first_name": "Jan",
+      "last_name": "Kochanowski",
+      "email": "jkochanowski@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 9,
+      "first_name": "Bolesław",
+      "last_name": "Prus",
+      "email": "bprus@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 10,
+      "first_name": "Władysław",
+      "last_name": "Reymont",
+      "email": "wreymont@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 11,
+      "first_name": "Julian",
+      "last_name": "Tuwim",
+      "email": "jtuwim@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 12,
+      "first_name": "Maria",
+      "last_name": "Konopnicka",
+      "email": "mkonopnicka@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 13,
+      "first_name": "Wisława",
+      "last_name": "Szymborska",
+      "email": "wszymborska@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 14,
+      "first_name": "Leopold",
+      "last_name": "Staff",
+      "email": "lstaff@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    },
+    {
+      "id": 15,
+      "first_name": "Adam",
+      "last_name": "Asnyk",
+      "email": "aasnyk@grapescode.pl",
+      "creation_date": "2017-07-10 00:00:00.000000",
+      "update_date": "2017-07-10 00:00:00.000000"
+    }
+  ],
+  "alwin_operator": [
+    {
+      "id": 1,
+      "alwin_user_id": 1,
+      "operator_type_id": 1,
+      "login": "amickiewicz",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 3,
+      "alwin_user_id": 3,
+      "operator_type_id": 2,
+      "login": "cknorwid",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "permission_id": 3,
+      "force_update_password": false
+    },
+    {
+      "id": 4,
+      "alwin_user_id": 4,
+      "operator_type_id": 3,
+      "login": "cmilosz",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": true,
+      "permission_id": 4
+    },
+    {
+      "id": 2,
+      "alwin_user_id": 2,
+      "operator_type_id": 2,
+      "login": "jslowacki",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "parent_alwin_operator_id": 4,
+      "permission_id": 2,
+      "force_update_password": false
+    },
+    {
+      "id": 5,
+      "alwin_user_id": 5,
+      "operator_type_id": 4,
+      "login": "slem",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 6,
+      "alwin_user_id": 6,
+      "operator_type_id": 5,
+      "login": "jbrzechwa",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 7,
+      "alwin_user_id": 7,
+      "operator_type_id": 6,
+      "login": "rkapuscinski",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 8,
+      "alwin_user_id": 8,
+      "operator_type_id": 7,
+      "login": "jkochanowski",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 9,
+      "alwin_user_id": 9,
+      "operator_type_id": 8,
+      "login": "bprus",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 10,
+      "alwin_user_id": 10,
+      "operator_type_id": 9,
+      "login": "wreymont",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 11,
+      "alwin_user_id": 11,
+      "operator_type_id": 10,
+      "login": "jtuwim",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "force_update_password": false
+    },
+    {
+      "id": 12,
+      "alwin_user_id": 12,
+      "operator_type_id": 11,
+      "login": "mkonopnicka",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": false,
+      "force_update_password": false
+    },
+    {
+      "id": 13,
+      "alwin_user_id": 13,
+      "operator_type_id": 11,
+      "login": "wszymborska",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": false,
+      "force_update_password": false
+    },
+    {
+      "id": 14,
+      "alwin_user_id": 6,
+      "operator_type_id": 5,
+      "login": "inactive_test",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": false,
+      "force_update_password": false
+    },
+    {
+      "id": 15,
+      "alwin_user_id": 14,
+      "operator_type_id": 12,
+      "login": "lstaff",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "parent_alwin_operator_id": 4,
+      "force_update_password": false
+    },
+    {
+      "id": 16,
+      "alwin_user_id": 15,
+      "operator_type_id": 13,
+      "login": "aasynk",
+      "password": "30e2bd81539d250a9db53a89bd51a94a38eb8d1a41319f6d01bf5a5779ed7db5ba9964a69326ccd875c6f5b1e22b2e2f550fc55f882eaad64b50318bfa79ce8d",
+      "salt": "7ad53ec9-876f-4cf3-b7cd-526a153e5836",
+      "active": true,
+      "parent_alwin_operator_id": 4,
+      "force_update_password": false
+    }
+  ],
+  "address": [
+    {
+      "id": 1,
+      "street_prefix": "ul.",
+      "street": "Kalwaryjska",
+      "house_no": "3",
+      "flat_no": "10",
+      "post_code": "02-567",
+      "city": "Kraków",
+      "country": "Polska",
+      "address_type": "CORRESPONDENCE",
+      "remark": "Test remark",
+      "imported_from_aida": true,
+      "imported_type": "CORRESPONDENCE"
+    },
+    {
+      "id": 2,
+      "street_prefix": "aleje",
+      "street": "Jerozolimskie",
+      "house_no": "8",
+      "flat_no": "19",
+      "post_code": "01-234",
+      "city": "Warszawa",
+      "country": "Polska",
+      "address_type": "RESIDENCE",
+      "remark": "Test remark",
+      "imported_from_aida": true,
+      "imported_type": "RESIDENCE"
+    },
+    {
+      "id": 3,
+      "street_prefix": "ul.",
+      "street": "Marszałkowska",
+      "house_no": "7",
+      "flat_no": "19",
+      "post_code": "04-890",
+      "city": "Warszawa",
+      "country": "Polska",
+      "address_type": "RESIDENCE",
+      "remark": "Test remark",
+      "imported_from_aida": false
+    },
+    {
+      "id": 4,
+      "street_prefix": "ul.",
+      "street": "Broniewskiego",
+      "house_no": "9",
+      "flat_no": "321",
+      "post_code": "01-756",
+      "city": "Warszawa",
+      "country": "Polska",
+      "address_type": "RESIDENCE",
+      "remark": "Test remark",
+      "imported_from_aida": false
+    },
+    {
+      "id": 5,
+      "street_prefix": "ul.",
+      "street": "Kochanowskiego",
+      "house_no": "12",
+      "post_code": "01-223",
+      "city": "Warszawa",
+      "country": "Polska",
+      "address_type": "RESIDENCE",
+      "remark": "Test remark",
+      "imported_from_aida": false
+    }
+  ],
+  "company": [
+    {
+      "id": 1,
+      "ext_company_id": 9999,
+      "company_name": "Nazwa Firmmy Sp. z o.o.",
+      "short_name": "Nazwa Firmmy",
+      "nip": "123456789",
+      "regon": "123456",
+      "krs": "98765432234",
+      "recipient_name": "Mikołaj Rej",
+      "rating": "Q01",
+      "rating_date": "2017-09-01 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2017-07-10 00:00:00.000000",
+      "segment": "A",
+      "involvement": 12345.67,
+      "pkd_code": "20.12.Z",
+      "pkd_name": "Produkcja barwników i pigmentów"
+    },
+    {
+      "id": 2,
+      "ext_company_id": 9998,
+      "company_name": "Najlepsza Firma Sp. z o.o.",
+      "short_name": "Najlepsza Firma",
+      "nip": "8866123123",
+      "regon": "989867612",
+      "krs": "876543232324",
+      "recipient_name": "Krzysztof Kolumb",
+      "rating": "W02",
+      "rating_date": "2016-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "B",
+      "involvement": 23456.78,
+      "pkd_code": "01.11.Z",
+      "pkd_name": "Uprawa zbóż, roślin strączkowych i roślin oleistych na nasiona, z wyłączeniem ryżu"
+    },
+    {
+      "id": 3,
+      "ext_company_id": 9997,
+      "company_name": "Druga Najlepsza Firma Sp. z o.o.",
+      "short_name": "Druga Najlepsza Firma",
+      "nip": "7488099035",
+      "regon": "270261889",
+      "krs": "098789876342",
+      "recipient_name": "John Smith",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 34567.89,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 4,
+      "ext_company_id": 9996,
+      "company_name": "Trzecia Najlepsza Firma Sp. z o.o.",
+      "short_name": "Trzecia Najlepsza Firma",
+      "nip": "3567636850",
+      "regon": "050309810",
+      "krs": "17328636",
+      "recipient_name": "Janko Walski",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Tarcie parmezanu"
+    },
+    {
+      "id": 5,
+      "ext_company_id": 9995,
+      "company_name": "Firma 9995",
+      "short_name": "Firma9995",
+      "nip": "3819667897",
+      "regon": "935884179",
+      "krs": "KRS 9995",
+      "recipient_name": "Odbiorca firma 9995",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 6,
+      "ext_company_id": 9994,
+      "company_name": "Firma 9994",
+      "short_name": "Firma9994",
+      "nip": "6780323778",
+      "regon": "756152902",
+      "krs": "KRS 9994",
+      "recipient_name": "Odbiorca firma 9994",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 7,
+      "ext_company_id": 9993,
+      "company_name": "Firma 9993",
+      "short_name": "Firma9993",
+      "nip": "2619474934",
+      "regon": "150939459",
+      "krs": "KRS 9993",
+      "recipient_name": "Odbiorca firma 9993",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 8,
+      "ext_company_id": 9992,
+      "company_name": "Firma 9992",
+      "short_name": "Firma9992",
+      "nip": "9393539165",
+      "regon": "735583142",
+      "krs": "KRS 9992",
+      "recipient_name": "Odbiorca firma 9992",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 9,
+      "ext_company_id": 9991,
+      "company_name": "Firma 9991",
+      "short_name": "Firma9991",
+      "nip": "6837458881",
+      "regon": "615557755",
+      "krs": "KRS 9991",
+      "recipient_name": "Odbiorca firma 9991",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 10,
+      "ext_company_id": 9990,
+      "company_name": "Firma 9990",
+      "short_name": "Firma9990",
+      "nip": "7341282285",
+      "regon": "893713518",
+      "krs": "KRS 9990",
+      "recipient_name": "Odbiorca firma 9990",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 11,
+      "ext_company_id": 9989,
+      "company_name": "Firma 9989",
+      "short_name": "Firma9989",
+      "nip": "1654307226",
+      "regon": "035394345",
+      "krs": "KRS 9989",
+      "recipient_name": "Odbiorca firma 9989",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 12,
+      "ext_company_id": 9988,
+      "company_name": "Firma 9988",
+      "short_name": "Firma9988",
+      "nip": "5332616395",
+      "regon": "791671434",
+      "krs": "KRS 9988",
+      "recipient_name": "Odbiorca firma 9988",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 13,
+      "ext_company_id": 9987,
+      "company_name": "Firma 9987",
+      "short_name": "Firma9987",
+      "nip": "3647943212",
+      "regon": "914725610",
+      "krs": "KRS 9987",
+      "recipient_name": "Odbiorca firma 9987",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 14,
+      "ext_company_id": 9986,
+      "company_name": "Firma 9986",
+      "short_name": "Firma9986",
+      "nip": "9882335491",
+      "regon": "491081759",
+      "krs": "KRS 9986",
+      "recipient_name": "Odbiorca firma 9986",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 15,
+      "ext_company_id": 9985,
+      "company_name": "Firma 9985",
+      "short_name": "Firma9985",
+      "nip": "9981051644",
+      "regon": "150182720",
+      "krs": "KRS 9985",
+      "recipient_name": "Odbiorca firma 9985",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 16,
+      "ext_company_id": 9984,
+      "company_name": "Firma 9984",
+      "short_name": "Firma9984",
+      "nip": "4669628820",
+      "regon": "071429334",
+      "krs": "KRS 9984",
+      "recipient_name": "Odbiorca firma 9984",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 17,
+      "ext_company_id": 9983,
+      "company_name": "Firma 9983",
+      "short_name": "Firma9983",
+      "nip": "5129997804",
+      "regon": "517228042",
+      "krs": "KRS 9983",
+      "recipient_name": "Odbiorca firma 9983",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 18,
+      "ext_company_id": 9982,
+      "company_name": "Firma 9982",
+      "short_name": "Firma9982",
+      "nip": "9740010632",
+      "regon": "738848530",
+      "krs": "KRS 9982",
+      "recipient_name": "Odbiorca firma 9982",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 19,
+      "ext_company_id": 9981,
+      "company_name": "Firma 9981",
+      "short_name": "Firma9981",
+      "nip": "6426764493",
+      "regon": "251933591",
+      "krs": "KRS 9981",
+      "recipient_name": "Odbiorca firma 9981",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 20,
+      "ext_company_id": 9980,
+      "company_name": "Firma 9980",
+      "short_name": "Firma9980",
+      "nip": "7131051243",
+      "regon": "738802060",
+      "krs": "KRS 9980",
+      "recipient_name": "Odbiorca firma 9980",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 21,
+      "ext_company_id": 9979,
+      "company_name": "Firma 9979",
+      "short_name": "Firma9979",
+      "nip": "8538966033",
+      "regon": "352494251",
+      "krs": "KRS 9979",
+      "recipient_name": "Odbiorca firma 9979",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 22,
+      "ext_company_id": 9978,
+      "company_name": "Firma 9978",
+      "short_name": "Firma9978",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9978",
+      "recipient_name": "Odbiorca firma 9978",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 23,
+      "ext_company_id": 9977,
+      "company_name": "Firma 9977",
+      "short_name": "Firma9977",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9977",
+      "recipient_name": "Odbiorca firma 9977",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "A",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 24,
+      "ext_company_id": 9976,
+      "company_name": "Firma 9976",
+      "short_name": "Firma9976",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9976",
+      "recipient_name": "Odbiorca firma 9976",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "B",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 25,
+      "ext_company_id": 9975,
+      "company_name": "Firma 9975",
+      "short_name": "Firma9975",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9975",
+      "recipient_name": "Odbiorca firma 9975",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "B",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 26,
+      "ext_company_id": 9974,
+      "company_name": "Firma 9974",
+      "short_name": "Firma9974",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9974",
+      "recipient_name": "Odbiorca firma 9974",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "B",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    },
+    {
+      "id": 27,
+      "ext_company_id": 9973,
+      "company_name": "Firma 9973",
+      "short_name": "Firma9973",
+      "nip": "3541983180",
+      "regon": "457545719",
+      "krs": "KRS 9973",
+      "recipient_name": "Odbiorca firma 9973",
+      "rating": "W02",
+      "rating_date": "2017-10-25 00:00:00.000000",
+      "external_db_agreement": "true",
+      "external_db_agreement_date": "2016-03-13 00:00:00.000000",
+      "segment": "B",
+      "involvement": 0.00,
+      "pkd_code": "01.12.Z",
+      "pkd_name": "Uprawa ryżu"
+    }
+  ],
+  "contact_detail": [
+    {
+      "id": 1,
+      "contact": "Jan Kochanowski",
+      "contact_type": "CONTACT_PERSON",
+      "state": "ACTIVE",
+      "remark": "trudno się dodzownić",
+      "imported_from_aida": true,
+      "imported_type": "CONTACT_PERSON"
+    },
+    {
+      "id": 2,
+      "contact": "Adam Mickiewicz",
+      "contact_type": "CONTACT_PERSON",
+      "state": "PREFERRED",
+      "remark": "w godzinach 10-18",
+      "imported_from_aida": false
+    },
+    {
+      "id": 3,
+      "contact": "Juliusz Słowacki",
+      "contact_type": "CONTACT_PERSON",
+      "state": "INACTIVE",
+      "remark": "nie odbiera",
+      "imported_from_aida": false
+    },
+    {
+      "id": 4,
+      "contact": "0048123456790",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "remark": "Jan - trudno się dodzownić",
+      "imported_from_aida": true,
+      "imported_type": "MOBILE_PHONE",
+      "send_automatic_sms": true
+    },
+    {
+      "id": 5,
+      "contact": "0048123456791",
+      "contact_type": "PHONE_NUMBER",
+      "state": "PREFERRED",
+      "remark": "Adam -  w godzinach 10-18",
+      "imported_from_aida": false,
+      "send_automatic_sms": false
+    },
+    {
+      "id": 6,
+      "contact": "0048123456789",
+      "contact_type": "PHONE_NUMBER",
+      "state": "INACTIVE",
+      "remark": "Juliusz - nie odbiera",
+      "imported_from_aida": false,
+      "send_automatic_sms": true
+    },
+    {
+      "id": 7,
+      "contact": "220987654",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_1",
+      "send_automatic_sms": false
+    },
+    {
+      "id": 8,
+      "contact": "221234567",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_2",
+      "send_automatic_sms": false
+    },
+    {
+      "id": 9,
+      "contact": "225678901",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_3",
+      "send_automatic_sms": false
+    },
+    {
+      "id": 10,
+      "contact": "contat@company.pl",
+      "contact_type": "E_MAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "E_MAIL"
+    },
+    {
+      "id": 11,
+      "contact": "documents@email.pl",
+      "contact_type": "DOCUMENT_E_MAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "DOCUMENT_E_MAIL"
+    },
+    {
+      "id": 12,
+      "contact": "test@test.pl",
+      "contact_type": "OFFICE_E_EMAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "OFFICE_E_EMAIL"
+    },
+    {
+      "id": 13,
+      "contact": "http://www.google.pl",
+      "contact_type": "INTERNET_ADDRESS",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "INTERNET_ADDRESS"
+    },
+    {
+      "id": 21,
+      "contact": "Juliusz Cezar",
+      "contact_type": "CONTACT_PERSON",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "CONTACT_PERSON"
+    },
+    {
+      "id": 22,
+      "contact": "contat@najlepszafirma.pl",
+      "contact_type": "E_MAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "E_MAIL"
+    },
+    {
+      "id": 23,
+      "contact": "221297834",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_1",
+      "send_automatic_sms": false
+    },
+    {
+      "id": 24,
+      "contact": "228901267",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_2",
+      "send_automatic_sms": true
+    },
+    {
+      "id": 25,
+      "contact": "223247865",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "PHONE_NUMBER_3",
+      "send_automatic_sms": false
+    },
+    {
+      "id": 26,
+      "contact": "0048534978576",
+      "contact_type": "PHONE_NUMBER",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "MOBILE_PHONE",
+      "send_automatic_sms": true
+    },
+    {
+      "id": 27,
+      "contact": "documents@najlepszafirma.pl",
+      "contact_type": "DOCUMENT_E_MAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "DOCUMENT_E_MAIL"
+    },
+    {
+      "id": 28,
+      "contact": "office@najlepszafirma.pl",
+      "contact_type": "OFFICE_E_EMAIL",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "OFFICE_E_EMAIL"
+    },
+    {
+      "id": 29,
+      "contact": "http://www.apple.pl",
+      "contact_type": "INTERNET_ADDRESS",
+      "state": "ACTIVE",
+      "imported_from_aida": true,
+      "imported_type": "INTERNET_ADDRESS"
+    }
+  ],
+  "company_contact_detail": [
+    {
+      "company_id": 1,
+      "contact_detail_id": 1
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 2
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 3
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 4
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 5
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 6
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 7
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 8
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 9
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 10
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 11
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 12
+    },
+    {
+      "company_id": 1,
+      "contact_detail_id": 13
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 21
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 22
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 23
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 24
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 25
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 26
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 27
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 28
+    },
+    {
+      "company_id": 2,
+      "contact_detail_id": 29
+    }
+  ],
+  "company_address": [
+    {
+      "company_id": 1,
+      "address_id": 1
+    },
+    {
+      "company_id": 1,
+      "address_id": 2
+    },
+    {
+      "company_id": 2,
+      "address_id": 3
+    },
+    {
+      "company_id": 23,
+      "address_id": 5
+    }
+  ],
+  "person": [
+    {
+      "id": 1,
+      "person_id": 8888,
+      "pesel": "88010101234",
+      "first_name": "Jan",
+      "last_name": "Kowalsky",
+      "representative": "true",
+      "address": "ul. Testowa 4/1",
+      "marital_status": 0,
+      "id_doc_country": "PL",
+      "id_doc_number": "QWE123456",
+      "id_doc_signed_by": "Prezydent Miasta Radzionkowo",
+      "id_doc_sign_date": "2010-04-23 00:00:00.000000",
+      "politician": "false",
+      "job_function": "Konserwator nawierzchni",
+      "birth_date": "1982-11-17 00:00:00.000000",
+      "real_beneficiary": "false",
+      "id_doc_type": 1,
+      "country": "Polska"
+    },
+    {
+      "id": 2,
+      "person_id": 8889,
+      "pesel": "81011101234",
+      "first_name": "Zuzana",
+      "last_name": "Fialová",
+      "representative": "false",
+      "address": "Banská Bystrica, Sládkovičova 54",
+      "marital_status": 1,
+      "id_doc_country": "SK",
+      "id_doc_number": "SAA12456",
+      "id_doc_signed_by": "Rodne číslo",
+      "id_doc_sign_date": "2011-02-11 00:00:00.000000",
+      "politician": "false",
+      "job_function": "Všeobecná zdravotná",
+      "birth_date": "1981-01-12 00:00:00.000000",
+      "real_beneficiary": "false",
+      "id_doc_type": 1,
+      "country": "Słowacja"
+    }
+  ],
+  "person_contact_detail": [
+    {
+      "person_id": 1,
+      "contact_detail_id": 1
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 2
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 3
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 4
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 5
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 6
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 7
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 8
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 9
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 10
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 11
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 12
+    },
+    {
+      "person_id": 1,
+      "contact_detail_id": 13
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 21
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 22
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 23
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 24
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 25
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 26
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 27
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 28
+    },
+    {
+      "person_id": 2,
+      "contact_detail_id": 29
+    }
+  ],
+  "person_address": [
+    {
+      "person_id": 1,
+      "address_id": 1
+    },
+    {
+      "person_id": 1,
+      "address_id": 2
+    },
+    {
+      "person_id": 2,
+      "address_id": 3
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "company_id": 1,
+      "person_id": 1,
+      "account_manager_id": 12
+    },
+    {
+      "id": 2,
+      "company_id": 1,
+      "person_id": 1
+    },
+    {
+      "id": 3,
+      "company_id": 1,
+      "person_id": 1
+    },
+    {
+      "id": 4,
+      "company_id": 2
+    },
+    {
+      "id": 5,
+      "company_id": 3
+    },
+    {
+      "id": 6,
+      "company_id": 4
+    },
+    {
+      "id": 7,
+      "company_id": 5
+    },
+    {
+      "id": 8,
+      "company_id": 6
+    },
+    {
+      "id": 9,
+      "company_id": 7
+    },
+    {
+      "id": 10,
+      "company_id": 8
+    },
+    {
+      "id": 11,
+      "company_id": 9
+    },
+    {
+      "id": 12,
+      "company_id": 10
+    },
+    {
+      "id": 13,
+      "company_id": 11
+    },
+    {
+      "id": 14,
+      "company_id": 12
+    },
+    {
+      "id": 15,
+      "company_id": 13
+    },
+    {
+      "id": 16,
+      "company_id": 14
+    },
+    {
+      "id": 17,
+      "company_id": 15
+    },
+    {
+      "id": 18,
+      "company_id": 16
+    },
+    {
+      "id": 19,
+      "company_id": 17
+    },
+    {
+      "id": 20,
+      "company_id": 18
+    },
+    {
+      "id": 21,
+      "company_id": 19
+    },
+    {
+      "id": 22,
+      "company_id": 20
+    },
+    {
+      "id": 23,
+      "company_id": 21
+    },
+    {
+      "id": 24,
+      "company_id": 22
+    },
+    {
+      "id": 25,
+      "company_id": 23
+    },
+    {
+      "id": 26,
+      "company_id": 24
+    },
+    {
+      "id": 27,
+      "company_id": 25
+    },
+    {
+      "id": 28,
+      "company_id": 26
+    },
+    {
+      "id": 29,
+      "company_id": 27
+    }
+  ],
+  "company_person": [
+    {
+      "company_id": 2,
+      "person_id": 1,
+      "contactPerson": false
+    },
+    {
+      "company_id": 2,
+      "person_id": 2,
+      "contactPerson": true
+    }
+  ],
+  "holiday": [
+    {
+      "id": 1,
+      "description": "Święto Pracy",
+      "holiday_day": 1,
+      "holiday_month": 5
+    },
+    {
+      "id": 2,
+      "description": "Wielkanoc",
+      "holiday_day": 1,
+      "holiday_month": 4,
+      "holiday_year": 2018
+    },
+    {
+      "id": 3,
+      "description": "Urlop",
+      "holiday_day": 2,
+      "holiday_month": 5,
+      "holiday_year": 2018,
+      "alwin_user_id": 1
+    },
+    {
+      "id": 4,
+      "description": "Wolne",
+      "holiday_day": 4,
+      "holiday_month": 5,
+      "holiday_year": 2018,
+      "alwin_user_id": 2
+    }
+  ],
+  "tag_icon": [
+    {
+      "id": 1,
+      "name": "bookmark"
+    },
+    {
+      "id": 2,
+      "name": "contact_support"
+    },
+    {
+      "id": 3,
+      "name": "date_range"
+    }
+  ],
+  "tag": [
+    {
+      "id": 1,
+      "name": "Koszyk 1",
+      "color": "#333333",
+      "predefined": false,
+      "tag_type": "CUSTOM",
+      "description": "Zlecenie koszyka 1",
+      "tag_icon_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Koszyk 2",
+      "color": "#999999",
+      "predefined": false,
+      "tag_type": "CUSTOM",
+      "description": "Zlecenie koszyka 2",
+      "tag_icon_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Zaległe",
+      "color": "#E53935",
+      "predefined": true,
+      "tag_type": "OVERDUE",
+      "description": "Zaległe zlecenie",
+      "tag_icon_id": 2
+    }
+  ],
+  "postal_code": [
+    {
+      "id": 1,
+      "mask": "12-345",
+      "operator_id": 1
+    },
+    {
+      "id": 2,
+      "mask": "12-34x",
+      "operator_id": 2
+    },
+    {
+      "id": 3,
+      "mask": "12-3xx",
+      "operator_id": 3
+    },
+    {
+      "id": 4,
+      "mask": "23-xxx",
+      "operator_id": 4
+    },
+    {
+      "id": 5,
+      "mask": "2x-xxx",
+      "operator_id": 1
+    },
+    {
+      "id": 6,
+      "mask": "01-2xx",
+      "operator_id": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "key": "NORMAL",
+    "label": "Normalny"
+  },
+  {
+    "key": "HIGH",
+    "label": "Wysoki"
+  }
+]

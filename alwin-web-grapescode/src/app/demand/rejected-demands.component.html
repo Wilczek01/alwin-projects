@@ -1,0 +1,203 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!dataSource.loading && !loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <form (ngSubmit)="searchForm.form.valid && findDemandsForPayment()" #searchForm="ngForm">
+      <div>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Wyszukiwarka
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div>
+            <mat-form-field>
+              <input name="contractNo" matInput [(ngModel)]="contractNo" placeholder="Numer umowy">
+            </mat-form-field>
+          </div>
+
+          <div>
+            <div>Data wystawienia</div>
+            <mat-form-field class="to-left" style="padding-right: 10px">
+              <input matInput [matDatepicker]="startIssueDatePicker" [(ngModel)]="startIssueDate" placeholder="Od" name="startIssueDate">
+              <mat-datepicker-toggle matSuffix [for]="startIssueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startIssueDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="right">
+              <input matInput [matDatepicker]="endIssueDatePicker" [(ngModel)]="endIssueDate" placeholder="Do" name="endIssueDate">
+              <mat-datepicker-toggle matSuffix [for]="endIssueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endIssueDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <div>Data zapłaty</div>
+            <mat-form-field class="to-left" style="padding-right: 10px">
+              <input matInput [matDatepicker]="startDueDatePicker" [(ngModel)]="startDueDate" placeholder="Od" name="startDueDate">
+              <mat-datepicker-toggle matSuffix [for]="startDueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDueDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="right">
+              <input matInput [matDatepicker]="endDueDatePicker" [(ngModel)]="endDueDate" placeholder="Do" name="endDueDate">
+              <mat-datepicker-toggle matSuffix [for]="endDueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDueDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input name="initialInvoiceNo" matInput [(ngModel)]="initialInvoiceNo" placeholder="Faktura inicjująca">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input name="chargeInvoiceNo" matInput [(ngModel)]="chargeInvoiceNo" placeholder="Faktura obciążeniowa">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input name="extCompanyId" matInput [(ngModel)]="extCompanyId" placeholder="Nr klienta">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input name="companyName" matInput [(ngModel)]="companyName" placeholder="Nazwa klienta">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-select placeholder="Typ" [(ngModel)]="type" name="type">
+                <mat-option [value]="null"></mat-option>
+                <mat-option [value]="'FIRST'">Monit</mat-option>
+                <mat-option [value]="'SECOND'">Wezwanie</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-select placeholder="Segment" [(ngModel)]="segment" name="segment">
+                <mat-option [value]="null"></mat-option>
+                <mat-option [value]="'A'">A</mat-option>
+                <mat-option [value]="'B'">B</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <button class="find-demands-panel-button" mat-raised-button color="primary" [disabled]="!searchForm.form.valid" id="company-search-button">
+            Wyszukaj
+          </button>
+          <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+        </mat-expansion-panel>
+      </div>
+    </form>
+  </div>
+
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+
+    <mat-table #table [dataSource]="dataSource" [hidden]="dataSource.max == 0 || dataSource.loading || loading" style="border: 1px solid #ddd;" matSort>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+
+      <ng-container cdkColumnDef="issueDate">
+        <mat-header-cell class="issue-date-column" *cdkHeaderCellDef mat-sort-header="{{SORT.ISSUE_DATE}}">
+          <div class="text-to-left">Data wystawienia</div>
+        </mat-header-cell>
+        <mat-cell class="issue-date-column" *cdkCellDef="let row">{{row.issueDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="dueDate">
+        <mat-header-cell class="due-date-column" *cdkHeaderCellDef mat-sort-header="{{SORT.DUE_DATE}}">Data zapłaty</mat-header-cell>
+        <mat-cell class="due-date-column" *cdkCellDef="let row">{{row.dueDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="initialInvoiceNo">
+        <mat-header-cell class="initial-invoice-no-column" *cdkHeaderCellDef mat-sort-header="{{SORT.INITIAL_INVOICE_NO}}">Faktura inicjująca</mat-header-cell>
+        <mat-cell class="initial-invoice-no-column" *cdkCellDef="let row">{{row.initialInvoiceNo}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="extCompanyId">
+        <mat-header-cell class="ext-company-id-column" *cdkHeaderCellDef mat-sort-header="{{SORT.EXT_COMPANY_ID}}">
+          <div class="text-to-left">Numer klienta</div>
+        </mat-header-cell>
+        <mat-cell class="ext-company-id-column" *cdkCellDef="let row">{{row.extCompanyId}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="companyName">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{SORT.COMPANY_NAME}}">Nazwa klienta</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">{{row.companyName}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="contractNumber">
+        <mat-header-cell class="contract-number-column" *cdkHeaderCellDef mat-sort-header="{{SORT.CONTRACT_NUMBER}}">Numer umowy</mat-header-cell>
+        <mat-cell class="contract-number-column" *cdkCellDef="let row">{{row.contractNumber}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="typeKey">
+        <mat-header-cell class="type-key-column" *cdkHeaderCellDef mat-sort-header="{{SORT.TYPE}}">Typ</mat-header-cell>
+        <mat-cell class="type-key-column" *cdkCellDef="let row">{{row.type | demandTypeKey}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="typeSegment">
+        <mat-header-cell class="type-segment-column" *cdkHeaderCellDef mat-sort-header="{{SORT.SEGMENT}}">Segment</mat-header-cell>
+        <mat-cell class="type-segment-column" *cdkCellDef="let row">{{row.type.segment.label}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="stateChangeDate">
+        <mat-header-cell class="state-change-date-column" *cdkHeaderCellDef>Data zmiany stanu</mat-header-cell>
+        <mat-cell class="state-change-date-column" *cdkCellDef="let row">{{row.stateChangeDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="stateChangeReason">
+        <mat-header-cell *cdkHeaderCellDef>Przyczyna zmiany stanu</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">{{row.stateChangeReason}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="stateChangeOperatorId">
+        <mat-header-cell *cdkHeaderCellDef>Operator zmieniający stan</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">{{ row.stateChangeOperator.user.firstName | concatenateText: [row.stateChangeOperator.user.lastName] }}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="chargeInvoiceNo">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{SORT.CHARGE_INVOICE_NO}}">Faktura obciążeniowa</mat-header-cell>
+        <mat-cell *cdkCellDef="let row">{{row.chargeInvoiceNo}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="attachmentRef">
+        <mat-header-cell class="attachment-ref-column" *cdkHeaderCellDef>Załącznik</mat-header-cell>
+        <mat-cell class="attachment-ref-column" *cdkCellDef="let row"><a href="{{row.attachmentRef}}" target="_blank">Otwórz</a></mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="invoices">
+        <mat-header-cell class="invoices-column" *cdkHeaderCellDef>Faktury</mat-header-cell>
+        <mat-cell class="invoices-column" *cdkCellDef="let row">
+          <button mat-icon-button (click)="showInvoices(row.invoices)" matTooltip="Zobacz">
+            <mat-icon class="material-icons">search</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+    </mat-table>
+
+    <div class="no-results" [hidden]="dataSource.max != 0 || dataSource.loading || loading">
+      Nie znaleziono żadnych wezwań do zapłaty dla podanych kryteriów wyszykiwania.
+    </div>
+
+    <div class="no-results" [hidden]="!dataSource.loading && !loading">
+      Trwa wyszukiwanie proszę czekać
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource == null || dataSource.max == 0 || dataSource.loading || loading">
+    </mat-paginator>
+  </div>
+
+</div>

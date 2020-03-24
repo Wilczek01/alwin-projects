@@ -1,0 +1,447 @@
+[
+  {
+    "id": 1,
+    "key": "OUTGOING_PHONE_CALL",
+    "name": "Telefon wychodzący",
+    "canBePlanned": true,
+    "mayBeAutomated": false,
+    "specific": true,
+    "mayHaveDeclaration": true,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": true,
+    "activityTypeDetailProperties": [
+      {
+        "id": 4,
+        "activityDetailProperty": {
+          "id": 4,
+          "name": "Rozmówca",
+          "key": "PHONE_CALL_PERSON",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 15,
+        "activityDetailProperty": {
+          "id": 2,
+          "name": "Czy pozostawiono wiadomość",
+          "key": "MESSAGE_LEFT",
+          "type": "java.lang.Boolean",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      },
+      {
+        "id": 3,
+        "activityDetailProperty": {
+          "id": 3,
+          "name": "Długość rozmowy",
+          "key": "PHONE_CALL_LENGTH",
+          "type": "java.lang.Integer",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 2,
+        "activityDetailProperty": {
+          "id": 2,
+          "name": "Czy pozostawiono wiadomość",
+          "key": "MESSAGE_LEFT",
+          "type": "java.lang.Boolean",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 14,
+        "activityDetailProperty": {
+          "id": 1,
+          "name": "Nr tel.",
+          "key": "PHONE_NUMBER",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": true
+      },
+      {
+        "id": 1,
+        "activityDetailProperty": {
+          "id": 1,
+          "name": "Nr tel.",
+          "key": "PHONE_NUMBER",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 16,
+        "activityDetailProperty": {
+          "id": 3,
+          "name": "Długość rozmowy",
+          "key": "PHONE_CALL_LENGTH",
+          "type": "java.lang.Integer",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      },
+      {
+        "id": 17,
+        "activityDetailProperty": {
+          "id": 10,
+          "name": "Komentarz",
+          "key": "REMARK",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 18,
+        "activityDetailProperty": {
+          "id": 10,
+          "name": "Komentarz",
+          "key": "REMARK",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "key": "FIRST_DEMAND_PAYMENT",
+    "name": "Wezwanie do zapłaty (podstawowe)",
+    "canBePlanned": false,
+    "mayBeAutomated": true,
+    "specific": true,
+    "mayHaveDeclaration": false,
+    "chargeMin": 50.00,
+    "chargeMax": 203.33,
+    "customerContact": false,
+    "activityTypeDetailProperties": [
+      {
+        "id": 5,
+        "activityDetailProperty": {
+          "id": 5,
+          "name": "Termin zapłaty",
+          "key": "DATE_OF_PAYMENT",
+          "type": "java.util.Date",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "key": "LAST_DEMAND_PAYMENT",
+    "name": "Wezwanie do zapłaty (ostateczne)",
+    "canBePlanned": false,
+    "mayBeAutomated": true,
+    "specific": true,
+    "mayHaveDeclaration": false,
+    "chargeMin": 150.33,
+    "chargeMax": 100.99,
+    "customerContact": false,
+    "activityTypeDetailProperties": [
+      {
+        "id": 7,
+        "activityDetailProperty": {
+          "id": 5,
+          "name": "Termin zapłaty",
+          "key": "DATE_OF_PAYMENT",
+          "type": "java.util.Date",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "key": "OUTGOING_SMS",
+    "name": "Wiadomość SMS wychodząca",
+    "canBePlanned": true,
+    "mayBeAutomated": true,
+    "specific": true,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": true,
+    "activityTypeDetailProperties": [
+      {
+        "id": 10,
+        "activityDetailProperty": {
+          "id": 8,
+          "name": "Treść wiadomości",
+          "key": "MESSAGE_CONTENT",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": true
+      },
+      {
+        "id": 9,
+        "activityDetailProperty": {
+          "id": 1,
+          "name": "Nr tel.",
+          "key": "PHONE_NUMBER",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "key": "INCOMING_PHONE_CALL",
+    "name": "Telefon przychodzący",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": true,
+    "mayHaveDeclaration": true,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": true,
+    "activityTypeDetailProperties": [
+      {
+        "id": 11,
+        "activityDetailProperty": {
+          "id": 1,
+          "name": "Nr tel.",
+          "key": "PHONE_NUMBER",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 12,
+        "activityDetailProperty": {
+          "id": 3,
+          "name": "Długość rozmowy",
+          "key": "PHONE_CALL_LENGTH",
+          "type": "java.lang.Integer",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      },
+      {
+        "id": 13,
+        "activityDetailProperty": {
+          "id": 4,
+          "name": "Rozmówca",
+          "key": "PHONE_CALL_PERSON",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "key": "COMMENT",
+    "name": "Komentarz",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 7,
+    "key": "FIELD_VISIT",
+    "name": "Wizyta terenowa",
+    "canBePlanned": true,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": [
+      {
+        "id": 22,
+        "activityDetailProperty": {
+          "id": 10,
+          "name": "Komentarz",
+          "key": "REMARK",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      },
+      {
+        "id": 23,
+        "activityDetailProperty": {
+          "id": 10,
+          "name": "Komentarz",
+          "key": "REMARK",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "PLANNED",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "key": "CONTRACT_TERMINATION",
+    "name": "Wypowiedzenie warunkowe umowy",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 9,
+    "key": "RETURN_SUBJECT_DEMAND",
+    "name": "Wezwanie do zwrotu przedmiotu",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 10,
+    "key": "FRAUD_SUSPECTED",
+    "name": "Podejrzenie fraudu",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 11,
+    "key": "SUBJECT_COLLECTED",
+    "name": "Odbiór przedmiotu leasingu",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 12,
+    "key": "PAYMENT_COLLECTED_CONFIRMATION",
+    "name": "Potwierdzenie wpłaty klienta",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": false,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": []
+  },
+  {
+    "id": 14,
+    "key": "FAILED_PHONE_CALL_ATTEMPT",
+    "name": "Nieudana próba kontaktu tel.",
+    "canBePlanned": false,
+    "mayBeAutomated": false,
+    "specific": true,
+    "mayHaveDeclaration": false,
+    "chargeMin": 0.00,
+    "chargeMax": null,
+    "customerContact": false,
+    "activityTypeDetailProperties": [
+      {
+        "id": 21,
+        "activityDetailProperty": {
+          "id": 10,
+          "name": "Komentarz",
+          "key": "REMARK",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      },
+      {
+        "id": 20,
+        "activityDetailProperty": {
+          "id": 1,
+          "name": "Nr tel.",
+          "key": "PHONE_NUMBER",
+          "type": "java.lang.String",
+          "dictionaryValues": []
+        },
+        "state": "EXECUTED",
+        "required": false
+      },
+      {
+        "id": 19,
+        "activityDetailProperty": {
+          "id": 11,
+          "name": "Przyczyna nieudanego kontaktu tel.",
+          "key": "FAILED_PHONE_CALL_REASON",
+          "type": "java.lang.String",
+          "dictionaryValues": [
+            {
+              "id": 1,
+              "value": "Nie odbiera"
+            },
+            {
+              "id": 2,
+              "value": "Tel. Wyłączony"
+            },
+            {
+              "id": 3,
+              "value": "Nie ma takiego numeru"
+            },
+            {
+              "id": 4,
+              "value": "Inna"
+            }
+          ]
+        },
+        "state": "EXECUTED",
+        "required": true
+      }
+    ]
+  }
+]

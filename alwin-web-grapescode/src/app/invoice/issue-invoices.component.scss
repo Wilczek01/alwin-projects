@@ -1,0 +1,88 @@
+@import '../../../sass/variables';
+
+.mat-cell, .mat-header-cell {
+    &.invoice-no-column {
+      position: relative;
+      flex: 0 0 $invoices-col-width;
+      button.ellipsis-with-hover {
+        text-align: left;
+        width: $invoices-col-width;
+        //min-width: $invoices-col-width;
+      }
+    }
+
+    &.corrections-column {
+      position: relative;
+      flex: 0 0 60px;
+      overflow: visible;
+      .ribbon {
+        span {
+          font-size: 7px;
+          font-weight: bold;
+          color: #ffffff;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 20px;
+          transform: rotate(-50deg);
+          -webkit-transform: rotate(-50deg);
+          width: 58px;
+          display: block;
+          background: #880e4f;
+        }
+      }
+    }
+}
+
+
+.issue-subject-column {
+  & > mat-icon {
+    color: #FEC533;
+  }
+}
+.invoice-no-column:hover {
+  cursor: hand;
+}
+
+.inactive-row {
+  color: #dddddd;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+//.ribbon {
+//  position: absolute;
+//  left: -5px;
+//  top: -5px;
+//  z-index: 1;
+//  overflow: hidden;
+//  width: 86px;
+//  height: 75px;
+//  text-align: right;
+//}
+//
+//.ribbon span {
+//  font-size: 7px;
+//  font-weight: bold;
+//  color: #ffffff;
+//  text-transform: uppercase;
+//  text-align: center;
+//  line-height: 20px;
+//  transform: rotate(-50deg);
+//  -webkit-transform: rotate(-50deg);
+//  width: 58px;
+//  display: block;
+//  background: #880e4f;
+//  position: absolute;
+//  top: 11px;
+//  left: 1px;
+//}
+
+.invoices-download-button {
+  margin: 5px 20px 0 5px;
+}

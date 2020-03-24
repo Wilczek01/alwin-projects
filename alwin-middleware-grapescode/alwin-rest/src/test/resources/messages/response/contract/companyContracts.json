@@ -1,0 +1,265 @@
+[
+  {
+    "id": 1,
+    "contractNo": "10",
+    "financialModelNo": 1,
+    "signDate": 1471903200000,
+    "endDate": 1504044000000,
+    "stateSymbol": 1,
+    "stateDescription": "Zbiorcza zbiorcza",
+    "active": true,
+    "invoiced": false,
+    "currency": "Polski zloty",
+    "financingType": "Leasing operacyjny",
+    "financingState": "Wykup z regresem",
+    "contractValue": 1000.23,
+    "distributionChannel": null,
+    "distributionOperator": null,
+    "subjects": [
+      {
+        "subjectId": 1090,
+        "contractId": 1,
+        "index": "1",
+        "name": "Samochód osobowy Opel Insignia",
+        "description": "BiTurbo 195KM wersja COSMO",
+        "startValue": 49593.50,
+        "vatRate": "23",
+        "yearOfProduction": 2012,
+        "serialNumber": "W0LGT6EN5C1097092",
+        "registrationNumber": "DW 662VY",
+        "subjectSupplier": {
+          "id": 10,
+          "postalCode": "8308",
+          "city": "ADHPoczta8308",
+          "prefix": "pl.",
+          "street": "ADHUlica28308",
+          "email": "kontakt@firma.example.zzz",
+          "correspondencePostalCode": "33424",
+          "correspondenceCity": "ADHPoczta33424",
+          "correspondencePrefix": "ul.",
+          "correspondenceStreet": "ADHUlica33424",
+          "nip": "98768308",
+          "regon": "12348308",
+          "krs": "krs",
+          "companyName": "ADHNazwa8308",
+          "shortName": "ADH8308",
+          "recipientName": "JOANNA SZNAJDROWICZ USLUGI TRANSPORTOWE",
+          "rating": "Q01",
+          "ratingDate": 1451516400000,
+          "contactPerson": "Pani Halinka",
+          "phoneNumber1": "tel 1",
+          "phoneNumber2": "tel 2",
+          "phoneNumber3": "tel 3",
+          "mobilePhoneNumber": "mobile",
+          "documentsEmail": "dokumenty@firma.example.zzz",
+          "officeEmail": "biuro@firma.example.zzz",
+          "websiteAddress": "http address 10",
+          "externalDBAgreement": false,
+          "externalDBAgreementDate": 1496181600000,
+          "legalForm": {
+            "id": 3,
+            "symbol": "Spółka cywilna"
+          },
+          "pkdCode": "28.41.Z",
+          "pkdName": "Produkcja maszyn do obróbki metalu"
+        }
+      }
+    ],
+    "paymentSchedules": [
+      {
+        "id": 1,
+        "financeModel": 1,
+        "calculationType": 1,
+        "name": "Bazowy",
+        "active": false,
+        "instalments": [
+          {
+            "id": 4,
+            "paymentDate": 1483225200000,
+            "remainingPayment": 20.00,
+            "financialCalculationNumber": 4,
+            "index": 1,
+            "capital": 100.12,
+            "interest": 53.23,
+            "payment": 15.11,
+            "financingElement": {
+              "id": 1,
+              "paymentKind": "Raty"
+            },
+            "financingPayment": {
+              "id": 4,
+              "invoiceId": 5
+            }
+          },
+          {
+            "id": 5,
+            "paymentDate": 1485903600000,
+            "remainingPayment": 21.12,
+            "financialCalculationNumber": 5,
+            "index": 2,
+            "capital": 16.15,
+            "interest": 11.33,
+            "payment": 13.11,
+            "financingElement": {
+              "id": 2,
+              "paymentKind": "Oplata Wstepna"
+            },
+            "financingPayment": {
+              "id": 5,
+              "invoiceId": 6
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "financeModel": 1,
+        "calculationType": 1,
+        "name": "Ubezpieczenie Komunikacyjne",
+        "active": false,
+        "instalments": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "contractNo": "100",
+    "financialModelNo": 2,
+    "signDate": 1471816800000,
+    "endDate": 1472421600000,
+    "stateSymbol": 2,
+    "stateDescription": "Zakonczona aktywna",
+    "active": false,
+    "invoiced": true,
+    "currency": "EUR NBP sredni",
+    "financingType": "Leasing finasowy",
+    "financingState": "Finansowanie własne",
+    "contractValue": 435000.15,
+    "distributionChannel": null,
+    "distributionOperator": null,
+    "subjects": [
+      {
+        "subjectId": 1090,
+        "contractId": 1,
+        "index": "1",
+        "name": "Samochód osobowy Opel Insignia",
+        "description": "BiTurbo 195KM wersja COSMO",
+        "startValue": 49593.50,
+        "vatRate": "23",
+        "yearOfProduction": 2012,
+        "serialNumber": "W0LGT6EN5C1097092",
+        "registrationNumber": "DW 662VY",
+        "subjectSupplier": {
+          "id": 10,
+          "postalCode": "8308",
+          "city": "ADHPoczta8308",
+          "prefix": "pl.",
+          "street": "ADHUlica28308",
+          "email": "kontakt@firma.example.zzz",
+          "correspondencePostalCode": "33424",
+          "correspondenceCity": "ADHPoczta33424",
+          "correspondencePrefix": "ul.",
+          "correspondenceStreet": "ADHUlica33424",
+          "nip": "98768308",
+          "regon": "12348308",
+          "krs": "krs",
+          "companyName": "ADHNazwa8308",
+          "shortName": "ADH8308",
+          "recipientName": "JOANNA SZNAJDROWICZ USLUGI TRANSPORTOWE",
+          "rating": "Q01",
+          "ratingDate": 1451516400000,
+          "contactPerson": "Pani Halinka",
+          "phoneNumber1": "tel 1",
+          "phoneNumber2": "tel 2",
+          "phoneNumber3": "tel 3",
+          "mobilePhoneNumber": "mobile",
+          "documentsEmail": "dokumenty@firma.example.zzz",
+          "officeEmail": "biuro@firma.example.zzz",
+          "websiteAddress": "http address 10",
+          "externalDBAgreement": false,
+          "externalDBAgreementDate": 1496181600000,
+          "legalForm": {
+            "id": 3,
+            "symbol": "Spółka cywilna"
+          },
+          "pkdCode": "28.41.Z",
+          "pkdName": "Produkcja maszyn do obróbki metalu"
+        }
+      }
+    ],
+    "paymentSchedules": [
+      {
+        "id": 2,
+        "financeModel": 2,
+        "calculationType": 1,
+        "name": "Ubezpieczenie dodatkowe",
+        "active": true,
+        "instalments": [
+          {
+            "id": 6,
+            "paymentDate": 1496268000000,
+            "remainingPayment": 121.12,
+            "financialCalculationNumber": 1,
+            "index": 1,
+            "capital": 116.15,
+            "interest": 111.33,
+            "payment": 113.11,
+            "financingElement": {
+              "id": 2,
+              "paymentKind": "Oplata Wstepna"
+            },
+            "financingPayment": {
+              "id": 6,
+              "invoiceId": 7
+            }
+          },
+          {
+            "id": 7,
+            "paymentDate": 1497996000000,
+            "remainingPayment": 221.12,
+            "financialCalculationNumber": 2,
+            "index": 2,
+            "capital": 216.15,
+            "interest": 211.33,
+            "payment": 213.11,
+            "financingElement": {
+              "id": 2,
+              "paymentKind": "Oplata Wstepna"
+            },
+            "financingPayment": {
+              "id": 7,
+              "invoiceId": 8
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "financeModel": 2,
+        "calculationType": 3,
+        "name": "GAP",
+        "active": false,
+        "instalments": [
+          {
+            "id": 8,
+            "paymentDate": 1491861600000,
+            "remainingPayment": 321.12,
+            "financialCalculationNumber": 3,
+            "index": 2,
+            "capital": 316.15,
+            "interest": 311.33,
+            "payment": 313.11,
+            "financingElement": {
+              "id": 2,
+              "paymentKind": "Oplata Wstepna"
+            },
+            "financingPayment": {
+              "id": 8,
+              "invoiceId": 9
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

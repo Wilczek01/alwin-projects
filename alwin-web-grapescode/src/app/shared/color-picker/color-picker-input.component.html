@@ -1,0 +1,18 @@
+<div class="alwin-mat-form-field" ngForm="colorFieldForm" #colorFieldForm="ngForm">
+  <mat-form-field class="to-left full-width" style="margin-right: -50px;">
+    <input matInput placeholder="Kolor" [(ngModel)]="objectWithColor.color" [style.color]="objectWithColor.color" name="color"
+           pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required/>
+  </mat-form-field>
+  <button mat-icon-button class="to-right" [matMenuTriggerFor]="appMenu" type="button">
+    <mat-icon class="material-icons">color_lens</mat-icon>
+  </button>
+  <div class="clear"></div>
+</div>
+
+<mat-menu #appMenu="matMenu">
+  <ul class="circle">
+    <li *ngFor="let color of colors">
+      <div class="text" [style.background-color]="color" (click)="fillColor(color)"></div>
+    </li>
+  </ul>
+</mat-menu>

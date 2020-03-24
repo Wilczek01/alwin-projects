@@ -1,0 +1,117 @@
+<mat-accordion [multi]="true">
+  <mat-expansion-panel *ngFor="let subject of subjects">
+    <mat-expansion-panel-header id="subject-{{subject.subjectId}}">
+      <mat-panel-title>Nazwa przedmiotu: {{subject.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Identyfikator przedmiotu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.subjectId}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Uzupełnienie nazwy przedmiotu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.description}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Identyfikator kontraktu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.contractId}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Numer indeksowy przedmiotu w umowie</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.index}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Wartość początkowa przedmiotu netto</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.startValue | number:'0.2-2' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Stawka VAT</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.vatRate}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Rok produkcji przedmiotu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.yearOfProduction}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Numer identyfikacyjny przedmiotu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.serialNumber}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Numer rejestracyjny pojazdu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.registrationNumber}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid" *ngIf="subject.subjectSupplier != null">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Dostawca</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{subject.subjectSupplier.companyName}}
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

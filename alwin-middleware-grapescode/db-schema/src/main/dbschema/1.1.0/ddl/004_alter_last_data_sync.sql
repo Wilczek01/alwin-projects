@@ -1,0 +1,5 @@
+ALTER TABLE last_data_sync
+  ALTER COLUMN from_date TYPE TIMESTAMP;
+
+ALTER TABLE last_data_sync
+  ALTER COLUMN to_date TYPE TIMESTAMP;

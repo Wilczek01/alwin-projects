@@ -1,0 +1,40 @@
+/*.debts-list-item {*/
+/*  margin-left: 48px;*/
+/*  margin-right: 48px;*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+.contract-list-header-column {
+  width: 10%;
+}
+
+.contract-list-column {
+  width: 10%;
+}
+
+.no-debts-message {
+  margin-top: 20px;
+}
+
+.activity-list-filter-content-right {
+  float: right;
+  margin-right: 32px;
+}
+
+.receivables b {
+  margin-left: 32px;
+  font-weight: 500;
+}
+
+.receivables span {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.balance-value {
+  margin: 0 8px;
+}
+
+.contract-excluded .contract-list-column {
+  color: #dddddd;
+}

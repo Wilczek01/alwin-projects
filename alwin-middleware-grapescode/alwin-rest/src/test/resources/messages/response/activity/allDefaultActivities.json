@@ -1,0 +1,85 @@
+[
+  {
+    "issueType": {
+      "id": 1,
+      "name": "PHONE_DEBT_COLLECTION_1",
+      "label": "Windykacja telefoniczna sekcja 1"
+    },
+    "defaultActivities": [
+      {
+        "id": 1,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1498860000000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 5,
+        "activityTypeId": 2,
+        "defaultDay": 3,
+        "version": 2,
+        "creatingDate": 1499637600000,
+        "defaultExecutionDate": 1355526000000
+      },
+      {
+        "id": 2,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 2,
+        "creatingDate": 1499119200000,
+        "defaultExecutionDate": 1355871600000
+      },
+      {
+        "id": 4,
+        "activityTypeId": 1,
+        "defaultDay": 10,
+        "version": 1,
+        "creatingDate": 1499032800000,
+        "defaultExecutionDate": 1356130800000
+      }
+    ]
+  },
+  {
+    "issueType": {
+      "id": 2,
+      "name": "PHONE_DEBT_COLLECTION_2",
+      "label": "Windykacja telefoniczna sekcja 2"
+    },
+    "defaultActivities": [
+      {
+        "id": 6,
+        "activityTypeId": 1,
+        "defaultDay": 1,
+        "version": 1,
+        "creatingDate": 1499205600000,
+        "defaultExecutionDate": 1355353200000
+      },
+      {
+        "id": 7,
+        "activityTypeId": 3,
+        "defaultDay": 7,
+        "version": 1,
+        "creatingDate": 1499292000000,
+        "defaultExecutionDate": 1355871600000
+      }
+    ]
+  },
+  {
+    "issueType": {
+      "id": 3,
+      "name": "DIRECT_DEBT_COLLECTION",
+      "label": "Windykacja bezpośrednia"
+    },
+    "defaultActivities": [
+      {
+        "id": 8,
+        "activityTypeId": 7,
+        "defaultDay": 2,
+        "version": 1,
+        "creatingDate": 1534197600000,
+        "defaultExecutionDate": 1355439600000
+      }
+    ]
+  }
+]

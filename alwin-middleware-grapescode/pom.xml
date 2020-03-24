@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <name>alwin-middleware</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.codersteam.alwin</groupId>
+    <artifactId>alwin-middleware</artifactId>
+    <version>1.18.0.20190917</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>alwin-common</module>
+        <module>alwin-test-data</module>
+        <module>alwin-dms-connector</module>
+        <module>alwin-core</module>
+        <module>alwin-core-api</module>
+        <module>alwin-frontend-jpa</module>
+        <module>alwin-db</module>
+        <module>alwin-rest</module>
+        <module>alwin-rest-doc</module>
+        <module>alwin-middleware-ear</module>
+        <module>db-schema</module>
+        <module>alwin-efaktura-connector</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <version.wildfly.maven.plugin>2.0.1.Final</version.wildfly.maven.plugin>
+        <version.jboss.bom>10.1.0.Final</version.jboss.bom>
+        <version.wildfly>10.1.0.Final</version.wildfly>
+        <version.wildfly.test>10.1.0.Final</version.wildfly.test>
+        <version.arquillian.dbunit>1.0.0.Alpha7</version.arquillian.dbunit>
+        <version.arquillian.wildfly>2.1.1.Final</version.arquillian.wildfly>
+
+        <version.plugin.compiler>3.8.1</version.plugin.compiler>
+        <version.plugin.ear>3.0.1</version.plugin.ear>
+        <version.plugin.ejb>3.0.1</version.plugin.ejb>
+        <version.plugin.surefire>3.0.0-M3</version.plugin.surefire>
+        <version.plugin.failsafe>3.0.0-M3</version.plugin.failsafe>
+        <version.plugin.release>2.5.3</version.plugin.release>
+        <version.plugin.war>3.2.3</version.plugin.war>
+        <version.plugin.jar>3.1.2</version.plugin.jar>
+        <version.plugin.clean>3.1.0</version.plugin.clean>
+        <version.plugin.install>3.0.0-M1</version.plugin.install>
+        <version.plugin.site>3.7.1</version.plugin.site>
+        <version.plugin.dependency>3.1.1</version.plugin.dependency>
+        <version.plugin.versions>2.7</version.plugin.versions>
+
+        <version.spock>1.0-groovy-2.4</version.spock>
+        <version.groovy>2.4.4</version.groovy>
+        <version.cglib>3.2.12</version.cglib>
+        <version.objenesis>3.0.1</version.objenesis>
+        <version.gmaven.plugin>1.4</version.gmaven.plugin>
+        <version.gmaven.runtime.plugin>1.5</version.gmaven.runtime.plugin>
+
+        <version.mockito>1.10.19</version.mockito>
+        <version.unitils.core>3.4.6</version.unitils.core>
+
+        <version.jacoco>0.7.8</version.jacoco>
+
+        <version.guava>22.0</version.guava>
+        <version.orika>1.5.1</version.orika>
+
+        <version.arquillian.jacoco>1.0.0</version.arquillian.jacoco>
+        <version.jacoco>0.8.4</version.jacoco>
+
+        <version.commons-lang>3.9</version.commons-lang>
+        <version.commons-collections>3.2.2</version.commons-collections>
+
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <version.javaee.api>7.0</version.javaee.api>
+
+        <version.aida.core.api>1.37.0</version.aida.core.api>
+
+        <version.assertj>3.12.2</version.assertj>
+
+        <version.javax.mail>1.6.0</version.javax.mail>
+        <version.jackson>2.8.9</version.jackson>
+
+        <version.hibernate>5.0.10.Final</version.hibernate>
+        <version.cxf>3.2.2</version.cxf>
+
+        <version.org.slf4j>1.7.26</version.org.slf4j>
+
+        <arquillian.java.debug.options/>
+        <arquillian.datatype.factory>org.dbunit.ext.h2.H2DataTypeFactory</arquillian.datatype.factory>
+
+        <jacoco.coverage.path>${basedir}/../alwin-test-coverage/target/coverage-reports</jacoco.coverage.path>
+        <sonar.host.url>http://localhost:9001</sonar.host.url>
+        <sonar.jacoco.reportPaths>${project.testresult.directory}/coverage/jacoco/jacoco.exec</sonar.jacoco.reportPaths>
+        <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
+        <sonar.sources>${project.basedir}/src/main/</sonar.sources>
+        <sonar.junit.reportsPath>${project.testresult.directory}</sonar.junit.reportsPath>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-test-data</artifactId>
+                <version>${project.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-common</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-core</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-dms-connector</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-efaktura-connector</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-core-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-db</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-frontend-jpa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-rest</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codersteam.alwin</groupId>
+                <artifactId>alwin-rest-doc</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-javaee7-with-tools</artifactId>
+                <version>${version.jboss.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${version.guava}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${version.orika}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-jacoco</artifactId>
+                <version>${version.arquillian.jacoco}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>org.jacoco.core</artifactId>
+                <version>${version.jacoco}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${version.commons-lang}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${version.commons-collections}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.7.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${version.assertj}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${version.javax.mail}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${version.hibernate}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${version.hibernate}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-envers</artifactId>
+                <version>${version.hibernate}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.jackson}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${version.jackson}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.jackson}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-bom</artifactId>
+                <version>2.0.0-beta-2</version>
+                <scope>test</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian.version}</version>
+                <scope>test</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${version.org.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${version.org.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>${version.org.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${version.org.slf4j}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${version.plugin.versions}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${version.plugin.clean}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${version.plugin.install}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${version.plugin.site}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${version.plugin.jar}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${version.plugin.war}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>${version.plugin.ear}</version>
+                    <configuration>
+                        <version>7</version>
+                        <defaultLibBundleDir>lib</defaultLibBundleDir>
+                        <outputFileNameMapping>@{artifactId}@-@{version}@@{dashClassifier?}@.@{extension}@
+                        </outputFileNameMapping>
+                        <useBaseVersion>true</useBaseVersion>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${version.plugin.dependency}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.6.0.1398</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>${version.wildfly.maven.plugin}</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${version.jacoco}</version>
+                    <configuration>
+                        <destFile>${jacoco.coverage.path}/${project.artifactId}-jacoco-unit.exec</destFile>
+                        <dataFile>${jacoco.coverage.path}/jacoco-unit.exec</dataFile>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>jacoco-initialize</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${version.plugin.compiler}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${version.plugin.surefire}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${version.plugin.failsafe}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>debug</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <arquillian.java.debug.options>-Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y
+                </arquillian.java.debug.options>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

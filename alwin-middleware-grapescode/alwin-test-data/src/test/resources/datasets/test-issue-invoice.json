@@ -1,0 +1,166 @@
+{
+  "issue_invoice": [
+    {
+      "invoice_id": 1,
+      "issue_id": 1,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": false
+    },
+    {
+      "invoice_id": 2,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": true,
+      "issue_subject": false
+    },
+    {
+      "invoice_id": 3,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": false
+    },
+    {
+      "invoice_id": 4,
+      "issue_id": 1,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": true,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 10,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 11,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 12,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 13,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 14,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": false
+    },
+    {
+      "invoice_id": 15,
+      "issue_id": 21,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 16,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 17,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 18,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 19,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 20,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 21,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 22,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 23,
+      "issue_id": 20,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true,
+      "inclusion_balance": -124.12
+    },
+    {
+      "invoice_id": 24,
+      "issue_id": 22,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": false
+    },
+    {
+      "invoice_id": 25,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 26,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 27,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    },
+    {
+      "invoice_id": 28,
+      "issue_id": 4,
+      "addition_date": "2018-01-01 00:00:00.000000",
+      "excluded": false,
+      "issue_subject": true
+    }
+  ]
+}

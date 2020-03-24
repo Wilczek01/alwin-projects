@@ -1,0 +1,99 @@
+{
+  "values": [
+    {
+      "id": 6,
+      "assignee": {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstName": "Adam",
+          "lastName": "Mickiewicz"
+        }
+      },
+      "customer": {
+        "id": 11,
+        "company": {
+          "id": 9,
+          "extCompanyId": 9991,
+          "companyName": "Firma 9991",
+          "shortName": "Firma9991",
+          "nip": "6837458881",
+          "regon": "615557755",
+          "krs": "KRS 9991",
+          "recipientName": "Odbiorca firma 9991",
+          "rating": "W02",
+          "ratingDate": 1508882400000,
+          "externalDBAgreement": true,
+          "externalDBAgreementDate": 1457823600000,
+          "persons": [],
+          "pkdCode": "01.12.Z",
+          "pkdName": "Uprawa ryżu"
+        },
+        "person": null,
+        "accountManager": null
+      },
+      "contract": {
+        "id": 6,
+        "extContractId": "TEST CONTRACT 6",
+        "customer": {
+          "id": 11,
+          "company": {
+            "id": 9,
+            "extCompanyId": 9991,
+            "companyName": "Firma 9991",
+            "shortName": "Firma9991",
+            "nip": "6837458881",
+            "regon": "615557755",
+            "krs": "KRS 9991",
+            "recipientName": "Odbiorca firma 9991",
+            "rating": "W02",
+            "ratingDate": 1508882400000,
+            "externalDBAgreement": true,
+            "externalDBAgreementDate": 1457823600000,
+            "persons": [],
+            "pkdCode": "01.12.Z",
+            "pkdName": "Uprawa ryżu"
+          },
+          "person": null,
+          "accountManager": null
+        }
+      },
+      "startDate": 1657404000000,
+      "expirationDate": 1660082400000,
+      "terminationCause": "testowy powód 6",
+      "terminationOperator": null,
+      "terminationDate": null,
+      "issueType": {
+        "id": 1,
+        "name": "PHONE_DEBT_COLLECTION_1",
+        "label": "Windykacja telefoniczna sekcja 1"
+      },
+      "issueState": {
+        "key": "NEW",
+        "label": "Nowe"
+      },
+      "rpbPLN": 191.12,
+      "balanceStartPLN": -33432.44,
+      "paymentsPLN": 557654.23,
+      "currentBalancePLN": -444642.67,
+      "rpbEUR": 0.00,
+      "balanceStartEUR": 0.00,
+      "paymentsEUR": 0.00,
+      "currentBalanceEUR": 0.00,
+      "totalBalanceStartPLN": 33432.44,
+      "totalCurrentBalancePLN": 444642.67,
+      "totalPaymentsPLN": 557654.23,
+      "excludedFromStats": false,
+      "exclusionCause": null,
+      "balanceUpdateDate": 1657404000000,
+      "priority": {
+        "key": "NORMAL",
+        "label": "Normalny"
+      },
+      "tags": [],
+      "dpdStart": 5,
+      "dpdEstimated": 36
+    }
+  ],
+  "totalValues": 1
+}

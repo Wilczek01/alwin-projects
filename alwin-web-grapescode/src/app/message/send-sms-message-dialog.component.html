@@ -1,0 +1,37 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!(loading)" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Wyślij wiadomość sms</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content id="send-sms-message-dialog">
+  <form (ngSubmit)="sendSmsMessageForm.form.valid && sendSmsMessage()" #sendSmsMessageForm="ngForm">
+
+    <mat-form-field>
+      <input matInput placeholder="Numer telefonu w formacie 48xxxxxxxxx" [(ngModel)]="phoneNumber" name="phoneNumber" required="true" pattern="48(\d{9})">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Szablon wiadomości" [(ngModel)]="smsMessage" name="smsTemplate">
+        <mat-option *ngFor="let smsTemplate of smsTemplates" [value]="smsTemplate.body">{{smsTemplate.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Treść wiadomości" [(ngModel)]="smsMessage" name="smsMessage" required="true"
+                [minlength]="1" [maxlength]="160" mat-autosize="">
+      </textarea>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button [disabled]="loading || !sendSmsMessageForm.form.valid" color="primary" class="create-button" id="send-sms-button">
+        Wyślij
+      </button>
+    </div>
+  </form>
+</div>

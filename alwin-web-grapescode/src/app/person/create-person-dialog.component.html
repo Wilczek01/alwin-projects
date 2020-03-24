@@ -1,0 +1,110 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading && !loadingTypes" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Nowa osoba uprawniona</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="alwin-dialog-size" style="min-width: 600px; max-height: 600px;" id="new-person-dialog">
+  <form (ngSubmit)="newPersonForm.form.valid && createPerson()" #newPersonForm="ngForm">
+
+    <mat-form-field>
+      <input matInput placeholder="Imię" [(ngModel)]="person.firstName" name="firstName" required maxlength="100">
+      <mat-hint *ngIf="validationResult.firstName && validationResult.firstName.length > 0" class="mat-error">{{validationResult.firstName}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nazwisko" [(ngModel)]="person.lastName" name="lastName" required maxlength="100">
+      <mat-hint *ngIf="validationResult.lastName && validationResult.lastName.length > 0" class="mat-error">{{validationResult.lastName}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Pesel" [(ngModel)]="person.pesel" name="pesel" maxlength="11" minlength="11">
+      <mat-hint *ngIf="validationResult.pesel && validationResult.pesel.length > 0" class="mat-error">{{validationResult.pesel}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Adres" [(ngModel)]="person.address" name="address" maxlength="1024">
+      <mat-hint *ngIf="validationResult.address && validationResult.address.length > 0" class="mat-error">{{validationResult.address}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="birthDatePicker" [(ngModel)]="person.birthDate" placeholder="Data urodzenia" name="birthDatePicker">
+      <mat-datepicker-toggle matSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #birthDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Stanowisko osoby" [(ngModel)]="person.jobFunction" name="jobFunction" maxlength="30">
+      <mat-hint *ngIf="validationResult.jobFunction && validationResult.jobFunction.length > 0" class="mat-error">{{validationResult.jobFunction}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Kraj" [(ngModel)]="person.country" name="country" maxlength="30">
+      <mat-hint *ngIf="validationResult.country && validationResult.country.length > 0" class="mat-error">{{validationResult.country}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Status cywilny" [(ngModel)]="person.maritalStatus" name="maritalStatus">
+        <mat-option *ngFor="let status of maritalStatuses" [value]="status">{{status.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="person.contactPerson" name="contactPerson" class="mat-form-field selection-separator">
+      Czy osoba do kontaku?
+    </mat-checkbox>
+
+    <mat-checkbox [(ngModel)]="person.realBeneficiary" name="realBeneficiary" class="mat-form-field selection-separator">
+      Czy osoba jest beneficjentem rzeczywistym transakcji?
+    </mat-checkbox>
+
+    <mat-checkbox [(ngModel)]="person.representative" name="representative" class="mat-form-field selection-separator">
+      Czy osoba jest reprezentantem?
+    </mat-checkbox>
+
+    <mat-checkbox [(ngModel)]="person.politician" name="politician" class="mat-form-field selection-separator">
+      Czy osoba jest politykiem?
+    </mat-checkbox>
+
+    <h6>Dokument tożsamości</h6>
+
+    <mat-form-field>
+      <mat-select placeholder="Typ dokumentu tożsamości" [(ngModel)]="person.idDocType" name="idDocType">
+        <mat-option *ngFor="let idDocType of idDocTypes" [value]="idDocType">{{idDocType.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Numer dokemntu tożsamości" [(ngModel)]="person.idDocNumber" name="idDocNumber" maxlength="30">
+      <mat-hint *ngIf="validationResult.idDocNumber && validationResult.idDocNumber.length > 0" class="mat-error">{{validationResult.idDocNumber}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Wystawca dokumentu tożsamości" [(ngModel)]="person.idDocSignedBy" name="idDocSignedBy" maxlength="50">
+      <mat-hint *ngIf="validationResult.idDocSignedBy && validationResult.idDocSignedBy.length > 0" class="mat-error">{{validationResult.idDocSignedBy}}
+      </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="idDocSignDatePicker" [(ngModel)]="person.idDocSignDate" placeholder="Data wystawienia dokumentu tożsamości"
+             name="idDocSignDatePicker">
+      <mat-datepicker-toggle matSuffix [for]="idDocSignDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #idDocSignDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Kraj wystawienia dokumentu tożsamości" [(ngModel)]="person.idDocCountry" name="idDocCountry" maxlength="2">
+      <mat-hint *ngIf="validationResult.idDocCountry && validationResult.idDocCountry.length > 0" class="mat-error">{{validationResult.idDocCountry}}</mat-hint>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button [disabled]="loading || loadingTypes || !newPersonForm.form.valid" color="primary" class="create-button">
+        Dodaj osobę uprawnioną
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<mat-tab-group class="customer-data-list-item">
+  <mat-tab label="Adresy">
+    <div class="alwin-work-mat-tab">
+      <alwin-customer-address-tab [customer]="customer" [readonly]="readonly"></alwin-customer-address-tab>
+    </div>
+  </mat-tab>
+  <mat-tab label="Dane kontaktowe firmy">
+    <div class="alwin-work-mat-tab">
+      <alwin-customer-contact-tab [customer]="customer" [issueId]="issueId" [readonly]="readonly"></alwin-customer-contact-tab>
+    </div>
+  </mat-tab>
+  <mat-tab label="Osoby uprawnione">
+    <div class="alwin-work-mat-tab">
+      <alwin-customer-person-tab [customer]="customer" [companyId]="customer.company.id" [issueId]="issueId" [readonly]="readonly"></alwin-customer-person-tab>
+    </div>
+  </mat-tab>
+  <mat-tab label="Umowy">
+    <div class="alwin-work-mat-tab">
+      <alwin-customer-contract-tab [extCompanyId]="customer.company.extCompanyId"></alwin-customer-contract-tab>
+    </div>
+  </mat-tab>
+</mat-tab-group>

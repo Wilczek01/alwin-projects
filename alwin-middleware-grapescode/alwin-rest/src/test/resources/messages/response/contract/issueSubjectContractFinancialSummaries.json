@@ -1,0 +1,40 @@
+[
+  {
+    "contractNo": "issue_21_00002/15/1",
+    "dpd": 1471,
+    "excluded": false,
+    "currencyToSummary": {
+      "PLN": {
+        "requiredPayment": 496.48,
+        "notRequiredPayment": 0.00,
+        "overpayment": 0.00,
+        "total": 496.48
+      },
+      "EUR": {
+        "requiredPayment": 0.00,
+        "notRequiredPayment": 124.12,
+        "overpayment": 0.00,
+        "total": 124.12
+      }
+    }
+  },
+  {
+    "contractNo": "issue_21_00001/15/1",
+    "dpd": 1319,
+    "excluded": true,
+    "currencyToSummary": {
+      "PLN": {
+        "requiredPayment": 0.00,
+        "notRequiredPayment": 0.00,
+        "overpayment": 0.00,
+        "total": 0.00
+      },
+      "EUR": {
+        "requiredPayment": 190.23,
+        "notRequiredPayment": 0.00,
+        "overpayment": 100.00,
+        "total": 90.23
+      }
+    }
+  }
+]

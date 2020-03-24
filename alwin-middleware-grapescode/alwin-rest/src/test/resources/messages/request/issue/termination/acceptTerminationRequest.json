@@ -1,0 +1,6 @@
+{
+  "requestCause": "przyczyna przedterminowego zakończenia zlecenia",
+  "excludedFromStats": true,
+  "exclusionFromStatsCause": "ważna przyczyna wykluczenia ze statystyk",
+  "comment": "zgadzam się na zkończenie zlecenia"
+}

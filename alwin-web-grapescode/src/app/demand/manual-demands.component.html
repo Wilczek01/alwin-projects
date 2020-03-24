@@ -1,0 +1,126 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+  </div>
+
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="full-width">
+      <button mat-mini-fab color="primary" (click)="addNewDemand()" matTooltip="Utwórz ręcznie" class="to-right" type="button">
+        <mat-icon class="md-24">add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+
+    <div class="full-width">
+      <div class="to-right clear">
+        Monity
+        <mat-slide-toggle [(ngModel)]="second" (change)="reloadDemandsForPayment()" [disabled]="loading">
+        </mat-slide-toggle>
+        Wezwania
+      </div>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width" *ngIf="demands.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric checkbox-column">
+
+        </th>
+        <th class="mdl-data-table__cell--non-numeric checkbox-column">
+          Wezwij
+          <mat-checkbox id="select-all" [(ngModel)]="allSend" (change)="markAllToSend()"
+                        [attr.checked]="allSend"></mat-checkbox>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric checkbox-column">
+          Odrzuć
+          <mat-checkbox id="reject-all" [(ngModel)]="allReject" (change)="markAllToReject()"
+                        [attr.checked]="allReject"></mat-checkbox>
+        </th>
+        <th class="mdl-data-table__cell--non-numeric date-column">Data wystawienia</th>
+        <th class="mdl-data-table__cell--non-numeric date-column">Data zapłaty</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktura inicjująca</th>
+        <th class="mdl-data-table__cell--non-numeric ext-company-id-column">Numer klienta</th>
+        <th class="mdl-data-table__cell--non-numeric">Nazwa klienta</th>
+        <th class="mdl-data-table__cell--non-numeric">Numer umowy</th>
+        <th class="mdl-data-table__cell--non-numeric">Segment</th>
+        <th class="mdl-data-table__cell--non-numeric state-column">Stan</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktura obciążeniowa</th>
+        <th class="mdl-data-table__cell--non-numeric">Faktury</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let newDemand of demands">
+        <td class="mdl-data-table__cell--non-numeric checkbox-column">
+          <button mat-icon-button (click)="openDetails(newDemand.demand.manualCreationMessage)"
+                  *ngIf="newDemand.demand.manualCreationMessage != null && newDemand.demand.manualCreationMessage.length != 0">
+            <mat-icon class="material-icons">warning</mat-icon>
+          </button>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric checkbox-column">
+          <mat-checkbox id="{{newDemand.demand.id}}-demand" [(ngModel)]="newDemand.send" (change)="markToSend(newDemand)"
+                        [attr.checked]="newDemand.send"
+                        [disabled]="newDemand.demand.state != STATE.NEW && newDemand.demand.state != STATE.FAILED"></mat-checkbox>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric checkbox-column">
+          <mat-checkbox id="{{newDemand.demand.id}}-reject" [(ngModel)]="newDemand.reject" (change)="markToReject(newDemand)"
+                        [attr.checked]="newDemand.reject"
+                        [disabled]="newDemand.demand.state != STATE.NEW && newDemand.demand.state != STATE.FAILED"></mat-checkbox>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.issueDate | date:'dd.MM.yyyy'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.dueDate | date:'dd.MM.yyyy'}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.initialInvoiceNo}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.extCompanyId}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.companyName}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.contractNumber}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.type.segment.label}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.state | demandState}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          {{newDemand.demand.chargeInvoiceNo}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <button mat-icon-button (click)="showInvoices(newDemand.demand.invoices)" matTooltip="Zobacz">
+            <mat-icon class="material-icons">search</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="full-width no-results" *ngIf="demands.length === 0 && !loading">
+      Nie znaleziono żadnych sugestii wezwań do zapłaty
+    </div>
+
+    <div class="full-width no-results" *ngIf="loading">
+      Trwa wyszukiwanie, proszę czekać
+    </div>
+
+  </div>
+
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <button mat-raised-button color="primary" class="full-width" id="update-user-data-button"
+            [disabled]="processing" [hidden]="loading" (click)="processDemands()">
+      Przetwórz sugestie {{second ? 'wezwań do zapłaty' : 'monitów'}}
+    </button>
+  </div>
+
+</div>

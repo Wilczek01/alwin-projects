@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_add_new_data_to_issue_type_activity_type" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.14.0/dml/001_add_new_data_to_issue_type_activity_type.sql"/>
+    </changeSet>
+
+    <changeSet id="001_create_table_postal_codes" author="mhorowic">
+        <sqlFile path="src/main/dbschema/1.14.0/ddl/001_create_table_postal_codes.sql"/>
+    </changeSet>
+
+    <changeSet id="002_alter_formal_debt_collection_add_doc_reference" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.14.0/ddl/002_alter_formal_debt_collection_add_doc_reference.sql"/>
+    </changeSet>
+
+    <changeSet id="003_formal_debt_collection_out_of_service" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.14.0/ddl/003_formal_debt_collection_out_of_service.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_formal_debt_collection_out_of_service" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.14.0/ddl/004_alter_formal_debt_collection_out_of_service.sql"/>
+    </changeSet>
+
+    <changeSet id="005_alter_demand_for_payment_create_manually_flag" author="tsliwinski">
+        <sqlFile path="src/main/dbschema/1.14.0/ddl/005_alter_demand_for_payment_create_manually_flag.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

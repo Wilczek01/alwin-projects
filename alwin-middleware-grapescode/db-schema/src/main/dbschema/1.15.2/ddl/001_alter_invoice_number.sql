@@ -1,0 +1,1 @@
+alter table invoice alter column number type character varying(120);

@@ -1,0 +1,18 @@
+[
+  {
+    "key": 0,
+    "label": "Nieznany"
+  },
+  {
+    "key": 1,
+    "label": "Wolny/wolna"
+  },
+  {
+    "key": 2,
+    "label": "Żonaty/zamężna ze wspólnotą majątkową"
+  },
+  {
+    "key": 3,
+    "label": "Żonaty/zamężna bez wspólnoty majątkowej"
+  }
+]

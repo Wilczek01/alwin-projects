@@ -1,0 +1,11 @@
+.mdl-data-table td {
+  padding: 0 !important;
+  text-align: left;
+}
+
+.new-termination-header div {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 700;
+  float: left;
+  line-height: 44px;
+}

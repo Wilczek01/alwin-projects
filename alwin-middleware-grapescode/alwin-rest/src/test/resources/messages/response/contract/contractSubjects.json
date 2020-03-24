@@ -1,0 +1,50 @@
+[
+  {
+    "subjectId": 1090,
+    "contractId": 1,
+    "index": "1",
+    "name": "Samochód osobowy Opel Insignia",
+    "description": "BiTurbo 195KM wersja COSMO",
+    "startValue": 49593.50,
+    "vatRate": "23",
+    "yearOfProduction": 2012,
+    "serialNumber": "W0LGT6EN5C1097092",
+    "registrationNumber": "DW 662VY",
+    "subjectSupplier": {
+      "id": 10,
+      "postalCode": "8308",
+      "city": "ADHPoczta8308",
+      "prefix": "pl.",
+      "street": "ADHUlica28308",
+      "email": "kontakt@firma.example.zzz",
+      "correspondencePostalCode": "33424",
+      "correspondenceCity": "ADHPoczta33424",
+      "correspondencePrefix": "ul.",
+      "correspondenceStreet": "ADHUlica33424",
+      "nip": "98768308",
+      "regon": "12348308",
+      "krs": "krs",
+      "companyName": "ADHNazwa8308",
+      "shortName": "ADH8308",
+      "recipientName": "JOANNA SZNAJDROWICZ USLUGI TRANSPORTOWE",
+      "rating": "Q01",
+      "ratingDate": 1451516400000,
+      "contactPerson": "Pani Halinka",
+      "phoneNumber1": "tel 1",
+      "phoneNumber2": "tel 2",
+      "phoneNumber3": "tel 3",
+      "mobilePhoneNumber": "mobile",
+      "documentsEmail": "dokumenty@firma.example.zzz",
+      "officeEmail": "biuro@firma.example.zzz",
+      "websiteAddress": "http address 10",
+      "externalDBAgreement": false,
+      "externalDBAgreementDate": 1496181600000,
+      "legalForm": {
+        "id": 3,
+        "symbol": "Spółka cywilna"
+      },
+      "pkdCode": "28.41.Z",
+      "pkdName": "Produkcja maszyn do obróbki metalu"
+    }
+  }
+]

@@ -1,0 +1,95 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading && !datasource.loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Nowa maska kodu pocztowego</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="alwin-dialog-size" id="new-location-dialog">
+  <form (ngSubmit)="newLocationForm.form.valid && createLocation()" #newLocationForm="ngForm">
+
+    <mat-form-field class="alwin-mat-form-field">
+      <input matInput placeholder="Maska" [(ngModel)]="location.mask" name="mask" [pattern]="maskPattern" #maskValue="ngModel" required>
+    </mat-form-field>
+
+    <input matInput placeholder="Operator" [(ngModel)]="location.operator" name="operator" required hidden>
+
+    <mat-form-field class="alwin-mat-form-field">
+      <mat-select placeholder="Operator" [(ngModel)]="location.operator" name="operatorSelect" disabled="true">
+        <mat-option [value]="location.operator">{{location.operator?.user.firstName | concatenateText:[location.operator?.user.lastName]}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+
+      <mat-table #table [dataSource]="datasource" [hidden]="datasource.max == 0 || datasource.loading || loading"
+                 style="border: 1px solid #ddd;">
+
+        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+
+        <ng-container cdkColumnDef="name">
+          <mat-header-cell *cdkHeaderCellDef>Operator</mat-header-cell>
+          <mat-cell *cdkCellDef="let row">
+            <span [style.font-weight]="location.operator != null && row.id === location.operator.id ? 'bold' : 'normal'">{{ row.user.firstName | concatenateText:[row.user.lastName] }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="login">
+          <mat-header-cell *cdkHeaderCellDef>Login</mat-header-cell>
+          <mat-cell *cdkCellDef="let row">
+            <span [style.font-weight]="location.operator != null && row.id === location.operator.id ? 'bold' : 'normal'">{{row.login}}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="actions">
+          <mat-header-cell *cdkHeaderCellDef></mat-header-cell>
+          <mat-cell *cdkCellDef="let row">
+            <button mat-icon-button (click)="selectOperator(row)" matTooltip="Wybierz"
+                    *ngIf="(location.operator == null || (location.operator != null && row.id !== location.operator.id))" type="button">
+              <mat-icon class="material-icons">get_app</mat-icon>
+            </button>
+            <button mat-icon-button (click)="unselect()" matTooltip="Anuluj"
+                    *ngIf="(location.operator != null  && row.id === location.operator.id)" type="button">
+              <mat-icon class="material-icons">cancel</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+      </mat-table>
+
+      <div class="no-results" [hidden]="datasource.max != 0 || datasource.loading || loading">
+      <span style="text-align: center">
+        Nie znaleziono żadnych operatorów w roli windykatora terenowego.
+      </span>
+      </div>
+
+      <div class="no-results" [hidden]="!datasource.loading && !loading">
+        Trwa wyszukiwanie, proszę czekać
+      </div>
+
+      <mat-paginator #paginator
+                     [length]="datasource.max"
+                     [pageIndex]="0"
+                     [pageSize]="5"
+                     [pageSizeOptions]="[5, 10, 15]"
+                     [hidden]="datasource == null || datasource.max == 0 || datasource.loading || loading">
+      </mat-paginator>
+    </div>
+
+    <div class="mat-error" *ngIf="errorMessage != null">
+      {{errorMessage}}
+    </div>
+
+    <div>
+      <button mat-raised-button [disabled]="loading || datasource.loading || !newLocationForm.form.valid" color="primary" class="create-button"
+              id="save-location-button">
+        Dodaj maskę
+      </button>
+    </div>
+  </form>
+</div>

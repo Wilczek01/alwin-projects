@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "personId": 8888,
+    "pesel": "88010101234",
+    "firstName": "Jan",
+    "lastName": "Kowalsky",
+    "representative": true,
+    "address": "ul. Testowa 4/1",
+    "maritalStatus": {
+      "key": 0,
+      "label": "Nieznany"
+    },
+    "idDocCountry": "PL",
+    "idDocNumber": "QWE123456",
+    "idDocSignedBy": "Prezydent Miasta Radzionkowo",
+    "idDocSignDate": 1271973600000,
+    "politician": false,
+    "jobFunction": "Konserwator nawierzchni",
+    "birthDate": 406335600000,
+    "realBeneficiary": false,
+    "idDocType": {
+      "key": 1,
+      "label": "Dowód osobisty"
+    },
+    "country": "Polska",
+    "contactPerson": false
+  },
+  {
+    "id": 2,
+    "personId": 8889,
+    "pesel": "81011101234",
+    "firstName": "Zuzana",
+    "lastName": "Fialová",
+    "representative": false,
+    "address": "Banská Bystrica, Sládkovičova 54",
+    "maritalStatus": {
+      "key": 1,
+      "label": "Wolny/wolna"
+    },
+    "idDocCountry": "SK",
+    "idDocNumber": "SAA12456",
+    "idDocSignedBy": "Rodne číslo",
+    "idDocSignDate": 1297378800000,
+    "politician": false,
+    "jobFunction": "Všeobecná zdravotná",
+    "birthDate": 348102000000,
+    "realBeneficiary": false,
+    "idDocType": {
+      "key": 1,
+      "label": "Dowód osobisty"
+    },
+    "country": "Słowacja",
+    "contactPerson": true
+  }
+]

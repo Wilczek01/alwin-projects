@@ -1,0 +1,34 @@
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Słownik</h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="null">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="update-dict-dialog-size" id="prepare-dict-values-dialog">
+
+  <div *ngFor="let dict of activityDetailProperty.dictionaryValues; let i = index" class="full-width">
+    <span>{{dict.value}}</span>
+    <button id="remove-dict-{{i}}" mat-icon-button matTooltip="Usuń" (click)="removeDictValue(i)">
+      <mat-icon class="material-icons">delete</mat-icon>
+    </button>
+  </div>
+
+  <div class="full-width">
+    <form (ngSubmit)="updateDictForm.form.valid && addDictValue()" #updateDictForm="ngForm">
+      <mat-form-field class="alwin-mat-form-field to-left">
+        <input matInput placeholder="Wartość słownika" [(ngModel)]="dictValue" name="dictValue" required>
+      </mat-form-field>
+      <button id="add-dict-value" mat-icon-button matTooltip="Dodaj" [disabled]="!updateDictForm.form.valid">
+        <mat-icon class="material-icons">add</mat-icon>
+      </button>
+    </form>
+  </div>
+
+  <div class="full-width update-button-wrapper">
+    <button mat-raised-button [disabled]="activityDetailProperty.dictionaryValues.length === 0"
+            color="primary" class="update-button" id="update-dict-values-button" (click)="prepareDict()">
+      Dodaj słownik
+    </button>
+  </div>
+</div>

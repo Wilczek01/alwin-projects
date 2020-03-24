@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="001_insert_operator_type" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.3.0/dml/001_insert_operator_type.sql"/>
+    </changeSet>
+
+    <changeSet id="002_update_operator_type" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.3.0/dml/002_update_operator_type.sql"/>
+    </changeSet>
+
+    <changeSet id="001_add_customer_account_manager" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.3.0/ddl/001_add_customer_account_manager.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_declaration" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.3.0/dml/003_alter_declaration.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_declaration" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.3.0/dml/004_alter_declaration.sql"/>
+    </changeSet>
+
+    <changeSet id="002_create_scheduler_execution" author="drackowski">
+        <sqlFile path="src/main/dbschema/1.3.0/ddl/002_create_scheduler_execution.sql"/>
+    </changeSet>
+
+    <changeSet id="003_alter_issue_type_duration" author="astepnowski">
+        <sqlFile path="src/main/dbschema/1.3.0/ddl/003_alter_issue_type_duration.sql"/>
+    </changeSet>
+
+    <changeSet id="004_alter_invoice" author="pnaroznik">
+        <sqlFile path="src/main/dbschema/1.3.0/ddl/004_alter_invoice.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

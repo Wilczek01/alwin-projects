@@ -1,0 +1,8 @@
+{
+  "username": "Jan Brzechwa",
+  "role": {
+    "id": 1,
+    "typeName": "FIELD_DEBT_COLLECTOR",
+    "typeLabel": "Windykator terenowy"
+  }
+}

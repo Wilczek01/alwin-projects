@@ -1,0 +1,54 @@
+<div class="mdl-grid">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table tags-table full-width" *ngIf="!loading && tags.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Nazwa</th>
+        <th class="mdl-data-table__cell--non-numeric">Opis</th>
+        <th class="mdl-data-table__cell--non-numeric">Symbol</th>
+        <th class="mdl-data-table__cell--non-numeric action-cell">Akcje</th>
+        <th class="mdl-data-table__cell--non-numeric">
+          <button mat-icon-button matTooltip="Dodaj" id="add-tag-button" (click)="createTag()">
+            <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+          </button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tag of tags">
+        <td class="mdl-data-table__cell--non-numeric" id="tag-name-{{tag.id}}">{{tag.name}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="tag-description-{{tag.id}}">{{tag.description}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="tag-color-{{tag.id}}">
+          <mat-icon class="material-icons" [style.color]="tag.color">{{tag.tagIcon.name}}</mat-icon>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric action-cell" id="tag-action-{{tag.id}}">
+          <button mat-icon-button matTooltip="Edytuj" id="edit-tag-{{tag.id}}-button" (click)="updateTag(tag)">
+            <mat-icon class="md-24" aria-label="Edytuj">mode_edit</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Usuń" id="delete-tag-{{tag.id}}-button" (click)="confirmDeleteTag(tag.id)" [disabled]="tag.type == type.OVERDUE">
+            <mat-icon class="md-24" aria-label="Usuń">delete</mat-icon>
+          </button>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && tags.length == 0">
+      <div class="to-left not-found-label">
+        Nie znaleziono żadnych etykiet
+      </div>
+      <div class="to-right not-found">
+        <button mat-icon-button matTooltip="Dodaj" (click)="createTag()">
+          <mat-icon class="md-24" aria-label="Dodaj">add</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

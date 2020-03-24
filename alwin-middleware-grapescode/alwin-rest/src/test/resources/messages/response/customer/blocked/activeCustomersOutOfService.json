@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "fileContent": null,
+    "fileName": null,
+    "startDate": 1499724000000,
+    "endDate": 1500501600000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 1",
+    "remark": "blocking remark 1"
+  },
+  {
+    "id": 2,
+    "fileContent": null,
+    "fileName": null,
+    "startDate": 1500069600000,
+    "endDate": 1500760800000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 2",
+    "remark": "blocking remark 2"
+  }
+]

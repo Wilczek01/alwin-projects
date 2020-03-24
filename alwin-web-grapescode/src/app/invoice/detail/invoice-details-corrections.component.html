@@ -1,0 +1,30 @@
+<div *ngIf="corrections && corrections.length" style="margin-bottom: 20px">
+  <p><strong></strong></p>
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width mdl-shadow--2dp--no-shadow mdl-data-table--no-border" id="corrections-table">
+    <thead>
+    <tr>
+      <th colspan="7" class="table-header">Faktury korygujące</th>
+    </tr>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Numer faktury</th>
+      <th class="mdl-data-table__cell--non-numeric">Typ</th>
+      <th class="mdl-data-table__cell--non-numeric">Waluta</th>
+      <th class="mdl-data-table__cell--non-numeric">Termin płatności</th>
+      <th>Kwota dokumentu</th>
+      <th>Różnica<br/>do pop. FV</th>
+      <th>Różnica<br/>do FV głównej</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let invoiceCorrection of corrections">
+      <td class="mdl-data-table__cell--non-numeric">{{invoiceCorrection.number}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{invoiceCorrection.typeLabel}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{invoiceCorrection.currency}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{invoiceCorrection.dueDate | date:'dd.MM.yyyy'}}</td>
+      <td>{{invoiceCorrection.grossAmount | number:'0.2-2'}}</td>
+      <td>{{invoiceCorrection.previousCorrectionGrossAmountDiff | number:'0.2-2'}}</td>
+      <td>{{invoiceCorrection.rootInvoiceGrossAmountDiff | number:'0.2-2'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

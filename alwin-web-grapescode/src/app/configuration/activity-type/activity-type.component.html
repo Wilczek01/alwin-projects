@@ -1,0 +1,63 @@
+<div class="mdl-grid">
+  <div class="mdl-color--white mdl-cell mdl-cell--12-col">
+    <div>
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <table class="mdl-data-table mdl-js-data-table full-width activity-types-table zebra-rows zebra-odd"
+           *ngIf="!loading && activityTypes.length != 0">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Nazwa typu czynności</th>
+        <th class="mdl-data-table__cell--non-numeric">Planowana</th>
+        <th class="mdl-data-table__cell--non-numeric">Opłata dodatkowa</th>
+        <th class="mdl-data-table__cell--non-numeric">Może być wykonana przez system</th>
+        <th class="mdl-data-table__cell--non-numeric">Deklaracje</th>
+        <th class="mdl-data-table__cell--non-numeric">Szczególna</th>
+        <th class="mdl-data-table__cell--non-numeric">Kontakt z klientem</th>
+        <th class="mdl-data-table__cell--non-numeric">Cechy przy planowaniu</th>
+        <th class="mdl-data-table__cell--non-numeric">Cechy</th>
+        <th class="mdl-data-table__cell--non-numeric">Akcja</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let type of activityTypes; let i = index" class="single-row">
+        <td class="mdl-data-table__cell--non-numeric" id="name-{{i}}">{{type.name}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="canBePlanned-{{i}}">{{type.canBePlanned | booleanToString}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="chargeMin-{{i}}">min. {{type.chargeMin | nullable}} / max. {{type.chargeMax | nullable}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="mayBeAutomated-{{i}}">{{type.mayBeAutomated |
+          booleanToString}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="mayHaveDeclaration-{{i}}">{{type.mayHaveDeclaration |
+          booleanToString}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric" id="specific-{{i}}">{{type.specific | booleanToString}}</td>
+        <td class="mdl-data-table__cell--non-numeric" id="customerContact-{{i}}">{{type.customerContact |
+          booleanToString}}
+        </td>
+
+        <td class="mdl-data-table__cell--non-numeric" id="activityDetailProperty-planned-{{i}}">
+          <span
+            *ngFor="let activityDetailProperty of type.activityTypeDetailProperties | filterActivityTypeDetailPropertiesByState: 'PLANNED';">{{activityDetailProperty.activityDetailProperty.name}}<br/></span>
+        </td>
+
+        <td class="mdl-data-table__cell--non-numeric" id="activityDetailProperty-executed-{{i}}">
+          <span
+            *ngFor="let activityDetailProperty of type.activityTypeDetailProperties | filterActivityTypeDetailPropertiesByState: 'EXECUTED';">{{activityDetailProperty.activityDetailProperty.name}}<br/></span>
+        </td>
+
+        <td class="mdl-data-table__cell--non-numeric">
+          <button id="edit-configuration-{{i}}" mat-icon-button matTooltip="Edytuj" (click)="editActivityType(type)">
+            <mat-icon class="material-icons">mode_edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="no-results" [style.display]="!loading && activityTypes.length == 0 ? '' : 'none'">
+      Nie znaleziono danych konfiguracji zlecenia
+    </div>
+  </div>
+</div>

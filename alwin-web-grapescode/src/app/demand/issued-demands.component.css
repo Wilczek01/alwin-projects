@@ -1,0 +1,40 @@
+.issue-date-column {
+  flex: 0 0 104px;
+}
+
+.due-date-column {
+  flex: 0 0 88px;
+}
+
+.ext-company-id-column {
+  flex: 0 0 94px;
+}
+
+.type-key-column {
+  flex: 0 0 78px;
+}
+
+.type-segment-column {
+  flex: 0 0 64px;
+}
+
+.attachment-ref-column {
+  flex: 0 0 72px;
+}
+
+.invoices-column {
+  flex: 0 0 48px;
+}
+
+.actions-column {
+  flex: 0 0 48px;
+}
+
+.demand-aborted-column {
+  color: red;
+  flex: 0 0 32px;
+}
+
+.demands-download-button {
+  margin: 5px 20px 0 5px;
+}

@@ -1,0 +1,52 @@
+{
+  "contract_out_of_service": [
+    {
+      "id": 1,
+      "start_date": "2017-07-11 00:00:00.000000",
+      "end_date": "2017-07-20 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "ext_company_id": 10,
+      "contract_no": "10",
+      "reason": "blocking reason 1",
+      "remark": "comment example 1"
+    },
+    {
+      "id": 2,
+      "start_date": "2017-07-10 00:00:00.000000",
+      "end_date": "2017-07-15 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "ext_company_id": 2,
+      "contract_no": "10",
+      "reason": "blocking reason 2",
+      "remark": "comment example 2"
+    },
+    {
+      "id": 3,
+      "start_date": "2017-07-11 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "ext_company_id": 10,
+      "contract_no": "100",
+      "reason": "blocking reason 3",
+      "remark": "comment example 3"
+    },
+    {
+      "id": 4,
+      "start_date": "2018-07-11 00:00:00.000000",
+      "end_date": "2018-07-20 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "ext_company_id": 10,
+      "contract_no": "10",
+      "reason": "blocking reason 4",
+      "remark": "comment example 4"
+    },
+    {
+      "id": 5,
+      "start_date": "2018-01-01 00:00:00.000000",
+      "blocking_operator_id": 1,
+      "ext_company_id": 9978,
+      "contract_no": "issue_21_00001/15/1",
+      "reason": "blocking reason 5",
+      "remark": "comment example 5"
+    }
+  ]
+}

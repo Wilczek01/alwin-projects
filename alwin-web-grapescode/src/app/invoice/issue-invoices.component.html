@@ -1,0 +1,236 @@
+<div class="mdl-shadow--2dp mdl-color--white margin-0 width-100-percent">
+  <div class="progress-bar-placeholder">
+    <mat-progress-bar [hidden]="!invoicesDatasource.loading && !loading" mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div *ngIf="issueId == null && !loading" class="mdl-cell mdl-cell--12-col">
+      <h2 class="mdl-card__title-text">Brak danych</h2>
+    </div>
+    <div [hidden]="issueId == null" class="mdl-cell mdl-cell--12-col">
+      <form [formGroup]="invoicesFilterForm" (ngSubmit)="submitFilterForInvoices()" #newActivityForm1="ngForm">
+        <div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Filtry
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-form-field>
+              <input formControlName="startDueDate" matInput [matDatepicker]="startDueDatePicker"
+                     placeholder="Termin płatności od">
+              <mat-datepicker-toggle matSuffix [for]="startDueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDueDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input formControlName="endDueDate" matInput [matDatepicker]="endDueDatePicker"
+                     placeholder="Termin płatności do">
+              <mat-datepicker-toggle matSuffix [for]="endDueDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDueDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select placeholder="Typ faktury" [(ngModel)]="filterFormInvoice.typeId" formControlName="type"
+                          class="filter-panel-select-field-250">
+                <mat-option *ngFor=" let type of invoiceTypes" [value]="type">{{type.label}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button class="filter-panel-button" mat-raised-button color="primary"
+                    [disabled]="!invoicesFilterForm.valid"> Zastosuj
+            </button>
+            <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+          </mat-expansion-panel>
+        </div>
+      </form>
+
+      <mat-table #table [dataSource]="invoicesDatasource" [hidden]="invoicesDatasource.max == 0" matSort class="zebra-rows zebra-even">
+
+        <ng-container cdkColumnDef="select">
+          <mat-header-cell *cdkHeaderCellDef class="invoice-select-column extra-small-col"></mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="invoice-select-column extra-small-col">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? toggleAndSum(row) : null"
+                          [checked]="selection.isSelected(row.id)"
+                          id="select-invoice-{{row.id}}"
+                          [disabled]="!notPaidOnly || ref.groupByContract">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="issueSubject">
+          <mat-header-cell *cdkHeaderCellDef class="issue-subject-column extra-small-col"></mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="issue-subject-column extra-small-col">
+            <mat-icon *ngIf="row.issueSubject" class="material-icons" matTooltip="Przedmiot umowy">monetization_on
+            </mat-icon>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="corrections">
+          <mat-header-cell *cdkHeaderCellDef class="corrections-column extra-small-col"></mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="corrections-column extra-small-col">
+            <div class="box" *ngIf="row.corrections && row.corrections.length">
+              <div class="ribbon"><span>korekty</span></div>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="number">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.NUMBER}}" class="invoice-no-column">Nr faktury</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="invoice-no-column">
+              <button mat-button color="primary" [ngClass]="{'inactive-row': row.excluded }"
+                      (click)="showInvoiceDetailsDialog(row)" type="button"
+                      id="invoice-settlements-{{row.number}}" class="ellipsis-with-hover">
+                {{row.number}}
+              </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="contractNumber">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.CONTRACT_NUMBER}}" class="contract-number-column">Numer umowy
+          </mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="contract-number-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.contractNumber}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="type">
+          <mat-header-cell *cdkHeaderCellDef class="type-column">Typ</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="type-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.typeLabel}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="currency">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.CURRENCY}}" class="currency-column">Waluta</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="currency-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.currency | nullable}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="issueDate">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.ISSUE_DATE}}" class="issue-date-column">
+            Data wystawienia
+          </mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="issue-date-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.issueDate | date:'dd.MM.yyyy'}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="dueDate">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.DUE_DATE}}" class="due-date-column">Termin płatności</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="due-date-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.dueDate | date:'dd.MM.yyyy'}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="lastPaymentDate">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.LAST_PAYMENT_DATE}}" class="due-date-column">Data rozliczenia</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="due-date-column" [ngClass]="{'inactive-row': row.excluded }">
+            <span *ngIf="row.currentBalance >= 0">{{row.lastPaymentDate | date:'dd.MM.yyyy'}}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="currentBalance">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.CURRENT_BALANCE}}" class="current-balance-column">Saldo</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="current-balance-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.currentBalance | number:'0.2-2' | nullable:['N/d']}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="paid">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.PAID}}" class="paid-column">Zapłacono</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="paid-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.paid | number:'0.2-2' | nullable:['N/d']}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="grossAmount">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.GROSS_AMOUNT}}" class="gross-amount-column">Kwota dokumentu
+          </mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="gross-amount-column" [ngClass]="{'inactive-row': row.excluded }">
+            {{row.grossAmount | number:'0.2-2'}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="excluded">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header="{{sortEnum.EXCLUDED}}" class="excluded-column">Wyłączona<br>z&nbsp;obsługi
+          </mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="excluded-column"
+                    [ngClass]="{'inactive-row': row.excluded }">{{row.excluded | booleanToString}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="dpd">
+          <mat-header-cell *cdkHeaderCellDef class="dpd-column extra-small-col">DPD</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="dpd-column extra-small-col" [ngClass]="{'inactive-row': row.excluded }">{{row.dpd}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="actions">
+          <mat-header-cell *cdkHeaderCellDef class="action-column double-icon-col">Wykluczanie</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" class="action-column double-icon-col">
+            <button [hidden]="row.excluded == true" mat-icon-button matTooltip="Wyklucz z obsługi"
+                    id="exclude-invoice-{{row.id}}-button" [disabled]="readonly"
+                    (click)="excludeInvoice(row)">
+              <mat-icon class="md-24" aria-label="Wyklucz z obsługi">
+                indeterminate_check_box
+              </mat-icon>
+            </button>
+            <button [hidden]="row.excluded == false" mat-icon-button matTooltip="Włącz do obsługi"
+                    id="include-invoice-{{row.id}}-button" [disabled]="readonly"
+                    (click)="excludeInvoice(row)">
+              <mat-icon class="md-24" aria-label="Włącz do obsługi">add_box
+              </mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *cdkHeaderRowDef="invoicesDisplayedColumns"></mat-header-row>
+
+        <mat-row *cdkRowDef="let row; columns: invoicesDisplayedColumns;" id="invoice-row-{{row.id}}"
+                 class="invoice-row"
+                 (click)="highlight(row)"></mat-row>
+      </mat-table>
+
+      <div class="no-results"
+           [style.display]="issueId != null && invoicesDatasource.max == 0 && !invoicesDatasource.loading ? '' : 'none'">
+        Nie znaleziono żadnych dokumentów
+      </div>
+
+      <div>
+        <div class="to-left invoices-sum" [hidden]="invoicesPLNSum === 0 && invoicesEURSum === 0">
+          <span id="selectedInvoicesSum">Suma sald faktur: {{invoicesPLNSum | number:'0.2-2'}} (PLN) i {{invoicesEURSum | number:'0.2-2'}} (EUR)</span>
+
+          <button mat-icon-button (click)="clearInvoicesSelection()" id="clear-invoices-selection-button" matTooltip="Wyczyść">
+            <mat-icon class="md-24">delete</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="createActivityWithSelectedInvoices()" id="crate-activity-with-selected-invoices-button" *ngIf="!readonly"
+                  matTooltip="Dodaj czynność z deklaracjami">
+            <mat-icon class="md-24">add</mat-icon>
+          </button>
+        </div>
+
+        <mat-paginator #invoicesPaginator
+                       [length]="invoicesDatasource.max"
+                       [pageIndex]="0"
+                       [pageSize]="25"
+                       [pageSizeOptions]="[25, 50, 100]"
+                       [hidden]="invoicesDatasource.max == 0"
+                       class="to-right">
+        </mat-paginator>
+
+        <div class="to-right invoices-download-button" *ngIf="invoicesDatasource.max != 0">
+          <button id="download-csv-report-button" mat-icon-button matTooltip="Eksportuj wszystkie do pliku"
+                  (click)="saveFile()">
+            <mat-spinner *ngIf="savingFile" [diameter]="24"></mat-spinner>
+            <mat-icon *ngIf="!savingFile" class=“material-icons”>save_alt</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

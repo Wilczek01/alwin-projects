@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "typeName": "ADMIN",
+    "typeLabel": "Administrator systemu"
+  },
+  {
+    "id": 2,
+    "typeName": "PHONE_DEBT_COLLECTOR",
+    "typeLabel": "Windykator telefoniczny"
+  },
+  {
+    "id": 3,
+    "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+    "typeLabel": "Menedżer windykacji telefonicznej"
+  },
+  {
+    "id": 4,
+    "typeName": "DIRECT_DEBT_COLLECTION_MANAGER",
+    "typeLabel": "Menedżer windykacji bezpośredniej"
+  },
+  {
+    "id": 5,
+    "typeName": "FIELD_DEBT_COLLECTOR",
+    "typeLabel": "Windykator terenowy"
+  },
+  {
+    "id": 6,
+    "typeName": "RESTRUCTURING_SPECIALIST",
+    "typeLabel": "Specjalista ds. restrukturyzacji"
+  },
+  {
+    "id": 7,
+    "typeName": "RENUNCIATION_COORDINATOR",
+    "typeLabel": "Koordynator wypowiedzeń"
+  },
+  {
+    "id": 8,
+    "typeName": "SECURITY_SPECIALIST",
+    "typeLabel": "Specjalista ds. realizacji zabezpieczeń"
+  },
+  {
+    "id": 9,
+    "typeName": "ANALYST",
+    "typeLabel": "Analityk"
+  },
+  {
+    "id": 10,
+    "typeName": "DEPARTMENT_MANAGER",
+    "typeLabel": "Menedżer departamentu"
+  },
+  {
+    "id": 11,
+    "typeName": "ACCOUNT_MANAGER",
+    "typeLabel": "Opiekun klienta"
+  },
+  {
+    "id": 12,
+    "typeName": "PHONE_DEBT_COLLECTOR_1",
+    "typeLabel": "Windykator telefoniczny sekcja 1"
+  },
+  {
+    "id": 13,
+    "typeName": "PHONE_DEBT_COLLECTOR_2",
+    "typeLabel": "Windykator telefoniczny sekcja 2"
+  }
+]

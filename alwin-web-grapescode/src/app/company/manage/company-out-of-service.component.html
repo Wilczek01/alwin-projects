@@ -1,0 +1,44 @@
+<div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col" id="company-data">
+  <div class="progress-bar-placeholder">
+    <mat-progress-bar [hidden]="!loadingCompany" mode="indeterminate"></mat-progress-bar>
+  </div>
+  <mat-list *ngIf="!loadingCompany && company != null">
+    <mat-list-item>
+      <mat-icon mat-list-icon>person</mat-icon>
+      <span mat-line>
+        <b class="to-left">Klient: {{company.companyName}}</b>
+      </span>
+    </mat-list-item>
+    <mat-list-item class="company-data">
+      <span mat-line>
+        <b>Identyfikator:</b> {{company.id | nullable}} |
+        <b> NIP:</b> {{company.nip | nullable}} |
+        <b> Regon:</b> {{company.regon | nullable}} |
+        <b> KRS:</b> {{company.krs | nullable}} |
+        <b> Forma prawna:</b> {{company.legalForm.symbol | nullable}}
+      </span>
+    </mat-list-item>
+    <mat-divider class="company-data-divider"></mat-divider>
+  </mat-list>
+
+  <mat-list *ngIf="!loadingCompany && company == null">
+    <mat-list-item>
+      <mat-icon mat-list-icon>person</mat-icon>
+      <span mat-line>
+        <b class="to-left">Brak danych dla firmy o identyfikatorze {{extCompanyId}}</b>
+      </span>
+    </mat-list-item>
+    <mat-divider class="company-data-divider"></mat-divider>
+  </mat-list>
+</div>
+
+<div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+  <mat-tab-group>
+    <mat-tab label="Windykacja nieformalna">
+      <alwin-manage-company [extCompanyId]="extCompanyId"></alwin-manage-company>
+    </mat-tab>
+    <mat-tab label="Windykacja formalna">
+      <alwin-manage-formal-debt-collection-company [extCompanyId]="extCompanyId"></alwin-manage-formal-debt-collection-company>
+    </mat-tab>
+  </mat-tab-group>
+</div>

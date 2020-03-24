@@ -1,0 +1,39 @@
+{
+  "id": 1,
+  "issueType": {
+    "id": 1,
+    "name": "PHONE_DEBT_COLLECTION_1",
+    "label": "Windykacja telefoniczna sekcja 1"
+  },
+  "duration": 14,
+  "segment": {
+    "key": "A",
+    "label": "A"
+  },
+  "createAutomatically": true,
+  "dpdStart": 10,
+  "minBalanceStart": -100.00,
+  "defaultIssueActivity": [
+    {
+      "id": 1,
+      "activityTypeId": 1,
+      "defaultDay": 1,
+      "version": 1,
+      "creatingDate": 1498860000000,
+      "defaultExecutionDate": 1355353200000
+    }
+  ],
+  "operatorTypes": [
+    {
+      "id": 1,
+      "typeName": "ADMIN",
+      "typeLabel": "Administrator systemu"
+    },
+    {
+      "id": 2,
+      "typeName": "PHONE_DEBT_COLLECTOR",
+      "typeLabel": "Windykator telefoniczny"
+    }
+  ],
+  "includeDebtInvoicesDuringIssue": false
+}

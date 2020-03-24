@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "issueId": 1,
+  "requestCause": "przyczyna przerwania 1",
+  "requestOperator": {
+    "id": 2,
+    "user": {
+      "id": 2,
+      "firstName": "Juliusz",
+      "lastName": "Słowacki"
+    }
+  },
+  "excludedFromStats": true,
+  "exclusionFromStatsCause": "przyczyna wyłączenia ze statystyk 1",
+  "state": {
+    "key": "NEW",
+    "label": "Nowe"
+  },
+  "managerOperator": null,
+  "comment": null,
+  "created": 1451606461000,
+  "updated": 1451606461000
+}

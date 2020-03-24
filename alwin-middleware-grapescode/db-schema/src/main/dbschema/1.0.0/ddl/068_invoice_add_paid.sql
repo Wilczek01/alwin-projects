@@ -1,0 +1,7 @@
+ALTER TABLE invoice
+  ADD COLUMN paid NUMERIC(18, 2) NOT NULL DEFAULT 0;
+
+COMMENT ON COLUMN invoice.paid IS 'Kwota wpłat';
+
+ALTER TABLE invoice_AUD
+  ADD COLUMN paid NUMERIC(18, 2);

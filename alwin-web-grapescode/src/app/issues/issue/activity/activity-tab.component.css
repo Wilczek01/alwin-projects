@@ -1,0 +1,51 @@
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.mat-expansion-panel-content:not(.mat-expanded) {
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+.mat-expansion-panel-header {
+  height: 48px;
+}
+
+.mat-form-field-margin {
+  margin-right: 15px;
+}
+
+.single-action-cell {
+  flex: 0 0 45px;
+}
+
+.action-cell {
+  flex: 0 0 100px;
+}
+
+.activity-list-filter-content-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.activity-list-filter-content-left {
+  float: left;
+  margin-left: 5px;
+}
+
+.radio-button {
+  margin-left: 20px;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.to-right {
+  float: right;
+  margin-top: -11px;
+}

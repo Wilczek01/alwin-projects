@@ -1,0 +1,1 @@
+DELETE FROM issue_type_transition WHERE closed_issue_type_id = 2 AND child_issue_type_id = 3;

@@ -1,0 +1,37 @@
+[
+  {
+    "settlementId": 4,
+    "amountSettled": 309.69,
+    "side": "MA",
+    "setDate": 1538431200000,
+    "title": "672 Zakup 002418/16/1"
+  },
+  {
+    "settlementId": 5,
+    "amountSettled": 715.45,
+    "side": "WN",
+    "setDate": 1539208800000,
+    "title": "679 Inne fv - menager"
+  },
+  {
+    "settlementId": 1,
+    "amountSettled": 307.50,
+    "side": "WN",
+    "setDate": 1539295200000,
+    "title": "626 Rata 2 - 001980/15/1"
+  },
+  {
+    "settlementId": 3,
+    "amountSettled": 65.50,
+    "side": "WN",
+    "setDate": 1539468000000,
+    "title": "624 Wplata poczatkowa 000100/15/1"
+  },
+  {
+    "settlementId": 2,
+    "amountSettled": 5197.49,
+    "side": "MA",
+    "setDate": 1541113200000,
+    "title": "czynsze w PLN"
+  }
+]

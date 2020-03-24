@@ -1,0 +1,424 @@
+{
+  "values": [
+    {
+      "extCompanyId": 1000,
+      "terminationDate": 1457823600000,
+      "type": "CONDITIONAL",
+      "companyName": "Company1000",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 101,
+          "terminationDate": 1457823600000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/101",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 0.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 0.00,
+          "amountInDemandForPaymentEUR": 0.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 0.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 0.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/001/2017",
+          "invoiceAmountInitiatingDemandForPayment": 0.00,
+          "invoiceBalanceInitiatingDemandForPayment": 0.00,
+          "subjects": [
+            {
+              "id": 101,
+              "subjectId": 10101,
+              "gpsToInstall": true,
+              "gpsInstallationCharge": 500.00,
+              "gpsInstalled": false
+            },
+            {
+              "id": 102,
+              "subjectId": 10102,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": true
+            },
+            {
+              "id": 103,
+              "subjectId": 10103,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": false
+            }
+          ],
+          "formalDebtCollectionInvoices": [
+            {
+              "id": 101,
+              "invoiceNumber": "FV/001/2017",
+              "contractNumber": "CONTRACT/01",
+              "issueDate": 1510268400000,
+              "dueDate": 1511478000000,
+              "currency": "PLN",
+              "netAmount": 1000.00,
+              "grossAmount": 1230.00,
+              "currentBalance": 500.00,
+              "leoId": 1101
+            },
+            {
+              "id": 102,
+              "invoiceNumber": "FV/002/2017",
+              "contractNumber": "CONTRACT/02",
+              "issueDate": 1489100400000,
+              "dueDate": 1490310000000,
+              "currency": "PLN",
+              "netAmount": 10000.00,
+              "grossAmount": 12300.00,
+              "currentBalance": 9000.00,
+              "leoId": 1102
+            }
+          ]
+        },
+        {
+          "contractTerminationId": 103,
+          "terminationDate": 1457823600000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/103",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 0.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 0.00,
+          "amountInDemandForPaymentEUR": 0.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 0.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 0.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/103",
+          "invoiceAmountInitiatingDemandForPayment": 0.00,
+          "invoiceBalanceInitiatingDemandForPayment": 0.00,
+          "subjects": [],
+          "formalDebtCollectionInvoices": []
+        }
+      ],
+      "attachmentRefs": [
+        "http://grapescode.pl/download/ba66bbb1bd8a16304b48e11de620937e",
+        "http://grapescode.pl/download/f820e6fc0758ad274a172d9fc4d6783d"
+      ]
+    },
+    {
+      "extCompanyId": 1009,
+      "terminationDate": 1460584800000,
+      "type": "CONDITIONAL",
+      "companyName": "Company1009",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 128,
+          "terminationDate": 1460584800000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/128",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 900.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 900.00,
+          "amountInDemandForPaymentEUR": 900.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 500.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 500.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/128",
+          "invoiceAmountInitiatingDemandForPayment": 300.00,
+          "invoiceBalanceInitiatingDemandForPayment": 70.00,
+          "subjects": [
+            {
+              "id": 126,
+              "subjectId": 1090,
+              "gpsToInstall": true,
+              "gpsInstallationCharge": 880.70,
+              "gpsInstalled": false
+            },
+            {
+              "id": 127,
+              "subjectId": 1090,
+              "gpsToInstall": true,
+              "gpsInstallationCharge": 880.70,
+              "gpsInstalled": false
+            }
+          ],
+          "formalDebtCollectionInvoices": []
+        }
+      ],
+      "attachmentRefs": []
+    },
+    {
+      "extCompanyId": 1010,
+      "terminationDate": 1460584800000,
+      "type": "CONDITIONAL",
+      "companyName": "Company1010",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 131,
+          "terminationDate": 1460584800000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/131",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 200.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 100.00,
+          "amountInDemandForPaymentEUR": 100.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 900.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 900.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/131",
+          "invoiceAmountInitiatingDemandForPayment": 400.00,
+          "invoiceBalanceInitiatingDemandForPayment": 10.00,
+          "subjects": [
+            {
+              "id": 130,
+              "subjectId": 1090,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": false
+            }
+          ],
+          "formalDebtCollectionInvoices": [
+            {
+              "id": 101,
+              "invoiceNumber": "FV/001/2017",
+              "contractNumber": "CONTRACT/01",
+              "issueDate": 1510268400000,
+              "dueDate": 1511478000000,
+              "currency": "PLN",
+              "netAmount": 1000.00,
+              "grossAmount": 1230.00,
+              "currentBalance": 500.00,
+              "leoId": 1101
+            },
+            {
+              "id": 103,
+              "invoiceNumber": "FV/2018/104",
+              "contractNumber": "CONTRACT/03",
+              "issueDate": 1497045600000,
+              "dueDate": 1498255200000,
+              "currency": "PLN",
+              "netAmount": 5000.00,
+              "grossAmount": 6150.00,
+              "currentBalance": 3000.00,
+              "leoId": 1103
+            }
+          ]
+        },
+        {
+          "contractTerminationId": 133,
+          "terminationDate": 1460584800000,
+          "activationDate": 1474149600000,
+          "contractNumber": "CONTRACT/133",
+          "type": "CONDITIONAL",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 100.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 1000.00,
+          "amountInDemandForPaymentEUR": 1000.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 400.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 400.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/133",
+          "invoiceAmountInitiatingDemandForPayment": 300.00,
+          "invoiceBalanceInitiatingDemandForPayment": 20.00,
+          "subjects": [
+            {
+              "id": 132,
+              "subjectId": 1090,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": true
+            }
+          ],
+          "formalDebtCollectionInvoices": []
+        }
+      ],
+      "attachmentRefs": [
+        "http://grapescode.pl/download/f820e6fc0758ad274a172d9fc4d6783d",
+        "http://grapescode.pl/download/14ff36e56b9dfb42fde740e5245a9fb7"
+      ]
+    },
+    {
+      "extCompanyId": 1010,
+      "terminationDate": 1460584800000,
+      "type": "IMMEDIATE",
+      "companyName": "Company1010",
+      "companyAddress": {
+        "id": 4,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Broniewskiego",
+        "flatNumber": "321",
+        "postalCode": "01-756",
+        "houseNumber": "9",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "companyCorrespondenceAddress": {
+        "id": 5,
+        "city": "Warszawa",
+        "remark": "Test remark",
+        "country": "Polska",
+        "streetName": "Kochanowskiego",
+        "flatNumber": null,
+        "postalCode": "01-223",
+        "houseNumber": "12",
+        "streetPrefix": "ul.",
+        "importedFromAida": false,
+        "addressType": {
+          "key": "RESIDENCE",
+          "label": "Siedziby/zamieszkania"
+        }
+      },
+      "contracts": [
+        {
+          "contractTerminationId": 132,
+          "terminationDate": 1460584800000,
+          "activationDate": null,
+          "contractNumber": "CONTRACT/132",
+          "type": "IMMEDIATE",
+          "state": "ISSUED",
+          "remark": null,
+          "generatedBy": "Jan Kochanowski",
+          "operatorPhoneNumber": "+22 123 45 67",
+          "operatorEmail": "jkochanowski@alwin.com",
+          "resumptionCost": 500.00,
+          "dueDateInDemandForPayment": 1459033200000,
+          "amountInDemandForPaymentPLN": 300.00,
+          "amountInDemandForPaymentEUR": 300.00,
+          "totalPaymentsSinceDemandForPaymentPLN": 1000.00,
+          "totalPaymentsSinceDemandForPaymentEUR": 1000.00,
+          "invoiceNumberInitiatingDemandForPayment": "FV/2018/132",
+          "invoiceAmountInitiatingDemandForPayment": 100.00,
+          "invoiceBalanceInitiatingDemandForPayment": 100.00,
+          "subjects": [
+            {
+              "id": 131,
+              "subjectId": 1090,
+              "gpsToInstall": false,
+              "gpsInstallationCharge": null,
+              "gpsInstalled": true
+            }
+          ],
+          "formalDebtCollectionInvoices": []
+        }
+      ],
+      "attachmentRefs": []
+    }
+  ],
+  "totalValues": 4
+}

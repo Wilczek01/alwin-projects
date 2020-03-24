@@ -1,0 +1,13 @@
+.update-button {
+  margin-top: 15px;
+}
+
+.update-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.update-dict-dialog-size {
+  min-width: 300px;
+  max-height: 600px;
+}

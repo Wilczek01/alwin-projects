@@ -1,0 +1,43 @@
+<div *ngIf="settlementsLoading" class="invoice-details-margin">
+  <p>Pobieranie rozrachunków...</p>
+</div>
+
+<div *ngIf="(settlements != null && settlements.length > 0) && !settlementsLoading" class="invoice-details-margin">
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width mdl-shadow--2dp--no-shadow mdl-data-table--no-border" id="settlements-table">
+    <thead>
+    <tr>
+      <th colspan="5" class="table-header">Rozrachunki</th>
+    </tr>
+    <tr>
+      <th>Identyfikator</th>
+      <th>Kwota</th>
+      <th class="mdl-data-table__cell--non-numeric">Data</th>
+      <th class="mdl-data-table__cell--non-numeric">Strona</th>
+      <th class="mdl-data-table__cell--non-numeric">Tytuł</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let settlement of settlements">
+      <td>
+        {{settlement.settlementId}}
+      </td>
+      <td>
+        {{settlement.amountSettled | number:'0.2-2'}}
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        {{settlement.setDate | date:'dd.MM.yyyy'}}
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        {{settlement.side}}
+      </td>
+      <td [matTooltip]="(settlement.title !== undefined && settlement.title.length > 35) ? settlement.title : ''" class="mdl-data-table__cell--non-numeric">
+        {{settlement.title | truncateText:[35]}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="((settlements === undefined || settlements.length === 0) && !settlementsLoading)" class="invoice-details-margin">
+  <p>Brak rozrachunków...</p>
+</div>

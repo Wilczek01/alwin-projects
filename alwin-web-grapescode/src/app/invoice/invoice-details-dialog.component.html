@@ -1,0 +1,19 @@
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Dokument: {{invoiceNo}}</h1>
+  <button mat-icon-button mat-dialog-close id="close-button">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content style="min-width: 600px; max-height: 600px;" id="invoice-settlements-dialog">
+
+  <!-- pozycje faktury -->
+  <alwin-invoice-details-entries [invoiceNo]="invoiceNo"></alwin-invoice-details-entries>
+
+  <!-- faktury korygujące -->
+  <alwin-invoice-details-corrections [corrections]="corrections"></alwin-invoice-details-corrections>
+
+  <!-- rozrachunki -->
+  <alwin-invoice-details-settlements [invoiceNo]="invoiceNo"></alwin-invoice-details-settlements>
+
+</div>

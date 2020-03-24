@@ -1,0 +1,35 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!requestInProgress" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">
+    <span>Anuluj wezwanie</span>
+  </h1>
+  <button mat-icon-button mat-dialog-close id="close-button" [mat-dialog-close]="false">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content class="cancel-demand-dialog">
+  <form (ngSubmit)="demandCancelForm.form.valid" #demandCancelForm="ngForm">
+
+    <mat-form-field>
+      <input required matInput placeholder="Komentarz" [(ngModel)]="demandCancelling.stateChangeReason" name="remark">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Wybrana przyczyna anulowania" [(ngModel)]="demandCancelling.reasonType" name="reasonType" required>
+        <mat-option *ngFor="let reasonType of reasonTypes" [value]="reasonType.key"> {{reasonType.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="buttons-container">
+      <button mat-raised-button [disabled]="!demandCancelForm.form.valid || requestInProgress" type="button" color="primary"
+              (click)="cancel()">
+        <span>Anuluj wezwanie</span>
+      </button>
+    </div>
+
+  </form>
+</div>

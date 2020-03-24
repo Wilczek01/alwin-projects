@@ -1,0 +1,127 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header">
+  <h1 mat-dialog-title id="dialog-title">Umowy klienta</h1>
+  <button mat-icon-button mat-dialog-close id="close-button">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content id="alwin-customer-contracts">
+
+  <div class="alwin-customer-contracts-expansion-panels">
+    <mat-accordion [multi]="true">
+      <mat-expansion-panel *ngFor="let contract of contracts">
+        <mat-expansion-panel-header id="contract-{{contract.id}}">
+          <mat-panel-title style="width: 25%;">Umowa numer: {{contract.contractNo}}</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="alwin-grid">
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Identyfikator umowy</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.id}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Data podpisania</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.signDate | date:'dd.MM.yyyy' | nullable}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Przewidywana data zakończenia umowy</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.endDate | date:'dd.MM.yyyy' | nullable}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Identyfikator statusu</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.stateSymbol}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Opis statusu</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.stateDescription}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Czy umowa jest aktywna</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.active | booleanToString}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Czy umowa jest fakturowana</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.invoiced | booleanToString}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Waluta</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.currency}}
+            </div>
+          </div>
+
+          <div class="alwin-grid-row">
+            <div class="alwin-grid-title">
+              <span class="grid-tile-title">Typ finansowania</span>
+            </div>
+            <div class="alwin-grid-content">
+              {{contract.financingType}}
+            </div>
+          </div>
+        </div>
+
+        <div [hidden]="contract.subjects == null || contract.subjects.length == 0">
+          <div class="contract-dialog-label">Przedmioty:</div>
+          <alwin-customer-contract-subjects [subjects]="contract.subjects"></alwin-customer-contract-subjects>
+        </div>
+
+        <div [hidden]="contract.paymentSchedules == null || contract.paymentSchedules.length == 0">
+          <div class="contract-dialog-label">Harmonogramy:</div>
+          <alwin-customer-contract-payment-schedules [paymentSchedules]="contract.paymentSchedules"></alwin-customer-contract-payment-schedules>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div *ngIf="((contracts === undefined || contracts.length === 0) && !loading)">
+    Brak umów.
+  </div>
+
+  <div *ngIf="loading">
+    Proszę czekać, trwa wyszukiwanie umów klienta.
+  </div>
+
+</div>

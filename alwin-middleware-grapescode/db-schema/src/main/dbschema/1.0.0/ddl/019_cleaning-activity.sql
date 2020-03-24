@@ -1,0 +1,2 @@
+DROP TABLE issue_debt_collection_action;
+DROP TABLE debt_collection_action;

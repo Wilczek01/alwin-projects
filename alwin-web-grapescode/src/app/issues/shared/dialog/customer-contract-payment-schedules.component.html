@@ -1,0 +1,35 @@
+<mat-accordion [multi]="true">
+  <mat-expansion-panel *ngFor="let schedule of paymentSchedules">
+    <mat-expansion-panel-header id="schedule-{{schedule.id}}">
+      <mat-panel-title>Harmonogram: {{schedule.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Identyfikator harmonogramu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{schedule.id}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Typ harmonogramu</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{schedule.calculationType}}
+        </div>
+      </div>
+    </div>
+
+    <div [hidden]="schedule.instalments == null || schedule.instalments.length == 0">
+      <div class="contract-dialog-label">Raty:</div>
+      <alwin-customer-contract-payment-schedule-installments [instalments]="schedule.instalments"></alwin-customer-contract-payment-schedule-installments>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>

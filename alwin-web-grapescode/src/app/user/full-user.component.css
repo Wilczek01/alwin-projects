@@ -1,0 +1,7 @@
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+.mdl-data-table {
+  white-space: normal;
+}

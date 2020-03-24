@@ -1,0 +1,25 @@
+.update-button {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.priority-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 7px;
+}
+
+.priority-radio-button {
+  margin: 5px;
+}
+
+§.priority-selected-value {
+  margin: 15px 0;
+}

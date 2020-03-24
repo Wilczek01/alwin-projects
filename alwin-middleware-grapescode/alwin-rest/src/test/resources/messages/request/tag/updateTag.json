@@ -1,0 +1,9 @@
+{
+  "name": "Koszyk 4",
+  "color": "#333333",
+  "description": "Zlecenie koszyka 3",
+  "tagIcon": {
+    "id": 1,
+    "name": "bookmark"
+  }
+}

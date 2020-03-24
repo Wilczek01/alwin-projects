@@ -1,0 +1,10 @@
+{
+  "maritalStatus": {
+    "key": -1,
+    "label": "invalid"
+  },
+  "idDocType": {
+    "key": -2,
+    "label": "invalid 2"
+  }
+}

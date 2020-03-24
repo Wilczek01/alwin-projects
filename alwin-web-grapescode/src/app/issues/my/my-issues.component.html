@@ -1,0 +1,244 @@
+<div class="mdl-grid padding-0">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col margin-0 width-100-percent mb-15">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+    <form [formGroup]="filterForm" (ngSubmit)="submitFilterForNonClosedIssues()">
+      <div>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>Filtruj</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div>
+            <div>
+              <div>
+                <span>Data rozpoczęcia zlecenia</span>
+                <div class="filter-table-row">
+                  <mat-form-field>
+                    <input formControlName="startStartDate" matInput [matDatepicker]="startStartDatePicker"
+                           placeholder="od" [max]="endStartDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="startStartDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startStartDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input formControlName="endStartDate" matInput [matDatepicker]="endStartDatePicker"
+                           placeholder="do" [min]="startStartDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="endStartDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endStartDatePicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <span>Data zakończenia</span>
+                <div class="filter-table-row">
+                  <mat-form-field>
+                    <input formControlName="startExpirationDate" matInput [matDatepicker]="startExpirationDatePicker"
+                           placeholder="od" [max]="endExpirationDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="startExpirationDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startExpirationDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input formControlName="endExpirationDate" matInput [matDatepicker]="endExpirationDatePicker"
+                           placeholder="do" [min]="startExpirationDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="endExpirationDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endExpirationDatePicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <span>Data czynności</span>
+                <div class="filter-table-row">
+                  <mat-form-field>
+                    <input formControlName="startActivityDate" matInput [matDatepicker]="startActivityDatePicker"
+                           placeholder="od" [max]="endActivityDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="startActivityDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startActivityDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input formControlName="endActivityDate" matInput [matDatepicker]="endActivityDatePicker"
+                           placeholder="do" [min]="startActivityDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="endActivityDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endActivityDatePicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <span>Data zaplanowania</span>
+                <div class="filter-table-row">
+                  <mat-form-field>
+                    <input formControlName="startPlannedDate" matInput [matDatepicker]="startPlannedDatePicker"
+                           placeholder="od" [max]="endPlannedDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="startPlannedDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startPlannedDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input formControlName="endPlannedDate" matInput [matDatepicker]="endPlannedDatePicker"
+                           placeholder="do" [min]="startPlannedDate.value">
+                    <mat-datepicker-toggle matSuffix [for]="endPlannedDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endPlannedDatePicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <span>Saldo</span>
+                <div class="filter-table-row">
+                  <mat-form-field class="form-field-width-200">
+                    <input matInput formControlName="startTotalCurrentBalancePLN" placeholder="od" type="number">
+                  </mat-form-field>
+                  <mat-form-field class="form-field-width-200">
+                    <input matInput formControlName="endTotalCurrentBalancePLN" placeholder="do" type="number">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <span>Priorytet</span>
+                <div class="filter-table-row">
+                  <mat-form-field>
+                    <mat-select placeholder="Priorytet" [formControl]="priorityControl">
+                      <mat-option [value]="null">Wszystkie</mat-option>
+                      <mat-option *ngFor="let priority of priorities" [value]="priority">
+                        {{ priority.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="filter-table-button" mat-raised-button color="primary" [disabled]="!filterForm.valid">Zastosuj
+          </button>
+          <button mat-raised-button type="reset" click="reset()">Wyczyść</button>
+        </mat-expansion-panel>
+      </div>
+    </form>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col margin-0 width-100-percent position-relative">
+    <div class="progress-bar-placeholder absolute-progress">
+      <mat-progress-bar [hidden]="!dataSource.loading" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" [hidden]="dataSource.max == 0" class="zebra-rows zebra-even">
+
+      <ng-container cdkColumnDef="priority">
+        <mat-header-cell *cdkHeaderCellDef class="issue-priority custom-icon-col"></mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-priority custom-icon-col">
+          <mat-icon mat-list-icon *ngIf="isIssuePriorityHigh(row)" matTooltip="Priorytet: {{row.priority.label}}">priority_high</mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="customer">
+        <mat-header-cell *cdkHeaderCellDef class="issue-customer-column">
+          <div class="wrapper padding-cell-3">
+            Klient
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-customer-column">
+          <button mat-button (click)="openCustomerDetails(row.customer)" class="user-name-cell ellipsis-with-hover" *ngIf="row.customer != null">
+            {{ row.customer.company.companyName }}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="startDate">
+        <mat-header-cell *cdkHeaderCellDef class="issue-start-date-column issue-date-column"> Data rozpoczęcia</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-start-date-column issue-date-column"> {{row.startDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="expirationDate">
+        <mat-header-cell *cdkHeaderCellDef class="issue-expiration-date-column issue-date-column"> Data wygaśnięcia</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-expiration-date-column issue-date-column"> {{row.expirationDate | date:'dd.MM.yyyy'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="terminationCause">
+        <mat-header-cell *cdkHeaderCellDef class="issue-state-column"> Przyczyna przerwania</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-state-column"> {{row.terminationCause}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="issueType">
+        <mat-header-cell *cdkHeaderCellDef class="issue-type-column custom-icon-col">
+          <div class="padding-cell-3">
+            Typ
+          </div>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-type-column custom-icon-col">
+          <alwin-issue-type-icon [issueType]="row.issueType"></alwin-issue-type-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="issueState">
+        <mat-header-cell *cdkHeaderCellDef class="issue-state-column"> Stan</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="issue-state-column"> {{row.issueState.label}}</mat-cell>
+      </ng-container>
+
+      <!--<ng-container cdkColumnDef="rpbPLN">
+        <mat-header-cell *cdkHeaderCellDef class="alwin-table-align-right"> Kapitał</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right"> {{row.rpbPLN | number:'0.2-2'}}</mat-cell>
+      </ng-container>-->
+
+      <ng-container cdkColumnDef="balanceStartPLN">
+        <mat-header-cell *cdkHeaderCellDef class="alwin-table-align-right amount"> Saldo początkowe</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right amount"> {{row.balanceStartPLN | number:'0.2-2'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="currentBalancePLN">
+        <mat-header-cell *cdkHeaderCellDef class="alwin-table-align-right amount"> Saldo bieżące</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right amount"> {{row.currentBalancePLN | number:'0.2-2'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="paymentsPLN">
+        <mat-header-cell *cdkHeaderCellDef class="alwin-table-align-right"> Suma wpłat</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right"> {{row.paymentsPLN | number:'0.2-2'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="rpbEUR">
+        <mat-header-cell *cdkHeaderCellDef class="alwin-table-align-right"> Kapitał</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="alwin-table-align-right"> {{row.rpbEUR | number:'0.2-2'}}</mat-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="issueDetails">
+        <mat-header-cell *cdkHeaderCellDef class="detail-column custom-icon-col"></mat-header-cell>
+        <mat-cell *cdkCellDef="let row" class="detail-column custom-icon-col">
+          <a href="issue/{{row.id}}" matTooltip="Szczegóły" target="_blank" class="icon-link mat-icon-button" name="issueDetails">
+            <mat-icon class="md-24" aria-label="Szczegóły">mode_edit</mat-icon>
+          </a>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns">
+      </mat-row>
+    </mat-table>
+
+    <div class="example-no-results" [style.display]="dataSource && !dataSource.loading && dataSource.max == 0  ? '' : 'none'">
+      Nie znaleziono żadnych zleceń.
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.max"
+                   [pageIndex]="0"
+                   [pageSize]="25"
+                   [pageSizeOptions]="[25, 50, 100]"
+                   [hidden]="dataSource.max == 0">
+    </mat-paginator>
+  </div>
+</div>

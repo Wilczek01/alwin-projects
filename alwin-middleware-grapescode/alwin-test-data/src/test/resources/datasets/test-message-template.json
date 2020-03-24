@@ -1,0 +1,23 @@
+{
+  "message_template": [
+    {
+      "id": 1,
+      "type": "SMS",
+      "name": "testowy 1",
+      "body": "testowa treść wiadomości 1"
+    },
+    {
+      "id": 2,
+      "type": "SMS",
+      "name": "testowy 2",
+      "body": "testowa treść wiadomości 2"
+    },
+    {
+      "id": 3,
+      "type": "E_MAIL",
+      "name": "testowy 3",
+      "body": "testowa treść wiadomości 3",
+      "topic": "testowy tytuł 3"
+    }
+  ]
+}

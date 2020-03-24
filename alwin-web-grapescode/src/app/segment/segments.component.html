@@ -1,0 +1,87 @@
+<div class="mdl-grid padding-0-8" *ngIf="loadingAllWallets">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <div class="progress-bar-placeholder">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+  </div>
+</div>
+
+<div class="mdl-grid padding-0-8" *ngIf="allWallets">
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <mat-list class="padding-0-8">
+      <mat-list-item>
+        <h3 mat-line id="issue-states-0"><b>Portfele dla zleceń</b> : {{joinLabels(walletsByIssueStates.issueStates)}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--3-col" *ngFor="let wallet of walletsByIssueStates.wallets; let j = index"
+       id="wallet-{{j}}">
+
+    <mat-list>
+      <mat-list-item>
+        <mat-icon class="logged-wallet-icon margin-right-4" aria-label="Portfel">account_balance_wallet</mat-icon>
+        <b class="margin-right-4">Portfel:</b>
+        {{wallet.issueType | issueType}} , segment {{wallet.segment.label}}
+        <span class="mdl-layout-spacer"></span>
+        <a (click)="navigateToIssuesPage(wallet.issueType, wallet.segment, walletsByIssueStates.issueStates)" matTooltip="Więcej"
+           class="icon-link mat-icon-button" *ngIf="isPhoneDebtCollectorManager()" id="navigate-to-issues-{{j}}">
+          <mat-icon class="material-icons">mode_edit</mat-icon>
+        </a>
+      </mat-list-item>
+      <mat-list-item>
+        <div class="mdl-cell--7-col">
+          <b>DPD:</b>
+        </div>
+        <div class="mdl-cell--5-col">
+          {{wallet.duration}}
+        </div>
+      </mat-list-item>
+      <alwin-wallet [wallet]="wallet"></alwin-wallet>
+    </mat-list>
+  </div>
+
+</div>
+
+<div class="mdl-grid padding-0-8" *ngIf="allWallets">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+    <mat-list class="padding-0-8">
+      <mat-list-item>
+        <h3 mat-line><b>Portfele dla etykiet</b></h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--3-col" id="waiting-for-termination-wallet">
+    <mat-list>
+      <mat-list-item>
+        {{waitingForTerminationIssuesWallet.issueState.label}}
+        <span class="mdl-layout-spacer"></span>
+        <a (click)="navigateToWaitingForTerminationIssuesPage(waitingForTerminationIssuesWallet.issueState)" matTooltip="Więcej"
+           class="icon-link mat-icon-button" *ngIf="isPhoneDebtCollectorManager()" id="navigate-to-waiting-issues">
+          <mat-icon class="material-icons">mode_edit</mat-icon>
+        </a>
+      </mat-list-item>
+      <alwin-wallet [wallet]="waitingForTerminationIssuesWallet"></alwin-wallet>
+    </mat-list>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--3-col" *ngFor="let wallet of tagWallets; let j = index"
+       id="tag-wallet-{{j}}">
+    <mat-list>
+      <mat-list-item>
+        <mat-icon class="material-icons margin-right-4" [style.color]="wallet.tag.color" matTooltip="{{wallet.tag.description | nullable}}">
+          {{wallet.tag.tagIcon .name}}
+        </mat-icon>
+        <span>{{wallet.tag.name}}</span>
+        <span class="mdl-layout-spacer"></span>
+        <a (click)="navigateToTagIssuesPage(wallet.tag)" matTooltip="Więcej"
+           class="icon-link mat-icon-button" *ngIf="isPhoneDebtCollectorManager()" id="navigate-to-tag-issues-{{j}}">
+          <mat-icon class="material-icons">mode_edit</mat-icon>
+        </a>
+      </mat-list-item>
+      <alwin-wallet [wallet]="wallet"></alwin-wallet>
+    </mat-list>
+  </div>
+</div>

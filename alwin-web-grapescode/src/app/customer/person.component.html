@@ -1,0 +1,51 @@
+<mat-list style="padding-top: 0">
+  <mat-list-item>
+    <h4 mat-line>Stanowisko</h4>
+    <p mat-line>{{person.jobFunction | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Pesel</h4>
+    <p mat-line>{{person.pesel | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Adres</h4>
+    <p mat-line>{{person.address | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Data urodzenia</h4>
+    <p mat-line>{{person.birthDate | date:'dd.MM.yyyy' | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Stan cywilny</h4>
+    <p mat-line>{{person.maritalStatus != null ? person.maritalStatus.label : null | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Czy jest reprezentantem</h4>
+    <p mat-line>{{person.representative | choice}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Czy jest rzeczywistym beneficjentem</h4>
+    <p mat-line>{{person.realBeneficiary | choice}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Czy jest politykiem</h4>
+    <p mat-line>{{person.politician | choice}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h4 mat-line>Kraj</h4>
+    <p mat-line>{{person.country | nullable}}</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <button mat-button style="margin: 0 auto;" (click)="openPersonIdDocument(person)">Zobacz dokument tożsamości</button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

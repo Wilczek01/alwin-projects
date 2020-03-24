@@ -1,0 +1,3 @@
+UPDATE issue SET priority=0 WHERE issue.priority IS NULL;
+ALTER TABLE issue ALTER COLUMN priority SET NOT NULL;
+ALTER TABLE issue ALTER COLUMN priority SET DEFAULT 0;

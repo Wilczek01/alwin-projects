@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "contractNo": "10",
+    "financialModelNo": 1,
+    "signDate": 1471903200000,
+    "endDate": 1504044000000,
+    "stateSymbol": 1,
+    "stateDescription": "Zbiorcza zbiorcza",
+    "active": true,
+    "invoiced": false,
+    "currency": "Polski zloty",
+    "financingType": "Leasing operacyjny",
+    "financingState": "Wykup z regresem",
+    "contractValue": 1000.23,
+    "distributionChannel": null,
+    "distributionOperator": null,
+    "exclusions": [
+      {
+        "id": 1,
+        "contractNo": "10",
+        "extCompanyId": 10,
+        "startDate": 1499724000000,
+        "endDate": 1500501600000,
+        "blockingOperator": "Adam Mickiewicz",
+        "reason": "blocking reason 1",
+        "remark": "comment example 1"
+      },
+      {
+        "id": 4,
+        "contractNo": "10",
+        "extCompanyId": 10,
+        "startDate": 1531260000000,
+        "endDate": 1532037600000,
+        "blockingOperator": "Adam Mickiewicz",
+        "reason": "blocking reason 4",
+        "remark": "comment example 4"
+      }
+    ],
+    "excluded": false
+  },
+  {
+    "id": 2,
+    "contractNo": "100",
+    "financialModelNo": 2,
+    "signDate": 1471816800000,
+    "endDate": 1472421600000,
+    "stateSymbol": 2,
+    "stateDescription": "Zakonczona aktywna",
+    "active": false,
+    "invoiced": true,
+    "currency": "EUR NBP sredni",
+    "financingType": "Leasing finasowy",
+    "financingState": "Finansowanie własne",
+    "contractValue": 435000.15,
+    "distributionChannel": null,
+    "distributionOperator": null,
+    "exclusions": [
+      {
+        "id": 3,
+        "contractNo": "100",
+        "extCompanyId": 10,
+        "startDate": 1499724000000,
+        "endDate": null,
+        "blockingOperator": "Adam Mickiewicz",
+        "reason": "blocking reason 3",
+        "remark": "comment example 3"
+      }
+    ],
+    "excluded": true
+  }
+]

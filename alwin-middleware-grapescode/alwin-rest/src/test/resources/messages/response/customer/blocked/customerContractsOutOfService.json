@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "contractNo": "10",
+    "extCompanyId": 10,
+    "startDate": 1499724000000,
+    "endDate": 1500501600000,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 1",
+    "remark": "comment example 1"
+  },
+  {
+    "id": 3,
+    "contractNo": "100",
+    "extCompanyId": 10,
+    "startDate": 1499724000000,
+    "endDate": null,
+    "blockingOperator": "Adam Mickiewicz",
+    "reason": "blocking reason 3",
+    "remark": "comment example 3"
+  }
+]

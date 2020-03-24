@@ -1,0 +1,2 @@
+ALTER TABLE activity
+  ALTER COLUMN creation_date SET DATA TYPE TIMESTAMP;

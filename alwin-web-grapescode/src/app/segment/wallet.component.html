@@ -1,0 +1,40 @@
+<mat-list-item>
+  <div class="mdl-cell--7-col">
+    <b>Zlecenia do obsłużenia:</b>
+  </div>
+  <div class="mdl-cell--5-col">
+    {{wallet.currentIssueQueueCount}}
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="mdl-cell--7-col">
+    <b>Klientów:</b>
+  </div>
+  <div class="mdl-cell--5-col">
+    {{wallet.companyCount}}
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="mdl-cell--7-col">
+    <b>Saldo PLN:</b>
+  </div>
+  <div class="mdl-cell--5-col">
+    {{wallet.currentBalancePLN | number: '0.2-2' | nullable}}
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="mdl-cell--7-col">
+    <b>Saldo EUR:</b>
+  </div>
+  <div class="mdl-cell--5-col">
+    {{wallet.currentBalanceEUR | number: '0.2-2' | nullable}}
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="mdl-cell--7-col">
+    <b>Zaangażowanie łączne:</b>
+  </div>
+  <div class="mdl-cell--5-col">
+    {{wallet.involvement | number:'0.2-2' | nullable}}
+  </div>
+</mat-list-item>

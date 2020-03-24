@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ali.aliorleasing.pl/contract-termination-api/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ContractTerminationApiBeanService" targetNamespace="http://ali.aliorleasing.pl/contract-termination-api/ws">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ali.aliorleasing.pl/contract-termination-api/ws" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ali.aliorleasing.pl/contract-termination-api/ws">
+  <xs:element name="generateContractTermination" type="tns:generateContractTermination"/>
+  <xs:element name="generateContractTerminationResponse" type="tns:generateContractTerminationResponse"/>
+  <xs:complexType name="generateContractTermination">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GenerateContractTerminationRequest" type="tns:generateContractTerminationRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generateContractTerminationRequest">
+    <xs:sequence>
+      <xs:element name="contractTermination" type="tns:contractTermination"/>
+      <xs:element name="securityInfo" type="tns:securityInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contractTermination">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactPhoneNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="contracts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="contract" type="tns:contract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="creationDate" type="xs:dateTime"/>
+      <xs:element name="customerCity" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerEmail" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerMailCity" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerMailPostalCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerMailStreet" type="xs:string"/>
+      <xs:element name="customerName" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerNip" type="xs:string"/>
+      <xs:element name="customerNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerPhoneNo1" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerPhoneNo2" type="xs:string"/>
+      <xs:element name="customerPostalCode" type="xs:string"/>
+      <xs:element name="customerStreet" type="xs:string"/>
+      <xs:element minOccurs="0" name="error" type="xs:string"/>
+      <xs:element minOccurs="0" name="documentHashes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="hash" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="issuingOperator" type="xs:string"/>
+      <xs:element minOccurs="0" name="sendDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="suspensionDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="terminationType" type="tns:terminationType"/>
+      <xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activationFee" type="xs:decimal"/>
+      <xs:element name="contractNo" type="xs:string"/>
+      <xs:element name="contractType" type="tns:contractType"/>
+      <xs:element minOccurs="0" name="outstandingInvoices">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="invoice" type="tns:invoice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="contractSubjects">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="contractSubject" type="tns:contractSubject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contractNo" type="xs:string"/>
+      <xs:element name="currency" type="xs:string"/>
+      <xs:element name="dueDate" type="xs:dateTime"/>
+      <xs:element name="invoiceBalance" type="xs:decimal"/>
+      <xs:element name="invoiceNo" type="xs:string"/>
+      <xs:element name="invoiceSum" type="xs:decimal"/>
+      <xs:element name="issueDate" type="xs:dateTime"/>
+      <xs:element name="leoId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contractSubject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gpsFee" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hasGps" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="plateNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="subject" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="securityInfo">
+    <xs:sequence>
+      <xs:element name="system" type="xs:string"/>
+      <xs:element name="token" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generateContractTerminationResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="GenerateContractTerminationResponse" type="tns:contractTermination"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="contractType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPERATIONAL_LEASING"/>
+      <xs:enumeration value="FINANCIAL_LEASING"/>
+      <xs:enumeration value="LOAN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="terminationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONDITIONAL"/>
+      <xs:enumeration value="IMMEDIATE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SecurityException" type="tns:SecurityException"/>
+  <xs:complexType name="SecurityException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="generateContractTermination">
+    <wsdl:part element="tns:generateContractTermination" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SecurityException">
+    <wsdl:part element="tns:SecurityException" name="SecurityException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateContractTerminationResponse">
+    <wsdl:part element="tns:generateContractTerminationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ContractTerminationServiceType">
+    <wsdl:operation name="generateContractTermination">
+      <wsdl:input message="tns:generateContractTermination" name="generateContractTermination">
+    </wsdl:input>
+      <wsdl:output message="tns:generateContractTerminationResponse" name="generateContractTerminationResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:SecurityException" name="SecurityException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContractTerminationApiBeanServiceSoapBinding" type="tns:ContractTerminationServiceType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generateContractTermination">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="generateContractTermination">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateContractTerminationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SecurityException">
+        <soap:fault name="SecurityException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContractTerminationApiBeanService">
+    <wsdl:port binding="tns:ContractTerminationApiBeanServiceSoapBinding" name="ContractTerminationApiServicePort">
+      <soap:address location="http://localhost:38080/einvoice-api/ContractTerminationServiceType"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

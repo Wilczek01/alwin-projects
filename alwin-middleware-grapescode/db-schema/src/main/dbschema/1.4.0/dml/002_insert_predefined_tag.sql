@@ -1,0 +1,1 @@
+INSERT INTO TAG(name, color, predefined, tag_type) VALUES ('Zaległe', '#E53935', true, 'OVERDUE');

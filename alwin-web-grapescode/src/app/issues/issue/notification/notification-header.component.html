@@ -1,0 +1,37 @@
+<button mat-icon-button [matMenuTriggerFor]="notificationsPanel"
+        [disabled]="(loadingNotifications || allNotificationsCount == 0) && (!hasRole(role.PHONE_DEBT_COLLECTOR_MANAGER) || loadingNotifications)"
+        class="alwin-mat-notification-size" id="show-notifications-button">
+  <mat-spinner *ngIf="loadingNotifications" [diameter]="24"></mat-spinner>
+  <div *ngIf="!loadingNotifications && allUnreadNotificationsCount != 0" class="material-icons mdl-badge mdl-badge--overlap"
+       [attr.data-badge]="allUnreadNotificationsCount">notifications
+  </div>
+  <mat-icon *ngIf="!loadingNotifications && allUnreadNotificationsCount == 0" class="alwin-mat-notification-size">notifications</mat-icon>
+</button>
+<mat-menu #notificationsPanel="matMenu" class="alwin-notification-header">
+  <div class="alwin-notification" *ngFor="let notification of notifications; let i = index;">
+    <div class="to-left alwin-notification-icon">
+      <button mat-icon-button class="read-notification-button" id="read-notification-button-{{notification.id}}"
+              *ngIf="notification.readDate == null && notification.readConfirmationRequired"
+              style="z-index: 1000;" [disabled]="readonly"
+              (click)="readNotificationAfterConfirmation(notification)" type="button">
+        <mat-icon>chat_bubble</mat-icon>
+      </button>
+      <mat-icon *ngIf="notification.readDate != null" style="color: #d3d3d3;">chat_bubble_outline</mat-icon>
+    </div>
+    <div class="to-right alwin-notification-content" [class.alwin-notification-content-separator]="(i+1) != notifications.length"
+         [style.color]="notification.readDate != null ? '#d3d3d3' : '#000000'">
+      <span title="notification-message-{{notification.id}}"
+            [style.font-weight]="notification.readDate == null ? 'bold' : 'normal'">{{notification.message}}</span>
+      <br/>
+      <span title="notification-details-{{notification.id}}" [style.color]="notification.readDate != null ? '#d3d3d3' : '#000000'">
+        {{notification.sender != null ? (notification.sender.user.firstName | concatenateText: [notification.sender.user.lastName]) : 'System'}}, utworzono: {{notification.creationDate | date:'dd.MM.yyyy'}}<span *ngIf="notification.readDate != null">, przeczytano: {{notification.readDate | date:'dd.MM.yyyy'}}.</span>
+      </span>
+    </div>
+  </div>
+  <div *ngIf="hasRole(role.PHONE_DEBT_COLLECTOR_MANAGER)" class="alwin-notification">
+    <button mat-button color="primary" (click)="createNewNotification()" class="full-width add-notification-button">
+      Dodaj powiadomienie
+    </button>
+  </div>
+
+</mat-menu>

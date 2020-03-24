@@ -1,0 +1,32 @@
+[
+  {
+    "invoiceId": 1,
+    "positionNumber": 1,
+    "quantityUnit": "szt.",
+    "quantity": 1,
+    "vatRate": "23",
+    "netAmount": 1752.31,
+    "vatAmount": 403.03,
+    "paymentTitle": "Rata leasingowa nr 10 - Odsetki"
+  },
+  {
+    "invoiceId": 1,
+    "positionNumber": 2,
+    "quantityUnit": "szt.",
+    "quantity": 2,
+    "vatRate": "ZW",
+    "netAmount": 100.00,
+    "vatAmount": 0.00,
+    "paymentTitle": "Wysłanie wezwania do zapłaty"
+  },
+  {
+    "invoiceId": 1,
+    "positionNumber": 3,
+    "quantityUnit": "szt.",
+    "quantity": 3,
+    "vatRate": null,
+    "netAmount": 150.00,
+    "vatAmount": 0.00,
+    "paymentTitle": "Opłata za sprawdzenie w CRZ"
+  }
+]

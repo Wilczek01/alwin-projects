@@ -1,0 +1,8 @@
+{
+  "username": "Czesław Miłosz",
+  "role": {
+    "id": 1,
+    "typeName": "PHONE_DEBT_COLLECTOR_MANAGER",
+    "typeLabel": "Menedżer windykacji telefonicznej"
+  }
+}

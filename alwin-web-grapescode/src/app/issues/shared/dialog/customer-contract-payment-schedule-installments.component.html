@@ -1,0 +1,95 @@
+<mat-accordion [multi]="true">
+  <mat-expansion-panel *ngFor="let instalment of instalments">
+    <mat-expansion-panel-header id="istalment-{{instalment.id}}">
+      <mat-panel-title>Rata (indeks): {{instalment.index}}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Identyfikator raty</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.id}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Data do któej powinna być wykonana płatność</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.paymentDate | date:'dd.MM.yyyy' | nullable}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Pozostało do spłaty</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.remainingPayment | number:'0.2-2'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Kapitał</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.capital | number:'0.2-2'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Odsetki</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.interest | number:'0.2-2'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Płatność</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.payment | number:'0.2-2'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid" *ngIf="instalment.financingElement != null">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Rodzaj płatości</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.financingElement.paymentKind}}
+        </div>
+      </div>
+    </div>
+
+    <div class="alwin-grid" *ngIf="instalment.financingPayment != null">
+      <div class="alwin-grid-row">
+        <div class="alwin-grid-title">
+          <span class="grid-tile-title">Identyfikator faktury dla pozycji zafakturowanych</span>
+        </div>
+        <div class="alwin-grid-content">
+          {{instalment.financingPayment.invoiceId}}
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

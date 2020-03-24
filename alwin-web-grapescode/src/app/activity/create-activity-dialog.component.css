@@ -1,0 +1,22 @@
+.buttons-container {
+  display: block;
+  margin-top: 24px;
+  text-align: center
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.selection-separator {
+  margin-bottom: 1.25em;
+}
+
+.planned-checkbox {
+  margin: 15px 0 20px 0;
+}
+
+.create-activity-dialog {
+  max-width: 600px;
+}

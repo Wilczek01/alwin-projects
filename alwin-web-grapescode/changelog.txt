@@ -1,0 +1,114 @@
+1.15.0
+    - #30826 Prezentacja wartości słownikowej dla anulowania w tabeli wysłanych wezwań do zapłaty
+    - #30825 Wybor z listy powodu anulowania wezwania
+    - #31913 Ukrywanie linku w menu w zależności od uprawnień operatora
+    - #30770 Możliwość przypisywania operatorów tylko do wybranych sekcji windykacji telefonicznej
+    - #30739 Dodanie nowej zakładki "Aktywowane" dla aktywowanych wypowiedzeń
+    - #30718 obsługa odrzucania wezwań	Resolved	Dariusz Raćkowski | Grapes Code
+    - #30719 Dodanie zakładki dla odrzuconych wezwań
+    - #30756 Filtrowanie wezwań (różne zakładki)
+    - #30808 Dodanie checkbox-a dla podwyższonej opłaty gps
+    - #30758 Dodanie sprawdzania, czy dany przedmiot ma już GPS
+    - #30721 dodanie checkboksów na poziomie grupy
+    - #30724 Dodanie nowej zakładki z odrzuconymi wypowiedzeniami
+    - #30648 Dodanie i obsluga akcji dla blokad windykacji formalnej
+    - #30647 Prezentacja blokad dla windykacji formalnej
+    - #30697 Tabela z informacją o liczbie oczekujących wezwań z podziałem na dni
+    - #30331 Sugerowana lista telefonów przy dodawaniu czynności
+    - #30655 Już wysłane wezwanie - należy móc oznaczyć jako anulowane
+    - #30692 Możliwość pobrania paczki wezwań (wysłanych) do excela
+1.14.0
+    - #23800 Zarządzanie przypisywaniem masek kodów pocztowych do operatorów
+    - #30348 Zaznaczanie/odznaczanie wszystkich wezwań
+    - #30423 Poprawka dla dodawania planowanej czynności windykacyjnej
+1.13.0
+    - #30084 Błędnie wskazywane saldo bieżące rozrachunków z klientem
+1.12.0
+    - #28920 [Frontend] Dodanie widoku dla windykatora terenowego (operator windykacji bezpośredniej)
+1.11.0
+    - #28313 Zmiana w prezentacji domyślnych czynności
+    - #28393 Zarządzanie cechami dla typów czynności windykacyjnych wraz z edycją wartości słownikowych (aktualnie tylko dla "Przyczyna nieudanego kontaktu telefonicznego")
+    - #28318 Obsługa filtrów w należnościach
+1.10.0
+    - #25155 Zmiana sposobu wyświetlania deklaracji w dialogu dodawania i edycji czynności
+    - #25145 Ujednolicenie widoku zakładek dla klienta
+    - #26715 Możliwość dodawania czynności z deklaracjami spłaty z zaznaczonych nieopłaconych faktur w należnościach
+    - #27263 Możliwość dodawania deklaracji przy edycji czynności zaplanowanej
+    - #25147 Layout Harmonogramu - usunięcie problemu z poziomym scrollem na liście harmonogramów (firefox)
+    - #27860 Przeniesienie przycisku do dodawania czynności
+    - #25167 Domyślne ukrycie filtrów wyszukiwania faktur.
+    - #27268 Możliwość dodawania deklaracji spłaty z zaznaczonych nieopłaconych faktur w należnościach w trakcie prowadzonej rozmowy telefonicznej
+    - #27327 [Frontend] wczytanie zaplanowanej czynności w callTo
+    - #25142 Nowa cecha dodatkowa przy nieudanej próbie kontaktu.
+1.9.1
+    - #27858: [Frontend] Zablokowanie dodawanie ujemnej kwoty deklaracji
+    - #27836: Zmiana momentu uznania deklaracji za niespłaconą
+1.9.0
+    - #25149 wyświetlanie portfeli dla etykiet
+    - #25182 Ustawienia stronicowania
+    - #27198 Historia zlecenia - informacje o czynnościach
+    - #26730 Dodanie przełącznika wykonane/zaplanowane na widoku czynności
+    - #26724 ograniczenie dla daty tworzenia deklaracji podczas dodawania deklaracji
+    - #26731 Dodanie daty zaplanowania/wykonania na liście czynności zlecenia
+    - #26714 Możliwość sumowania salda niezapłaconych faktur przez zaznaczanie ich checkboxami
+    - #27264 Poprawienie walidacji przy edycji czynności zaplanowanej
+    - #27265 Usunięcie edycji deklaracji jak jest czynność wykonana
+    - #27577 Dialogi z czynnościami w trybie tylko do odczytu
+1.8.0:
+    - #27002 dodatkowe filtry dla zleceń w widoku operatora (dane kontaktowe, dane osób powiązanych, nr umowy na fakturze)
+    - #26526 ustawianie domyślnych statusów w filtrach zleceń po kliknięciu odnośnika w portfelu
+    - #26524 prezentacja portfeli z podziałem na typy zleceń (nowe i realizowane) oraz (czekające na zamknięcie)
+    - #26013 Ukrycie przycisku do aktualizacji salda, prezentacja daty ostatniej aktualizacji salda
+    - #26021 użycie serwisu do pobierania zlecenia z aktualnym saldem
+    - #26447 [Frontend] Prezentacja ikony oraz opisu etykiety
+    - #26440 [Frontend] rozszerzenie formularza do edycji i dodawania etykiet
+    - #27017 Poprawki w obszarze dialogu dodawania/edycji czynności:
+               - usunięcie problemu z komentarzem w przypadku czynności tworzonych automatycznie
+               - usunięcie problemu z brakiem zapisywania komentarza dla czynności utworzonej automatycznie
+               - usunięcie przycisku w dialogu czynności, w przypadku gdy jest ona wykonana
+               - usunięcie przycisku dodawania deklaracji dla wykonanej czynności
+               - zmiana tooltipa na liście czynności "Edytuj" -> "Szczegóły"
+               - zmiana nagłówka dialogu czynności w przypadku, gdy czynność jest już wykonana
+     - #25164 Eksport zestawienia należności do excel'a
+1.7.0:
+    - #26062 wyświetlanie powiadomień o nadpłatach
+    - #25343 filtrowanie zleceń przez operatora po danych klienta - nip, regon, nazwa lub jej część
+    - #25146 Scrollowanie listy umów
+    - #26132 prezentacja typu edytowanej czynności w formularzu edycji
+    - #26135 prezentacja listy pozycji na fakturze
+    - #26216 Podsumowanie sald prezentowane w belce po kliknięciu w "spłacono" i procent spłaty
+    - #26137 Zmiana w prezentacji korekt - prezentowanie różnicy pomiędzy korektą a FV główną oraz pomiędzy korektami
+    - #26144 Zmiana prezentacji rozrachunków
+    - #26289 Zmiany położenia sald bieżącego, należności wymaganych i niewymaganych
+    - #26396 Dodanie nowych pól w historii zlecenia, poprawienie błędu podczas wyświetlania
+1.6.0:
+    - #23700 oznaczanie faktur które są przedmiotem umowy
+    - #24456 Prezentowanie sald na stronie należności
+    - #24913 Wyświetlanie wersji aplikacji webowej oraz backendowej
+    - #23551 Wyświetlenie konfiguracji zleceń
+    - #23761 Edycja konfiguracji zlecenia
+    - #24065 Prezentacja konfiguracji domyślnych czynności dla zlecenia
+    - #24066 Edycja konfiguracji domyślnych czynności dla zlecenia
+    - #24569 Prezentacja wszystkich czynności windykacyjnych
+    - #24570 Edycja czynności windykacyjnych
+    - #25159 Uaktualnianie domyślnych czynności zlecenia
+    - #25160 Uaktualnianie typu czynności
+    - #23123 dodatkowe informacje na belce zlecenia (informacja "spłacono" z paskiem % spłaty)
+    - #25341 Aktualizacja słowników prezentujących właściwości zlecenia
+    - #25959 Błąd podczas manualnego tworzenia zlecenia dla zablokowanej firmy - prezentacja komunikatu
+    - #25960 Odświeżenie widoku po ręcznym uruchomieniu schedulera
+1.5.0:
+    - #24455 Wyświetlanie daty ostatniej wpłaty na liście należności dla balance >=0 (data rozliczenia)
+    - #24453 Wyświetlanie DPD na liście zleceń oraz na stronie pojedynczego zlecenia
+    - #24453 Wyświetlenie przycisku do aktualizacji salda w należnościach na stronie zlecenia dla managera
+    - #24459 Zmiana w portfelach (prezentacja ile jest zadań zaległych)
+    - #24452 prezentacja formy prawnej klienta
+1.4.0:
+    - #21250 dodanie filtrowania zleceń po priorytecie
+    - #21327 dodanie filtrowania zleceń po typie zlecenia oraz po segmencie klienta
+    - #23570 wyświetlanie numeru umowy w zestawieniu faktur
+1.3.0:
+    - prezentacja faktur korygujących
+    - poprawka w prezentacji salda na liście faktur
+    - #23121 Dodanie możliwości wyświetlania należności bez podziału na umowy
+    - #23266 FIX: błędny komunikat w przypadku braku uprawnień do zakończenia zlecenia

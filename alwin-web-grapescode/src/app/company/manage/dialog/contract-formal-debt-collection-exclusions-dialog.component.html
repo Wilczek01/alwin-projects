@@ -1,0 +1,54 @@
+<div class="progress-bar-placeholder" style="margin: -24px -24px 12px -24px">
+  <mat-progress-bar [hidden]="!loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="alwin-dialog-header full-width">
+  <h1 mat-dialog-title id="dialog-title">Blokady umowy nr {{contract.contractNo}}</h1>
+  <button mat-icon-button mat-dialog-close id="close-button">
+    <mat-icon class="material-icons">cancel</mat-icon>
+  </button>
+</div>
+
+<table class="mdl-data-table mdl-js-data-table full-width" id="contract-exclusions-table"
+       [hidden]="contract.exclusions == null || contract.exclusions.length == 0">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Od</th>
+    <th class="mdl-data-table__cell--non-numeric">Do</th>
+    <th class="mdl-data-table__cell--non-numeric">Blokujący</th>
+    <th class="mdl-data-table__cell--non-numeric">Wybrana przyczyna</th>
+    <th class="mdl-data-table__cell--non-numeric">Typ Wezwania</th>
+    <th class="mdl-data-table__cell--non-numeric">Powód</th>
+    <th class="mdl-data-table__cell--non-numeric">Komentarz</th>
+    <th class="mdl-data-table__cell--non-numeric action-cell">Akcje</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let exclusion of contract.exclusions">
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.startDate | date:'dd.MM.yyyy'}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.endDate | date:'dd.MM.yyyy'}}</td>
+    <td class="mdl-data-table__cell--non-numeric">
+      <mat-chip-list>
+        <mat-chip>{{exclusion.blockingOperator}}</mat-chip>
+      </mat-chip-list>
+    </td>
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.reasonTypeLabel}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.demandForPaymentType | demandTypeKeyString}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.reason}}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{exclusion.remark}}</td>
+    <td class="mdl-data-table__cell--non-numeric action-cell">
+      <button mat-icon-button matTooltip="Edytuj" (click)="editExclusion(exclusion)">
+        <mat-icon class="material-icons">mode_edit</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Usuń" (click)="confirmDeleteExclusion(exclusion.id)">
+        <mat-icon class="material-icons">delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="no-results clear" [hidden]="contract.exclusions != null && contract.exclusions.length != 0">
+  Nie znaleziono żadnych blokad tej umowy.
+</div>
+

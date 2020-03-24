@@ -1,0 +1,393 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://aliorleasing.pl/dms" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  name="DocumentRPCService" targetNamespace="http://aliorleasing.pl/dms">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://aliorleasing.pl/dms" targetNamespace="http://aliorleasing.pl/dms"
+                   version="1.0">
+            <xs:complexType name="generateDocumentRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="documentAdditionalInformations">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="documentAdditionalInformation" type="tns:documentAdditionalInformation"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="documentAttachments">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="documentAttachment" type="tns:documentAttachment"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="documentDescriptions">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="documentDescription" type="tns:documentDescription"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="documentTemplateId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentAdditionalInformation">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="key" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentAttachment">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contentBase64" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mimeType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentDescription">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="fontSize" type="xs:double"/>
+                    <xs:element minOccurs="0" name="key" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pageType" type="tns:pageType"/>
+                    <xs:element minOccurs="0" name="pages">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="page" type="xs:int"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="pdfX" type="xs:double"/>
+                    <xs:element minOccurs="0" name="pdfY" type="xs:double"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueType" type="tns:valueType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="generatedDocument">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="document" type="tns:documentDTO"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="statusResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="status" type="tns:documentResponseStatus"/>
+                    <xs:element minOccurs="0" name="statusDescription" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" type="xs:string"/>
+                    <xs:element minOccurs="0" name="comment" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentGeneratorRequestId" type="xs:long"/>
+                    <xs:element minOccurs="0" name="documentHash" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentId" type="xs:long"/>
+                    <xs:element minOccurs="0" name="documentMetadataList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="documentMetadata" type="tns:documentMetadataDTO"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="documentNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentTemplateId" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentUrl" type="xs:string"/>
+                    <xs:element minOccurs="0" name="htmlBase64Content" type="xs:string"/>
+                    <xs:element minOccurs="0" name="htmlDocumentUrl" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mimeType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pdfContentBase64" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pdfDocumentUrl" type="xs:string"/>
+                    <xs:element minOccurs="0" name="system" type="xs:string"/>
+                    <xs:element minOccurs="0" name="systemUserId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentMetadataDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="key" type="xs:string"/>
+                    <xs:element minOccurs="0" name="label" type="xs:string"/>
+                    <xs:element minOccurs="0" name="value" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDocumentListRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentListResponse">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="documents">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="document" type="tns:documentDTO"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="getDocumentRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="documentHash" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentResponse">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="document" type="tns:documentDTO"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="sendDocumentRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" type="xs:string"/>
+                    <xs:element minOccurs="0" name="comment" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contentBase64" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentMetadataList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="documentMetadata" type="tns:documentMetadataDTO"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="documentNumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="documentType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mimeType" type="xs:string"/>
+                    <xs:element minOccurs="0" name="system" type="xs:string"/>
+                    <xs:element minOccurs="0" name="systemUserId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="sentDocument">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="document" type="tns:documentDTO"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="getDocumentTemplateRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="documentTemplateId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="documentTemplateResponse">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="documentTemplate" type="tns:documentTemplateDTO"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="documentTemplateDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" type="xs:string"/>
+                    <xs:element minOccurs="0" name="htmlUrl" type="xs:string"/>
+                    <xs:element minOccurs="0" name="id" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="loginRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="login" type="xs:string"/>
+                    <xs:element minOccurs="0" name="password" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="loginResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountId" type="xs:long"/>
+                    <xs:element minOccurs="0" name="status" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="enableTemplateOnlineRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="documentTemplateId" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="enableTemplateOnlineResponse">
+                <xs:complexContent>
+                    <xs:extension base="tns:statusResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="htmlUrl" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:simpleType name="pageType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ALL"/>
+                    <xs:enumeration value="LISTED"/>
+                    <xs:enumeration value="ALL_WITHOUT_COVER"/>
+                    <xs:enumeration value="NONE"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="valueType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="TEXT"/>
+                    <xs:enumeration value="IMAGE"/>
+                    <xs:enumeration value="COUNTER"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="documentResponseStatus">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="OK"/>
+                    <xs:enumeration value="TEMPLATE_ERROR"/>
+                    <xs:enumeration value="UNAUTHORIZED"/>
+                    <xs:enumeration value="INTERNAL_ERROR"/>
+                    <xs:enumeration value="ERROR"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getDocument">
+        <wsdl:part name="GetDocumentRequest" type="tns:getDocumentRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendDocument">
+        <wsdl:part name="SendDocumentRequest" type="tns:sendDocumentRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentTemplate">
+        <wsdl:part name="GetTemplateRequest" type="tns:getDocumentTemplateRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="enableDocumentTemplateOnlineResponse">
+        <wsdl:part name="EnableTemplateOnlineResponse" type="tns:enableTemplateOnlineResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentResponse">
+        <wsdl:part name="DocumentResponse" type="tns:documentResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="enableDocumentTemplateOnline">
+        <wsdl:part name="EnableTemplateOnlineRequest" type="tns:enableTemplateOnlineRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generateDocument">
+        <wsdl:part name="GenerateDocumentRequest" type="tns:generateDocumentRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentList">
+        <wsdl:part name="GetDocumentListRequest" type="tns:getDocumentListRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentListResponse">
+        <wsdl:part name="DocumentListResponse" type="tns:documentListResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generateDocumentResponse">
+        <wsdl:part name="GeneratedDocument" type="tns:generatedDocument"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendDocumentResponse">
+        <wsdl:part name="SentDocument" type="tns:sentDocument"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="authorize">
+        <wsdl:part name="LoginRequest" type="tns:loginRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="authorizeResponse">
+        <wsdl:part name="LoginResponse" type="tns:loginResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocumentTemplateResponse">
+        <wsdl:part name="DocumentTemplateResponse" type="tns:documentTemplateResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="DocumentRPCService">
+        <wsdl:operation name="generateDocument">
+            <wsdl:input message="tns:generateDocument" name="generateDocument"></wsdl:input>
+            <wsdl:output message="tns:generateDocumentResponse" name="generateDocumentResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentList">
+            <wsdl:input message="tns:getDocumentList" name="getDocumentList"></wsdl:input>
+            <wsdl:output message="tns:getDocumentListResponse" name="getDocumentListResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocument">
+            <wsdl:input message="tns:getDocument" name="getDocument"></wsdl:input>
+            <wsdl:output message="tns:getDocumentResponse" name="getDocumentResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendDocument">
+            <wsdl:input message="tns:sendDocument" name="sendDocument"></wsdl:input>
+            <wsdl:output message="tns:sendDocumentResponse" name="sendDocumentResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentTemplate">
+            <wsdl:input message="tns:getDocumentTemplate" name="getDocumentTemplate"></wsdl:input>
+            <wsdl:output message="tns:getDocumentTemplateResponse" name="getDocumentTemplateResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="authorize">
+            <wsdl:input message="tns:authorize" name="authorize"></wsdl:input>
+            <wsdl:output message="tns:authorizeResponse" name="authorizeResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="enableDocumentTemplateOnline">
+            <wsdl:input message="tns:enableDocumentTemplateOnline" name="enableDocumentTemplateOnline"></wsdl:input>
+            <wsdl:output message="tns:enableDocumentTemplateOnlineResponse" name="enableDocumentTemplateOnlineResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="DocumentRPCServiceSoapBinding" type="tns:DocumentRPCService">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="generateDocument">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="generateDocument">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="generateDocumentResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentList">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="getDocumentList">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocumentListResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocument">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="getDocument">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocumentResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendDocument">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="sendDocument">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendDocumentResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocumentTemplate">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="getDocumentTemplate">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocumentTemplateResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="authorize">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="authorize">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="authorizeResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="enableDocumentTemplateOnline">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="enableDocumentTemplateOnline">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="enableDocumentTemplateOnlineResponse">
+                <soap:body namespace="http://aliorleasing.pl/dms" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="DocumentRPCService">
+        <wsdl:port binding="tns:DocumentRPCServiceSoapBinding" name="DocumentPort">
+            <soap:address location="http://localhost:8080/dms-api/DocumentRPCService/DocumentRPCService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
